@@ -33,17 +33,23 @@
         <h2>Submodules</h2>
         <ul>
                 <li><a href="graphy/create_barchart.html">create_barchart</a></li>
-                <li><a href="graphy/create_piechart.html">create_piechart</a></li>
                 <li><a href="graphy/create_stacked_barchart.html">create_stacked_barchart</a></li>
+                <li><a href="graphy/create_piechart.html">create_piechart</a></li>
         </ul>
 
         <h2>API Documentation</h2>
             <ul class="memberlist">
             <li>
-                    <a class="function" href="#get_sphinx_docstring">get_sphinx_docstring</a>
+                    <a class="function" href="#start_presentation">start_presentation</a>
             </li>
             <li>
-                    <a class="function" href="#add_parameter_text_slide">add_parameter_text_slide</a>
+                    <a class="function" href="#save_presentation">save_presentation</a>
+            </li>
+            <li>
+                    <a class="function" href="#add_title_slide">add_title_slide</a>
+            </li>
+            <li>
+                    <a class="function" href="#add_text_slide">add_text_slide</a>
             </li>
             <li>
                     <a class="function" href="#show_summary">show_summary</a>
@@ -52,31 +58,13 @@
                     <a class="function" href="#show_stats">show_stats</a>
             </li>
             <li>
-                    <a class="function" href="#start_presentation">start_presentation</a>
-            </li>
-            <li>
-                    <a class="function" href="#save_presentation">save_presentation</a>
-            </li>
-            <li>
-                    <a class="function" href="#add_text_slide">add_text_slide</a>
-            </li>
-            <li>
-                    <a class="function" href="#add_title_slide">add_title_slide</a>
-            </li>
-            <li>
-                    <a class="function" href="#show_param_as_title">show_param_as_title</a>
-            </li>
-            <li>
                     <a class="function" href="#create_barchart">create_barchart</a>
-            </li>
-            <li>
-                    <a class="function" href="#create_piechart">create_piechart</a>
             </li>
             <li>
                     <a class="function" href="#create_stacked_barchart">create_stacked_barchart</a>
             </li>
             <li>
-                    <a class="function" href="#get_google_docstring">get_google_docstring</a>
+                    <a class="function" href="#create_piechart">create_piechart</a>
             </li>
     </ul>
 
@@ -180,58 +168,6 @@ graphy    </h1>
                 
                 
             </section>
-                <section id="get_sphinx_docstring">
-                    <div class="attr function">
-            
-        <span class="def">def</span>
-        <span class="name">get_sphinx_docstring</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">my_function</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="nb">dict</span>:</span></span>
-
-        
-    </div>
-    <a class="headerlink" href="#get_sphinx_docstring"></a>
-    
-    
-
-                </section>
-                <section id="add_parameter_text_slide">
-                    <div class="attr function">
-            
-        <span class="def">def</span>
-        <span class="name">add_parameter_text_slide</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">info</span><span class="p">:</span> <span class="nb">dict</span>,</span><span class="param">	<span class="n">parameters</span><span class="p">:</span> <span class="nb">dict</span>,</span><span class="param">	<span class="n">param</span><span class="p">:</span> <span class="nb">str</span>,</span><span class="param">	<span class="n">additional_text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
-
-        
-    </div>
-    <a class="headerlink" href="#add_parameter_text_slide"></a>
-    
-    
-
-                </section>
-                <section id="show_summary">
-                    <div class="attr function">
-            
-        <span class="def">def</span>
-        <span class="name">show_summary</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">meta</span></span><span class="return-annotation">):</span></span>
-
-        
-    </div>
-    <a class="headerlink" href="#show_summary"></a>
-    
-    
-
-                </section>
-                <section id="show_stats">
-                    <div class="attr function">
-            
-        <span class="def">def</span>
-        <span class="name">show_stats</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">meta</span>, </span><span class="param"><span class="n">variable</span></span><span class="return-annotation">):</span></span>
-
-        
-    </div>
-    <a class="headerlink" href="#show_stats"></a>
-    
-    
-
-                </section>
                 <section id="start_presentation">
                     <div class="attr function">
             
@@ -289,19 +225,6 @@ graphy    </h1>
     
 
                 </section>
-                <section id="add_text_slide">
-                    <div class="attr function">
-            
-        <span class="def">def</span>
-        <span class="name">add_text_slide</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">info</span><span class="p">:</span> <span class="nb">dict</span>,</span><span class="param">	<span class="n">text</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>,</span><span class="param">	<span class="n">my_title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;gfs-zürich, Markt- &amp; Sozialforschung&#39;</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
-
-        
-    </div>
-    <a class="headerlink" href="#add_text_slide"></a>
-    
-    
-
-                </section>
                 <section id="add_title_slide">
                     <div class="attr function">
             
@@ -315,15 +238,41 @@ graphy    </h1>
     
 
                 </section>
-                <section id="show_param_as_title">
+                <section id="add_text_slide">
                     <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">show_param_as_title</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">param</span>, </span><span class="param"><span class="n">i</span>, </span><span class="param"><span class="n">param_2</span><span class="o">=</span><span class="s1">&#39;&#39;</span>, </span><span class="param"><span class="n">j</span><span class="o">=</span><span class="s1">&#39;&#39;</span></span><span class="return-annotation">):</span></span>
+        <span class="name">add_text_slide</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">info</span><span class="p">:</span> <span class="nb">dict</span>,</span><span class="param">	<span class="n">text</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>,</span><span class="param">	<span class="n">my_title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;gfs-zürich, Markt- &amp; Sozialforschung&#39;</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
 
         
     </div>
-    <a class="headerlink" href="#show_param_as_title"></a>
+    <a class="headerlink" href="#add_text_slide"></a>
+    
+    
+
+                </section>
+                <section id="show_summary">
+                    <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">show_summary</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">meta</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#show_summary"></a>
+    
+    
+
+                </section>
+                <section id="show_stats">
+                    <div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">show_stats</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">meta</span>, </span><span class="param"><span class="n">variable</span></span><span class="return-annotation">):</span></span>
+
+        
+    </div>
+    <a class="headerlink" href="#show_stats"></a>
     
     
 
@@ -401,19 +350,6 @@ graphy    </h1>
 
 
                 </section>
-                <section id="create_piechart">
-                    <div class="attr function">
-            
-        <span class="def">def</span>
-        <span class="name">create_piechart</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">info</span><span class="p">:</span> <span class="nb">dict</span>,</span><span class="param">	<span class="n">variables</span><span class="p">:</span> <span class="nb">list</span>,</span><span class="param">	<span class="n">breaks</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">break_labels_rename</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">left_labels_rename</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">legend_labels_rename</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">left_labels_wrap</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span>,</span><span class="param">	<span class="n">left_labels_width</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">999</span>,</span><span class="param">	<span class="n">show_mean</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>,</span><span class="param">	<span class="n">title_custom_text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;auto&#39;</span>,</span><span class="param">	<span class="n">subtitle_custom_text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;auto&#39;</span>,</span><span class="param">	<span class="n">tag_custom_text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;auto&#39;</span>,</span><span class="param">	<span class="n">title_position</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span>,</span><span class="param">	<span class="n">subtitle_position</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span>,</span><span class="param">	<span class="n">tag_position</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span>,</span><span class="param">	<span class="n">return_data</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>,</span><span class="param">	<span class="n">color_theme</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;auto&#39;</span>,</span><span class="param">	<span class="n">color_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;diverging&#39;</span>,</span><span class="param">	<span class="n">color_direction</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;forward&#39;</span>,</span><span class="param">	<span class="n">value_labels_color</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">999</span>,</span><span class="param">	<span class="n">value_labels_show_min</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.8</span>,</span><span class="param">	<span class="n">weight</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;auto&#39;</span>,</span><span class="param">	<span class="n">order_by</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">title_remove_before</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>,</span><span class="param">	<span class="n">title_remove_after</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>,</span><span class="param">	<span class="n">tag_add_before</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>,</span><span class="param">	<span class="n">subtitle_add_before</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>,</span><span class="param">	<span class="n">left_labels_remove_before</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>,</span><span class="param">	<span class="n">left_labels_remove_after</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>,</span><span class="param">	<span class="n">bar_width</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">999</span>,</span><span class="param">	<span class="n">break_distance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">999</span>,</span><span class="param">	<span class="n">label_size</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">16</span>,</span><span class="param">	<span class="n">value_labels_size</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">16</span>,</span><span class="param">	<span class="n">legend_labels_size</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">12</span>,</span><span class="param">	<span class="n">show_legend</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>,</span><span class="param">	<span class="n">show_total</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>,</span><span class="param">	<span class="n">show_count</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>,</span><span class="param">	<span class="n">select_variable_levels</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">special_variables</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">96</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">99999996</span><span class="p">,</span> <span class="mi">99999997</span><span class="p">,</span> <span class="mi">99999998</span><span class="p">]</span>,</span><span class="param">	<span class="n">standard_arguments</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">df</span><span class="p">:</span> <span class="n">pandas</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="s1">&#39;auto&#39;</span>,</span><span class="param">	<span class="n">meta</span><span class="p">:</span> <span class="n">pyreadstat</span><span class="o">.</span><span class="n">_readstat_parser</span><span class="o">.</span><span class="n">metadata_container</span> <span class="o">=</span> <span class="s1">&#39;auto&#39;</span></span><span class="return-annotation">):</span></span>
-
-        
-    </div>
-    <a class="headerlink" href="#create_piechart"></a>
-    
-    
-
-                </section>
                 <section id="create_stacked_barchart">
                     <div class="attr function">
             
@@ -484,15 +420,15 @@ graphy    </h1>
 
 
                 </section>
-                <section id="get_google_docstring">
+                <section id="create_piechart">
                     <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">get_google_docstring</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">my_function</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="nb">dict</span>:</span></span>
+        <span class="name">create_piechart</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">info</span><span class="p">:</span> <span class="nb">dict</span>,</span><span class="param">	<span class="n">variables</span><span class="p">:</span> <span class="nb">list</span>,</span><span class="param">	<span class="n">breaks</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">break_labels_rename</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">left_labels_rename</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">legend_labels_rename</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">left_labels_wrap</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span>,</span><span class="param">	<span class="n">left_labels_width</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">999</span>,</span><span class="param">	<span class="n">show_mean</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>,</span><span class="param">	<span class="n">title_custom_text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;auto&#39;</span>,</span><span class="param">	<span class="n">subtitle_custom_text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;auto&#39;</span>,</span><span class="param">	<span class="n">tag_custom_text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;auto&#39;</span>,</span><span class="param">	<span class="n">title_position</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span>,</span><span class="param">	<span class="n">subtitle_position</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span>,</span><span class="param">	<span class="n">tag_position</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span>,</span><span class="param">	<span class="n">return_data</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>,</span><span class="param">	<span class="n">color_theme</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;auto&#39;</span>,</span><span class="param">	<span class="n">color_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;diverging&#39;</span>,</span><span class="param">	<span class="n">color_direction</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;forward&#39;</span>,</span><span class="param">	<span class="n">value_labels_color</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">999</span>,</span><span class="param">	<span class="n">value_labels_show_min</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.8</span>,</span><span class="param">	<span class="n">weight</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;auto&#39;</span>,</span><span class="param">	<span class="n">order_by</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">title_remove_before</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>,</span><span class="param">	<span class="n">title_remove_after</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>,</span><span class="param">	<span class="n">tag_add_before</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>,</span><span class="param">	<span class="n">subtitle_add_before</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>,</span><span class="param">	<span class="n">left_labels_remove_before</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>,</span><span class="param">	<span class="n">left_labels_remove_after</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>,</span><span class="param">	<span class="n">bar_width</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">999</span>,</span><span class="param">	<span class="n">break_distance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">999</span>,</span><span class="param">	<span class="n">label_size</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">16</span>,</span><span class="param">	<span class="n">value_labels_size</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">16</span>,</span><span class="param">	<span class="n">legend_labels_size</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">12</span>,</span><span class="param">	<span class="n">show_legend</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>,</span><span class="param">	<span class="n">show_total</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>,</span><span class="param">	<span class="n">show_count</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>,</span><span class="param">	<span class="n">select_variable_levels</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">special_variables</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">96</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">99999996</span><span class="p">,</span> <span class="mi">99999997</span><span class="p">,</span> <span class="mi">99999998</span><span class="p">]</span>,</span><span class="param">	<span class="n">standard_arguments</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">df</span><span class="p">:</span> <span class="n">pandas</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="s1">&#39;auto&#39;</span>,</span><span class="param">	<span class="n">meta</span><span class="p">:</span> <span class="n">pyreadstat</span><span class="o">.</span><span class="n">_readstat_parser</span><span class="o">.</span><span class="n">metadata_container</span> <span class="o">=</span> <span class="s1">&#39;auto&#39;</span></span><span class="return-annotation">):</span></span>
 
         
     </div>
-    <a class="headerlink" href="#get_google_docstring"></a>
+    <a class="headerlink" href="#create_piechart"></a>
     
     
 
