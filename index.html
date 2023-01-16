@@ -56,12 +56,7 @@
 <pre><code class="language-powershell">tar --list -f dist/gfs-functions-1.0.tar.gz
 </code></pre>
 <p>Add documentation:</p>
-<pre><code class="language-powershell">pdoc  `
-    --output-dir docs graphy `
-    --logo &quot;https://gfs-zh.ch/wp-content/uploads/2021/06/LOGO_gfs-zh_org-RGB.svg&quot; `
-    --favicon &quot;https://gfs-zh.ch/wp-content/uploads/2022/09/favicon.png&quot; `
-    -d google `
-    --no-show-source
+<pre><code class="language-powershell">pdoc --html --output-dir docs functions --config show_source_code=False -f
 </code></pre>
 </section>
 <section>
