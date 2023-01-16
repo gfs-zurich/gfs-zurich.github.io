@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>functions.graphy.create_piechart API documentation</title>
+<title>functions.metatables.main API documentation</title>
 <meta name="description" content="" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
@@ -19,7 +19,7 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>functions.graphy.create_piechart</code></h1>
+<h1 class="title">Module <code>functions.metatables.main</code></h1>
 </header>
 <section id="section-intro">
 </section>
@@ -28,29 +28,98 @@
 <section>
 </section>
 <section>
-<h2 class="section-title" id="header-functions">Functions</h2>
-<dl>
-<dt id="functions.graphy.create_piechart.create_piechart"><code class="name flex">
-<span>def <span class="ident">create_piechart</span></span>(<span>info: dict, variables: list, breaks: list = None, break_labels_rename: dict[str, str] = None, legend_labels_rename: dict[str, str] = None, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_color: int = 999, value_labels_show_min: float = 0.8, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', subtitle_add_before: str = '', value_labels_size: float = 16, legend_labels_size: float = 12, hole_size: float = 0, show_legend: bool = True, show_count: bool = False, select_variable_levels: list[int] = None, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto')</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.graphy.create_piechart.create_piechart_df"><code class="name flex">
-<span>def <span class="ident">create_piechart_df</span></span>(<span>info: dict, variables: list[str], breaks: list[str], df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, break_labels_rename: dict[str, str], weight: str, order_by: dict, select_variable_levels: list[int], show_count: bool, special_variables: list[int], legend_labels_rename: dict[str, str]) ‑> pandas.core.frame.DataFrame</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.graphy.create_piechart.create_piechart_graph"><code class="name flex">
-<span>def <span class="ident">create_piechart_graph</span></span>(<span>info: dict, x: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, variables: list[str], color_theme: str, color_type: str, color_direction: str, value_labels_color: int, value_labels_show_min: float, value_labels_size: float, legend_labels_size: float, show_legend: bool, special_variables: list[int], hole_size: float, color_custom: list[str]) ‑> None</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
 </section>
 <section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="functions.metatables.main.MetaTable"><code class="flex name class">
+<span>class <span class="ident">MetaTable</span></span>
+<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>creates MetaTable object that makes data wrangling of files read with pyreadstat easy</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>DataFrame read with pyreadstat</dd>
+<dt><strong><code>meta</code></strong> :&ensp;<code>pyreadstat._readstat_parser.metadata_container</code></dt>
+<dd>pyreadstat metadata</dd>
+</dl></div>
+<h3>Methods</h3>
+<dl>
+<dt id="functions.metatables.main.MetaTable.return_components"><code class="name flex">
+<span>def <span class="ident">return_components</span></span>(<span>self) ‑> tuple[pandas.core.frame.DataFrame, pyreadstat._readstat_parser.metadata_container]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the updated DataFrame and metadata that are contained within the object</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>tuple[pd.DataFrame, pyreadstat._readstat_parser.metadata_container]</code></dt>
+<dd>returns tuple with objects</dd>
+</dl></div>
+</dd>
+<dt id="functions.metatables.main.MetaTable.select_columns"><code class="name flex">
+<span>def <span class="ident">select_columns</span></span>(<span>self, columns: list)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>selects the given columns and removes all others.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>columns</code></strong> :&ensp;<code>list</code></dt>
+<dd>Columns to select</dd>
+</dl></div>
+</dd>
+<dt id="functions.metatables.main.MetaTable.show"><code class="name flex">
+<span>def <span class="ident">show</span></span>(<span>self, variable: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Shows info about the value labels and variable label of the given variable</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Variable to be shown</dd>
+</dl></div>
+</dd>
+<dt id="functions.metatables.main.MetaTable.val_lab"><code class="name flex">
+<span>def <span class="ident">val_lab</span></span>(<span>self, columns: list[str], labels: Union[dict[int, str], str])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Changes the value labels of the given columns</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>columns</code></strong> :&ensp;<code>list[str]</code></dt>
+<dd>A list of columns that need new value labels</dd>
+<dt><strong><code>labels</code></strong> :&ensp;<code>Union[dict[int, str], str]</code></dt>
+<dd>A dictionary with new labels {1 : "label for code 1", 2: "label for code 2"} or the variable name with the labels to be used "variable_name"</dd>
+</dl></div>
+</dd>
+<dt id="functions.metatables.main.MetaTable.var_lab"><code class="name flex">
+<span>def <span class="ident">var_lab</span></span>(<span>self, columns: list[str], text: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Changes the variable labels of the given columns</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>columns</code></strong> :&ensp;<code>list[str]</code></dt>
+<dd>A list of columns that need a new variable label</dd>
+<dt><strong><code>text</code></strong> :&ensp;<code>str</code></dt>
+<dd>Text of the variable label</dd>
+</dl></div>
+</dd>
+<dt id="functions.metatables.main.MetaTable.write_sav"><code class="name flex">
+<span>def <span class="ident">write_sav</span></span>(<span>self, path: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Writes a sav file of the MetaTable object which includes a Dataframe and the metadata.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path of the new file, includes the file name. To save the file in the package directory use "./filename.sav"</dd>
+</dl></div>
+</dd>
+</dl>
+</dd>
+</dl>
 </section>
 </article>
 <nav id="sidebar">
@@ -61,14 +130,22 @@
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
-<li><code><a title="functions.graphy" href="index.html">functions.graphy</a></code></li>
+<li><code><a title="functions.metatables" href="index.html">functions.metatables</a></code></li>
 </ul>
 </li>
-<li><h3><a href="#header-functions">Functions</a></h3>
-<ul class="">
-<li><code><a title="functions.graphy.create_piechart.create_piechart" href="#functions.graphy.create_piechart.create_piechart">create_piechart</a></code></li>
-<li><code><a title="functions.graphy.create_piechart.create_piechart_df" href="#functions.graphy.create_piechart.create_piechart_df">create_piechart_df</a></code></li>
-<li><code><a title="functions.graphy.create_piechart.create_piechart_graph" href="#functions.graphy.create_piechart.create_piechart_graph">create_piechart_graph</a></code></li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="functions.metatables.main.MetaTable" href="#functions.metatables.main.MetaTable">MetaTable</a></code></h4>
+<ul class="two-column">
+<li><code><a title="functions.metatables.main.MetaTable.return_components" href="#functions.metatables.main.MetaTable.return_components">return_components</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable.select_columns" href="#functions.metatables.main.MetaTable.select_columns">select_columns</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable.show" href="#functions.metatables.main.MetaTable.show">show</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable.val_lab" href="#functions.metatables.main.MetaTable.val_lab">val_lab</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable.var_lab" href="#functions.metatables.main.MetaTable.var_lab">var_lab</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable.write_sav" href="#functions.metatables.main.MetaTable.write_sav">write_sav</a></code></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

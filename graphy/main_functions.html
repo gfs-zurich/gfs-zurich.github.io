@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>functions.graphy.create_piechart API documentation</title>
+<title>functions.graphy.main_functions API documentation</title>
 <meta name="description" content="" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
@@ -19,7 +19,7 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>functions.graphy.create_piechart</code></h1>
+<h1 class="title">Module <code>functions.graphy.main_functions</code></h1>
 </header>
 <section id="section-intro">
 </section>
@@ -30,20 +30,20 @@
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt id="functions.graphy.create_piechart.create_piechart"><code class="name flex">
-<span>def <span class="ident">create_piechart</span></span>(<span>info: dict, variables: list, breaks: list = None, break_labels_rename: dict[str, str] = None, legend_labels_rename: dict[str, str] = None, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_color: int = 999, value_labels_show_min: float = 0.8, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', subtitle_add_before: str = '', value_labels_size: float = 16, legend_labels_size: float = 12, hole_size: float = 0, show_legend: bool = True, show_count: bool = False, select_variable_levels: list[int] = None, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto')</span>
+<dt id="functions.graphy.main_functions.none_to_dict"><code class="name flex">
+<span>def <span class="ident">none_to_dict</span></span>(<span>variable)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="functions.graphy.create_piechart.create_piechart_df"><code class="name flex">
-<span>def <span class="ident">create_piechart_df</span></span>(<span>info: dict, variables: list[str], breaks: list[str], df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, break_labels_rename: dict[str, str], weight: str, order_by: dict, select_variable_levels: list[int], show_count: bool, special_variables: list[int], legend_labels_rename: dict[str, str]) ‑> pandas.core.frame.DataFrame</span>
+<dt id="functions.graphy.main_functions.none_to_list"><code class="name flex">
+<span>def <span class="ident">none_to_list</span></span>(<span>variable)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="functions.graphy.create_piechart.create_piechart_graph"><code class="name flex">
-<span>def <span class="ident">create_piechart_graph</span></span>(<span>info: dict, x: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, variables: list[str], color_theme: str, color_type: str, color_direction: str, value_labels_color: int, value_labels_show_min: float, value_labels_size: float, legend_labels_size: float, show_legend: bool, special_variables: list[int], hole_size: float, color_custom: list[str]) ‑> None</span>
+<dt id="functions.graphy.main_functions.raise_errors"><code class="name flex">
+<span>def <span class="ident">raise_errors</span></span>(<span>globals_dict: dict, variable: Any, type: Any, min_value: Union[float, int, ForwardRef(None)] = None, max_value: Union[float, int, ForwardRef(None)] = None, min_length: Optional[int] = None, max_length: Optional[int] = None) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -66,9 +66,9 @@
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
-<li><code><a title="functions.graphy.create_piechart.create_piechart" href="#functions.graphy.create_piechart.create_piechart">create_piechart</a></code></li>
-<li><code><a title="functions.graphy.create_piechart.create_piechart_df" href="#functions.graphy.create_piechart.create_piechart_df">create_piechart_df</a></code></li>
-<li><code><a title="functions.graphy.create_piechart.create_piechart_graph" href="#functions.graphy.create_piechart.create_piechart_graph">create_piechart_graph</a></code></li>
+<li><code><a title="functions.graphy.main_functions.none_to_dict" href="#functions.graphy.main_functions.none_to_dict">none_to_dict</a></code></li>
+<li><code><a title="functions.graphy.main_functions.none_to_list" href="#functions.graphy.main_functions.none_to_list">none_to_list</a></code></li>
+<li><code><a title="functions.graphy.main_functions.raise_errors" href="#functions.graphy.main_functions.raise_errors">raise_errors</a></code></li>
 </ul>
 </li>
 </ul>
