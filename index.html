@@ -541,6 +541,21 @@
 </dl></div>
 <h3>Methods</h3>
 <dl>
+<dt id="functions.MetaTable.recode"><code class="name flex">
+<span>def <span class="ident">recode</span></span>(<span>self, columns: Union[list[str], dict[str, str]], values: dict[int, typing.Any], keep_untouched_codes=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>recodes chosen columns</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>columns</code></strong> :&ensp;<code>Union[list[str], dict[str, str]]</code></dt>
+<dd>can either be a list of the columns that should get new codes list ['F5_01', 'F5_02'] or a dictionary with columns that should be kept unchanged as keys and new columns as values like {'F5_01': 'F5_01_rec', 'F5_02': 'F5_02_rec'}</dd>
+<dt><strong><code>values</code></strong> :&ensp;<code>dict[int, Any]</code></dt>
+<dd>a dictionary with new variable labels as keys and variable labels that should be recoded as values like {1: [1, 2], 2: range(3, 6), 3: 6}. This means that the old codes 1 and 2 become the new code 1, the codes 3, 4 and 5 become the new code 2, and the code 6 becomes the new code 3.</dd>
+<dt><strong><code>keep_untouched_codes</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>For example: When a code 7 exists, but is not changed with the "values" argument, it is kept as it was if True. If False, all answers with code 7 will set to Null and the label for the code 7 will be deleted. Defaults to True.</dd>
+</dl></div>
+</dd>
 <dt id="functions.MetaTable.return_components"><code class="name flex">
 <span>def <span class="ident">return_components</span></span>(<span>self) ‑> tuple[pandas.core.frame.DataFrame, pyreadstat._readstat_parser.metadata_container]</span>
 </code></dt>
@@ -563,11 +578,22 @@
 <dd>Columns to select</dd>
 </dl></div>
 </dd>
-<dt id="functions.MetaTable.show"><code class="name flex">
-<span>def <span class="ident">show</span></span>(<span>self, variable: str)</span>
+<dt id="functions.MetaTable.show_variable"><code class="name flex">
+<span>def <span class="ident">show_variable</span></span>(<span>self, variable: str)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Shows info about the value labels and variable label of the given variable</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Variable to be shown</dd>
+</dl></div>
+</dd>
+<dt id="functions.MetaTable.show_variable_meta"><code class="name flex">
+<span>def <span class="ident">show_variable_meta</span></span>(<span>self, variable: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Shows info about the meta data of the given variable</p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>variable</code></strong> :&ensp;<code>str</code></dt>
@@ -654,9 +680,11 @@
 <li>
 <h4><code><a title="functions.MetaTable" href="#functions.MetaTable">MetaTable</a></code></h4>
 <ul class="two-column">
+<li><code><a title="functions.MetaTable.recode" href="#functions.MetaTable.recode">recode</a></code></li>
 <li><code><a title="functions.MetaTable.return_components" href="#functions.MetaTable.return_components">return_components</a></code></li>
 <li><code><a title="functions.MetaTable.select_columns" href="#functions.MetaTable.select_columns">select_columns</a></code></li>
-<li><code><a title="functions.MetaTable.show" href="#functions.MetaTable.show">show</a></code></li>
+<li><code><a title="functions.MetaTable.show_variable" href="#functions.MetaTable.show_variable">show_variable</a></code></li>
+<li><code><a title="functions.MetaTable.show_variable_meta" href="#functions.MetaTable.show_variable_meta">show_variable_meta</a></code></li>
 <li><code><a title="functions.MetaTable.val_lab" href="#functions.MetaTable.val_lab">val_lab</a></code></li>
 <li><code><a title="functions.MetaTable.var_lab" href="#functions.MetaTable.var_lab">var_lab</a></code></li>
 <li><code><a title="functions.MetaTable.write_sav" href="#functions.MetaTable.write_sav">write_sav</a></code></li>
