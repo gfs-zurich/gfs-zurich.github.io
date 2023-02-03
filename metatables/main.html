@@ -73,6 +73,19 @@
 <dd>returns tuple with objects</dd>
 </dl></div>
 </dd>
+<dt id="functions.metatables.main.MetaTable.scale_level"><code class="name flex">
+<span>def <span class="ident">scale_level</span></span>(<span>self, columns: list[str], new_scale: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Changes the scale levels of the given columns.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>columns</code></strong> :&ensp;<code>list[str]</code></dt>
+<dd>A list of columns</dd>
+<dt><strong><code>new_scale</code></strong> :&ensp;<code>str</code></dt>
+<dd>The new scale of the given columns. Can be 'nominal', 'scale' or 'ordinal'</dd>
+</dl></div>
+</dd>
 <dt id="functions.metatables.main.MetaTable.select_columns"><code class="name flex">
 <span>def <span class="ident">select_columns</span></span>(<span>self, columns: list)</span>
 </code></dt>
@@ -84,8 +97,14 @@
 <dd>Columns to select</dd>
 </dl></div>
 </dd>
+<dt id="functions.metatables.main.MetaTable.show"><code class="name flex">
+<span>def <span class="ident">show</span></span>(<span>self, only_label=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Shows info about the last changed variables.</p></div>
+</dd>
 <dt id="functions.metatables.main.MetaTable.show_variable"><code class="name flex">
-<span>def <span class="ident">show_variable</span></span>(<span>self, variable: str)</span>
+<span>def <span class="ident">show_variable</span></span>(<span>self, variable: str, only_label=False, show_objects=True)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Shows info about the value labels and variable label of the given variable</p>
@@ -166,7 +185,9 @@
 <ul class="two-column">
 <li><code><a title="functions.metatables.main.MetaTable.recode" href="#functions.metatables.main.MetaTable.recode">recode</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable.return_components" href="#functions.metatables.main.MetaTable.return_components">return_components</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable.scale_level" href="#functions.metatables.main.MetaTable.scale_level">scale_level</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable.select_columns" href="#functions.metatables.main.MetaTable.select_columns">select_columns</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable.show" href="#functions.metatables.main.MetaTable.show">show</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable.show_variable" href="#functions.metatables.main.MetaTable.show_variable">show_variable</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable.show_variable_meta" href="#functions.metatables.main.MetaTable.show_variable_meta">show_variable_meta</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable.val_lab" href="#functions.metatables.main.MetaTable.val_lab">val_lab</a></code></li>
