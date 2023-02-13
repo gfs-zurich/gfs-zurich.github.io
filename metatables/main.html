@@ -34,7 +34,7 @@
 <dl>
 <dt id="functions.metatables.main.MetaTable"><code class="flex name class">
 <span>class <span class="ident">MetaTable</span></span>
-<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container)</span>
+<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, project_name: str, gfs_meta: dict = None, year: str = '2023')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>creates MetaTable object that makes data wrangling of files read with pyreadstat easy</p>
@@ -44,9 +44,46 @@
 <dd>DataFrame read with pyreadstat</dd>
 <dt><strong><code>meta</code></strong> :&ensp;<code>pyreadstat._readstat_parser.metadata_container</code></dt>
 <dd>pyreadstat metadata</dd>
+<dt><strong><code>project_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>The name of the project. Is used as a folder name for the generated files</dd>
+<dt><strong><code>gfs_meta</code></strong> :&ensp;<code>dict</code></dt>
+<dd>gfs specific meta data that is used in other gfs products</dd>
 </dl></div>
 <h3>Methods</h3>
 <dl>
+<dt id="functions.metatables.main.MetaTable.create_column_copy"><code class="name flex">
+<span>def <span class="ident">create_column_copy</span></span>(<span>self, new_column: str, column: str, copy_values: bool)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a new column that's a copy of another column in the MetaTable</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>new_column</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the new column</dd>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the column to be copied</dd>
+<dt><strong><code>copy_values</code></strong> :&ensp;<code>bool</code></dt>
+<dd>If True it copies the dataframe values, if False, the column will be full of np.NaN</dd>
+</dl></div>
+</dd>
+<dt id="functions.metatables.main.MetaTable.create_empty_columns"><code class="name flex">
+<span>def <span class="ident">create_empty_columns</span></span>(<span>self, columns: list[str], label: str, variable_labels: dict[int, str])</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="functions.metatables.main.MetaTable.export_config"><code class="name flex">
+<span>def <span class="ident">export_config</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Exports an excel-file that makes changing the meta data very simple.</p></div>
+</dd>
+<dt id="functions.metatables.main.MetaTable.import_config"><code class="name flex">
+<span>def <span class="ident">import_config</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Imports the excel-file with the changed meta data and changes the MetaTable accordingly.</p></div>
+</dd>
 <dt id="functions.metatables.main.MetaTable.recode"><code class="name flex">
 <span>def <span class="ident">recode</span></span>(<span>self, columns: Union[list[str], dict[str, str]], values: dict[int, typing.Any], keep_untouched_codes=True)</span>
 </code></dt>
@@ -104,7 +141,7 @@
 <div class="desc"><p>Shows info about the last changed variables.</p></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable.show_variable"><code class="name flex">
-<span>def <span class="ident">show_variable</span></span>(<span>self, variable: str, only_label=False, show_objects=True)</span>
+<span>def <span class="ident">show_variable</span></span>(<span>self, variable: str, only_label: bool = False, show_objects: bool = False)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Shows info about the value labels and variable label of the given variable</p>
@@ -112,6 +149,10 @@
 <dl>
 <dt><strong><code>variable</code></strong> :&ensp;<code>str</code></dt>
 <dd>Variable to be shown</dd>
+<dt><strong><code>only_label</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Only shows the variable label</dd>
+<dt><strong><code>show_objects</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Also shows the python objects (makes copying easier)</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable.show_variable_meta"><code class="name flex">
@@ -126,7 +167,7 @@
 </dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable.val_lab"><code class="name flex">
-<span>def <span class="ident">val_lab</span></span>(<span>self, columns: list[str], labels: Union[dict[int, str], str])</span>
+<span>def <span class="ident">val_lab</span></span>(<span>self, columns: list[str], labels: Union[dict[int, str], str], keep_untouched_codes=False)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Changes the value labels of the given columns</p>
@@ -136,6 +177,8 @@
 <dd>A list of columns that need new value labels</dd>
 <dt><strong><code>labels</code></strong> :&ensp;<code>Union[dict[int, str], str]</code></dt>
 <dd>A dictionary with new labels {1 : "label for code 1", 2: "label for code 2"} or the variable name with the labels to be used "variable_name"</dd>
+<dt><strong><code>keep_untouched_codes</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>This will keep the old labels of the column and just add the new ones instead of replacing all labels. Defaults to False.</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable.var_lab"><code class="name flex">
@@ -182,7 +225,11 @@
 <ul>
 <li>
 <h4><code><a title="functions.metatables.main.MetaTable" href="#functions.metatables.main.MetaTable">MetaTable</a></code></h4>
-<ul class="two-column">
+<ul class="">
+<li><code><a title="functions.metatables.main.MetaTable.create_column_copy" href="#functions.metatables.main.MetaTable.create_column_copy">create_column_copy</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable.create_empty_columns" href="#functions.metatables.main.MetaTable.create_empty_columns">create_empty_columns</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable.export_config" href="#functions.metatables.main.MetaTable.export_config">export_config</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable.import_config" href="#functions.metatables.main.MetaTable.import_config">import_config</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable.recode" href="#functions.metatables.main.MetaTable.recode">recode</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable.return_components" href="#functions.metatables.main.MetaTable.return_components">return_components</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable.scale_level" href="#functions.metatables.main.MetaTable.scale_level">scale_level</a></code></li>
