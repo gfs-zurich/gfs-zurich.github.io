@@ -135,35 +135,44 @@
 </dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable.show"><code class="name flex">
-<span>def <span class="ident">show</span></span>(<span>self, only_label=False)</span>
+<span>def <span class="ident">show</span></span>(<span>self, columns: Union[list[str], str] = 'last changed', only_label: bool = False, show_objects: bool = False, total: bool = False)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Shows info about the last changed variables.</p></div>
-</dd>
-<dt id="functions.metatables.main.MetaTable.show_variable"><code class="name flex">
-<span>def <span class="ident">show_variable</span></span>(<span>self, variable: str, only_label: bool = False, show_objects: bool = False)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Shows info about the value labels and variable label of the given variable</p>
+<div class="desc"><p>Shows info about the value labels and variable label of the given columns.</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>variable</code></strong> :&ensp;<code>str</code></dt>
-<dd>Variable to be shown</dd>
+<dt><strong><code>columns</code></strong> :&ensp;<code>Union[list[str], str]</code></dt>
+<dd>Columns to be shown. If no column is passed in the last changed columns will be used. columns can either be a list of column names or a single column name as a string.</dd>
 <dt><strong><code>only_label</code></strong> :&ensp;<code>bool</code></dt>
 <dd>Only shows the variable label</dd>
 <dt><strong><code>show_objects</code></strong> :&ensp;<code>bool</code></dt>
 <dd>Also shows the python objects (makes copying easier)</dd>
+<dt><strong><code>total</code></strong> :&ensp;<code>bool</code></dt>
+<dd>makes some changes to output for the show_all function. Not useful to the enduser.</dd>
 </dl></div>
 </dd>
-<dt id="functions.metatables.main.MetaTable.show_variable_meta"><code class="name flex">
-<span>def <span class="ident">show_variable_meta</span></span>(<span>self, variable: str)</span>
+<dt id="functions.metatables.main.MetaTable.show_all"><code class="name flex">
+<span>def <span class="ident">show_all</span></span>(<span>self, columns: Union[list[str], str] = 'last changed')</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Shows info about the meta data of the given variable</p>
+<div class="desc"><p>Shows info about the value labels and the meta data of the given columns.</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>variable</code></strong> :&ensp;<code>str</code></dt>
-<dd>Variable to be shown</dd>
+<dt><strong><code>columns</code></strong> :&ensp;<code>Union[list[str], str]</code></dt>
+<dd>Columns to be shown. If no column is passed in the last changed columns will be used. columns can either be a list of column names or a single column name as a string.</dd>
+</dl></div>
+</dd>
+<dt id="functions.metatables.main.MetaTable.show_meta"><code class="name flex">
+<span>def <span class="ident">show_meta</span></span>(<span>self, columns: Union[list[str], str] = 'last changed', total: bool = False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Shows info about the meta data of the given columns.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>columns</code></strong> :&ensp;<code>Union[list[str], str]</code></dt>
+<dd>Columns to be shown. If no column is passed in the last changed columns will be used. columns can either be a list of column names or a single column name as a string.</dd>
+<dt><strong><code>total</code></strong> :&ensp;<code>bool</code></dt>
+<dd>makes some changes to output for the show_all function. Not useful to the enduser.</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable.val_lab"><code class="name flex">
@@ -235,8 +244,8 @@
 <li><code><a title="functions.metatables.main.MetaTable.scale_level" href="#functions.metatables.main.MetaTable.scale_level">scale_level</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable.select_columns" href="#functions.metatables.main.MetaTable.select_columns">select_columns</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable.show" href="#functions.metatables.main.MetaTable.show">show</a></code></li>
-<li><code><a title="functions.metatables.main.MetaTable.show_variable" href="#functions.metatables.main.MetaTable.show_variable">show_variable</a></code></li>
-<li><code><a title="functions.metatables.main.MetaTable.show_variable_meta" href="#functions.metatables.main.MetaTable.show_variable_meta">show_variable_meta</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable.show_all" href="#functions.metatables.main.MetaTable.show_all">show_all</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable.show_meta" href="#functions.metatables.main.MetaTable.show_meta">show_meta</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable.val_lab" href="#functions.metatables.main.MetaTable.val_lab">val_lab</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable.var_lab" href="#functions.metatables.main.MetaTable.var_lab">var_lab</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable.write_sav" href="#functions.metatables.main.MetaTable.write_sav">write_sav</a></code></li>
