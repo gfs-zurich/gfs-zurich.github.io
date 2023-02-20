@@ -99,6 +99,17 @@
 <dd>For example: When a code 7 exists, but is not changed with the "values" argument, it is kept as it was if True. If False, all answers with code 7 will set to Null and the label for the code 7 will be deleted. Defaults to True.</dd>
 </dl></div>
 </dd>
+<dt id="functions.metatables.main.MetaTable.rename_columns"><code class="name flex">
+<span>def <span class="ident">rename_columns</span></span>(<span>self, columns: dict[str, str])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Renames the given columns.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>columns</code></strong> :&ensp;<code>dict[str, str]</code></dt>
+<dd>Columns to rename: {'old_name': 'new_name'}</dd>
+</dl></div>
+</dd>
 <dt id="functions.metatables.main.MetaTable.return_components"><code class="name flex">
 <span>def <span class="ident">return_components</span></span>(<span>self) ‑> tuple[pandas.core.frame.DataFrame, pyreadstat._readstat_parser.metadata_container]</span>
 </code></dt>
@@ -240,6 +251,7 @@
 <li><code><a title="functions.metatables.main.MetaTable.export_config" href="#functions.metatables.main.MetaTable.export_config">export_config</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable.import_config" href="#functions.metatables.main.MetaTable.import_config">import_config</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable.recode" href="#functions.metatables.main.MetaTable.recode">recode</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable.rename_columns" href="#functions.metatables.main.MetaTable.rename_columns">rename_columns</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable.return_components" href="#functions.metatables.main.MetaTable.return_components">return_components</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable.scale_level" href="#functions.metatables.main.MetaTable.scale_level">scale_level</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable.select_columns" href="#functions.metatables.main.MetaTable.select_columns">select_columns</a></code></li>

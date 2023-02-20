@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>functions API documentation</title>
-<meta name="description" content="Functions to create graphs and tables with python for gfs-zürich …" />
+<meta name="description" content="![](https://github.com/gfs-zurich/gfs-zurich.github.io/blob/4d68fed1b2d21a6db6878dacebba795e327a47f9/ressources/gfs-zh.svg)
+gfs-functions
+This …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,40 +24,159 @@
 <h1 class="title">Package <code>functions</code></h1>
 </header>
 <section id="section-intro">
-<p>Functions to create graphs and tables with python for gfs-zürich.</p>
-<h2 id="installation">Installation</h2>
-<p>In this project, we are using Pipenv for dependency management. Thus, you need the <code>pipenv</code> CLI tool installed on your computer:</p>
-<pre><code class="language-powershell">pip install pipenv
+<p><img alt="" src="https://github.com/gfs-zurich/gfs-zurich.github.io/blob/4d68fed1b2d21a6db6878dacebba795e327a47f9/ressources/gfs-zh.svg"></p>
+<h1 id="gfs-functions">gfs-functions</h1>
+<p>This repository is a part of the technology stack of <a href="https://github.com/gfs-zurich">gfs-zürich</a>.</p>
+<h4 id="-project-status-ongoing">&ndash; Project Status: Ongoing</h4>
+<h2 id="project-introduction">Project introduction</h2>
+<p>This repository is used for customer projects at gfs-zürich.
+It contains functions to create graphs and tables with python.</p>
+<h2 id="project-objectives">Project objectives</h2>
+<ul>
+<li>streamline preprocessing of data files</li>
+<li>streamline table creation for data files</li>
+<li>streamline graphic creation for data files</li>
+<li>create presentations</li>
+</ul>
+<h2 id="methods-used">Methods used</h2>
+<ul>
+<li>Data Visualisation</li>
+<li>Data Processing</li>
+<li>&hellip;</li>
+</ul>
+<h2 id="technologies">Technologies</h2>
+<ul>
+<li>Python</li>
+<li>Jupyter Notebooks</li>
+<li>SPSS Datafiles</li>
+<li>Excel</li>
+<li>JSON</li>
+<li>API</li>
+<li>Pandas </li>
+<li>&hellip;</li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<ol>
+<li>Installed Python 3.10+ on your local machine</li>
+<li>&hellip;</li>
+</ol>
+<h2 id="getting-started">Getting-Started</h2>
+<ol>
+<li>Clone this repository (for help see this <a href="https://help.github.com/articles/cloning-a-repository/">tutorial</a>).</li>
+<li>Install or update your Virtual Environment by following this section <a href="https://github.com/gfs-zurich/gfs-functions/blob/main/README.md#Virtual-Environment">Pipenv virtual environment</a></li>
+<li>&hellip;</li>
+</ol>
+<h2 id="virtual-environment">Virtual-Environment</h2>
+<h3 id="install-pipenv-package">Install Pipenv Package</h3>
+<p>In this project, we are using Pipenv for dependency management. Thus, you need the <code>pipenv</code> CLI tool installed on your computer:
+- open <code>cmd</code> or <code>powershell</code>
+- <code>pip install pipenv</code></p>
+<h3 id="first-install-of-environment">First install of Environment</h3>
+<p>As soon this package is installed, you can install all required packages for this project by executing the following command inside the root project folder:
+- open <code>cmd</code> or <code>powershell</code>
+- <code>cd /your/local/github/repofolder/</code>
+- <code>pipenv install</code>
+- restart VSCode
+- choose the newly created <strong>gfs-functions</strong> virtual environment python interpreter (for help see this <a href="https://code.visualstudio.com/docs/python/environments#_working-with-python-interpreters">tutorial</a> </p>
+<h3 id="environment-already-installed-update-dependencies">Environment already installed (update dependencies)</h3>
+<p>If your environment exists and you only want to update the dependencies use these steps:
+- open <code>cmd</code> or <code>powershell</code>
+- <code>cd /your/local/github/repofolder/</code>
+- <code>pipenv sync</code> </p>
+<h3 id="add-new-dependency">Add new Dependency</h3>
+<p>If you need another dependency, not yet defined in the <code>Pipfile</code>, you can install it using this command and it will also be added to the dependency list.
+- open <code>cmd</code> or <code>powershell</code>
+- <code>cd /your/local/github/repofolder/</code>
+- <code>pipenv install &lt;package&gt;</code> </p>
+<h2 id="featured-files">Featured Files</h2>
+<ul>
+<li><a href="Pipfile">Pipfile for package dependencies</a></li>
+<li><a href=".gitignore">Git Ignore</a> </li>
+<li>&hellip;</li>
+</ul>
+<h2 id="file-folder-structure">File &amp; Folder Structure</h2>
+<pre><code>|   .gitignore                                          # Git Ignore File
+|   LICENSE                                             # License File
+|   Pipfile                                             # Pip File for Dependencies 
+|   README.md                                           # Readme File for Repository
+|   setup.py                                            #
+|   test.py                                             #
+|   UML_gfs_repos.drawio                                # UML File
+|
++---data                                                # Data Folder
+|       EndFile_GVZ.sav
+|       fertig_R_GVZ.sav
+|       fertig_R_Omnibus_April.sav
+|       fertig_R_Omnibus_ZH.sav
+|       fertig_R_SAK.sav
+|       Grafiken_Vorlagen_mt.pptx
+|       grafiken_vorlage_alte_Methode.pptx
+|
++---functions                                           # folder for main functions
+|   |   __init__.py                                         # init py file 
+|   |
+|   +---graphy                                          # subfolder for graphics creation
+|   |       create_barchart.py                              # file to create a bar chart
+|   |       create_piechart.py                              # file to create a pie chart
+|   |       create_stacked_barchart.py                      # file to create a stacked bar chart
+|   |       create_wordcloud.py                             # file to create a wordcloud
+|   |       main_data.py                                    # file for data preparation 
+|   |       main_functions.py                               # file for common functions
+|   |       main_graph.py                                   # file for helper functions to create graphics
+|   |       main_helper.py                                  # file for helper functions 
+|   |       main_presentation.py                            # file for presentation creation
+|   |       main_wrangling.py                               # file for data wrangling
+|   |       __init__.py                                     # init py file 
+|   |
+|   +---metatables                                      # subfolder for data preprocessing
+|   |       main.py                                         # file for data preprocessing
+|   |       __init__.py                                     # init py file 
+|   |
+|   \---tools                                           # subfolder for general tools 
+|           perimeter_search.py                             # python script for perimeter search 
+|           __init__.py                                     # init py file 
++---output                                              # folder for outputs
+|
++---ressources                                          # folder for ressources
+|   \---maps                                                # subfolder for map ressources
+|       \---Shapefiles                                          # subfolder for shapefiles
+|               NUTS_RG_03M_2021_4326.cpg                           # cpg file for 03M EU Shapefile
+|               NUTS_RG_03M_2021_4326.dbf                           # dbf file for 03M EU Shapefile    
+|               NUTS_RG_03M_2021_4326.prj                           # prj file for 03M EU Shapefile
+|               NUTS_RG_03M_2021_4326.shp                           # shp file for 03M EU Shapefile
+|               NUTS_RG_03M_2021_4326.shx                           # shx file for 03M EU Shapefile
+|               NUTS_RG_10M_2021_4326.cpg                           # cpg file for 10M EU Shapefile
+|               NUTS_RG_10M_2021_4326.dbf                           # dbf file for 10M EU Shapefile
+|               NUTS_RG_10M_2021_4326.prj                           # prj file for 10M EU Shapefile
+|               NUTS_RG_10M_2021_4326.shp                           # shp file for 10M EU Shapefile
+|               NUTS_RG_10M_2021_4326.shx                           # shx file for 10M EU Shapefile
+|               NUTS_RG_20M_2021_4326.cpg                           # cpg file for 20M EU Shapefile
+|               NUTS_RG_20M_2021_4326.dbf                           # dbf file for 20M EU Shapefile
+|               NUTS_RG_20M_2021_4326.prj                           # prj file for 20M EU Shapefile
+|               NUTS_RG_20M_2021_4326.shp                           # shp file for 20M EU Shapefile
+|               NUTS_RG_20M_2021_4326.shx                           # shx file for 20M EU Shapefile
+|
++---templates                                           # folder for templates
+|       arial.ttf                                           # arial font
+|       color.json                                          # json for color templates
+|       gfs-zh_logo.svg                                     # vector image gfs logo
+|       graph.json                                          #
+|       LeelawUI.ttf                                        # LeelawUI font
+|       tahomabd.ttf                                        # tahomabd font
+|       template_logo_left.pptx                             # Powerpoint presentation template
+|       template_logo_left_no_page_nr.pptx                  # Powerpoint presentation template
+|       template_logo_right.pptx                            # Powerpoint presentation template   
+|       template_logo_right_no_page_nr.pptx                 # Powerpoint presentation template
+|       template_swissstaffing.pptx                         # Swissstaffing Powerpoint presentation template
+|       text.json                                           # 
+|
+\---test                                                    # folder for testing 
+        test_barchart.ipynb                                     # testing notebook for bar charts
+        test_metatables.ipynb                                   # testing notebook for preprocessing
+        test_stacked_barchart.ipynb                             # testing notebook for stacked bar charts
+        test_syntax.ipynb                                       # 
 </code></pre>
-<p>As soon this package is installed, you can install all required packages for this project by executing the following command inside the root project folder:</p>
-<pre><code class="language-powershell">pipenv install
-</code></pre>
-<p>If you need another dependency, not yet defined in the <code>Pipfile</code>, you can install it using this command and it will also be added to the dependency list.</p>
-<pre><code class="language-powershell">pipenv install &lt;package&gt;
-</code></pre>
-<p>Now, to run the Python scripts, you will need to select the right kernel (name should start with <code>gfs-functions</code>) or if you are executing them using the CLI, you can switch to the virtual environment with the installed dependencies by running this command:</p>
-<pre><code class="language-powershell">pipenv shell
-</code></pre>
-<p>Afterwards you can use the default command to create a juptyer instance:</p>
-<pre><code class="language-powershell">jupyter notebook
-</code></pre>
-<p>Or if that does not work you can try the following command:</p>
-<pre><code class="language-powershell">pipenv run jupyter notebook
-</code></pre>
-<p>Install package</p>
-<pre><code class="language-powershell">pipenv install M:\Mitarbeiter\Joel\Git\gfs-functions\dist\graphy-0.0.2.tar.gz
-</code></pre>
-<h2 id="developing">Developing</h2>
-<p>Create package:</p>
-<pre><code class="language-powershell">python setup.py sdist bdist_wheel
-</code></pre>
-<p>Create package for development environment:</p>
-<pre><code class="language-powershell">python setup.py develop
-</code></pre>
-<p>List package content:</p>
-<pre><code class="language-powershell">tar --list -f dist/gfs-functions-1.0.tar.gz
-</code></pre>
-<p>Add documentation:</p>
+<h2 id="add-documentation">Add documentation</h2>
 <p>The documentation will be added to the <strong><a href="https://github.com/gfs-zurich/gfs-zurich.github.io">gfs-zurich.github.io</a></strong> repository. To get the documentation into the repository, clone it into the <code>./docs</code> folder as <code><a title="functions" href="#functions">functions</a></code>. Then run the following command in the root folder of this repository to create the updated documentation:</p>
 <pre><code class="language-powershell">pdoc --html --output-dir docs functions --config show_source_code=False -f
 </code></pre>
@@ -68,6 +189,10 @@
 <div class="desc"></div>
 </dd>
 <dt><code class="name"><a title="functions.metatables" href="metatables/index.html">functions.metatables</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="functions.tools" href="tools/index.html">functions.tools</a></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -594,6 +719,17 @@
 <dd>For example: When a code 7 exists, but is not changed with the "values" argument, it is kept as it was if True. If False, all answers with code 7 will set to Null and the label for the code 7 will be deleted. Defaults to True.</dd>
 </dl></div>
 </dd>
+<dt id="functions.MetaTable.rename_columns"><code class="name flex">
+<span>def <span class="ident">rename_columns</span></span>(<span>self, columns: dict[str, str])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Renames the given columns.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>columns</code></strong> :&ensp;<code>dict[str, str]</code></dt>
+<dd>Columns to rename: {'old_name': 'new_name'}</dd>
+</dl></div>
+</dd>
 <dt id="functions.MetaTable.return_components"><code class="name flex">
 <span>def <span class="ident">return_components</span></span>(<span>self) ‑> tuple[pandas.core.frame.DataFrame, pyreadstat._readstat_parser.metadata_container]</span>
 </code></dt>
@@ -718,8 +854,26 @@
 <h1>Index</h1>
 <div class="toc">
 <ul>
-<li><a href="#installation">Installation</a></li>
-<li><a href="#developing">Developing</a></li>
+<li><a href="#gfs-functions">gfs-functions</a><ul>
+<li><a href="#-project-status-ongoing">&ndash; Project Status: Ongoing</a></li>
+<li><a href="#project-introduction">Project introduction</a></li>
+<li><a href="#project-objectives">Project objectives</a></li>
+<li><a href="#methods-used">Methods used</a></li>
+<li><a href="#technologies">Technologies</a></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#getting-started">Getting-Started</a></li>
+<li><a href="#virtual-environment">Virtual-Environment</a><ul>
+<li><a href="#install-pipenv-package">Install Pipenv Package</a></li>
+<li><a href="#first-install-of-environment">First install of Environment</a></li>
+<li><a href="#environment-already-installed-update-dependencies">Environment already installed (update dependencies)</a></li>
+<li><a href="#add-new-dependency">Add new Dependency</a></li>
+</ul>
+</li>
+<li><a href="#featured-files">Featured Files</a></li>
+<li><a href="#file-folder-structure">File &amp; Folder Structure</a></li>
+<li><a href="#add-documentation">Add documentation</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <ul id="index">
@@ -727,6 +881,7 @@
 <ul>
 <li><code><a title="functions.graphy" href="graphy/index.html">functions.graphy</a></code></li>
 <li><code><a title="functions.metatables" href="metatables/index.html">functions.metatables</a></code></li>
+<li><code><a title="functions.tools" href="tools/index.html">functions.tools</a></code></li>
 </ul>
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
@@ -757,6 +912,7 @@
 <li><code><a title="functions.MetaTable.export_config" href="#functions.MetaTable.export_config">export_config</a></code></li>
 <li><code><a title="functions.MetaTable.import_config" href="#functions.MetaTable.import_config">import_config</a></code></li>
 <li><code><a title="functions.MetaTable.recode" href="#functions.MetaTable.recode">recode</a></code></li>
+<li><code><a title="functions.MetaTable.rename_columns" href="#functions.MetaTable.rename_columns">rename_columns</a></code></li>
 <li><code><a title="functions.MetaTable.return_components" href="#functions.MetaTable.return_components">return_components</a></code></li>
 <li><code><a title="functions.MetaTable.scale_level" href="#functions.MetaTable.scale_level">scale_level</a></code></li>
 <li><code><a title="functions.MetaTable.select_columns" href="#functions.MetaTable.select_columns">select_columns</a></code></li>
