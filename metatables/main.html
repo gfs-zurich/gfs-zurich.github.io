@@ -34,7 +34,7 @@
 <dl>
 <dt id="functions.metatables.main.MetaTable"><code class="flex name class">
 <span>class <span class="ident">MetaTable</span></span>
-<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, project_name: str, gfs_meta: dict = None, year: str = '2023')</span>
+<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, project_name: str, year: str = '2023')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>creates MetaTable object that makes data wrangling of files read with pyreadstat easy</p>
@@ -111,13 +111,13 @@
 </dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable.return_components"><code class="name flex">
-<span>def <span class="ident">return_components</span></span>(<span>self) ‑> tuple[pandas.core.frame.DataFrame, pyreadstat._readstat_parser.metadata_container]</span>
+<span>def <span class="ident">return_components</span></span>(<span>self) ‑> tuple[pandas.core.frame.DataFrame, pyreadstat._readstat_parser.metadata_container, dict]</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Returns the updated DataFrame and metadata that are contained within the object</p>
+<div class="desc"><p>Returns the updated DataFrame, the metadata that are contained within the object and the gfs metadata</p>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>tuple[pd.DataFrame, pyreadstat._readstat_parser.metadata_container]</code></dt>
+<dt><code>tuple[pd.DataFrame, pyreadstat._readstat_parser.metadata_container, dict]</code></dt>
 <dd>returns tuple with objects</dd>
 </dl></div>
 </dd>

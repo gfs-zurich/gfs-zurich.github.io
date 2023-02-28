@@ -28,6 +28,21 @@
 <section>
 </section>
 <section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="functions.tools.perimeter_search.perimeter_search"><code class="name flex">
+<span>def <span class="ident">perimeter_search</span></span>(<span>datasetName, facettes, exclusion_country_code, geofilter_distance, rows=-1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>creates a csv with Zip-Codes in a perimeter from a opendatasoft API Call
+Args:
+datasetName (str): Name of the Dataset to use from the opendatasoft API
+facettes (str): Facettes (fields) to get from the API Call
+exclusion_country_code (str): Country Codes to exclude
+geofilter_distance (str): coordinate North, coordinates E, distance in metres as a query string
+rows (int): count of rows to return (they are limited to 10000, use -1 for 10000)</p></div>
+</dd>
+</dl>
 </section>
 <section>
 </section>
@@ -41,6 +56,11 @@
 <li><h3>Super-module</h3>
 <ul>
 <li><code><a title="functions.tools" href="index.html">functions.tools</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="functions.tools.perimeter_search.perimeter_search" href="#functions.tools.perimeter_search.perimeter_search">perimeter_search</a></code></li>
 </ul>
 </li>
 </ul>

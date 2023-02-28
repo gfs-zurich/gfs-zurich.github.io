@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>functions API documentation</title>
-<meta name="description" content="![](https://github.com/gfs-zurich/gfs-zurich.github.io/blob/4d68fed1b2d21a6db6878dacebba795e327a47f9/ressources/gfs-zh.svg)
+<meta name="description" content="![](ressources/gfs-zh.svg)
 gfs-functions
-This …" />
+This repository is a part of the technology stack of [gfs-zürich](https://github.com/gfs-zurich) …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -24,7 +24,7 @@ This …" />
 <h1 class="title">Package <code>functions</code></h1>
 </header>
 <section id="section-intro">
-<p><img alt="" src="https://github.com/gfs-zurich/gfs-zurich.github.io/blob/4d68fed1b2d21a6db6878dacebba795e327a47f9/ressources/gfs-zh.svg"></p>
+<p><img alt="" src="ressources/gfs-zh.svg"></p>
 <h1 id="gfs-functions">gfs-functions</h1>
 <p>This repository is a part of the technology stack of <a href="https://github.com/gfs-zurich">gfs-zürich</a>.</p>
 <h4 id="-project-status-ongoing">&ndash; Project Status: Ongoing</h4>
@@ -57,7 +57,7 @@ It contains functions to create graphs and tables with python.</p>
 </ul>
 <h2 id="requirements">Requirements</h2>
 <ol>
-<li>Installed Python 3.10+ on your local machine</li>
+<li>Installed Python 3.10.6 on your local machine</li>
 <li>&hellip;</li>
 </ol>
 <h2 id="getting-started">Getting-Started</h2>
@@ -654,7 +654,7 @@ It contains functions to create graphs and tables with python.</p>
 <dl>
 <dt id="functions.MetaTable"><code class="flex name class">
 <span>class <span class="ident">MetaTable</span></span>
-<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, project_name: str, gfs_meta: dict = None, year: str = '2023')</span>
+<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, project_name: str, year: str = '2023')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>creates MetaTable object that makes data wrangling of files read with pyreadstat easy</p>
@@ -731,13 +731,13 @@ It contains functions to create graphs and tables with python.</p>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable.return_components"><code class="name flex">
-<span>def <span class="ident">return_components</span></span>(<span>self) ‑> tuple[pandas.core.frame.DataFrame, pyreadstat._readstat_parser.metadata_container]</span>
+<span>def <span class="ident">return_components</span></span>(<span>self) ‑> tuple[pandas.core.frame.DataFrame, pyreadstat._readstat_parser.metadata_container, dict]</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Returns the updated DataFrame and metadata that are contained within the object</p>
+<div class="desc"><p>Returns the updated DataFrame, the metadata that are contained within the object and the gfs metadata</p>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>tuple[pd.DataFrame, pyreadstat._readstat_parser.metadata_container]</code></dt>
+<dt><code>tuple[pd.DataFrame, pyreadstat._readstat_parser.metadata_container, dict]</code></dt>
 <dd>returns tuple with objects</dd>
 </dl></div>
 </dd>
