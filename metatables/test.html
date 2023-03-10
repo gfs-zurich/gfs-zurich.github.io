@@ -360,20 +360,14 @@
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="functions.metatables.test.MetaTable2.check_column_exists"><code class="name flex">
-<span>def <span class="ident">check_column_exists</span></span>(<span>self, column: str, should_exist: bool = True)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.MetaTable2.check_group_exists"><code class="name flex">
-<span>def <span class="ident">check_group_exists</span></span>(<span>self, group: str, should_exist: bool = True)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
 <dt id="functions.metatables.test.MetaTable2.copy_column"><code class="name flex">
 <span>def <span class="ident">copy_column</span></span>(<span>self, column: str, new_column: str, same_group: bool = True)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="functions.metatables.test.MetaTable2.create_column"><code class="name flex">
+<span>def <span class="ident">create_column</span></span>(<span>)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -396,6 +390,12 @@
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="functions.metatables.test.MetaTable2.move_column"><code class="name flex">
+<span>def <span class="ident">move_column</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="functions.metatables.test.MetaTable2.remove_group"><code class="name flex">
 <span>def <span class="ident">remove_group</span></span>(<span>self, column: str)</span>
 </code></dt>
@@ -404,6 +404,30 @@
 </dd>
 <dt id="functions.metatables.test.MetaTable2.rename_column"><code class="name flex">
 <span>def <span class="ident">rename_column</span></span>(<span>self, name: str, new_name: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="functions.metatables.test.MetaTable2.show_column_info"><code class="name flex">
+<span>def <span class="ident">show_column_info</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="functions.metatables.test.MetaTable2.show_column_meta"><code class="name flex">
+<span>def <span class="ident">show_column_meta</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="functions.metatables.test.MetaTable2.show_group_info"><code class="name flex">
+<span>def <span class="ident">show_group_info</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="functions.metatables.test.MetaTable2.show_group_meta"><code class="name flex">
+<span>def <span class="ident">show_group_meta</span></span>(<span>)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -490,19 +514,23 @@
 <h4><code><a title="functions.metatables.test.MetaTable2" href="#functions.metatables.test.MetaTable2">MetaTable2</a></code></h4>
 <ul class="two-column">
 <li><code><a title="functions.metatables.test.MetaTable2.add_to_group" href="#functions.metatables.test.MetaTable2.add_to_group">add_to_group</a></code></li>
-<li><code><a title="functions.metatables.test.MetaTable2.check_column_exists" href="#functions.metatables.test.MetaTable2.check_column_exists">check_column_exists</a></code></li>
-<li><code><a title="functions.metatables.test.MetaTable2.check_group_exists" href="#functions.metatables.test.MetaTable2.check_group_exists">check_group_exists</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.columns" href="#functions.metatables.test.MetaTable2.columns">columns</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.copy_column" href="#functions.metatables.test.MetaTable2.copy_column">copy_column</a></code></li>
+<li><code><a title="functions.metatables.test.MetaTable2.create_column" href="#functions.metatables.test.MetaTable2.create_column">create_column</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.delete_column" href="#functions.metatables.test.MetaTable2.delete_column">delete_column</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.delete_group" href="#functions.metatables.test.MetaTable2.delete_group">delete_group</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.df" href="#functions.metatables.test.MetaTable2.df">df</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.export_data" href="#functions.metatables.test.MetaTable2.export_data">export_data</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.groups" href="#functions.metatables.test.MetaTable2.groups">groups</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.meta" href="#functions.metatables.test.MetaTable2.meta">meta</a></code></li>
+<li><code><a title="functions.metatables.test.MetaTable2.move_column" href="#functions.metatables.test.MetaTable2.move_column">move_column</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.project_name" href="#functions.metatables.test.MetaTable2.project_name">project_name</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.remove_group" href="#functions.metatables.test.MetaTable2.remove_group">remove_group</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.rename_column" href="#functions.metatables.test.MetaTable2.rename_column">rename_column</a></code></li>
+<li><code><a title="functions.metatables.test.MetaTable2.show_column_info" href="#functions.metatables.test.MetaTable2.show_column_info">show_column_info</a></code></li>
+<li><code><a title="functions.metatables.test.MetaTable2.show_column_meta" href="#functions.metatables.test.MetaTable2.show_column_meta">show_column_meta</a></code></li>
+<li><code><a title="functions.metatables.test.MetaTable2.show_group_info" href="#functions.metatables.test.MetaTable2.show_group_info">show_group_info</a></code></li>
+<li><code><a title="functions.metatables.test.MetaTable2.show_group_meta" href="#functions.metatables.test.MetaTable2.show_group_meta">show_group_meta</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.year" href="#functions.metatables.test.MetaTable2.year">year</a></code></li>
 </ul>
 </li>
