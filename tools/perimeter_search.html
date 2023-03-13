@@ -31,7 +31,7 @@
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="functions.tools.perimeter_search.perimeter_search"><code class="name flex">
-<span>def <span class="ident">perimeter_search</span></span>(<span>datasetName, facettes, exclusion_country_code, geofilter_distance, rows=-1)</span>
+<span>def <span class="ident">perimeter_search</span></span>(<span>datasetName, facettes, exclusion_country_code, geofilter_distance, geofilter_polygon, rows=-1)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>creates a csv with Zip-Codes in a perimeter from a opendatasoft API Call</p>
@@ -44,7 +44,9 @@
 <dt><strong><code>exclusion_country_code</code></strong> :&ensp;<code>str</code></dt>
 <dd>Country Codes to exclude</dd>
 <dt><strong><code>geofilter_distance</code></strong> :&ensp;<code>str</code></dt>
-<dd>coordinate North, coordinates E, distance in metres as a query string</dd>
+<dd>coordinate North, coordinates East, distance in metres as a query string</dd>
+<dt><strong><code>geofilter_polygon</code></strong> :&ensp;<code>str</code></dt>
+<dd>2d polygon of coordinates in WGS84 format eg. a shape file </dd>
 <dt><strong><code>rows</code></strong> :&ensp;<code>int</code></dt>
 <dd>count of rows to return (they are limited to 10000, use -1 for 10000)</dd>
 </dl></div>
