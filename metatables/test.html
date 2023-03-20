@@ -30,6 +30,12 @@
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
+<dt id="functions.metatables.test.make_categorical_validator"><code class="name flex">
+<span>def <span class="ident">make_categorical_validator</span></span>(<span>value_type, values)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="functions.metatables.test.make_range_validator"><code class="name flex">
 <span>def <span class="ident">make_range_validator</span></span>(<span>value_type, min_value, max_value)</span>
 </code></dt>
@@ -102,129 +108,27 @@
 <div class="desc"></div>
 </dd>
 </dl>
-<h3>Methods</h3>
-<dl>
-<dt id="functions.metatables.test.Column.get_display_width"><code class="name flex">
-<span>def <span class="ident">get_display_width</span></span>(<span>self)</span>
+</dd>
+<dt id="functions.metatables.test.ColumnDict"><code class="flex name class">
+<span>class <span class="ident">ColumnDict</span></span>
+<span>(</span><span>*args, **kwargs)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Column.get_group"><code class="name flex">
-<span>def <span class="ident">get_group</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Column.get_group_label"><code class="name flex">
-<span>def <span class="ident">get_group_label</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Column.get_item_label"><code class="name flex">
-<span>def <span class="ident">get_item_label</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Column.get_kind"><code class="name flex">
-<span>def <span class="ident">get_kind</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Column.get_label"><code class="name flex">
-<span>def <span class="ident">get_label</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Column.get_lfm"><code class="name flex">
-<span>def <span class="ident">get_lfm</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Column.get_measure"><code class="name flex">
-<span>def <span class="ident">get_measure</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Column.get_name"><code class="name flex">
-<span>def <span class="ident">get_name</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Column.get_value_labels"><code class="name flex">
-<span>def <span class="ident">get_value_labels</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Column.set_display_width"><code class="name flex">
-<span>def <span class="ident">set_display_width</span></span>(<span>self, display_width)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Column.set_group"><code class="name flex">
-<span>def <span class="ident">set_group</span></span>(<span>self, group)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Column.set_group_label"><code class="name flex">
-<span>def <span class="ident">set_group_label</span></span>(<span>self, group_label)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Column.set_item_label"><code class="name flex">
-<span>def <span class="ident">set_item_label</span></span>(<span>self, item_label)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Column.set_kind"><code class="name flex">
-<span>def <span class="ident">set_kind</span></span>(<span>self, kind)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Column.set_label"><code class="name flex">
-<span>def <span class="ident">set_label</span></span>(<span>self, label)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Column.set_lfm"><code class="name flex">
-<span>def <span class="ident">set_lfm</span></span>(<span>self, lfm)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Column.set_measure"><code class="name flex">
-<span>def <span class="ident">set_measure</span></span>(<span>self, measure)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Column.set_name"><code class="name flex">
-<span>def <span class="ident">set_name</span></span>(<span>self, name)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Column.set_value_labels"><code class="name flex">
-<span>def <span class="ident">set_value_labels</span></span>(<span>self, value_labels)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
+<div class="desc"><p>dict() -&gt; new empty dictionary
+dict(mapping) -&gt; new dictionary initialized from a mapping object's
+(key, value) pairs
+dict(iterable) -&gt; new dictionary initialized as if via:
+d = {}
+for k, v in iterable:
+d[k] = v
+dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
+in the keyword argument list.
+For example:
+dict(one=1, two=2)</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.dict</li>
+</ul>
 </dd>
 <dt id="functions.metatables.test.Group"><code class="flex name class">
 <span>class <span class="ident">Group</span></span>
@@ -255,73 +159,31 @@
 <div class="desc"></div>
 </dd>
 </dl>
-<h3>Methods</h3>
-<dl>
-<dt id="functions.metatables.test.Group.get_columns"><code class="name flex">
-<span>def <span class="ident">get_columns</span></span>(<span>self)</span>
+</dd>
+<dt id="functions.metatables.test.GroupDict"><code class="flex name class">
+<span>class <span class="ident">GroupDict</span></span>
+<span>(</span><span>*args, **kwargs)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Group.get_kind"><code class="name flex">
-<span>def <span class="ident">get_kind</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Group.get_label"><code class="name flex">
-<span>def <span class="ident">get_label</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Group.get_lfm"><code class="name flex">
-<span>def <span class="ident">get_lfm</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Group.get_name"><code class="name flex">
-<span>def <span class="ident">get_name</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Group.set_columns"><code class="name flex">
-<span>def <span class="ident">set_columns</span></span>(<span>self, columns)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Group.set_kind"><code class="name flex">
-<span>def <span class="ident">set_kind</span></span>(<span>self, kind)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Group.set_label"><code class="name flex">
-<span>def <span class="ident">set_label</span></span>(<span>self, label)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Group.set_lfm"><code class="name flex">
-<span>def <span class="ident">set_lfm</span></span>(<span>self, lfm)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.metatables.test.Group.set_name"><code class="name flex">
-<span>def <span class="ident">set_name</span></span>(<span>self, name)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
+<div class="desc"><p>dict() -&gt; new empty dictionary
+dict(mapping) -&gt; new dictionary initialized from a mapping object's
+(key, value) pairs
+dict(iterable) -&gt; new dictionary initialized as if via:
+d = {}
+for k, v in iterable:
+d[k] = v
+dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
+in the keyword argument list.
+For example:
+dict(one=1, two=2)</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.dict</li>
+</ul>
 </dd>
 <dt id="functions.metatables.test.MetaTable2"><code class="flex name class">
 <span>class <span class="ident">MetaTable2</span></span>
-<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, project_name: str, columns: dict[str, <a title="functions.metatables.test.Column" href="#functions.metatables.test.Column">Column</a>] = _Nothing.NOTHING, groups: dict[str, <a title="functions.metatables.test.Group" href="#functions.metatables.test.Group">Group</a>] = _Nothing.NOTHING, year: str = '2023')</span>
+<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, project_name: str, columns: dict[str, <a title="functions.metatables.test.Column" href="#functions.metatables.test.Column">Column</a>] = _Nothing.NOTHING, groups: dict[str, <a title="functions.metatables.test.Group" href="#functions.metatables.test.Group">Group</a>] = _Nothing.NOTHING, year: str = '2023', output_path: str = './output/', projects_path: str = './gfs-projects/')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates MetaTable object that makes data wrangling of files read with pyreadstat easy.</p>
@@ -339,6 +201,10 @@
 <dd>metadata of all column groups. Is part of gfs-meta</dd>
 <dt><strong><code>year</code></strong> :&ensp;<code>str</code></dt>
 <dd>current year. Is used to choose the save folder</dd>
+<dt><strong><code>output_path</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Path of the output. Defaults to './output/'.</dd>
+<dt><strong><code>projects_path</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Path of the git projects folder. Defaults to './gfs-projects/'.</dd>
 </dl>
 <p>Method generated by attrs for class MetaTable2.</p></div>
 <h3>Class variables</h3>
@@ -359,7 +225,15 @@
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="functions.metatables.test.MetaTable2.output_path"><code class="name">var <span class="ident">output_path</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="functions.metatables.test.MetaTable2.project_name"><code class="name">var <span class="ident">project_name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="functions.metatables.test.MetaTable2.projects_path"><code class="name">var <span class="ident">projects_path</span> : str</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -428,23 +302,48 @@
 <span>def <span class="ident">export_config</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Exports an excel-file that makes changing the meta data very simple.</p></div>
 </dd>
 <dt id="functions.metatables.test.MetaTable2.export_data"><code class="name flex">
-<span>def <span class="ident">export_data</span></span>(<span>self, output_path: str = './output/', projects_path: str = './gfs-projects/')</span>
+<span>def <span class="ident">export_data</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Exports a .SAV-file and a gfs-meta JSON-file.</p>
+<div class="desc"><p>Exports a .SAV-file and a gfs-meta JSON-file.</p></div>
+</dd>
+<dt id="functions.metatables.test.MetaTable2.group_label"><code class="name flex">
+<span>def <span class="ident">group_label</span></span>(<span>self, group: str, text: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the group_label of a group of kind = "batch" or "multi".</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>output_path</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Path of the output. Defaults to './output/'.</dd>
-<dt><strong><code>projects_path</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Path of the git projects folder. Defaults to './gfs-projects/'.</dd>
+<dt><strong><code>group</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the group of columns</dd>
+<dt><strong><code>text</code></strong> :&ensp;<code>str</code></dt>
+<dd>New text of the group_label</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.test.MetaTable2.import_config"><code class="name flex">
 <span>def <span class="ident">import_config</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="functions.metatables.test.MetaTable2.item_label"><code class="name flex">
+<span>def <span class="ident">item_label</span></span>(<span>self, column: str, text: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the item_label of a variable of kind = "batch".</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the column</dd>
+<dt><strong><code>text</code></strong> :&ensp;<code>str</code></dt>
+<dd>New text of the item_label</dd>
+</dl></div>
+</dd>
+<dt id="functions.metatables.test.MetaTable2.measure"><code class="name flex">
+<span>def <span class="ident">measure</span></span>(<span>self, column: str, measure: str)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -511,10 +410,15 @@
 </dl></div>
 </dd>
 <dt id="functions.metatables.test.MetaTable2.show_group_info"><code class="name flex">
-<span>def <span class="ident">show_group_info</span></span>(<span>)</span>
+<span>def <span class="ident">show_group_info</span></span>(<span>self, group: str)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Shows info about the given group.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>group</code></strong> :&ensp;<code>str</code></dt>
+<dd>The name of a group of columns</dd>
+</dl></div>
 </dd>
 <dt id="functions.metatables.test.MetaTable2.show_group_meta"><code class="name flex">
 <span>def <span class="ident">show_group_meta</span></span>(<span>self, group: str)</span>
@@ -527,34 +431,8 @@
 <dd>The name of a group of columns</dd>
 </dl></div>
 </dd>
-<dt id="functions.metatables.test.MetaTable2.update_group_label"><code class="name flex">
-<span>def <span class="ident">update_group_label</span></span>(<span>self, group: str, text: str)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Updates the group_label of a group of kind = "batch" or "multi".</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>group</code></strong> :&ensp;<code>str</code></dt>
-<dd>Name of the group of columns</dd>
-<dt><strong><code>text</code></strong> :&ensp;<code>str</code></dt>
-<dd>New text of the group_label</dd>
-</dl></div>
-</dd>
-<dt id="functions.metatables.test.MetaTable2.update_item_label"><code class="name flex">
-<span>def <span class="ident">update_item_label</span></span>(<span>self, column: str, text: str)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Updates the item_label of a variable of kind = "batch".</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
-<dd>Name of the column</dd>
-<dt><strong><code>text</code></strong> :&ensp;<code>str</code></dt>
-<dd>New text of the item_label</dd>
-</dl></div>
-</dd>
-<dt id="functions.metatables.test.MetaTable2.update_single_label"><code class="name flex">
-<span>def <span class="ident">update_single_label</span></span>(<span>self, column: str, text: str)</span>
+<dt id="functions.metatables.test.MetaTable2.single_label"><code class="name flex">
+<span>def <span class="ident">single_label</span></span>(<span>self, column: str, text: str)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Updates the label of a variable of kind = "single".</p>
@@ -584,6 +462,7 @@
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
+<li><code><a title="functions.metatables.test.make_categorical_validator" href="#functions.metatables.test.make_categorical_validator">make_categorical_validator</a></code></li>
 <li><code><a title="functions.metatables.test.make_range_validator" href="#functions.metatables.test.make_range_validator">make_range_validator</a></code></li>
 </ul>
 </li>
@@ -593,16 +472,6 @@
 <h4><code><a title="functions.metatables.test.Column" href="#functions.metatables.test.Column">Column</a></code></h4>
 <ul class="two-column">
 <li><code><a title="functions.metatables.test.Column.display_width" href="#functions.metatables.test.Column.display_width">display_width</a></code></li>
-<li><code><a title="functions.metatables.test.Column.get_display_width" href="#functions.metatables.test.Column.get_display_width">get_display_width</a></code></li>
-<li><code><a title="functions.metatables.test.Column.get_group" href="#functions.metatables.test.Column.get_group">get_group</a></code></li>
-<li><code><a title="functions.metatables.test.Column.get_group_label" href="#functions.metatables.test.Column.get_group_label">get_group_label</a></code></li>
-<li><code><a title="functions.metatables.test.Column.get_item_label" href="#functions.metatables.test.Column.get_item_label">get_item_label</a></code></li>
-<li><code><a title="functions.metatables.test.Column.get_kind" href="#functions.metatables.test.Column.get_kind">get_kind</a></code></li>
-<li><code><a title="functions.metatables.test.Column.get_label" href="#functions.metatables.test.Column.get_label">get_label</a></code></li>
-<li><code><a title="functions.metatables.test.Column.get_lfm" href="#functions.metatables.test.Column.get_lfm">get_lfm</a></code></li>
-<li><code><a title="functions.metatables.test.Column.get_measure" href="#functions.metatables.test.Column.get_measure">get_measure</a></code></li>
-<li><code><a title="functions.metatables.test.Column.get_name" href="#functions.metatables.test.Column.get_name">get_name</a></code></li>
-<li><code><a title="functions.metatables.test.Column.get_value_labels" href="#functions.metatables.test.Column.get_value_labels">get_value_labels</a></code></li>
 <li><code><a title="functions.metatables.test.Column.group" href="#functions.metatables.test.Column.group">group</a></code></li>
 <li><code><a title="functions.metatables.test.Column.group_label" href="#functions.metatables.test.Column.group_label">group_label</a></code></li>
 <li><code><a title="functions.metatables.test.Column.item_label" href="#functions.metatables.test.Column.item_label">item_label</a></code></li>
@@ -612,40 +481,26 @@
 <li><code><a title="functions.metatables.test.Column.measure" href="#functions.metatables.test.Column.measure">measure</a></code></li>
 <li><code><a title="functions.metatables.test.Column.name" href="#functions.metatables.test.Column.name">name</a></code></li>
 <li><code><a title="functions.metatables.test.Column.readstat_type" href="#functions.metatables.test.Column.readstat_type">readstat_type</a></code></li>
-<li><code><a title="functions.metatables.test.Column.set_display_width" href="#functions.metatables.test.Column.set_display_width">set_display_width</a></code></li>
-<li><code><a title="functions.metatables.test.Column.set_group" href="#functions.metatables.test.Column.set_group">set_group</a></code></li>
-<li><code><a title="functions.metatables.test.Column.set_group_label" href="#functions.metatables.test.Column.set_group_label">set_group_label</a></code></li>
-<li><code><a title="functions.metatables.test.Column.set_item_label" href="#functions.metatables.test.Column.set_item_label">set_item_label</a></code></li>
-<li><code><a title="functions.metatables.test.Column.set_kind" href="#functions.metatables.test.Column.set_kind">set_kind</a></code></li>
-<li><code><a title="functions.metatables.test.Column.set_label" href="#functions.metatables.test.Column.set_label">set_label</a></code></li>
-<li><code><a title="functions.metatables.test.Column.set_lfm" href="#functions.metatables.test.Column.set_lfm">set_lfm</a></code></li>
-<li><code><a title="functions.metatables.test.Column.set_measure" href="#functions.metatables.test.Column.set_measure">set_measure</a></code></li>
-<li><code><a title="functions.metatables.test.Column.set_name" href="#functions.metatables.test.Column.set_name">set_name</a></code></li>
-<li><code><a title="functions.metatables.test.Column.set_value_labels" href="#functions.metatables.test.Column.set_value_labels">set_value_labels</a></code></li>
 <li><code><a title="functions.metatables.test.Column.spss_type" href="#functions.metatables.test.Column.spss_type">spss_type</a></code></li>
 <li><code><a title="functions.metatables.test.Column.storage_width" href="#functions.metatables.test.Column.storage_width">storage_width</a></code></li>
 <li><code><a title="functions.metatables.test.Column.value_labels" href="#functions.metatables.test.Column.value_labels">value_labels</a></code></li>
 </ul>
 </li>
 <li>
+<h4><code><a title="functions.metatables.test.ColumnDict" href="#functions.metatables.test.ColumnDict">ColumnDict</a></code></h4>
+</li>
+<li>
 <h4><code><a title="functions.metatables.test.Group" href="#functions.metatables.test.Group">Group</a></code></h4>
-<ul class="two-column">
+<ul class="">
 <li><code><a title="functions.metatables.test.Group.columns" href="#functions.metatables.test.Group.columns">columns</a></code></li>
-<li><code><a title="functions.metatables.test.Group.get_columns" href="#functions.metatables.test.Group.get_columns">get_columns</a></code></li>
-<li><code><a title="functions.metatables.test.Group.get_kind" href="#functions.metatables.test.Group.get_kind">get_kind</a></code></li>
-<li><code><a title="functions.metatables.test.Group.get_label" href="#functions.metatables.test.Group.get_label">get_label</a></code></li>
-<li><code><a title="functions.metatables.test.Group.get_lfm" href="#functions.metatables.test.Group.get_lfm">get_lfm</a></code></li>
-<li><code><a title="functions.metatables.test.Group.get_name" href="#functions.metatables.test.Group.get_name">get_name</a></code></li>
 <li><code><a title="functions.metatables.test.Group.kind" href="#functions.metatables.test.Group.kind">kind</a></code></li>
 <li><code><a title="functions.metatables.test.Group.label" href="#functions.metatables.test.Group.label">label</a></code></li>
 <li><code><a title="functions.metatables.test.Group.lfm" href="#functions.metatables.test.Group.lfm">lfm</a></code></li>
 <li><code><a title="functions.metatables.test.Group.name" href="#functions.metatables.test.Group.name">name</a></code></li>
-<li><code><a title="functions.metatables.test.Group.set_columns" href="#functions.metatables.test.Group.set_columns">set_columns</a></code></li>
-<li><code><a title="functions.metatables.test.Group.set_kind" href="#functions.metatables.test.Group.set_kind">set_kind</a></code></li>
-<li><code><a title="functions.metatables.test.Group.set_label" href="#functions.metatables.test.Group.set_label">set_label</a></code></li>
-<li><code><a title="functions.metatables.test.Group.set_lfm" href="#functions.metatables.test.Group.set_lfm">set_lfm</a></code></li>
-<li><code><a title="functions.metatables.test.Group.set_name" href="#functions.metatables.test.Group.set_name">set_name</a></code></li>
 </ul>
+</li>
+<li>
+<h4><code><a title="functions.metatables.test.GroupDict" href="#functions.metatables.test.GroupDict">GroupDict</a></code></h4>
 </li>
 <li>
 <h4><code><a title="functions.metatables.test.MetaTable2" href="#functions.metatables.test.MetaTable2">MetaTable2</a></code></h4>
@@ -659,20 +514,23 @@
 <li><code><a title="functions.metatables.test.MetaTable2.df" href="#functions.metatables.test.MetaTable2.df">df</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.export_config" href="#functions.metatables.test.MetaTable2.export_config">export_config</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.export_data" href="#functions.metatables.test.MetaTable2.export_data">export_data</a></code></li>
+<li><code><a title="functions.metatables.test.MetaTable2.group_label" href="#functions.metatables.test.MetaTable2.group_label">group_label</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.groups" href="#functions.metatables.test.MetaTable2.groups">groups</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.import_config" href="#functions.metatables.test.MetaTable2.import_config">import_config</a></code></li>
+<li><code><a title="functions.metatables.test.MetaTable2.item_label" href="#functions.metatables.test.MetaTable2.item_label">item_label</a></code></li>
+<li><code><a title="functions.metatables.test.MetaTable2.measure" href="#functions.metatables.test.MetaTable2.measure">measure</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.meta" href="#functions.metatables.test.MetaTable2.meta">meta</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.move_column" href="#functions.metatables.test.MetaTable2.move_column">move_column</a></code></li>
+<li><code><a title="functions.metatables.test.MetaTable2.output_path" href="#functions.metatables.test.MetaTable2.output_path">output_path</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.project_name" href="#functions.metatables.test.MetaTable2.project_name">project_name</a></code></li>
+<li><code><a title="functions.metatables.test.MetaTable2.projects_path" href="#functions.metatables.test.MetaTable2.projects_path">projects_path</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.remove_from_group" href="#functions.metatables.test.MetaTable2.remove_from_group">remove_from_group</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.rename_column" href="#functions.metatables.test.MetaTable2.rename_column">rename_column</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.show_column_info" href="#functions.metatables.test.MetaTable2.show_column_info">show_column_info</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.show_column_meta" href="#functions.metatables.test.MetaTable2.show_column_meta">show_column_meta</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.show_group_info" href="#functions.metatables.test.MetaTable2.show_group_info">show_group_info</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.show_group_meta" href="#functions.metatables.test.MetaTable2.show_group_meta">show_group_meta</a></code></li>
-<li><code><a title="functions.metatables.test.MetaTable2.update_group_label" href="#functions.metatables.test.MetaTable2.update_group_label">update_group_label</a></code></li>
-<li><code><a title="functions.metatables.test.MetaTable2.update_item_label" href="#functions.metatables.test.MetaTable2.update_item_label">update_item_label</a></code></li>
-<li><code><a title="functions.metatables.test.MetaTable2.update_single_label" href="#functions.metatables.test.MetaTable2.update_single_label">update_single_label</a></code></li>
+<li><code><a title="functions.metatables.test.MetaTable2.single_label" href="#functions.metatables.test.MetaTable2.single_label">single_label</a></code></li>
 <li><code><a title="functions.metatables.test.MetaTable2.year" href="#functions.metatables.test.MetaTable2.year">year</a></code></li>
 </ul>
 </li>

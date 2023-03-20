@@ -28,10 +28,29 @@
 <section>
 </section>
 <section>
-<h2 class="section-title" id="header-functions">Functions</h2>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
-<dt id="functions.graphy.create_maps.clip_coordinates"><code class="name flex">
-<span>def <span class="ident">clip_coordinates</span></span>(<span>scope: <a title="functions.graphy.map_helper.Map_Scope_Enum" href="map_helper.html#functions.graphy.map_helper.Map_Scope_Enum">Map_Scope_Enum</a>)</span>
+<dt id="functions.graphy.create_maps.gfs_Maps"><code class="flex name class">
+<span>class <span class="ident">gfs_Maps</span></span>
+<span>(</span><span>info: dict, variables: list, scope: <a title="functions.graphy.map_helper.Map_Scope_Enum" href="map_helper.html#functions.graphy.map_helper.Map_Scope_Enum">Map_Scope_Enum</a>, legend_labels_rename: dict[str, str] = None, show_count: bool = False, left_labels_rename: dict[str, str] = None, break_labels_rename: dict[str, str] = None, breaks: list = None, legend_break: list = None, order_by: dict = None, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', legend_title_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: list[str] = None, legend_position: str = 'right', weight: str = 'auto', select_variable_levels: list[int] = None, show_mean: bool = False, tag_position: int = 3, left_labels_wrap: int = 50, left_labels_width: int = 999, show_total: bool = False, tag_add_before: str = '', subtitle_add_before: str = '', value_labels_add_after: list[list[str]] = None, left_labels_remove_before: str = '', left_labels_remove_after: str = '', title_remove_before: str = '', title_remove_after: str = '', label_size: int = 16, background_filter={&#x27;LEVL_CODE&#x27;: &lt;Map_LOD_Enum.Country: 0&gt;}, foreground_filter={&#x27;CNTR_CODE&#x27;: &lt;Country_Code_Enum.CH: &#x27;CH&#x27;&gt;, &#x27;LEVL_CODE&#x27;: &lt;Map_LOD_Enum.States: 2&gt;}, language: str = 'de', disable_hover_info: bool = False, projection: str = 'mercator', save_figure: bool = True, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto', enable_log: bool = False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a map chart</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt>language (str):</dt>
+<dt><strong><code>projection</code></strong> :&ensp;<code>str</code></dt>
+<dd>projection type as a string or None ('equirectangular', 'mercator', 'orthographic',
+'natural earth', 'kavrayskiy7', 'miller', 'robinson', 'eckert4', 'azimuthal equal area', 'azimuthal equidistant',
+'conic equal area', 'conic conformal', 'conic equidistant', 'gnomonic', 'stereographic', 'mollweide', 'hammer',
+'transverse mercator', 'albers usa', 'winkel tripel', 'aitoff' and 'sinusoidal')</dd>
+</dl></div>
+<h3>Methods</h3>
+<dl>
+<dt id="functions.graphy.create_maps.gfs_Maps.clip_coordinates"><code class="name flex">
+<span>def <span class="ident">clip_coordinates</span></span>(<span>self, scope: <a title="functions.graphy.map_helper.Map_Scope_Enum" href="map_helper.html#functions.graphy.map_helper.Map_Scope_Enum">Map_Scope_Enum</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>clips coordinates of background to a preset for the scope of the map and returns the background shape</p>
@@ -41,24 +60,16 @@
 <dd>Enum to define the preset (EU or CH)</dd>
 </dl></div>
 </dd>
-<dt id="functions.graphy.create_maps.create_map_figure"><code class="name flex">
-<span>def <span class="ident">create_map_figure</span></span>(<span>x: pandas.core.frame.DataFrame, background_shape, foreground_shapes, show_all_bars: bool, bar_min_size: float, breaks: list[str], show_mean: bool, variables: list[str], show_total: bool, select_variable_levels: bool, projection=None)</span>
+<dt id="functions.graphy.create_maps.gfs_Maps.create_map_figure"><code class="name flex">
+<span>def <span class="ident">create_map_figure</span></span>(<span>self, foreground_shapes)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>creates map figures and combines background and foreground shapes with each other</p>
 <h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>background_shape</code></strong> :&ensp;<code>geopandas.Dataframe</code></dt>
-<dd>geopandas Dataframe with the background geometries</dd>
-<dt>foreground_shapes (geopandas.Dataframe):geopandas Dataframe with the foreground geometries</dt>
-<dt><strong><code>projection</code></strong> :&ensp;<code>str</code></dt>
-<dd>projection type as a string or None ('equirectangular', 'mercator', 'orthographic', </dd>
-</dl>
-<p>'natural earth', 'kavrayskiy7', 'miller', 'robinson', 'eckert4', 'azimuthal equal area', 'azimuthal equidistant', 'conic equal area',
-'conic conformal', 'conic equidistant', 'gnomonic', 'stereographic', 'mollweide', 'hammer', 'transverse mercator', 'albers usa', 'winkel tripel', 'aitoff' and 'sinusoidal')</p></div>
+<p>foreground_shapes (geopandas.Dataframe):geopandas Dataframe with the foreground geometries</p></div>
 </dd>
-<dt id="functions.graphy.create_maps.create_maps"><code class="name flex">
-<span>def <span class="ident">create_maps</span></span>(<span>info: dict, variables: list, scope: <a title="functions.graphy.map_helper.Map_Scope_Enum" href="map_helper.html#functions.graphy.map_helper.Map_Scope_Enum">Map_Scope_Enum</a>, background_filter={&#x27;LEVL_CODE&#x27;: &lt;Map_LOD_Enum.Country: 0&gt;}, foreground_filter={&#x27;CNTR_CODE&#x27;: &lt;Country_Code_Enum.CH: &#x27;CH&#x27;&gt;, &#x27;LEVL_CODE&#x27;: &lt;Map_LOD_Enum.States: 2&gt;}, breaks: list = None, legend_break: list = None, barchart_mean: bool = False, break_labels_rename: dict[str, str] = None, left_labels_rename: dict[str, str] = None, legend_labels_rename: dict[str, str] = None, left_labels_wrap: int = 50, left_labels_width: int = 999, show_mean: bool = False, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', legend_title_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, legend_position: str = 'right', return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_show_min: float = 0, value_labels_add_after: list[list[str]] = None, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', subtitle_add_before: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', bar_gap=999, bar_width: float = 999, bar_min_size: float = 0, break_distance: float = 999, label_size: float = 16, value_labels_size: float = 999, legend_labels_size: float = 14, show_legend: bool = True, show_total: bool = True, show_count: bool = False, show_all_bars: bool = False, show_legend_title: Optional[bool] = None, select_variable_levels: list[int] = None, select_min_count: int = 0, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto') ‑> Optional[tuple]</span>
+<dt id="functions.graphy.create_maps.gfs_Maps.create_maps"><code class="name flex">
+<span>def <span class="ident">create_maps</span></span>(<span>self) ‑> Optional[tuple]</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a map chart</p>
@@ -85,14 +96,14 @@ Defaults to False.</dd>
 <dd>returns df and meta objects if return_data is True</dd>
 </dl></div>
 </dd>
-<dt id="functions.graphy.create_maps.create_maps_df"><code class="name flex">
-<span>def <span class="ident">create_maps_df</span></span>(<span>info: dict, variables: list, breaks: list, legend_break: list, df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, break_labels_rename: dict[str, str], left_labels_wrap: int, weight: str, order_by: dict, left_labels_remove_before: str, left_labels_remove_after: str, label_size: int, select_variable_levels: list[int], show_count: bool, left_labels_rename: dict[str, str], legend_labels_rename: dict[str, str], special_variables: list[int], barchart_mean: bool, show_mean: bool)</span>
+<dt id="functions.graphy.create_maps.gfs_Maps.create_maps_df"><code class="name flex">
+<span>def <span class="ident">create_maps_df</span></span>(<span>self)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="functions.graphy.create_maps.get_background_shapes"><code class="name flex">
-<span>def <span class="ident">get_background_shapes</span></span>(<span>clipped_shapes, filter)</span>
+<dt id="functions.graphy.create_maps.gfs_Maps.get_background_shapes"><code class="name flex">
+<span>def <span class="ident">get_background_shapes</span></span>(<span>self, clipped_shapes)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>gets background shape for the maps</p>
@@ -104,8 +115,8 @@ Defaults to False.</dd>
 <dd>dictionary to filter the geopandas dataframe</dd>
 </dl></div>
 </dd>
-<dt id="functions.graphy.create_maps.get_foreground_shapes"><code class="name flex">
-<span>def <span class="ident">get_foreground_shapes</span></span>(<span>filter)</span>
+<dt id="functions.graphy.create_maps.gfs_Maps.get_foreground_shapes"><code class="name flex">
+<span>def <span class="ident">get_foreground_shapes</span></span>(<span>self)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>gets foreground shape for the maps</p>
@@ -115,14 +126,14 @@ Defaults to False.</dd>
 <dd>dictionary to filter the geopandas dataframe</dd>
 </dl></div>
 </dd>
-<dt id="functions.graphy.create_maps.get_names"><code class="name flex">
-<span>def <span class="ident">get_names</span></span>(<span>)</span>
+<dt id="functions.graphy.create_maps.gfs_Maps.get_translations"><code class="name flex">
+<span>def <span class="ident">get_translations</span></span>(<span>self)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="functions.graphy.create_maps.init_shape_file"><code class="name flex">
-<span>def <span class="ident">init_shape_file</span></span>(<span>file=None, resolution='10')</span>
+<dt id="functions.graphy.create_maps.gfs_Maps.init_shape_file"><code class="name flex">
+<span>def <span class="ident">init_shape_file</span></span>(<span>self, file=None, resolution='10')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>gets shapefile from the file system and load it into a geopandas dataframe</p>
@@ -135,8 +146,8 @@ Defaults to False.</dd>
 </dl></div>
 </dd>
 </dl>
-</section>
-<section>
+</dd>
+</dl>
 </section>
 </article>
 <nav id="sidebar">
@@ -150,16 +161,21 @@ Defaults to False.</dd>
 <li><code><a title="functions.graphy" href="index.html">functions.graphy</a></code></li>
 </ul>
 </li>
-<li><h3><a href="#header-functions">Functions</a></h3>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="functions.graphy.create_maps.gfs_Maps" href="#functions.graphy.create_maps.gfs_Maps">gfs_Maps</a></code></h4>
 <ul class="">
-<li><code><a title="functions.graphy.create_maps.clip_coordinates" href="#functions.graphy.create_maps.clip_coordinates">clip_coordinates</a></code></li>
-<li><code><a title="functions.graphy.create_maps.create_map_figure" href="#functions.graphy.create_maps.create_map_figure">create_map_figure</a></code></li>
-<li><code><a title="functions.graphy.create_maps.create_maps" href="#functions.graphy.create_maps.create_maps">create_maps</a></code></li>
-<li><code><a title="functions.graphy.create_maps.create_maps_df" href="#functions.graphy.create_maps.create_maps_df">create_maps_df</a></code></li>
-<li><code><a title="functions.graphy.create_maps.get_background_shapes" href="#functions.graphy.create_maps.get_background_shapes">get_background_shapes</a></code></li>
-<li><code><a title="functions.graphy.create_maps.get_foreground_shapes" href="#functions.graphy.create_maps.get_foreground_shapes">get_foreground_shapes</a></code></li>
-<li><code><a title="functions.graphy.create_maps.get_names" href="#functions.graphy.create_maps.get_names">get_names</a></code></li>
-<li><code><a title="functions.graphy.create_maps.init_shape_file" href="#functions.graphy.create_maps.init_shape_file">init_shape_file</a></code></li>
+<li><code><a title="functions.graphy.create_maps.gfs_Maps.clip_coordinates" href="#functions.graphy.create_maps.gfs_Maps.clip_coordinates">clip_coordinates</a></code></li>
+<li><code><a title="functions.graphy.create_maps.gfs_Maps.create_map_figure" href="#functions.graphy.create_maps.gfs_Maps.create_map_figure">create_map_figure</a></code></li>
+<li><code><a title="functions.graphy.create_maps.gfs_Maps.create_maps" href="#functions.graphy.create_maps.gfs_Maps.create_maps">create_maps</a></code></li>
+<li><code><a title="functions.graphy.create_maps.gfs_Maps.create_maps_df" href="#functions.graphy.create_maps.gfs_Maps.create_maps_df">create_maps_df</a></code></li>
+<li><code><a title="functions.graphy.create_maps.gfs_Maps.get_background_shapes" href="#functions.graphy.create_maps.gfs_Maps.get_background_shapes">get_background_shapes</a></code></li>
+<li><code><a title="functions.graphy.create_maps.gfs_Maps.get_foreground_shapes" href="#functions.graphy.create_maps.gfs_Maps.get_foreground_shapes">get_foreground_shapes</a></code></li>
+<li><code><a title="functions.graphy.create_maps.gfs_Maps.get_translations" href="#functions.graphy.create_maps.gfs_Maps.get_translations">get_translations</a></code></li>
+<li><code><a title="functions.graphy.create_maps.gfs_Maps.init_shape_file" href="#functions.graphy.create_maps.gfs_Maps.init_shape_file">init_shape_file</a></code></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
