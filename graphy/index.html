@@ -6,7 +6,7 @@
 <meta name="generator" content="pdoc 0.10.0" />
 <title>functions.graphy API documentation</title>
 <meta name="description" content="gfs-graphy
-These are graphical interfaces for various plots inside the technology stack of [gfs-zürich](https://github.com/gfs-zurich)." />
+These are graphical interfaces for various plots inside the technology stack of [gfs-zürich](https://github.com/gfs-zurich) …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -25,6 +25,43 @@ These are graphical interfaces for various plots inside the technology stack of 
 <section id="section-intro">
 <h1 id="gfs-graphy">gfs-graphy</h1>
 <p>These are graphical interfaces for various plots inside the technology stack of <a href="https://github.com/gfs-zurich">gfs-zürich</a>.</p>
+<h2 id="standardarguments-for-plots">Standardarguments for Plots</h2>
+<p>use the standardarguments in the gfs plots by supplying it in the "standard_arguments" parameter.
+Example:</p>
+<pre><code class="language-python">create_barchart(
+    info,[&quot;SGE1_1&quot;],standard_arguments={&quot;tick_values&quot;:[0,20,40,60,80,100]}
+)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>valueexample</th>
+<th>description</th>
+<th>plots</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tick_values</td>
+<td>[0,20,40,60,80,100]</td>
+<td>defines x axis tick values</td>
+<td>barchart, stacked_barchart</td>
+</tr>
+<tr>
+<td>round_value_labels</td>
+<td>0</td>
+<td>round the value label to the integer you supply</td>
+<td>barchart</td>
+</tr>
+<tr>
+<td>axis_suffix</td>
+<td>"%"</td>
+<td>add or remove suffix to the x axis labels</td>
+<td>barchart</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section>
 <h2 class="section-title" id="header-submodules">Sub-modules</h2>
@@ -82,7 +119,10 @@ These are graphical interfaces for various plots inside the technology stack of 
 <h1>Index</h1>
 <div class="toc">
 <ul>
-<li><a href="#gfs-graphy">gfs-graphy</a></li>
+<li><a href="#gfs-graphy">gfs-graphy</a><ul>
+<li><a href="#standardarguments-for-plots">Standardarguments for Plots</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <ul id="index">
