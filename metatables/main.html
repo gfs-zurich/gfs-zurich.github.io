@@ -161,6 +161,19 @@
 <dd>
 <div class="desc"><p>Exports a .SAV-file and a gfs-meta JSON-file.</p></div>
 </dd>
+<dt id="functions.metatables.main.MetaTable2.group_kind"><code class="name flex">
+<span>def <span class="ident">group_kind</span></span>(<span>self, group: str, kind: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the kind of a group of columns.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>group</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the group</dd>
+<dt><strong><code>kind</code></strong> :&ensp;<code>str</code></dt>
+<dd>New kind of the group. Should be "multi", "single" or "batch"</dd>
+</dl></div>
+</dd>
 <dt id="functions.metatables.main.MetaTable2.group_label"><code class="name flex">
 <span>def <span class="ident">group_label</span></span>(<span>self, group: str, text: str)</span>
 </code></dt>
@@ -174,11 +187,37 @@
 <dd>New text of the group_label</dd>
 </dl></div>
 </dd>
+<dt id="functions.metatables.main.MetaTable2.group_lfm"><code class="name flex">
+<span>def <span class="ident">group_lfm</span></span>(<span>self, group: str, lfm: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the lfm (label from group) of a group of columns.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>group</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the group</dd>
+<dt><strong><code>lfm</code></strong> :&ensp;<code>str</code></dt>
+<dd>New lfm of the group. Should be "yes" or "no"</dd>
+</dl></div>
+</dd>
+<dt id="functions.metatables.main.MetaTable2.group_measure"><code class="name flex">
+<span>def <span class="ident">group_measure</span></span>(<span>self, group: str, measure: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the measure of a group of columns.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>group</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the group</dd>
+<dt><strong><code>measure</code></strong> :&ensp;<code>str</code></dt>
+<dd>New measure of the group. Should be "nominal", "string", "scale" or "ordinal"</dd>
+</dl></div>
+</dd>
 <dt id="functions.metatables.main.MetaTable2.import_config"><code class="name flex">
 <span>def <span class="ident">import_config</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Imports the gfs-config excel-file and updates the MetaTable according to the changes made in excel.</p></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.item_label"><code class="name flex">
 <span>def <span class="ident">item_label</span></span>(<span>self, column: str, text: str)</span>
@@ -193,11 +232,31 @@
 <dd>New text of the item_label</dd>
 </dl></div>
 </dd>
+<dt id="functions.metatables.main.MetaTable2.kind"><code class="name flex">
+<span>def <span class="ident">kind</span></span>(<span>self, column: str, kind: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the kind of a column.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the column</dd>
+<dt><strong><code>kind</code></strong> :&ensp;<code>str</code></dt>
+<dd>New kind of the column. Should be "multi", "single" or "batch"</dd>
+</dl></div>
+</dd>
 <dt id="functions.metatables.main.MetaTable2.measure"><code class="name flex">
 <span>def <span class="ident">measure</span></span>(<span>self, column: str, measure: str)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Updates the measure of a column.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the column</dd>
+<dt><strong><code>measure</code></strong> :&ensp;<code>str</code></dt>
+<dd>New measure of the column. Should be "nominal", "string", "scale" or "ordinal"</dd>
+</dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.move_column"><code class="name flex">
 <span>def <span class="ident">move_column</span></span>(<span>self, column: str, end: bool = True)</span>
@@ -325,10 +384,14 @@
 <li><code><a title="functions.metatables.main.MetaTable2.df" href="#functions.metatables.main.MetaTable2.df">df</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.export_config" href="#functions.metatables.main.MetaTable2.export_config">export_config</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.export_data" href="#functions.metatables.main.MetaTable2.export_data">export_data</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable2.group_kind" href="#functions.metatables.main.MetaTable2.group_kind">group_kind</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.group_label" href="#functions.metatables.main.MetaTable2.group_label">group_label</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable2.group_lfm" href="#functions.metatables.main.MetaTable2.group_lfm">group_lfm</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable2.group_measure" href="#functions.metatables.main.MetaTable2.group_measure">group_measure</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.groups" href="#functions.metatables.main.MetaTable2.groups">groups</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.import_config" href="#functions.metatables.main.MetaTable2.import_config">import_config</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.item_label" href="#functions.metatables.main.MetaTable2.item_label">item_label</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable2.kind" href="#functions.metatables.main.MetaTable2.kind">kind</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.measure" href="#functions.metatables.main.MetaTable2.measure">measure</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.meta" href="#functions.metatables.main.MetaTable2.meta">meta</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.move_column" href="#functions.metatables.main.MetaTable2.move_column">move_column</a></code></li>
