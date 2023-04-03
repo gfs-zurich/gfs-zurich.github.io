@@ -127,6 +127,12 @@
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="functions.metatables.main.MetaTable2.create_group"><code class="name flex">
+<span>def <span class="ident">create_group</span></span>(<span>self, group_name: str, columns: list[str], kind: str, measure: str = 'auto', lfm: str = 'yes', group_label: str = 'auto')</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="functions.metatables.main.MetaTable2.delete_column"><code class="name flex">
 <span>def <span class="ident">delete_column</span></span>(<span>self, column: str)</span>
 </code></dt>
@@ -150,7 +156,7 @@
 </dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.export_config"><code class="name flex">
-<span>def <span class="ident">export_config</span></span>(<span>self)</span>
+<span>def <span class="ident">export_config</span></span>(<span>self, export_df: bool = True)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Exports an excel-file that makes changing the meta data very simple.</p></div>
@@ -211,6 +217,21 @@
 <dd>Name of the group</dd>
 <dt><strong><code>measure</code></strong> :&ensp;<code>str</code></dt>
 <dd>New measure of the group. Should be "nominal", "string", "scale" or "ordinal"</dd>
+</dl></div>
+</dd>
+<dt id="functions.metatables.main.MetaTable2.group_value_labels"><code class="name flex">
+<span>def <span class="ident">group_value_labels</span></span>(<span>self, group: str, value_labels: Union[dict[int, str], str], keep_untouched_codes: bool = False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the value labels of a group of columns.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>group</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the group</dd>
+<dt><strong><code>value_labels</code></strong> :&ensp;<code>Union[dict[int, str], str]</code></dt>
+<dd>A dictionary with new labels {1 : "label for code 1", 2: "label for code 2"} or the column name with the labels to be used "column_name"</dd>
+<dt><strong><code>keep_untouched_codes</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>This will keep the old labels of the column and just add the new ones instead of replacing all labels. Defaults to False.</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.import_config"><code class="name flex">
@@ -354,6 +375,21 @@
 <dd>New text of the label</dd>
 </dl></div>
 </dd>
+<dt id="functions.metatables.main.MetaTable2.value_labels"><code class="name flex">
+<span>def <span class="ident">value_labels</span></span>(<span>self, column: str, value_labels: Union[dict[int, str], str], keep_untouched_codes: bool = False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the value labels of a column.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the column</dd>
+<dt><strong><code>value_labels</code></strong> :&ensp;<code>Union[dict[int, str], str]</code></dt>
+<dd>A dictionary with new labels {1 : "label for code 1", 2: "label for code 2"} or the column name with the labels to be used "column_name"</dd>
+<dt><strong><code>keep_untouched_codes</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>This will keep the old labels of the column and just add the new ones instead of replacing all labels. Defaults to False.</dd>
+</dl></div>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -379,6 +415,7 @@
 <li><code><a title="functions.metatables.main.MetaTable2.columns" href="#functions.metatables.main.MetaTable2.columns">columns</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.copy_column" href="#functions.metatables.main.MetaTable2.copy_column">copy_column</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.create_column" href="#functions.metatables.main.MetaTable2.create_column">create_column</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable2.create_group" href="#functions.metatables.main.MetaTable2.create_group">create_group</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.delete_column" href="#functions.metatables.main.MetaTable2.delete_column">delete_column</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.delete_group" href="#functions.metatables.main.MetaTable2.delete_group">delete_group</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.df" href="#functions.metatables.main.MetaTable2.df">df</a></code></li>
@@ -388,6 +425,7 @@
 <li><code><a title="functions.metatables.main.MetaTable2.group_label" href="#functions.metatables.main.MetaTable2.group_label">group_label</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.group_lfm" href="#functions.metatables.main.MetaTable2.group_lfm">group_lfm</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.group_measure" href="#functions.metatables.main.MetaTable2.group_measure">group_measure</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable2.group_value_labels" href="#functions.metatables.main.MetaTable2.group_value_labels">group_value_labels</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.groups" href="#functions.metatables.main.MetaTable2.groups">groups</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.import_config" href="#functions.metatables.main.MetaTable2.import_config">import_config</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.item_label" href="#functions.metatables.main.MetaTable2.item_label">item_label</a></code></li>
@@ -405,6 +443,7 @@
 <li><code><a title="functions.metatables.main.MetaTable2.show_group_info" href="#functions.metatables.main.MetaTable2.show_group_info">show_group_info</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.show_group_meta" href="#functions.metatables.main.MetaTable2.show_group_meta">show_group_meta</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.single_label" href="#functions.metatables.main.MetaTable2.single_label">single_label</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable2.value_labels" href="#functions.metatables.main.MetaTable2.value_labels">value_labels</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.year" href="#functions.metatables.main.MetaTable2.year">year</a></code></li>
 </ul>
 </li>
