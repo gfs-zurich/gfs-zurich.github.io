@@ -31,7 +31,7 @@
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="functions.tools.perimeter_search.perimeter_search"><code class="name flex">
-<span>def <span class="ident">perimeter_search</span></span>(<span>datasetName, facettes, exclusion_country_code, geofilter_distance, geofilter_polygon, rows=-1)</span>
+<span>def <span class="ident">perimeter_search</span></span>(<span>datasetName, facettes, exclusion_country_code, geofilter_distance, geofilter_polygon, output_path, rows=-1, output_path_file='zip_perimeter.csv', verbose=False)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>creates a csv with Zip-Codes in a perimeter from a opendatasoft API Call</p>
@@ -44,11 +44,20 @@
 <dt><strong><code>exclusion_country_code</code></strong> :&ensp;<code>str</code></dt>
 <dd>Country Codes to exclude</dd>
 <dt><strong><code>geofilter_distance</code></strong> :&ensp;<code>str</code></dt>
-<dd>coordinate North, coordinates East, distance in metres as a query string</dd>
+<dd>coordinate North, coordinates East, distance in metres as a query string, \ </dd>
+<dt><strong><code>example</code></strong></dt>
+<dd>"47.5596%2C7.5886%2C{distance}</dd>
 <dt><strong><code>geofilter_polygon</code></strong> :&ensp;<code>str</code></dt>
-<dd>2d polygon of coordinates in WGS84 format eg. a shape file </dd>
+<dd>2d polygon of coordinates in WGS84 format eg. a shape file,
+example:"(47.351454435569536,8.565216064453125),(47.58354293895587,8.51509094238281),(47.57057306743187,8.953857421875),(47.34819792163414,9.026641845703123),(47.351919635443565,8.568649291992186),(47.351454435569536,8.565216064453125)"</dd>
+<dt><strong><code>output_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>path to save the csv to</dd>
 <dt><strong><code>rows</code></strong> :&ensp;<code>int</code></dt>
 <dd>count of rows to return (they are limited to 10000, use -1 for 10000)</dd>
+<dt><strong><code>output_path_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>file name for the csv file , default is: zip_perimeter.csv</dd>
+<dt><strong><code>verbose</code></strong> :&ensp;<code>bool</code></dt>
+<dd>if true prints the received records</dd>
 </dl></div>
 </dd>
 </dl>

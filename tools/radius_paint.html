@@ -31,23 +31,17 @@
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="functions.tools.radius_paint.radius_paint"><code class="name flex">
-<span>def <span class="ident">radius_paint</span></span>(<span>center_lat, center_lon, custom_imagepath='', save_map_path='', distance=6)</span>
+<span>def <span class="ident">radius_paint</span></span>(<span>center_lat, center_lon, custom_imagepath, output_path, output_file_name, distance=6)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>creates a html File with a map and circles around a center point</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>center_lat</code></strong> :&ensp;<code>float</code></dt>
-<dd>latitude of center point</dd>
-<dt><strong><code>center_lon</code></strong> :&ensp;<code>float</code></dt>
-<dd>longitude of center point</dd>
-<dt><strong><code>custom_imagepath</code></strong> :&ensp;<code>str</code></dt>
-<dd>path to custom image to use in background</dd>
-<dt><strong><code>save_map_path</code></strong> :&ensp;<code>str</code></dt>
-<dd>path to save the html map to</dd>
-<dt><strong><code>distance</code></strong> :&ensp;<code>float</code></dt>
-<dd>Calculate the distance in kilometers between the center point and each corner of the grid</dd>
-</dl></div>
+<div class="desc"><p>creates an html file and a map. adds circles around a center point with different radians, uses custom image overlay
+Args:
+center_lat (float): latitude of center point
+center_lon (float): longitude of center point
+custom_imagepath (str): path to custom image to use as overlay
+output_path (str): path to save the html map to
+output_file_name (str): file name for the html map
+distance (float): Calculate the distance in kilometers between the center point and each corner of the grid</p></div>
 </dd>
 </dl>
 </section>
