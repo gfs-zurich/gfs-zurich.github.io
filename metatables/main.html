@@ -34,7 +34,7 @@
 <dl>
 <dt id="functions.metatables.main.MetaTable2"><code class="flex name class">
 <span>class <span class="ident">MetaTable2</span></span>
-<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, project_name: str, columns: dict[str, <a title="functions.metatables.column.Column" href="column.html#functions.metatables.column.Column">Column</a>] = _Nothing.NOTHING, groups: dict[str, <a title="functions.metatables.group.Group" href="group.html#functions.metatables.group.Group">Group</a>] = _Nothing.NOTHING, year: str = '2023', output_path: str = './output/', projects_path: str = './gfs-projects/')</span>
+<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, project_number: int, project_name: str, columns: dict[str, <a title="functions.metatables.column.Column" href="column.html#functions.metatables.column.Column">Column</a>] = _Nothing.NOTHING, groups: dict[str, <a title="functions.metatables.group.Group" href="group.html#functions.metatables.group.Group">Group</a>] = _Nothing.NOTHING, year: str = '2023', output_path: str = '//172.16.20.100/daten/PROJEKTE_PythonOutputs/', projects_path: str = './gfs-projects/')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates MetaTable object that makes data wrangling of files read with pyreadstat easy.</p>
@@ -44,6 +44,8 @@
 <dd>DataFrame read with pyreadstat</dd>
 <dt><strong><code>meta</code></strong> :&ensp;<code>pyreadstat._readstat_parser.metadata_container</code></dt>
 <dd>pyreadstat metadata</dd>
+<dt><strong><code>project_number</code></strong> :&ensp;<code>str</code></dt>
+<dd>The project number. Is used as a folder name for the generated files</dd>
 <dt><strong><code>project_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>The name of the project. Is used as a folder name for the generated files</dd>
 <dt><strong><code>columns</code></strong> :&ensp;<code>dict[str, Column]</code></dt>
@@ -53,7 +55,7 @@
 <dt><strong><code>year</code></strong> :&ensp;<code>str</code></dt>
 <dd>current year. Is used to choose the save folder</dd>
 <dt><strong><code>output_path</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Path of the output. Defaults to './output/'.</dd>
+<dd>Path of the output. Defaults to '//172.16.20.100/daten/PROJEKTE_PythonOutputs/'.</dd>
 <dt><strong><code>projects_path</code></strong> :&ensp;<code>str</code>, optional</dt>
 <dd>Path of the git projects folder. Defaults to './gfs-projects/'.</dd>
 </dl>
@@ -81,6 +83,10 @@
 <div class="desc"></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.project_name"><code class="name">var <span class="ident">project_name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="functions.metatables.main.MetaTable2.project_number"><code class="name">var <span class="ident">project_number</span> : int</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -128,7 +134,7 @@
 <div class="desc"></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.create_group"><code class="name flex">
-<span>def <span class="ident">create_group</span></span>(<span>self, group_name: str, columns: list[str], kind: str, measure: str = 'auto', lfm: str = 'yes', group_label: str = 'auto')</span>
+<span>def <span class="ident">create_group</span></span>(<span>self, group_name: str, columns: list[str], kind: str, measure: str = 'auto', lfm: str = 'yes', group_label: str = 'auto', group_value_labels: Union[dict[int, str], str] = 'auto')</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -166,6 +172,12 @@
 </code></dt>
 <dd>
 <div class="desc"><p>Exports a .SAV-file and a gfs-meta JSON-file.</p></div>
+</dd>
+<dt id="functions.metatables.main.MetaTable2.export_weight_table"><code class="name flex">
+<span>def <span class="ident">export_weight_table</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.group_kind"><code class="name flex">
 <span>def <span class="ident">group_kind</span></span>(<span>self, group: str, kind: str)</span>
@@ -266,6 +278,24 @@
 <dd>New kind of the column. Should be "multi", "single" or "batch"</dd>
 </dl></div>
 </dd>
+<dt id="functions.metatables.main.MetaTable2.make_quota_check"><code class="name flex">
+<span>def <span class="ident">make_quota_check</span></span>(<span>self, list_rows: list, list_columns: list, filename_quotas: str = 'cross_tab', filename_quota_check: str = 'quota_check', save_quota_check: bool = False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates the difference between a crosstab and a quota</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt>list_rows (list):list of dataframe variables in crosstab rows</dt>
+<dt><strong><code>list_columns</code></strong> :&ensp;<code>list</code></dt>
+<dd>list of dataframe variables in crosstab columns</dd>
+<dt><strong><code>filename_quotas</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>name of the excel file where the crosstab is</dd>
+<dt><strong><code>filename_quota_check</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>name of the excel file where the difference in quotas is saved</dd>
+<dt><strong><code>save_quota_check</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>boolean to indicate if difference in quota is saved in an excel file</dd>
+</dl></div>
+</dd>
 <dt id="functions.metatables.main.MetaTable2.measure"><code class="name flex">
 <span>def <span class="ident">measure</span></span>(<span>self, column: str, measure: str)</span>
 </code></dt>
@@ -291,6 +321,12 @@
 <dt><strong><code>end</code></strong> :&ensp;<code>bool</code>, optional</dt>
 <dd>If end is True the column is moved to the end, if end is False the column is moved to the beginning. Defaults to True.</dd>
 </dl></div>
+</dd>
+<dt id="functions.metatables.main.MetaTable2.recode"><code class="name flex">
+<span>def <span class="ident">recode</span></span>(<span>self, old_column: str, new_column: str, values: dict[int, typing.Any], keep_untouched_codes: bool = True)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.remove_from_group"><code class="name flex">
 <span>def <span class="ident">remove_from_group</span></span>(<span>self, column: str)</span>
@@ -338,6 +374,22 @@
 <dl>
 <dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Column to be shown</dd>
+</dl></div>
+</dd>
+<dt id="functions.metatables.main.MetaTable2.show_crosstab"><code class="name flex">
+<span>def <span class="ident">show_crosstab</span></span>(<span>self, list_rows: list, list_columns: list, save_crosstab: bool = False, cross_tab_name: str = 'cross_tab')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates and shows a crosstab with a set of row and a set of column breaks</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt>list_rows (list):list of dataframe variables in crosstab rows</dt>
+<dt><strong><code>list_columns</code></strong> :&ensp;<code>list</code></dt>
+<dd>list of dataframe variables in crosstab columns</dd>
+<dt><strong><code>save_crosstab</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>boolean to indicate if crosstab is saved in an excel file</dd>
+<dt><strong><code>cross_tab_name</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>name of the excel file</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.show_group_info"><code class="name flex">
@@ -421,6 +473,7 @@
 <li><code><a title="functions.metatables.main.MetaTable2.df" href="#functions.metatables.main.MetaTable2.df">df</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.export_config" href="#functions.metatables.main.MetaTable2.export_config">export_config</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.export_data" href="#functions.metatables.main.MetaTable2.export_data">export_data</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable2.export_weight_table" href="#functions.metatables.main.MetaTable2.export_weight_table">export_weight_table</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.group_kind" href="#functions.metatables.main.MetaTable2.group_kind">group_kind</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.group_label" href="#functions.metatables.main.MetaTable2.group_label">group_label</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.group_lfm" href="#functions.metatables.main.MetaTable2.group_lfm">group_lfm</a></code></li>
@@ -430,16 +483,20 @@
 <li><code><a title="functions.metatables.main.MetaTable2.import_config" href="#functions.metatables.main.MetaTable2.import_config">import_config</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.item_label" href="#functions.metatables.main.MetaTable2.item_label">item_label</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.kind" href="#functions.metatables.main.MetaTable2.kind">kind</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable2.make_quota_check" href="#functions.metatables.main.MetaTable2.make_quota_check">make_quota_check</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.measure" href="#functions.metatables.main.MetaTable2.measure">measure</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.meta" href="#functions.metatables.main.MetaTable2.meta">meta</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.move_column" href="#functions.metatables.main.MetaTable2.move_column">move_column</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.output_path" href="#functions.metatables.main.MetaTable2.output_path">output_path</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.project_name" href="#functions.metatables.main.MetaTable2.project_name">project_name</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable2.project_number" href="#functions.metatables.main.MetaTable2.project_number">project_number</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.projects_path" href="#functions.metatables.main.MetaTable2.projects_path">projects_path</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable2.recode" href="#functions.metatables.main.MetaTable2.recode">recode</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.remove_from_group" href="#functions.metatables.main.MetaTable2.remove_from_group">remove_from_group</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.rename_column" href="#functions.metatables.main.MetaTable2.rename_column">rename_column</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.show_column_info" href="#functions.metatables.main.MetaTable2.show_column_info">show_column_info</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.show_column_meta" href="#functions.metatables.main.MetaTable2.show_column_meta">show_column_meta</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable2.show_crosstab" href="#functions.metatables.main.MetaTable2.show_crosstab">show_crosstab</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.show_group_info" href="#functions.metatables.main.MetaTable2.show_group_info">show_group_info</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.show_group_meta" href="#functions.metatables.main.MetaTable2.show_group_meta">show_group_meta</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.single_label" href="#functions.metatables.main.MetaTable2.single_label">single_label</a></code></li>
