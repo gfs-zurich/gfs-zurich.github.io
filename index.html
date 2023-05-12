@@ -243,6 +243,10 @@ By modifying the pre-commit script in this way, you can ensure that the Jupyter 
 <div class="desc"><p>gfs-graphy
 These are graphical interfaces for various plots inside the technology stack of <a href="https://github.com/gfs-zurich">gfs-zürich</a> …</p></div>
 </dd>
+<dt><code class="name"><a title="functions.matrixmixer" href="matrixmixer/index.html">functions.matrixmixer</a></code></dt>
+<dd>
+<div class="desc"><p>gfs-matrixmixer …</p></div>
+</dd>
 <dt><code class="name"><a title="functions.metatables" href="metatables/index.html">functions.metatables</a></code></dt>
 <dd>
 <div class="desc"><p>gfs-metatables
@@ -273,7 +277,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <div class="desc"></div>
 </dd>
 <dt id="functions.create_barchart"><code class="name flex">
-<span>def <span class="ident">create_barchart</span></span>(<span>info: dict, variables: list, breaks: list = None, legend_break: list = None, barchart_mean: bool = False, break_labels_rename: dict[str, str] = None, left_labels_rename: dict[str, str] = None, legend_labels_rename: dict[str, str] = None, left_labels_wrap: int = 50, left_labels_width: int = 999, show_mean: bool = False, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', legend_title_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, legend_position: str = 'right', return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_show_min: float = 0, value_labels_add_after: list[list[str]] = None, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', subtitle_add_before: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', bar_gap=999, bar_width: float = 999, bar_min_size: float = 0, break_distance: float = 999, label_size: float = 16, value_labels_size: float = 999, legend_labels_size: float = 14, show_legend: bool = True, show_total: bool = True, show_count: bool = False, show_all_bars: bool = False, show_legend_title: Optional[bool] = None, select_variable_levels: list[int] = None, select_min_count: int = 0, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto') ‑> Optional[tuple]</span>
+<span>def <span class="ident">create_barchart</span></span>(<span>info: dict, variables: list, breaks: list = None, legend_break: list = None, barchart_mean: bool = False, break_labels_rename: dict[str, str] = None, left_labels_rename: dict[str, str] = None, legend_labels_rename: dict[str, str] = None, left_labels_wrap: int = 50, left_labels_width: int = 999, show_mean: bool = False, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', legend_title_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, legend_position: str = 'right', return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_show_min: float = 0, value_labels_add_after: list[list[str]] = None, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', subtitle_add_before: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', bar_gap=999, bar_width: float = 999, bar_min_size: float = 0, break_distance: float = 999, label_size: float = 16, value_labels_size: float = 999, legend_labels_size: float = 14, show_legend: bool = True, show_total: bool = True, show_count: bool = False, show_all_bars: bool = False, show_legend_title: Optional[bool] = None, select_variable_levels: list[int] = None, select_min_count: int = 0, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, return_figure: bool = False, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto') ‑> Optional[tuple]</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a barchart</p>
@@ -381,6 +385,8 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <dd>Adds some standard arguments that normally don't need to be changed. Defaults to None.</dd>
 <dt><strong><code>save_figure</code></strong> :&ensp;<code>dict</code>, optional</dt>
 <dd>Turns figure export on and off. Defaults to True.</dd>
+<dt><strong><code>return_figure</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Turns figure return on and off. Defaults to False.</dd>
 <dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code>, optional</dt>
 <dd>The current data file ~ usually df. Defaults to 'auto'.</dd>
 <dt><strong><code>meta</code></strong> :&ensp;<code>pyreadstat._readstat_parser.metadata_container</code>, optional</dt>
@@ -717,6 +723,41 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <section>
 <h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
+<dt id="functions.MatrixMixer"><code class="flex name class">
+<span>class <span class="ident">MatrixMixer</span></span>
+<span>(</span><span>meta_table: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Assembles multiple tables with descriptive statistics and exports them to excel.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>meta_table</code></strong> :&ensp;<code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></dt>
+<dd>MetaTable created using gfs-functions</dd>
+</dl>
+<p>Method generated by attrs for class MatrixMixer.</p></div>
+<h3>Class variables</h3>
+<dl>
+<dt id="functions.MatrixMixer.meta_table"><code class="name">var <span class="ident">meta_table</span> : <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="functions.MatrixMixer.create_matrix"><code class="name flex">
+<span>def <span class="ident">create_matrix</span></span>(<span>self, question: str, breaks: list[str])</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="functions.MatrixMixer.export_excel"><code class="name flex">
+<span>def <span class="ident">export_excel</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
 <dt id="functions.MetaTable"><code class="flex name class">
 <span>class <span class="ident">MetaTable</span></span>
 <span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, project_name: str, year: str = '2023')</span>
@@ -914,7 +955,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 </dd>
 <dt id="functions.MetaTable2"><code class="flex name class">
 <span>class <span class="ident">MetaTable2</span></span>
-<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, project_number: int, project_name: str, columns: dict[str, <a title="functions.metatables.column.Column" href="metatables/column.html#functions.metatables.column.Column">Column</a>] = _Nothing.NOTHING, groups: dict[str, <a title="functions.metatables.group.Group" href="metatables/group.html#functions.metatables.group.Group">Group</a>] = _Nothing.NOTHING, year: str = '2023', output_path: str = '//172.16.20.100/daten/PROJEKTE_PythonOutputs/', projects_path: str = './gfs-projects/')</span>
+<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, project_number: int, project_name: str, columns: dict[str, <a title="functions.metatables.column.Column" href="metatables/column.html#functions.metatables.column.Column">Column</a>] = _Nothing.NOTHING, groups: dict[str, <a title="functions.metatables.group.Group" href="metatables/group.html#functions.metatables.group.Group">Group</a>] = _Nothing.NOTHING, weights: dict[str, <a title="functions.metatables.weight.Weight" href="metatables/weight.html#functions.metatables.weight.Weight">Weight</a>] = _Nothing.NOTHING, year: str = '2023', output_path: str = '//172.16.20.100/daten/PROJEKTE_PythonOutputs/', projects_path: str = './gfs-projects/')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates MetaTable object that makes data wrangling of files read with pyreadstat easy.</p>
@@ -924,7 +965,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <dd>DataFrame read with pyreadstat</dd>
 <dt><strong><code>meta</code></strong> :&ensp;<code>pyreadstat._readstat_parser.metadata_container</code></dt>
 <dd>pyreadstat metadata</dd>
-<dt><strong><code>project_number</code></strong> :&ensp;<code>str</code></dt>
+<dt><strong><code>project_number</code></strong> :&ensp;<code>int</code></dt>
 <dd>The project number. Is used as a folder name for the generated files</dd>
 <dt><strong><code>project_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>The name of the project. Is used as a folder name for the generated files</dd>
@@ -974,6 +1015,10 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="functions.MetaTable2.weights"><code class="name">var <span class="ident">weights</span> : dict[str, <a title="functions.metatables.weight.Weight" href="metatables/weight.html#functions.metatables.weight.Weight">Weight</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="functions.MetaTable2.year"><code class="name">var <span class="ident">year</span> : str</code></dt>
 <dd>
 <div class="desc"></div>
@@ -992,14 +1037,20 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <dd>Name of the column</dd>
 </dl></div>
 </dd>
+<dt id="functions.MetaTable2.calculate_weight"><code class="name flex">
+<span>def <span class="ident">calculate_weight</span></span>(<span>self, column: str, target_values: dict)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="functions.MetaTable2.copy_column"><code class="name flex">
-<span>def <span class="ident">copy_column</span></span>(<span>self, column: str, new_column: str, same_group: bool = True)</span>
+<span>def <span class="ident">copy_column</span></span>(<span>self, old_column: str, new_column: str, same_group: bool = True, add_to_group: bool = True)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a copy of a column and gives it a new name.</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dt><strong><code>old_column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the column to be copied</dd>
 <dt><strong><code>new_column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the new column</dd>
@@ -1007,14 +1058,26 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <dd>If True the column will be added to the same group as the copied column. Defaults to True.</dd>
 </dl></div>
 </dd>
+<dt id="functions.MetaTable2.copy_group"><code class="name flex">
+<span>def <span class="ident">copy_group</span></span>(<span>self, old_group: str, new_group: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="functions.MetaTable2.create_column"><code class="name flex">
-<span>def <span class="ident">create_column</span></span>(<span>)</span>
+<span>def <span class="ident">create_column</span></span>(<span>self, column: str, label: str, value_labels: Union[dict[int, str], str, ForwardRef(None)] = None)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
 <dt id="functions.MetaTable2.create_group"><code class="name flex">
 <span>def <span class="ident">create_group</span></span>(<span>self, group_name: str, columns: list[str], kind: str, measure: str = 'auto', lfm: str = 'yes', group_label: str = 'auto', group_value_labels: Union[dict[int, str], str] = 'auto')</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="functions.MetaTable2.create_weight"><code class="name flex">
+<span>def <span class="ident">create_weight</span></span>(<span>self, name: str, columns: list[str])</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -1041,6 +1104,12 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <dd>Name of the group</dd>
 </dl></div>
 </dd>
+<dt id="functions.MetaTable2.encode"><code class="name flex">
+<span>def <span class="ident">encode</span></span>(<span>self, old_column: str, new_column: str, values: Optional[dict[int, str]] = None, keep_untouched_values: bool = True)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="functions.MetaTable2.export_config"><code class="name flex">
 <span>def <span class="ident">export_config</span></span>(<span>self, export_df: bool = True)</span>
 </code></dt>
@@ -1048,13 +1117,18 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <div class="desc"><p>Exports an excel-file that makes changing the meta data very simple.</p></div>
 </dd>
 <dt id="functions.MetaTable2.export_data"><code class="name flex">
-<span>def <span class="ident">export_data</span></span>(<span>self)</span>
+<span>def <span class="ident">export_data</span></span>(<span>self, file_name: str = 'fertig')</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Exports a .SAV-file and a gfs-meta JSON-file.</p></div>
+<div class="desc"><p>Exports a .SAV-file and a gfs-meta JSON-file.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>file_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>File name of the .sav file</dd>
+</dl></div>
 </dd>
-<dt id="functions.MetaTable2.export_weight_table"><code class="name flex">
-<span>def <span class="ident">export_weight_table</span></span>(<span>self)</span>
+<dt id="functions.MetaTable2.get_intersection_counts"><code class="name flex">
+<span>def <span class="ident">get_intersection_counts</span></span>(<span>self, categorical_columns: list[str])</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -1073,7 +1147,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.group_label"><code class="name flex">
-<span>def <span class="ident">group_label</span></span>(<span>self, group: str, text: str)</span>
+<span>def <span class="ident">group_label</span></span>(<span>self, group: str, text: str, verbose: bool = True)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Updates the group_label of a group of kind = "batch" or "multi".</p>
@@ -1133,7 +1207,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <div class="desc"><p>Imports the gfs-config excel-file and updates the MetaTable according to the changes made in excel.</p></div>
 </dd>
 <dt id="functions.MetaTable2.item_label"><code class="name flex">
-<span>def <span class="ident">item_label</span></span>(<span>self, column: str, text: str)</span>
+<span>def <span class="ident">item_label</span></span>(<span>self, column: str, text: str, verbose: bool = True)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Updates the item_label of a variable of kind = "batch".</p>
@@ -1159,15 +1233,14 @@ These are tools for various tasks inside the technology stack of <a href="https:
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.make_quota_check"><code class="name flex">
-<span>def <span class="ident">make_quota_check</span></span>(<span>self, list_rows: list, list_columns: list, filename_quotas: str = 'cross_tab', filename_quota_check: str = 'quota_check', save_quota_check: bool = False)</span>
+<span>def <span class="ident">make_quota_check</span></span>(<span>self, columns: list[str], filename_quotas: str = 'cross_tab', filename_quota_check: str = 'quota_check', save_quota_check: bool = False)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Calculates the difference between a crosstab and a quota</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt>list_rows (list):list of dataframe variables in crosstab rows</dt>
-<dt><strong><code>list_columns</code></strong> :&ensp;<code>list</code></dt>
-<dd>list of dataframe variables in crosstab columns</dd>
+<dt><strong><code>columns</code></strong> :&ensp;<code>list[str]</code></dt>
+<dd>list of dataframe columns in crosstab</dd>
 <dt><strong><code>filename_quotas</code></strong> :&ensp;<code>str</code>, optional</dt>
 <dd>name of the excel file where the crosstab is</dd>
 <dt><strong><code>filename_quota_check</code></strong> :&ensp;<code>str</code>, optional</dt>
@@ -1202,8 +1275,20 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <dd>If end is True the column is moved to the end, if end is False the column is moved to the beginning. Defaults to True.</dd>
 </dl></div>
 </dd>
+<dt id="functions.MetaTable2.nested_to_tuple_dict"><code class="name flex">
+<span>def <span class="ident">nested_to_tuple_dict</span></span>(<span>self, nested_dict)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="functions.MetaTable2.recode"><code class="name flex">
 <span>def <span class="ident">recode</span></span>(<span>self, old_column: str, new_column: str, values: dict[int, typing.Any], keep_untouched_codes: bool = True)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="functions.MetaTable2.recode_group"><code class="name flex">
+<span>def <span class="ident">recode_group</span></span>(<span>self, old_group: str, new_group: str, values: dict[int, typing.Any], keep_untouched_codes: bool = True)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -1257,19 +1342,22 @@ These are tools for various tasks inside the technology stack of <a href="https:
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.show_crosstab"><code class="name flex">
-<span>def <span class="ident">show_crosstab</span></span>(<span>self, list_rows: list, list_columns: list, save_crosstab: bool = False, cross_tab_name: str = 'cross_tab')</span>
+<span>def <span class="ident">show_crosstab</span></span>(<span>self, columns: list[str], save_crosstab: bool = False, cross_tab_name: str = 'cross_tab', drop_na: bool = False, show_margins: bool = True)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates and shows a crosstab with a set of row and a set of column breaks</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt>list_rows (list):list of dataframe variables in crosstab rows</dt>
-<dt><strong><code>list_columns</code></strong> :&ensp;<code>list</code></dt>
-<dd>list of dataframe variables in crosstab columns</dd>
+<dt><strong><code>columns</code></strong> :&ensp;<code>list[str]</code></dt>
+<dd>list of dataframe columns in crosstab</dd>
 <dt><strong><code>save_crosstab</code></strong> :&ensp;<code>bool</code>, optional</dt>
 <dd>boolean to indicate if crosstab is saved in an excel file</dd>
 <dt><strong><code>cross_tab_name</code></strong> :&ensp;<code>str</code>, optional</dt>
 <dd>name of the excel file</dd>
+<dt><strong><code>drop_na</code></strong> :&ensp;<code>bool</code></dt>
+<dd>if True it doesn't show rows and columns if all of their values are zero</dd>
+<dt><strong><code>show_margins</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Shows the total of rows and columns if True</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.show_group_info"><code class="name flex">
@@ -1295,7 +1383,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.single_label"><code class="name flex">
-<span>def <span class="ident">single_label</span></span>(<span>self, column: str, text: str)</span>
+<span>def <span class="ident">single_label</span></span>(<span>self, column: str, text: str, verbose: bool = True)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Updates the label of a variable of kind = "single".</p>
@@ -1306,6 +1394,12 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <dt><strong><code>text</code></strong> :&ensp;<code>str</code></dt>
 <dd>New text of the label</dd>
 </dl></div>
+</dd>
+<dt id="functions.MetaTable2.tuple_to_nested_dict"><code class="name flex">
+<span>def <span class="ident">tuple_to_nested_dict</span></span>(<span>self, tuple_dict)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 <dt id="functions.MetaTable2.value_labels"><code class="name flex">
 <span>def <span class="ident">value_labels</span></span>(<span>self, column: str, value_labels: Union[dict[int, str], str], keep_untouched_codes: bool = False)</span>
@@ -1362,6 +1456,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <li><h3><a href="#header-submodules">Sub-modules</a></h3>
 <ul>
 <li><code><a title="functions.graphy" href="graphy/index.html">functions.graphy</a></code></li>
+<li><code><a title="functions.matrixmixer" href="matrixmixer/index.html">functions.matrixmixer</a></code></li>
 <li><code><a title="functions.metatables" href="metatables/index.html">functions.metatables</a></code></li>
 <li><code><a title="functions.tools" href="tools/index.html">functions.tools</a></code></li>
 </ul>
@@ -1388,6 +1483,14 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
 <li>
+<h4><code><a title="functions.MatrixMixer" href="#functions.MatrixMixer">MatrixMixer</a></code></h4>
+<ul class="">
+<li><code><a title="functions.MatrixMixer.create_matrix" href="#functions.MatrixMixer.create_matrix">create_matrix</a></code></li>
+<li><code><a title="functions.MatrixMixer.export_excel" href="#functions.MatrixMixer.export_excel">export_excel</a></code></li>
+<li><code><a title="functions.MatrixMixer.meta_table" href="#functions.MatrixMixer.meta_table">meta_table</a></code></li>
+</ul>
+</li>
+<li>
 <h4><code><a title="functions.MetaTable" href="#functions.MetaTable">MetaTable</a></code></h4>
 <ul class="">
 <li><code><a title="functions.MetaTable.create_column_copy" href="#functions.MetaTable.create_column_copy">create_column_copy</a></code></li>
@@ -1409,18 +1512,22 @@ These are tools for various tasks inside the technology stack of <a href="https:
 </li>
 <li>
 <h4><code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></h4>
-<ul class="two-column">
+<ul class="">
 <li><code><a title="functions.MetaTable2.add_to_group" href="#functions.MetaTable2.add_to_group">add_to_group</a></code></li>
+<li><code><a title="functions.MetaTable2.calculate_weight" href="#functions.MetaTable2.calculate_weight">calculate_weight</a></code></li>
 <li><code><a title="functions.MetaTable2.columns" href="#functions.MetaTable2.columns">columns</a></code></li>
 <li><code><a title="functions.MetaTable2.copy_column" href="#functions.MetaTable2.copy_column">copy_column</a></code></li>
+<li><code><a title="functions.MetaTable2.copy_group" href="#functions.MetaTable2.copy_group">copy_group</a></code></li>
 <li><code><a title="functions.MetaTable2.create_column" href="#functions.MetaTable2.create_column">create_column</a></code></li>
 <li><code><a title="functions.MetaTable2.create_group" href="#functions.MetaTable2.create_group">create_group</a></code></li>
+<li><code><a title="functions.MetaTable2.create_weight" href="#functions.MetaTable2.create_weight">create_weight</a></code></li>
 <li><code><a title="functions.MetaTable2.delete_column" href="#functions.MetaTable2.delete_column">delete_column</a></code></li>
 <li><code><a title="functions.MetaTable2.delete_group" href="#functions.MetaTable2.delete_group">delete_group</a></code></li>
 <li><code><a title="functions.MetaTable2.df" href="#functions.MetaTable2.df">df</a></code></li>
+<li><code><a title="functions.MetaTable2.encode" href="#functions.MetaTable2.encode">encode</a></code></li>
 <li><code><a title="functions.MetaTable2.export_config" href="#functions.MetaTable2.export_config">export_config</a></code></li>
 <li><code><a title="functions.MetaTable2.export_data" href="#functions.MetaTable2.export_data">export_data</a></code></li>
-<li><code><a title="functions.MetaTable2.export_weight_table" href="#functions.MetaTable2.export_weight_table">export_weight_table</a></code></li>
+<li><code><a title="functions.MetaTable2.get_intersection_counts" href="#functions.MetaTable2.get_intersection_counts">get_intersection_counts</a></code></li>
 <li><code><a title="functions.MetaTable2.group_kind" href="#functions.MetaTable2.group_kind">group_kind</a></code></li>
 <li><code><a title="functions.MetaTable2.group_label" href="#functions.MetaTable2.group_label">group_label</a></code></li>
 <li><code><a title="functions.MetaTable2.group_lfm" href="#functions.MetaTable2.group_lfm">group_lfm</a></code></li>
@@ -1434,11 +1541,13 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <li><code><a title="functions.MetaTable2.measure" href="#functions.MetaTable2.measure">measure</a></code></li>
 <li><code><a title="functions.MetaTable2.meta" href="#functions.MetaTable2.meta">meta</a></code></li>
 <li><code><a title="functions.MetaTable2.move_column" href="#functions.MetaTable2.move_column">move_column</a></code></li>
+<li><code><a title="functions.MetaTable2.nested_to_tuple_dict" href="#functions.MetaTable2.nested_to_tuple_dict">nested_to_tuple_dict</a></code></li>
 <li><code><a title="functions.MetaTable2.output_path" href="#functions.MetaTable2.output_path">output_path</a></code></li>
 <li><code><a title="functions.MetaTable2.project_name" href="#functions.MetaTable2.project_name">project_name</a></code></li>
 <li><code><a title="functions.MetaTable2.project_number" href="#functions.MetaTable2.project_number">project_number</a></code></li>
 <li><code><a title="functions.MetaTable2.projects_path" href="#functions.MetaTable2.projects_path">projects_path</a></code></li>
 <li><code><a title="functions.MetaTable2.recode" href="#functions.MetaTable2.recode">recode</a></code></li>
+<li><code><a title="functions.MetaTable2.recode_group" href="#functions.MetaTable2.recode_group">recode_group</a></code></li>
 <li><code><a title="functions.MetaTable2.remove_from_group" href="#functions.MetaTable2.remove_from_group">remove_from_group</a></code></li>
 <li><code><a title="functions.MetaTable2.rename_column" href="#functions.MetaTable2.rename_column">rename_column</a></code></li>
 <li><code><a title="functions.MetaTable2.show_column_info" href="#functions.MetaTable2.show_column_info">show_column_info</a></code></li>
@@ -1447,7 +1556,9 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <li><code><a title="functions.MetaTable2.show_group_info" href="#functions.MetaTable2.show_group_info">show_group_info</a></code></li>
 <li><code><a title="functions.MetaTable2.show_group_meta" href="#functions.MetaTable2.show_group_meta">show_group_meta</a></code></li>
 <li><code><a title="functions.MetaTable2.single_label" href="#functions.MetaTable2.single_label">single_label</a></code></li>
+<li><code><a title="functions.MetaTable2.tuple_to_nested_dict" href="#functions.MetaTable2.tuple_to_nested_dict">tuple_to_nested_dict</a></code></li>
 <li><code><a title="functions.MetaTable2.value_labels" href="#functions.MetaTable2.value_labels">value_labels</a></code></li>
+<li><code><a title="functions.MetaTable2.weights" href="#functions.MetaTable2.weights">weights</a></code></li>
 <li><code><a title="functions.MetaTable2.year" href="#functions.MetaTable2.year">year</a></code></li>
 </ul>
 </li>
