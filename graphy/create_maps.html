@@ -34,102 +34,116 @@
 <dl>
 <dt id="functions.graphy.create_maps.gfs_Maps"><code class="flex name class">
 <span>class <span class="ident">gfs_Maps</span></span>
-<span>(</span><span>info: dict, variables: list, scope: <a title="functions.graphy.map_helper.Map_Scope_Enum" href="map_helper.html#functions.graphy.map_helper.Map_Scope_Enum">Map_Scope_Enum</a>, legend_labels_rename: dict[str, str] = None, show_count: bool = False, left_labels_rename: dict[str, str] = None, break_labels_rename: dict[str, str] = None, breaks: list = None, legend_break: list = None, order_by: dict = None, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', legend_title_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, color_theme: str = 'auto', color_type: str = 'single_hue_reversed', color_direction: str = 'forward', color_custom: list[str] = None, legend_position: str = 'right', legend_labels_size: float = 14, weight: str = 'auto', select_variable_levels: list[int] = None, show_mean: bool = False, tag_position: int = 3, left_labels_wrap: int = 50, left_labels_width: int = 999, show_total: bool = False, tag_add_before: str = '', subtitle_add_before: str = '', value_labels_add_after: list[list[str]] = None, left_labels_remove_before: str = '', left_labels_remove_after: str = '', title_remove_before: str = '', title_remove_after: str = '', label_size: int = 16, show_legend: bool = True, show_legend_title: Optional[bool] = None, break_distance: float = 999, select_min_count: int = 0, exclusion_filter=[], foreground_filter={&#x27;CNTR_CODE&#x27;: &lt;Country_Code_Enum.CH: &#x27;CH&#x27;&gt;, &#x27;LEVL_CODE&#x27;: &lt;Map_LOD_Enum.States: 2&gt;}, language: str = 'de', disable_hover_info: bool = False, projection: str = 'mercator', background_map_color: str = '#999', save_figure: bool = True, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto')</span>
+<span>(</span><span>info: dict, variables: list, scope: <a title="functions.graphy.map_helper.Map_Scope_Enum" href="map_helper.html#functions.graphy.map_helper.Map_Scope_Enum">Map_Scope_Enum</a>, legend_labels_rename: dict[str, str] = None, show_count: bool = False, left_labels_rename: dict[str, str] = None, break_labels_rename: dict[str, str] = None, breaks: list = None, legend_break: list = None, order_by: dict = None, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', legend_title_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: list[str] = None, legend_position: str = 'right', weight: str = 'auto', select_variable_levels: list[int] = None, show_mean: bool = False, tag_position: int = 3, left_labels_wrap: int = 50, left_labels_width: int = 999, show_total: bool = False, tag_add_before: str = '', subtitle_add_before: str = '', value_labels_add_after: list[list[str]] = None, left_labels_remove_before: str = '', left_labels_remove_after: str = '', title_remove_before: str = '', title_remove_after: str = '', label_size: int = 16, background_filter={&#x27;LEVL_CODE&#x27;: &lt;Map_LOD_Enum.Country: 0&gt;}, foreground_filter={&#x27;CNTR_CODE&#x27;: &lt;Country_Code_Enum.CH: &#x27;CH&#x27;&gt;, &#x27;LEVL_CODE&#x27;: &lt;Map_LOD_Enum.States: 2&gt;}, language: str = 'de', disable_hover_info: bool = False, projection: str = 'mercator', save_figure: bool = True, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto', enable_log: bool = False)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a map chart</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>background_map_color</code></strong> :&ensp;<code>str</code></dt>
-<dd>hex color code to set the background color of map shapes, default is "#999"</dd>
+<dt>language (str):</dt>
 <dt><strong><code>projection</code></strong> :&ensp;<code>str</code></dt>
 <dd>projection type as a string or None ('equirectangular', 'mercator', 'orthographic',
-'natural earth', 'kavrayskiy7', 'miller', 'robinson', 'eckert4', 'azimuthal equal area',
-'azimuthal equidistant', 'conic equal area', 'conic conformal', 'conic equidistant', 'gnomonic',
-'stereographic', 'mollweide', 'hammer', 'transverse mercator', 'albers usa', 'winkel tripel',
-'aitoff' and 'sinusoidal')</dd>
+'natural earth', 'kavrayskiy7', 'miller', 'robinson', 'eckert4', 'azimuthal equal area', 'azimuthal equidistant',
+'conic equal area', 'conic conformal', 'conic equidistant', 'gnomonic', 'stereographic', 'mollweide', 'hammer',
+'transverse mercator', 'albers usa', 'winkel tripel', 'aitoff' and 'sinusoidal')</dd>
 </dl></div>
 <h3>Methods</h3>
 <dl>
+<dt id="functions.graphy.create_maps.gfs_Maps.clip_coordinates"><code class="name flex">
+<span>def <span class="ident">clip_coordinates</span></span>(<span>self, scope: <a title="functions.graphy.map_helper.Map_Scope_Enum" href="map_helper.html#functions.graphy.map_helper.Map_Scope_Enum">Map_Scope_Enum</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>clips coordinates of background to a preset for the scope of the map and returns the background shape</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>scope</code></strong> :&ensp;<code>Map_Scope_Enum</code></dt>
+<dd>Enum to define the preset (EU or CH)</dd>
+</dl></div>
+</dd>
 <dt id="functions.graphy.create_maps.gfs_Maps.create_map_figure"><code class="name flex">
-<span>def <span class="ident">create_map_figure</span></span>(<span>self, foreground_shapes: geopandas.geodataframe.GeoDataFrame, clipped_foreground_shapes: geopandas.geodataframe.GeoDataFrame)</span>
+<span>def <span class="ident">create_map_figure</span></span>(<span>self, foreground_shapes)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>creates map figures and combines background and foreground shapes with each other</p>
 <h2 id="args">Args</h2>
-<p>foreground_shapes (:gpd.GeoDataFrame):geopandas Dataframe with the foreground shapes data
-clipped_foreground_shapes (:gpd.GeoDataFrame):geopandas Dataframe with the clipped foreground shapes data</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>go.Figure</code></dt>
-<dd>plotly Figure with map objects</dd>
-</dl></div>
+<p>foreground_shapes (geopandas.Dataframe):geopandas Dataframe with the foreground geometries</p></div>
 </dd>
 <dt id="functions.graphy.create_maps.gfs_Maps.create_maps"><code class="name flex">
 <span>def <span class="ident">create_maps</span></span>(<span>self) ‑> Optional[tuple]</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Creates a map chart
-Returns:
-Optional[tuple]: returns df and meta objects if return_data is True</p></div>
+<div class="desc"><p>Creates a map chart</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>info</code></strong> :&ensp;<code>dict</code></dt>
+<dd>A dictionary with info about the presentation. Has info like number of slides,
+presentation name and the presentation object itself ~ usually info</dd>
+<dt><strong><code>variables</code></strong> :&ensp;<code>list</code></dt>
+<dd>A list of variables. If multiple are added, function doesn't accept any breaks. ~ ['AW2'] /
+['AW1_1', 'AW1_2', &hellip;]</dd>
+<dt><strong><code>breaks</code></strong> :&ensp;<code>list</code>, optional</dt>
+<dd>A list of breaks. ~ ['alter_break', 'sex_break']. Defaults to None.</dd>
+<dt><strong><code>legend_break</code></strong> :&ensp;<code>list</code>, optional</dt>
+<dd>A list of breaks. This is used to create the legend break if either
+"mean" == True or "select_variable_levels" has exactly one item ~ ['alter_break'] / [['alter_break']]. Defaults to None.</dd>
+<dt><strong><code>barchart_mean</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Toggles barchart type mean, where mean value of variable is shown.
+Defaults to False.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Optional[tuple]</code></dt>
+<dd>returns df and meta objects if return_data is True</dd>
+</dl></div>
 </dd>
 <dt id="functions.graphy.create_maps.gfs_Maps.create_maps_df"><code class="name flex">
-<span>def <span class="ident">create_maps_df</span></span>(<span>self) ‑> pandas.core.frame.DataFrame</span>
+<span>def <span class="ident">create_maps_df</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>creates dataframe for a map graphic</p>
-<p>Returns:
-pd.DataFrame: returns pandas dataframe for map</p></div>
+<div class="desc"></div>
+</dd>
+<dt id="functions.graphy.create_maps.gfs_Maps.get_background_shapes"><code class="name flex">
+<span>def <span class="ident">get_background_shapes</span></span>(<span>self, clipped_shapes)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>gets background shape for the maps</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>clipped_shapes</code></strong> :&ensp;<code>geopandas.Dataframe</code></dt>
+<dd>geopandas Dataframe with the clipped geometries</dd>
+<dt><strong><code>filter</code></strong> :&ensp;<code>dict</code></dt>
+<dd>dictionary to filter the geopandas dataframe</dd>
+</dl></div>
 </dd>
 <dt id="functions.graphy.create_maps.gfs_Maps.get_foreground_shapes"><code class="name flex">
-<span>def <span class="ident">get_foreground_shapes</span></span>(<span>self, resolution='03') ‑> geopandas.geodataframe.GeoDataFrame</span>
+<span>def <span class="ident">get_foreground_shapes</span></span>(<span>self)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>gets foreground shape for the maps</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>resolution</code></strong> :&ensp;<code>str</code></dt>
-<dd>resolution size of the standard "NUTS" shapefiles - possible values are 03,10,20, default is 03</dd>
-</dl>
-<p>Returns:
-gpd.GeoDataFrame: returns filtered geopandas dataframe</p></div>
+<dt><strong><code>filter</code></strong> :&ensp;<code>dict</code></dt>
+<dd>dictionary to filter the geopandas dataframe</dd>
+</dl></div>
 </dd>
 <dt id="functions.graphy.create_maps.gfs_Maps.get_translations"><code class="name flex">
-<span>def <span class="ident">get_translations</span></span>(<span>self) ‑> str</span>
+<span>def <span class="ident">get_translations</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>gets translation json for maps and map objects for the map scope
-Returns:
-str: json string with all map objects</p></div>
+<div class="desc"></div>
 </dd>
 <dt id="functions.graphy.create_maps.gfs_Maps.init_shape_file"><code class="name flex">
-<span>def <span class="ident">init_shape_file</span></span>(<span>self, resolution, file=None) ‑> geopandas.geodataframe.GeoDataFrame</span>
+<span>def <span class="ident">init_shape_file</span></span>(<span>self, file=None, resolution='10')</span>
 </code></dt>
 <dd>
-<div class="desc"><p>reads shapefile from the file system and loads it into a geopandas dataframe</p>
+<div class="desc"><p>gets shapefile from the file system and load it into a geopandas dataframe</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>resolution</code></strong> :&ensp;<code>str</code></dt>
-<dd>resolution size of the standard "NUTS" shapefiles - possible values are 03,10,20</dd>
 <dt><strong><code>file</code></strong> :&ensp;<code>str</code></dt>
 <dd>file path to your own shapefile if you need it</dd>
-</dl>
-<p>Returns:
-gpd.GeoDataFrame: returns geopandas dataframe</p></div>
-</dd>
-<dt id="functions.graphy.create_maps.gfs_Maps.shape_clipping"><code class="name flex">
-<span>def <span class="ident">shape_clipping</span></span>(<span>self, foreground_shapes: geopandas.geodataframe.GeoDataFrame, exclusion_filter: list) ‑> geopandas.geodataframe.GeoDataFrame</span>
-</code></dt>
-<dd>
-<div class="desc"><p>removes shapes with a list of NUTS ID objects</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>foreground_shapes</code></strong> :&ensp;<code>gpd.GeoDataFrame</code></dt>
-<dd>shapes to be used in the map plot</dd>
-</dl>
-<p>exclusion_filter (list(str)): list of NUTS ID objects to remove
-Returns:
-gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
+<dt><strong><code>resolution</code></strong> :&ensp;<code>str</code></dt>
+<dd>resolution size of the standard "NUTS" shapefiles - possible values are 03,10,20</dd>
+</dl></div>
 </dd>
 </dl>
 </dd>
@@ -152,13 +166,14 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li>
 <h4><code><a title="functions.graphy.create_maps.gfs_Maps" href="#functions.graphy.create_maps.gfs_Maps">gfs_Maps</a></code></h4>
 <ul class="">
+<li><code><a title="functions.graphy.create_maps.gfs_Maps.clip_coordinates" href="#functions.graphy.create_maps.gfs_Maps.clip_coordinates">clip_coordinates</a></code></li>
 <li><code><a title="functions.graphy.create_maps.gfs_Maps.create_map_figure" href="#functions.graphy.create_maps.gfs_Maps.create_map_figure">create_map_figure</a></code></li>
 <li><code><a title="functions.graphy.create_maps.gfs_Maps.create_maps" href="#functions.graphy.create_maps.gfs_Maps.create_maps">create_maps</a></code></li>
 <li><code><a title="functions.graphy.create_maps.gfs_Maps.create_maps_df" href="#functions.graphy.create_maps.gfs_Maps.create_maps_df">create_maps_df</a></code></li>
+<li><code><a title="functions.graphy.create_maps.gfs_Maps.get_background_shapes" href="#functions.graphy.create_maps.gfs_Maps.get_background_shapes">get_background_shapes</a></code></li>
 <li><code><a title="functions.graphy.create_maps.gfs_Maps.get_foreground_shapes" href="#functions.graphy.create_maps.gfs_Maps.get_foreground_shapes">get_foreground_shapes</a></code></li>
 <li><code><a title="functions.graphy.create_maps.gfs_Maps.get_translations" href="#functions.graphy.create_maps.gfs_Maps.get_translations">get_translations</a></code></li>
 <li><code><a title="functions.graphy.create_maps.gfs_Maps.init_shape_file" href="#functions.graphy.create_maps.gfs_Maps.init_shape_file">init_shape_file</a></code></li>
-<li><code><a title="functions.graphy.create_maps.gfs_Maps.shape_clipping" href="#functions.graphy.create_maps.gfs_Maps.shape_clipping">shape_clipping</a></code></li>
 </ul>
 </li>
 </ul>
