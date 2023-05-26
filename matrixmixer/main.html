@@ -34,7 +34,7 @@
 <dl>
 <dt id="functions.matrixmixer.main.MatrixMixer"><code class="flex name class">
 <span>class <span class="ident">MatrixMixer</span></span>
-<span>(</span><span>meta_table: <a title="functions.metatables.main.MetaTable2" href="../metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, breaks: list = ['tz'], language: list = 'de')</span>
+<span>(</span><span>meta_table: <a title="functions.metatables.main.MetaTable2" href="../metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, breaks: list = [['tz']], language: list = 'de')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Assembles multiple tables with descriptive statistics and exports them to excel.</p>
@@ -66,7 +66,7 @@
 <h3>Methods</h3>
 <dl>
 <dt id="functions.matrixmixer.main.MatrixMixer.create_matrix"><code class="name flex">
-<span>def <span class="ident">create_matrix</span></span>(<span>self, question: str, breaks: list[str] = 'auto') ‑> None</span>
+<span>def <span class="ident">create_matrix</span></span>(<span>self, question: str, breaks: list[list[str]] = 'auto') ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a single matrix and saves it to the MatrixMixer object.</p>
@@ -74,7 +74,7 @@
 <dl>
 <dt><strong><code>question</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of question. Can either be of type Column or Group.</dd>
-<dt><strong><code>breaks</code></strong> :&ensp;<code>list[str]</code>, optional</dt>
+<dt><strong><code>breaks</code></strong> :&ensp;<code>list[list[str]]</code>, optional</dt>
 <dd>Selects the breaks used in matrix. Defaults to 'auto'.</dd>
 </dl></div>
 </dd>
