@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>functions API documentation</title>
-<meta name="description" content="![gfs-zh](ressources/gfs-zh.svg) …" />
+<meta name="description" content="gfs-functions …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,25 +22,15 @@
 <h1 class="title">Package <code>functions</code></h1>
 </header>
 <section id="section-intro">
-<p><img alt="gfs-zh" src="ressources/gfs-zh.svg"></p>
 <h1 id="gfs-functions">gfs-functions</h1>
-<p>This repository is a part of the technology stack of <a href="https://github.com/gfs-zurich">gfs-zürich</a>.</p>
-<h2 id="-project-status-ongoing">&ndash; Project Status: Ongoing</h2>
-<h2 id="project-introduction">Project introduction</h2>
-<p>This repository is used for customer projects at gfs-zürich.
-It contains functions to create graphs and tables with python.</p>
+<p><img align="right" height="100" src="ressources/logo_gfs-zh.svg"></p>
+<p>This repository is a part of the technology stack of <a href="https://github.com/gfs-zurich">gfs-zürich</a>. It contains functions to create graphs and tables with python.</p>
 <h2 id="project-objectives">Project objectives</h2>
 <ul>
 <li>streamline preprocessing of data files</li>
 <li>streamline table creation for data files</li>
 <li>streamline graphic creation for data files</li>
 <li>create presentations</li>
-</ul>
-<h2 id="methods-used">Methods used</h2>
-<ul>
-<li>Data Visualisation</li>
-<li>Data Processing</li>
-<li>&hellip;</li>
 </ul>
 <h2 id="technologies">Technologies</h2>
 <ul>
@@ -101,86 +91,21 @@ It contains functions to create graphs and tables with python.</p>
 <li>&hellip;</li>
 </ul>
 <h2 id="file-folder-structure">File &amp; Folder Structure</h2>
-<pre><code class="language-markdown">|   .gitignore                                          # Git Ignore File
-|   LICENSE                                             # License File
-|   Pipfile                                             # Pip File for Dependencies 
-|   README.md                                           # Readme File for Repository
-|   setup.py                                            #
-|   test.py                                             #
-|   UML_gfs_repos.drawio                                # UML File
-|
-+---data                                                # Data Folder
-|       EndFile_GVZ.sav
-|       fertig_R_GVZ.sav
-|       fertig_R_Omnibus_April.sav
-|       fertig_R_Omnibus_ZH.sav
-|       fertig_R_SAK.sav
-|       Grafiken_Vorlagen_mt.pptx
-|       grafiken_vorlage_alte_Methode.pptx
-|
-+---functions                                           # folder for main functions
-|   |   __init__.py                                         # init py file 
-|   |
-|   +---graphy                                          # subfolder for graphics creation
-|   |       create_barchart.py                              # file to create a bar chart
-|   |       create_piechart.py                              # file to create a pie chart
-|   |       create_stacked_barchart.py                      # file to create a stacked bar chart
-|   |       create_wordcloud.py                             # file to create a wordcloud
-|   |       main_data.py                                    # file for data preparation 
-|   |       main_functions.py                               # file for common functions
-|   |       main_graph.py                                   # file for helper functions to create graphics
-|   |       main_helper.py                                  # file for helper functions 
-|   |       main_presentation.py                            # file for presentation creation
-|   |       main_wrangling.py                               # file for data wrangling
-|   |       __init__.py                                     # init py file 
-|   |
-|   +---metatables                                      # subfolder for data preprocessing
-|   |       main.py                                         # file for data preprocessing
-|   |       __init__.py                                     # init py file 
-|   |
-|   \---tools                                           # subfolder for general tools 
-|           perimeter_search.py                             # python script for perimeter search 
-|           __init__.py                                     # init py file 
-+---output                                              # folder for outputs
-|
-+---ressources                                          # folder for ressources
-|   \---maps                                                # subfolder for map ressources
-|       \---Shapefiles                                          # subfolder for shapefiles
-|               NUTS_RG_03M_2021_4326.cpg                           # cpg file for 03M EU Shapefile
-|               NUTS_RG_03M_2021_4326.dbf                           # dbf file for 03M EU Shapefile    
-|               NUTS_RG_03M_2021_4326.prj                           # prj file for 03M EU Shapefile
-|               NUTS_RG_03M_2021_4326.shp                           # shp file for 03M EU Shapefile
-|               NUTS_RG_03M_2021_4326.shx                           # shx file for 03M EU Shapefile
-|               NUTS_RG_10M_2021_4326.cpg                           # cpg file for 10M EU Shapefile
-|               NUTS_RG_10M_2021_4326.dbf                           # dbf file for 10M EU Shapefile
-|               NUTS_RG_10M_2021_4326.prj                           # prj file for 10M EU Shapefile
-|               NUTS_RG_10M_2021_4326.shp                           # shp file for 10M EU Shapefile
-|               NUTS_RG_10M_2021_4326.shx                           # shx file for 10M EU Shapefile
-|               NUTS_RG_20M_2021_4326.cpg                           # cpg file for 20M EU Shapefile
-|               NUTS_RG_20M_2021_4326.dbf                           # dbf file for 20M EU Shapefile
-|               NUTS_RG_20M_2021_4326.prj                           # prj file for 20M EU Shapefile
-|               NUTS_RG_20M_2021_4326.shp                           # shp file for 20M EU Shapefile
-|               NUTS_RG_20M_2021_4326.shx                           # shx file for 20M EU Shapefile
-|
-+---templates                                           # folder for templates
-|       arial.ttf                                           # arial font
-|       color.json                                          # json for color templates
-|       gfs-zh_logo.svg                                     # vector image gfs logo
-|       graph.json                                          #
-|       LeelawUI.ttf                                        # LeelawUI font
-|       tahomabd.ttf                                        # tahomabd font
-|       template_logo_left.pptx                             # Powerpoint presentation template
-|       template_logo_left_no_page_nr.pptx                  # Powerpoint presentation template
-|       template_logo_right.pptx                            # Powerpoint presentation template   
-|       template_logo_right_no_page_nr.pptx                 # Powerpoint presentation template
-|       template_swissstaffing.pptx                         # Swissstaffing Powerpoint presentation template
-|       text.json                                           # 
-|
-\---test                                                    # folder for testing 
-        test_barchart.ipynb                                     # testing notebook for bar charts
-        test_metatables.ipynb                                   # testing notebook for preprocessing
-        test_stacked_barchart.ipynb                             # testing notebook for stacked bar charts
-        test_syntax.ipynb                                       # 
+<pre><code class="language-markdown">+---.vscode                           # VS-Code settings
++---data                              # Data Folder with example files
++---docs                              # Automatically generated documentation files
++---functions                         # Main function folder
+|   +---graphy                        # Functions for graph creation
+|   +---matrixmixer                   # Functions for table creation
+|   +---metatables                    # Functions for SPSS file data preprocessing
+|   \---tools                         # Functions for general tasks
++---gfs-projects                      # Repository with project files
++---output                            # Folder for outputs
++---resources                         # Folder with resources for maps
++---templates                         # Folder with all template files
+|   \---mapping                       # JSON files with standard variable mappings
++---test                              # test functions
++---uml                               # UML diagrams for documentation
 </code></pre>
 <h2 id="add-documentation">Add documentation</h2>
 <p>The documentation will be added to the <strong><a href="https://github.com/gfs-zurich/gfs-zurich.github.io">gfs-zurich.github.io</a></strong> repository. To get the documentation into the repository, clone it into the <code>./docs</code> folder as <code><a title="functions" href="#functions">functions</a></code>. Then run the following command in the root folder of this repository to create the updated documentation:</p>
@@ -1473,10 +1398,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <div class="toc">
 <ul>
 <li><a href="#gfs-functions">gfs-functions</a><ul>
-<li><a href="#-project-status-ongoing">&ndash; Project Status: Ongoing</a></li>
-<li><a href="#project-introduction">Project introduction</a></li>
 <li><a href="#project-objectives">Project objectives</a></li>
-<li><a href="#methods-used">Methods used</a></li>
 <li><a href="#technologies">Technologies</a></li>
 <li><a href="#requirements">Requirements</a></li>
 <li><a href="#getting-started">Getting-Started</a></li>
