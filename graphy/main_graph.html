@@ -31,7 +31,7 @@
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="functions.graphy.main_graph.add_standard_arguments"><code class="name flex">
-<span>def <span class="ident">add_standard_arguments</span></span>(<span>standard_arguments: dict, info: dict) ‑> dict</span>
+<span>def <span class="ident">add_standard_arguments</span></span>(<span>standard_arguments: dict, info: dict) ‑> Optional[dict]</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -55,7 +55,7 @@
 <div class="desc"></div>
 </dd>
 <dt id="functions.graphy.main_graph.get_colors"><code class="name flex">
-<span>def <span class="ident">get_colors</span></span>(<span>x: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, variables: list[str], color_theme: str, color_type: str, info: dict, color_direction: str, special_variables: list[int], color_custom: list[str], break_color: bool = False, continous_scale: bool = False) ‑> list[str]</span>
+<span>def <span class="ident">get_colors</span></span>(<span>x: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, variables: list[str], color_theme: str, color_type: str, info: dict, color_direction: str, special_variables: list[int], color_custom: list[str], break_color: bool = False) ‑> list[str]</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -67,7 +67,7 @@
 <div class="desc"></div>
 </dd>
 <dt id="functions.graphy.main_graph.get_text_positions"><code class="name flex">
-<span>def <span class="ident">get_text_positions</span></span>(<span>title_text: str, subtitle_text: str, tag_text: str, title_position: int, subtitle_position: int, tag_position: int) ‑> tuple[str]</span>
+<span>def <span class="ident">get_text_positions</span></span>(<span>title_text: str, subtitle_text: str, tag_text: str, title_position: int, subtitle_position: int, tag_position: int) ‑> tuple[str, str, str]</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
