@@ -65,34 +65,87 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="functions.metatables.create_age_break"><code class="name flex">
-<span>def <span class="ident">create_age_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, age_break_name: str) ‑> None</span>
+<span>def <span class="ident">create_age_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str) ‑> None</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Creates a standard age break.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.metatables.MetaTable2" href="#functions.metatables.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+</dl></div>
 </dd>
 <dt id="functions.metatables.create_canton_break"><code class="name flex">
-<span>def <span class="ident">create_canton_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, canton_break_name: str) ‑> None</span>
+<span>def <span class="ident">create_canton_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str) ‑> None</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Creates a canton break based on a JSON mapping file.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.metatables.MetaTable2" href="#functions.metatables.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>original_variable_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>Type of the original variable. "plz" if it represents the Postleitzahl and "gdenr" if it represents the Gemeindenummer.</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+</dl></div>
 </dd>
 <dt id="functions.metatables.create_grossregion_break"><code class="name flex">
-<span>def <span class="ident">create_grossregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, grossregion_break_name: str) ‑> None</span>
+<span>def <span class="ident">create_grossregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str) ‑> None</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Creates a grossregion break based on a JSON mapping file.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.metatables.MetaTable2" href="#functions.metatables.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>original_variable_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>Type of the original variable. "plz" if it represents the Postleitzahl and "gdenr" if it represents the Gemeindenummer.</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+</dl></div>
 </dd>
 <dt id="functions.metatables.create_siedlungsart_break"><code class="name flex">
-<span>def <span class="ident">create_siedlungsart_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, siedlungsart_break_name: str) ‑> None</span>
+<span>def <span class="ident">create_siedlungsart_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str) ‑> None</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Creates a siedlungsart break based on a JSON mapping file.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.metatables.MetaTable2" href="#functions.metatables.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>original_variable_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>Type of the original variable. "plz" if it represents the Postleitzahl and "gdenr" if it represents the Gemeindenummer.</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+</dl></div>
 </dd>
 <dt id="functions.metatables.create_sprachregion_break"><code class="name flex">
-<span>def <span class="ident">create_sprachregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, sprachregion_break_name: str) ‑> None</span>
+<span>def <span class="ident">create_sprachregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str) ‑> None</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Creates a sprachregion break based on a JSON mapping file.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.metatables.MetaTable2" href="#functions.metatables.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>original_variable_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>Type of the original variable. "plz" if it represents the Postleitzahl and "gdenr" if it represents the Gemeindenummer.</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+</dl></div>
 </dd>
 </dl>
 </section>
