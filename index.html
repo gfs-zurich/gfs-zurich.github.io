@@ -103,7 +103,12 @@
 +---output             # Folder for outputs
 +---resources          # Folder with resources for maps
 +---templates          # Folder with all template files
-|   \---mapping        # JSON files with standard variable mappings
+|   +---fonts          # .ttf files with project fonts
+|   +---logo           # gfs logo files
+|   +---mapping        # JSON files with standard variable mappings
+|   +---powerpoint     # Templates of Powerpoint presentations
+|   +---shapefiles     # Shapefiles for maps
+|   \---translations   # Translation JSON files used to translate graphs and tables
 +---test               # test functions
 +---uml                # UML diagrams for documentation
 </code></pre>
@@ -202,7 +207,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <div class="desc"></div>
 </dd>
 <dt id="functions.create_age_break"><code class="name flex">
-<span>def <span class="ident">create_age_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, age_variable: str, age_break_name: str)</span>
+<span>def <span class="ident">create_age_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, age_break_name: str) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -330,13 +335,13 @@ These are tools for various tasks inside the technology stack of <a href="https:
 </dl></div>
 </dd>
 <dt id="functions.create_canton_break"><code class="name flex">
-<span>def <span class="ident">create_canton_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, plz_variable: str, canton_break_name: str)</span>
+<span>def <span class="ident">create_canton_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, canton_break_name: str) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
 <dt id="functions.create_grossregion_break"><code class="name flex">
-<span>def <span class="ident">create_grossregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, plz_variable: str, grossregion_break_name: str)</span>
+<span>def <span class="ident">create_grossregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, grossregion_break_name: str) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -348,13 +353,13 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <div class="desc"></div>
 </dd>
 <dt id="functions.create_siedlungsart_break"><code class="name flex">
-<span>def <span class="ident">create_siedlungsart_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, plz_variable: str, siedlungsart_break_name: str)</span>
+<span>def <span class="ident">create_siedlungsart_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, siedlungsart_break_name: str) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
 <dt id="functions.create_sprachregion_break"><code class="name flex">
-<span>def <span class="ident">create_sprachregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, plz_variable: str, sprachregion_break_name: str)</span>
+<span>def <span class="ident">create_sprachregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, sprachregion_break_name: str) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -628,9 +633,9 @@ These are tools for various tasks inside the technology stack of <a href="https:
 :type df: pd.DataFrame</p>
 <p>:param meta: The current meta data file ~ usually meta
 :type meta: pyreadstat._readstat_parser.metadata_container</p>
-<p>:param output_path: Changes path and name of the output files, defaults to "../output/"
+<p>:param output_path: Changes path and name of the output files, defaults to "./output/"
 :type output_path: str, optional</p>
-<p>:param template_path: Sets path of pptx-template file, defaults to '../templates/'
+<p>:param template_path: Sets path of pptx-template file, defaults to './templates/'
 :type template_path: str, optional</p>
 <p>:param template_custom: Choose a custom template, defaults to 'auto'
 :type template_custom: str, optional</p>

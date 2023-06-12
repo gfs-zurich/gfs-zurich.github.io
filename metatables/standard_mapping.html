@@ -31,34 +31,47 @@
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="functions.metatables.standard_mapping.create_age_break"><code class="name flex">
-<span>def <span class="ident">create_age_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, age_variable: str, age_break_name: str)</span>
+<span>def <span class="ident">create_age_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, age_break_name: str) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
 <dt id="functions.metatables.standard_mapping.create_canton_break"><code class="name flex">
-<span>def <span class="ident">create_canton_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, plz_variable: str, canton_break_name: str)</span>
+<span>def <span class="ident">create_canton_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, canton_break_name: str) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
 <dt id="functions.metatables.standard_mapping.create_grossregion_break"><code class="name flex">
-<span>def <span class="ident">create_grossregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, plz_variable: str, grossregion_break_name: str)</span>
+<span>def <span class="ident">create_grossregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, grossregion_break_name: str) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
 <dt id="functions.metatables.standard_mapping.create_siedlungsart_break"><code class="name flex">
-<span>def <span class="ident">create_siedlungsart_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, plz_variable: str, siedlungsart_break_name: str)</span>
+<span>def <span class="ident">create_siedlungsart_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, siedlungsart_break_name: str) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
 <dt id="functions.metatables.standard_mapping.create_sprachregion_break"><code class="name flex">
-<span>def <span class="ident">create_sprachregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, plz_variable: str, sprachregion_break_name: str)</span>
+<span>def <span class="ident">create_sprachregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, sprachregion_break_name: str) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
+</dd>
+<dt id="functions.metatables.standard_mapping.get_mapping_json"><code class="name flex">
+<span>def <span class="ident">get_mapping_json</span></span>(<span>original_variable_type: str, new_variable: str) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reads the mapping json file to a dictionary</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>original_variable_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>type of original variable. Either plz or gdenr</dd>
+<dt><strong><code>new_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>name of new variable in mapping</dd>
+</dl></div>
 </dd>
 </dl>
 </section>
@@ -83,6 +96,7 @@
 <li><code><a title="functions.metatables.standard_mapping.create_grossregion_break" href="#functions.metatables.standard_mapping.create_grossregion_break">create_grossregion_break</a></code></li>
 <li><code><a title="functions.metatables.standard_mapping.create_siedlungsart_break" href="#functions.metatables.standard_mapping.create_siedlungsart_break">create_siedlungsart_break</a></code></li>
 <li><code><a title="functions.metatables.standard_mapping.create_sprachregion_break" href="#functions.metatables.standard_mapping.create_sprachregion_break">create_sprachregion_break</a></code></li>
+<li><code><a title="functions.metatables.standard_mapping.get_mapping_json" href="#functions.metatables.standard_mapping.get_mapping_json">get_mapping_json</a></code></li>
 </ul>
 </li>
 </ul>
