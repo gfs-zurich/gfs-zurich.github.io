@@ -112,7 +112,7 @@
 <pre><code class="language-powershell">pdoc --html --output-dir docs functions --config show_source_code=False -f
 </code></pre>
 <p>or use (be sure to install draw.io.exe locally)</p>
-<pre><code class="language-powershell">documentation.bat
+<pre><code class="language-powershell">pipenv run .\documentation.bat
 </code></pre>
 <h2 id="uml">UML</h2>
 <h3 id="workflow-fur-metatable-datapreprocessing">Workflow für Metatable / Datapreprocessing</h3>
@@ -208,7 +208,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <div class="desc"></div>
 </dd>
 <dt id="functions.create_barchart"><code class="name flex">
-<span>def <span class="ident">create_barchart</span></span>(<span>info: dict, variables: list, breaks: Optional[list] = None, legend_break: Optional[list] = None, barchart_mean: bool = False, break_labels_rename: Optional[dict[str, str]] = None, left_labels_rename: Optional[dict[str, str]] = None, legend_labels_rename: Optional[dict[str, str]] = None, left_labels_wrap: int = 50, left_labels_width: int = 999, show_mean: bool = False, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', legend_title_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, legend_position: str = 'right', return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: Optional[list[str]] = None, value_labels_show_min: float = 0, value_labels_add_after: Optional[list[list[str]]] = None, weight: str = 'auto', order_by: Optional[dict] = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', subtitle_add_before: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', bar_gap=999, bar_width: float = 999, bar_min_size: float = 0, break_distance: float = 999, label_size: float = 16, value_labels_size: float = 999, legend_labels_size: float = 14, show_legend: bool = True, show_total: bool = True, show_count: bool = False, show_all_bars: bool = False, show_legend_title: Optional[bool] = None, select_variable_levels: Optional[list[int]] = None, select_min_count: int = 0, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: Optional[dict] = None, save_figure: bool = True, df: Union[pandas.core.frame.DataFrame, str] = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto') ‑> Optional[tuple]</span>
+<span>def <span class="ident">create_barchart</span></span>(<span>info: dict, variables: list, breaks: Optional[list] = None, legend_break: Optional[list] = None, barchart_mean: bool = False, break_labels_rename: Optional[dict[str, str]] = None, left_labels_rename: Optional[dict[str, str]] = None, legend_labels_rename: Optional[dict[str, str]] = None, left_labels_wrap: int = 50, left_labels_width: int = 999, show_mean: bool = False, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', legend_title_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, legend_position: str = 'right', return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: Optional[list[str]] = None, value_labels_show_min: float = 0, value_labels_add_after: Optional[list[list[str]]] = None, weight: str = 'auto', order_by: Optional[dict] = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', subtitle_add_before: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', bar_gap=999, bar_width: float = 999, bar_min_size: float = 0, break_distance: float = 999, label_size: float = 16, value_labels_size: float = 999, legend_labels_size: float = 14, show_legend: bool = True, show_total: bool = True, show_count: bool = False, show_all_bars: bool = False, show_legend_title: Optional[bool] = None, select_variable_levels: Optional[list[int]] = None, select_min_count: int = 0, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: Optional[dict] = None, save_figure: bool = True, return_figure: bool = False, df: Union[pandas.core.frame.DataFrame, str] = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto') ‑> Optional[tuple]</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a barchart</p>
@@ -316,6 +316,8 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <dd>Adds some standard arguments that normally don't need to be changed. Defaults to None.</dd>
 <dt><strong><code>save_figure</code></strong> :&ensp;<code>dict</code>, optional</dt>
 <dd>Turns figure export on and off. Defaults to True.</dd>
+<dt><strong><code>return_figure</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Turns figure return on and off. Defaults to False.</dd>
 <dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code>, optional</dt>
 <dd>The current data file ~ usually df. Defaults to 'auto'.</dd>
 <dt><strong><code>meta</code></strong> :&ensp;<code>pyreadstat._readstat_parser.metadata_container</code>, optional</dt>
@@ -340,7 +342,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <div class="desc"></div>
 </dd>
 <dt id="functions.create_piechart"><code class="name flex">
-<span>def <span class="ident">create_piechart</span></span>(<span>info: dict, variables: list, breaks: list = None, break_labels_rename: dict[str, str] = None, legend_labels_rename: dict[str, str] = None, legend_position: str = 'bottom', title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_color: int = 999, value_labels_show_min: float = 0.8, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', subtitle_add_before: str = '', value_labels_size: float = 16, legend_labels_size: float = 12, hole_size: float = 0, show_legend: bool = True, show_count: bool = False, select_variable_levels: list[int] = None, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto')</span>
+<span>def <span class="ident">create_piechart</span></span>(<span>info: dict, variables: list, breaks: list = None, break_labels_rename: dict[str, str] = None, legend_labels_rename: dict[str, str] = None, legend_position: str = 'bottom', title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_color: int = 999, value_labels_show_min: float = 0.8, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', subtitle_add_before: str = '', value_labels_size: float = 16, legend_labels_size: float = 12, hole_size: float = 0, show_legend: bool = True, show_count: bool = False, select_variable_levels: list[int] = None, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, return_figure: bool = False, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto')</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -358,7 +360,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <div class="desc"></div>
 </dd>
 <dt id="functions.create_stacked_barchart"><code class="name flex">
-<span>def <span class="ident">create_stacked_barchart</span></span>(<span>info: dict, variables: list, breaks: list = None, break_labels_rename: dict[str, str] = None, left_labels_rename: dict[str, str] = None, legend_labels_rename: dict[str, str] = None, left_labels_wrap: int = 50, left_labels_width: int = 999, show_mean: bool = False, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_type: str = 'diverging', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_color: int = 999, value_labels_show_min: float = 0.8, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', subtitle_add_before: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', value_labels_add_after: str = '', bar_width: float = 999, break_distance: float = 999, label_size: float = 16, value_labels_size: float = 16, legend_labels_size: float = 14, show_legend: bool = True, show_total: bool = True, show_count: bool = False, mean_name: str = 'MW', mean_transform: function = &lt;function &lt;lambda&gt;&gt;, mean_custom: list[str] = None, select_variable_levels: list[int] = None, select_variables: list[int] = None, select_min_count: int = 0, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto')</span>
+<span>def <span class="ident">create_stacked_barchart</span></span>(<span>info: dict, variables: list, breaks: list = None, break_labels_rename: dict[str, str] = None, left_labels_rename: dict[str, str] = None, legend_labels_rename: dict[str, str] = None, left_labels_wrap: int = 50, left_labels_width: int = 999, show_mean: bool = False, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_type: str = 'diverging', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_color: int = 999, value_labels_show_min: float = 0.8, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', subtitle_add_before: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', value_labels_add_after: str = '', bar_width: float = 999, break_distance: float = 999, label_size: float = 16, value_labels_size: float = 16, legend_labels_size: float = 14, show_legend: bool = True, show_total: bool = True, show_count: bool = False, mean_name: str = 'MW', mean_transform: function = &lt;function &lt;lambda&gt;&gt;, mean_custom: list[str] = None, select_variable_levels: list[int] = None, select_variables: list[int] = None, select_min_count: int = 0, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, return_figure: bool = False, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a stacked barchart</p>
@@ -454,6 +456,8 @@ These are tools for various tasks inside the technology stack of <a href="https:
 :type standard_arguments: dict, optional</p>
 <p>:param save_figure: Turns figure export on and off. ~ False, defaults to True
 :type save_figure: bool, optional</p>
+<p>:param return_figure: Turns figure return on and off. ~ False, defaults to True
+:type return_figure: bool, optional</p>
 <p>:return: If return_data is on it returns the plot data, so it can be viewed.
 :rtype: <em>type</em></p></div>
 </dd>
@@ -725,7 +729,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 </dl></div>
 </dd>
 <dt id="functions.MatrixMixer.export_excel"><code class="name flex">
-<span>def <span class="ident">export_excel</span></span>(<span>self) ‑> None</span>
+<span>def <span class="ident">export_excel</span></span>(<span>self, show_title_page: bool = True) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Exports the matrices from the MatrixMixer to Excel.</p></div>
@@ -1045,7 +1049,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <div class="desc"></div>
 </dd>
 <dt id="functions.MetaTable2.create_group"><code class="name flex">
-<span>def <span class="ident">create_group</span></span>(<span>self, group_name: str, columns: list[str], kind: str, measure: str = 'auto', lfm: str = 'yes', group_label: str = 'auto', group_value_labels: Union[dict[int, str], str] = 'auto')</span>
+<span>def <span class="ident">create_group</span></span>(<span>self, group_name: str, columns: list[str], kind: str, measure: str = 'auto', lfm: str = 'yes', mean: str = 'auto', group_label: str = 'auto', group_value_labels: Union[dict[int, str], str] = 'auto')</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -1106,6 +1110,19 @@ These are tools for various tasks inside the technology stack of <a href="https:
 </code></dt>
 <dd>
 <div class="desc"></div>
+</dd>
+<dt id="functions.MetaTable2.group_has_mean"><code class="name flex">
+<span>def <span class="ident">group_has_mean</span></span>(<span>self, group: str, mean: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates if there is a useful mean value for a group of columns.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>group</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the group</dd>
+<dt><strong><code>mean</code></strong> :&ensp;<code>str</code></dt>
+<dd>New mean state of the group. Should be "yes" or "no"</dd>
+</dl></div>
 </dd>
 <dt id="functions.MetaTable2.group_kind"><code class="name flex">
 <span>def <span class="ident">group_kind</span></span>(<span>self, group: str, kind: str)</span>
@@ -1172,6 +1189,19 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <dd>A dictionary with new labels {1 : "label for code 1", 2: "label for code 2"} or the column name with the labels to be used "column_name"</dd>
 <dt><strong><code>keep_untouched_codes</code></strong> :&ensp;<code>bool</code>, optional</dt>
 <dd>This will keep the old labels of the column and just add the new ones instead of replacing all labels. Defaults to False.</dd>
+</dl></div>
+</dd>
+<dt id="functions.MetaTable2.has_mean"><code class="name flex">
+<span>def <span class="ident">has_mean</span></span>(<span>self, column: str, mean: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates if there is a useful mean value for a column.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the column</dd>
+<dt><strong><code>mean</code></strong> :&ensp;<code>str</code></dt>
+<dd>New mean state of the group. Should be "yes" or "no"</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.import_config"><code class="name flex">
@@ -1394,23 +1424,144 @@ These are tools for various tasks inside the technology stack of <a href="https:
 </dd>
 <dt id="functions.gfs_Maps"><code class="flex name class">
 <span>class <span class="ident">gfs_Maps</span></span>
-<span>(</span><span>info: dict, variables: list, scope: <a title="functions.graphy.map_helper.Map_Scope_Enum" href="graphy/map_helper.html#functions.graphy.map_helper.Map_Scope_Enum">Map_Scope_Enum</a>, legend_labels_rename: dict[str, str] = None, show_count: bool = False, left_labels_rename: dict[str, str] = None, break_labels_rename: dict[str, str] = None, breaks: list = None, legend_break: list = None, order_by: dict = None, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', legend_title_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: list[str] = None, legend_position: str = 'right', weight: str = 'auto', select_variable_levels: list[int] = None, show_mean: bool = False, tag_position: int = 3, left_labels_wrap: int = 50, left_labels_width: int = 999, show_total: bool = False, tag_add_before: str = '', subtitle_add_before: str = '', value_labels_add_after: list[list[str]] = None, left_labels_remove_before: str = '', left_labels_remove_after: str = '', title_remove_before: str = '', title_remove_after: str = '', label_size: int = 16, background_filter={&#x27;LEVL_CODE&#x27;: &lt;Map_LOD_Enum.Country: 0&gt;}, foreground_filter={&#x27;CNTR_CODE&#x27;: &lt;Country_Code_Enum.CH: &#x27;CH&#x27;&gt;, &#x27;LEVL_CODE&#x27;: &lt;Map_LOD_Enum.States: 2&gt;}, language: str = 'de', disable_hover_info: bool = False, projection: str = 'mercator', save_figure: bool = True, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto', enable_log: bool = False)</span>
+<span>(</span><span>info: dict, variables: list, map_scope: <a title="functions.graphy.map_helper.Map_Scope_Enum" href="graphy/map_helper.html#functions.graphy.map_helper.Map_Scope_Enum">Map_Scope_Enum</a>, map_level: <a title="functions.graphy.map_helper.Map_LOD_Enum" href="graphy/map_helper.html#functions.graphy.map_helper.Map_LOD_Enum">Map_LOD_Enum</a>, breaks: list = None, exclusion_filter=[], subplot_columns: int = 3, language: str = 'de', disable_hover_info: bool = False, background_map_color: str = '#999', projection: str = 'mercator', show_mean: bool = False, show_count: bool = False, show_total: bool = False, show_legend: bool = True, legend_labels_rename: dict[str, str] = None, left_labels_rename: dict[str, str] = None, break_labels_rename: dict[str, str] = None, legend_break: list = None, order_by: dict = None, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', legend_title_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, color_theme: str = 'auto', color_type: str = 'single_hue', color_direction: str = 'backward', color_custom: list[str] = None, legend_position: str = 'right', legend_labels_size: float = 14, weight: str = 'auto', select_variable_levels: list[int] = None, tag_position: int = 3, left_labels_wrap: int = 50, tag_add_before: str = '', subtitle_add_before: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', title_remove_before: str = '', title_remove_after: str = '', label_size: int = 16, select_min_count: int = 0, save_figure: bool = True, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a map chart</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt>language (str):</dt>
+<dt><strong><code>info</code></strong> :&ensp;<code>dict</code></dt>
+<dd>A dictionary with info about the presentation. Has info like number of slides,
+presentation name and the presentation object itself ~ usually info</dd>
+<dt><strong><code>variables</code></strong> :&ensp;<code>list</code></dt>
+<dd>A list of variables. If multiple are added, function doesn't accept any breaks.
+~ ['AW2'] /['AW1_1', 'AW1_2', &hellip;]</dd>
+<dt><strong><code>map_scope</code></strong> :&ensp;<code>Map_Scope_Enum</code></dt>
+<dd>defines a preset for the scope of the map eg. EU with all its countries etc.</dd>
+<dt><strong><code>map_level</code></strong> :&ensp;<code>Map_LOD_Enum</code></dt>
+<dd>defines level of detail for the map. eg. metropolitan areas, country or others</dd>
+<dt><strong><code>breaks</code></strong> :&ensp;<code>list</code>, optional</dt>
+<dd>A list of breaks. ~ ['alter_break', 'sex_break']. Defaults to None.</dd>
+<dt><strong><code>exclusion_filter</code></strong> :&ensp;<code>list</code></dt>
+<dd>a list of string objects representing NUTS_ID's to exlude in the maps,
+example: ["CH025", "CH022", "CH024"], see: <a href="https://ec.europa.eu/eurostat/web/nuts/nuts-maps">https://ec.europa.eu/eurostat/web/nuts/nuts-maps</a> for
+the available ID's</dd>
+<dt><strong><code>subplot_columns</code></strong> :&ensp;<code>int</code></dt>
+<dd>count of subplotcolumns to use if there are multiple maps</dd>
+<dt><strong><code>language</code></strong> :&ensp;<code>str</code></dt>
+<dd>language to label the shapes, must be present in translation json</dd>
+<dt><strong><code>disable_hover_info</code></strong> :&ensp;<code>bool</code></dt>
+<dd>disables hover info on shapes</dd>
+<dt><strong><code>background_map_color</code></strong> :&ensp;<code>str</code></dt>
+<dd>hex color code to set the background color of map shapes, default is "#999"</dd>
 <dt><strong><code>projection</code></strong> :&ensp;<code>str</code></dt>
 <dd>projection type as a string or None ('equirectangular', 'mercator', 'orthographic',
-'natural earth', 'kavrayskiy7', 'miller', 'robinson', 'eckert4', 'azimuthal equal area', 'azimuthal equidistant',
-'conic equal area', 'conic conformal', 'conic equidistant', 'gnomonic', 'stereographic', 'mollweide', 'hammer',
-'transverse mercator', 'albers usa', 'winkel tripel', 'aitoff' and 'sinusoidal')</dd>
+'natural earth', 'kavrayskiy7', 'miller', 'robinson', 'eckert4', 'azimuthal equal area',
+'azimuthal equidistant', 'conic equal area', 'conic conformal', 'conic equidistant', 'gnomonic',
+'stereographic', 'mollweide', 'hammer', 'transverse mercator', 'albers usa', 'winkel tripel',
+'aitoff' and 'sinusoidal')</dd>
+<dt><strong><code>show_mean</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Turns uses the mean of the variable as x-value and changes scale type
+from percentage to mean. ~ True. Defaults to False.</dd>
+<dt><strong><code>show_count</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Turns counts in variable labels on and off. ~ True. Defaults to False.</dd>
+<dt><strong><code>show_total</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Turns total bar on and off. ~ False. Defaults to True.</dd>
+<dt><strong><code>show_legend</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Turns legend on and off. ~ False. Defaults to True.</dd>
+<dt><strong><code>legend_labels_rename</code></strong> :&ensp;<code>dict[str, str]</code>, optional</dt>
+<dd>Renames the labels of the different legend levels.
+~ {'old_name', 'new_name'}. Defaults to None.</dd>
+<dt><strong><code>left_labels_rename</code></strong> :&ensp;<code>dict[str, str]</code>, optional</dt>
+<dd>Renames the labels of the different break levels.
+~ {'old_name', 'new_name'}. Defaults to None.</dd>
+<dt><strong><code>break_labels_rename</code></strong> :&ensp;<code>dict[str, str]</code>, optional</dt>
+<dd>Renames the breaks. ~ {'old_name': 'new_name'}.
+Defaults to None.</dd>
+<dt><strong><code>legend_break</code></strong> :&ensp;<code>list</code>, optional</dt>
+<dd>A list of breaks. This is used to create the legend break if either
+"mean" == True or "select_variable_levels" has exactly one item ~ ['alter_break'] / [['alter_break']]. Defaults to None.</dd>
+<dt><strong><code>order_by</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>A dictionary. Orders the plot by any variable in the x data frame.
+~ {'mean': 'asc'} / {1: 'desc'}. Defaults to None.</dd>
+<dt><strong><code>special_variables</code></strong> :&ensp;<code>list[int]</code>, optional</dt>
+<dd>A list variable levels that will be treated differently.
+They will appear gray in the graph and have not effect on the mean calculation. ~ [16, 99999997].
+Defaults to [96, 97, 98, 99999996, 99999997, 99999998].</dd>
+<dt><strong><code>standard_arguments</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>Adds some standard arguments that normally don't need to be changed.
+Defaults to None.</dd>
+<dt><strong><code>title_custom_text</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Creates custom title text, if automatic text isn't desired.
+Defaults to 'auto'.</dd>
+<dt><strong><code>subtitle_custom_text</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Creates custom subtitle text, if automatic text isn't desired.
+Defaults to 'auto'.</dd>
+<dt><strong><code>tag_custom_text</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Creates custom tag text, if automatic text isn't desired. Defaults to 'auto'.
+legend_title_custom_text (str, optional): Creates a custom legend title, if title is desired.
+Defaults to 'auto'.</dd>
+<dt><strong><code>legend_title_custom_text</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Creates a custom legend title, if title is desired.
+Defaults to 'auto'.</dd>
+<dt><strong><code>title_position</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Sets the position of the title text.
+~ 0 = don't show, 1, 2, 3 are possible positions on plot. Defaults to 1.</dd>
+<dt><strong><code>subtitle_position</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Sets the position of the subtitle text. ~ 0 = don't show, 1, 2, 3 are
+possible positions on plot. Defaults to 2.</dd>
+<dt><strong><code>color_theme</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Sets color theme for graph. ~ 'test', 'gfs'. Defaults to 'auto'.</dd>
+<dt><strong><code>color_type</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Sets color value type. ~ 'diverging', 'single_hue'. Defaults to 'groups'.</dd>
+<dt><strong><code>color_direction</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Sets direction of color pattern. ~ 'backward'. Defaults to 'forward'.</dd>
+<dt><strong><code>color_custom</code></strong> :&ensp;<code>list[str]</code>, optional</dt>
+<dd>Uses custom colors ~ ['#131366', '#454578']. Defaults to None.
+value_labels_show_min (float, optional): Sets threshold showing labels by %. Use 0 to show all labels
+and 100 to show none. Use numbers between for a mix. Defaults to 0.</dd>
+<dt><strong><code>legend_position</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Sets the position of the legend. ~ 'bottom'. Defaults to 'right'.</dd>
+<dt><strong><code>legend_labels_size</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>Sets the size of legend. Defaults to 14.</dd>
+<dt><strong><code>weight</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Turns weight on if weight variable name is added. ~ "gewicht". Defaults to 'auto'.</dd>
+<dt><strong><code>select_variable_levels</code></strong> :&ensp;<code>list[int]</code>, optional</dt>
+<dd>A list variable levels used to select and order variables.
+~ [2, 1, 99999997]. Defaults to None.</dd>
+<dt><strong><code>tag_add_before</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Adds text before the tag text. ~ "Meine Zusatzinfo, ', " adds this string
+before tag. Defaults to ''.</dd>
+<dt><strong><code>tag_position</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Sets the position of the tag text. ~ 0 = don't show, 1, 2, 3 are
+possible positions on plot. Defaults to 3.</dd>
+<dt><strong><code>left_labels_wrap</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Wraps the variable labels. Defaults to 50.</dd>
+<dt><strong><code>subtitle_add_before</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Adds text before the tag text. ~ "Filter: F3 = 'Ja', " adds this
+string before tag. Defaults to ''.</dd>
+<dt><strong><code>left_labels_remove_before</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Removes the label text before the given string. ~ "? "
+deletes everything up until and including the question mark. Defaults to ''.</dd>
+<dt><strong><code>left_labels_remove_after</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Removes the label text after the given string. ~ ". Bitte"
+deletes everything after and including the punctuation mark. Defaults to ''.</dd>
+<dt><strong><code>title_remove_before</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Removes the label text before the given string. ~ "? "
+deletes everything up until and including the question mark. Defaults to ''.</dd>
+<dt><strong><code>title_remove_after</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Removes the label text after the given string. ~ ". Bitte" deletes
+everything after and including the punctuation mark that. Defaults to ''.</dd>
+<dt><strong><code>label_size</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>Sets the size of labels. Defaults to 16.</dd>
+<dt><strong><code>select_min_count</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Selects all bars with higher count than given. ~ 10 means that only bars
+with more than 10 observations will be selected. Defaults to 0.</dd>
 </dl></div>
 <h3>Methods</h3>
 <dl>
 <dt id="functions.gfs_Maps.clip_coordinates"><code class="name flex">
-<span>def <span class="ident">clip_coordinates</span></span>(<span>self, scope: <a title="functions.graphy.map_helper.Map_Scope_Enum" href="graphy/map_helper.html#functions.graphy.map_helper.Map_Scope_Enum">Map_Scope_Enum</a>)</span>
+<span>def <span class="ident">clip_coordinates</span></span>(<span>self, unclipped_shapes: <a title="functions.graphy.map_helper.Map_Scope_Enum" href="graphy/map_helper.html#functions.graphy.map_helper.Map_Scope_Enum">Map_Scope_Enum</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>clips coordinates of background to a preset for the scope of the map and returns the background shape</p>
@@ -1421,89 +1572,85 @@ These are tools for various tasks inside the technology stack of <a href="https:
 </dl></div>
 </dd>
 <dt id="functions.gfs_Maps.create_map_figure"><code class="name flex">
-<span>def <span class="ident">create_map_figure</span></span>(<span>self, foreground_shapes)</span>
+<span>def <span class="ident">create_map_figure</span></span>(<span>self, foreground_shapes: geopandas.geodataframe.GeoDataFrame, clipped_foreground_shapes: geopandas.geodataframe.GeoDataFrame)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>creates map figures and combines background and foreground shapes with each other</p>
 <h2 id="args">Args</h2>
-<p>foreground_shapes (geopandas.Dataframe):geopandas Dataframe with the foreground geometries</p></div>
+<p>foreground_shapes (:gpd.GeoDataFrame):geopandas Dataframe with the foreground shapes data
+clipped_foreground_shapes (:gpd.GeoDataFrame):geopandas Dataframe with the clipped foreground shapes data</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>go.Figure</code></dt>
+<dd>plotly Figure with map objects</dd>
+</dl></div>
 </dd>
 <dt id="functions.gfs_Maps.create_maps"><code class="name flex">
 <span>def <span class="ident">create_maps</span></span>(<span>self) ‑> Optional[tuple]</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Creates a map chart</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>info</code></strong> :&ensp;<code>dict</code></dt>
-<dd>A dictionary with info about the presentation. Has info like number of slides,
-presentation name and the presentation object itself ~ usually info</dd>
-<dt><strong><code>variables</code></strong> :&ensp;<code>list</code></dt>
-<dd>A list of variables. If multiple are added, function doesn't accept any breaks. ~ ['AW2'] /
-['AW1_1', 'AW1_2', &hellip;]</dd>
-<dt><strong><code>breaks</code></strong> :&ensp;<code>list</code>, optional</dt>
-<dd>A list of breaks. ~ ['alter_break', 'sex_break']. Defaults to None.</dd>
-<dt><strong><code>legend_break</code></strong> :&ensp;<code>list</code>, optional</dt>
-<dd>A list of breaks. This is used to create the legend break if either
-"mean" == True or "select_variable_levels" has exactly one item ~ ['alter_break'] / [['alter_break']]. Defaults to None.</dd>
-<dt><strong><code>barchart_mean</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>Toggles barchart type mean, where mean value of variable is shown.
-Defaults to False.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>Optional[tuple]</code></dt>
-<dd>returns df and meta objects if return_data is True</dd>
-</dl></div>
+<div class="desc"><p>Creates a map chart
+Returns:
+Optional[tuple]: returns df and meta objects if return_data is True</p></div>
 </dd>
 <dt id="functions.gfs_Maps.create_maps_df"><code class="name flex">
-<span>def <span class="ident">create_maps_df</span></span>(<span>self)</span>
+<span>def <span class="ident">create_maps_df</span></span>(<span>self) ‑> pandas.core.frame.DataFrame</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.gfs_Maps.get_background_shapes"><code class="name flex">
-<span>def <span class="ident">get_background_shapes</span></span>(<span>self, clipped_shapes)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>gets background shape for the maps</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>clipped_shapes</code></strong> :&ensp;<code>geopandas.Dataframe</code></dt>
-<dd>geopandas Dataframe with the clipped geometries</dd>
-<dt><strong><code>filter</code></strong> :&ensp;<code>dict</code></dt>
-<dd>dictionary to filter the geopandas dataframe</dd>
-</dl></div>
+<div class="desc"><p>creates dataframe for a map graphic</p>
+<p>Returns:
+pd.DataFrame: returns pandas dataframe for map</p></div>
 </dd>
 <dt id="functions.gfs_Maps.get_foreground_shapes"><code class="name flex">
-<span>def <span class="ident">get_foreground_shapes</span></span>(<span>self)</span>
+<span>def <span class="ident">get_foreground_shapes</span></span>(<span>self, resolution='03') ‑> geopandas.geodataframe.GeoDataFrame</span>
 </code></dt>
 <dd>
 <div class="desc"><p>gets foreground shape for the maps</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>filter</code></strong> :&ensp;<code>dict</code></dt>
-<dd>dictionary to filter the geopandas dataframe</dd>
-</dl></div>
+<dt><strong><code>resolution</code></strong> :&ensp;<code>str</code></dt>
+<dd>resolution size of the standard "NUTS" shapefiles - possible values are 03,10,20,
+default is 03</dd>
+</dl>
+<p>Returns:
+gpd.GeoDataFrame: returns filtered geopandas dataframe by level and scope</p></div>
 </dd>
 <dt id="functions.gfs_Maps.get_translations"><code class="name flex">
-<span>def <span class="ident">get_translations</span></span>(<span>self)</span>
+<span>def <span class="ident">get_translations</span></span>(<span>self) ‑> str</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>gets translation json for maps and map objects for the map scope
+Returns:
+str: json string with all map objects</p></div>
 </dd>
 <dt id="functions.gfs_Maps.init_shape_file"><code class="name flex">
-<span>def <span class="ident">init_shape_file</span></span>(<span>self, file=None, resolution='10')</span>
+<span>def <span class="ident">init_shape_file</span></span>(<span>self, resolution, file=None) ‑> geopandas.geodataframe.GeoDataFrame</span>
 </code></dt>
 <dd>
-<div class="desc"><p>gets shapefile from the file system and load it into a geopandas dataframe</p>
+<div class="desc"><p>reads shapefile from the file system and loads it into a geopandas dataframe</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>file</code></strong> :&ensp;<code>str</code></dt>
-<dd>file path to your own shapefile if you need it</dd>
 <dt><strong><code>resolution</code></strong> :&ensp;<code>str</code></dt>
 <dd>resolution size of the standard "NUTS" shapefiles - possible values are 03,10,20</dd>
-</dl></div>
+<dt><strong><code>file</code></strong> :&ensp;<code>str</code></dt>
+<dd>file path to your own shapefile if you need it</dd>
+</dl>
+<p>Returns:
+gpd.GeoDataFrame: returns geopandas dataframe</p></div>
+</dd>
+<dt id="functions.gfs_Maps.shape_clipping"><code class="name flex">
+<span>def <span class="ident">shape_clipping</span></span>(<span>self, foreground_shapes: geopandas.geodataframe.GeoDataFrame, exclusion_filter: list) ‑> geopandas.geodataframe.GeoDataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>removes shapes with a list of NUTS ID objects</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>foreground_shapes</code></strong> :&ensp;<code>gpd.GeoDataFrame</code></dt>
+<dd>shapes to be used in the map plot</dd>
+</dl>
+<p>exclusion_filter (list(str)): list of NUTS ID objects to remove
+Returns:
+gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 </dd>
 </dl>
 </dd>
@@ -1621,12 +1768,14 @@ Defaults to False.</dd>
 <li><code><a title="functions.MetaTable2.export_config" href="#functions.MetaTable2.export_config">export_config</a></code></li>
 <li><code><a title="functions.MetaTable2.export_data" href="#functions.MetaTable2.export_data">export_data</a></code></li>
 <li><code><a title="functions.MetaTable2.get_intersection_counts" href="#functions.MetaTable2.get_intersection_counts">get_intersection_counts</a></code></li>
+<li><code><a title="functions.MetaTable2.group_has_mean" href="#functions.MetaTable2.group_has_mean">group_has_mean</a></code></li>
 <li><code><a title="functions.MetaTable2.group_kind" href="#functions.MetaTable2.group_kind">group_kind</a></code></li>
 <li><code><a title="functions.MetaTable2.group_label" href="#functions.MetaTable2.group_label">group_label</a></code></li>
 <li><code><a title="functions.MetaTable2.group_lfm" href="#functions.MetaTable2.group_lfm">group_lfm</a></code></li>
 <li><code><a title="functions.MetaTable2.group_measure" href="#functions.MetaTable2.group_measure">group_measure</a></code></li>
 <li><code><a title="functions.MetaTable2.group_value_labels" href="#functions.MetaTable2.group_value_labels">group_value_labels</a></code></li>
 <li><code><a title="functions.MetaTable2.groups" href="#functions.MetaTable2.groups">groups</a></code></li>
+<li><code><a title="functions.MetaTable2.has_mean" href="#functions.MetaTable2.has_mean">has_mean</a></code></li>
 <li><code><a title="functions.MetaTable2.import_config" href="#functions.MetaTable2.import_config">import_config</a></code></li>
 <li><code><a title="functions.MetaTable2.item_label" href="#functions.MetaTable2.item_label">item_label</a></code></li>
 <li><code><a title="functions.MetaTable2.kind" href="#functions.MetaTable2.kind">kind</a></code></li>
@@ -1662,10 +1811,10 @@ Defaults to False.</dd>
 <li><code><a title="functions.gfs_Maps.create_map_figure" href="#functions.gfs_Maps.create_map_figure">create_map_figure</a></code></li>
 <li><code><a title="functions.gfs_Maps.create_maps" href="#functions.gfs_Maps.create_maps">create_maps</a></code></li>
 <li><code><a title="functions.gfs_Maps.create_maps_df" href="#functions.gfs_Maps.create_maps_df">create_maps_df</a></code></li>
-<li><code><a title="functions.gfs_Maps.get_background_shapes" href="#functions.gfs_Maps.get_background_shapes">get_background_shapes</a></code></li>
 <li><code><a title="functions.gfs_Maps.get_foreground_shapes" href="#functions.gfs_Maps.get_foreground_shapes">get_foreground_shapes</a></code></li>
 <li><code><a title="functions.gfs_Maps.get_translations" href="#functions.gfs_Maps.get_translations">get_translations</a></code></li>
 <li><code><a title="functions.gfs_Maps.init_shape_file" href="#functions.gfs_Maps.init_shape_file">init_shape_file</a></code></li>
+<li><code><a title="functions.gfs_Maps.shape_clipping" href="#functions.gfs_Maps.shape_clipping">shape_clipping</a></code></li>
 </ul>
 </li>
 </ul>

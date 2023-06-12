@@ -217,7 +217,7 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <div class="desc"></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.create_group"><code class="name flex">
-<span>def <span class="ident">create_group</span></span>(<span>self, group_name: str, columns: list[str], kind: str, measure: str = 'auto', lfm: str = 'yes', group_label: str = 'auto', group_value_labels: Union[dict[int, str], str] = 'auto')</span>
+<span>def <span class="ident">create_group</span></span>(<span>self, group_name: str, columns: list[str], kind: str, measure: str = 'auto', lfm: str = 'yes', mean: str = 'auto', group_label: str = 'auto', group_value_labels: Union[dict[int, str], str] = 'auto')</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -278,6 +278,19 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 </code></dt>
 <dd>
 <div class="desc"></div>
+</dd>
+<dt id="functions.metatables.MetaTable2.group_has_mean"><code class="name flex">
+<span>def <span class="ident">group_has_mean</span></span>(<span>self, group: str, mean: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates if there is a useful mean value for a group of columns.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>group</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the group</dd>
+<dt><strong><code>mean</code></strong> :&ensp;<code>str</code></dt>
+<dd>New mean state of the group. Should be "yes" or "no"</dd>
+</dl></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.group_kind"><code class="name flex">
 <span>def <span class="ident">group_kind</span></span>(<span>self, group: str, kind: str)</span>
@@ -344,6 +357,19 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <dd>A dictionary with new labels {1 : "label for code 1", 2: "label for code 2"} or the column name with the labels to be used "column_name"</dd>
 <dt><strong><code>keep_untouched_codes</code></strong> :&ensp;<code>bool</code>, optional</dt>
 <dd>This will keep the old labels of the column and just add the new ones instead of replacing all labels. Defaults to False.</dd>
+</dl></div>
+</dd>
+<dt id="functions.metatables.MetaTable2.has_mean"><code class="name flex">
+<span>def <span class="ident">has_mean</span></span>(<span>self, column: str, mean: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates if there is a useful mean value for a column.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the column</dd>
+<dt><strong><code>mean</code></strong> :&ensp;<code>str</code></dt>
+<dd>New mean state of the group. Should be "yes" or "no"</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.import_config"><code class="name flex">
@@ -620,12 +646,14 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <li><code><a title="functions.metatables.MetaTable2.export_config" href="#functions.metatables.MetaTable2.export_config">export_config</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.export_data" href="#functions.metatables.MetaTable2.export_data">export_data</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.get_intersection_counts" href="#functions.metatables.MetaTable2.get_intersection_counts">get_intersection_counts</a></code></li>
+<li><code><a title="functions.metatables.MetaTable2.group_has_mean" href="#functions.metatables.MetaTable2.group_has_mean">group_has_mean</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.group_kind" href="#functions.metatables.MetaTable2.group_kind">group_kind</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.group_label" href="#functions.metatables.MetaTable2.group_label">group_label</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.group_lfm" href="#functions.metatables.MetaTable2.group_lfm">group_lfm</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.group_measure" href="#functions.metatables.MetaTable2.group_measure">group_measure</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.group_value_labels" href="#functions.metatables.MetaTable2.group_value_labels">group_value_labels</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.groups" href="#functions.metatables.MetaTable2.groups">groups</a></code></li>
+<li><code><a title="functions.metatables.MetaTable2.has_mean" href="#functions.metatables.MetaTable2.has_mean">has_mean</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.import_config" href="#functions.metatables.MetaTable2.import_config">import_config</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.item_label" href="#functions.metatables.MetaTable2.item_label">item_label</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.kind" href="#functions.metatables.MetaTable2.kind">kind</a></code></li>
