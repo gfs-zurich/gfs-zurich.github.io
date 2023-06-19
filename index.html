@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>functions API documentation</title>
-<meta name="description" content="![gfs-zh](ressources/gfs-zh.svg) …" />
+<meta name="description" content="Data Gathering …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,149 +22,8 @@
 <h1 class="title">Package <code>functions</code></h1>
 </header>
 <section id="section-intro">
-<p><img alt="gfs-zh" src="ressources/gfs-zh.svg"></p>
-<p><a href="nebu.md">Nebu-test</a></p>
-<h1 id="gfs-functions">gfs-functions</h1>
-<p>This repository is a part of the technology stack of <a href="https://github.com/gfs-zurich">gfs-zürich</a>. It contains functions to create graphs and tables with python.</p>
-<h2 id="project-objectives">Project objectives</h2>
-<ul>
-<li>streamline preprocessing of data files</li>
-<li>streamline table creation for data files</li>
-<li>streamline graphic creation for data files</li>
-<li>create presentations</li>
-</ul>
-<h2 id="technologies">Technologies</h2>
-<ul>
-<li>Python</li>
-<li>Jupyter Notebooks</li>
-<li>SPSS Datafiles</li>
-<li>Excel</li>
-<li>JSON</li>
-<li>API</li>
-<li>Pandas</li>
-<li>&hellip;</li>
-</ul>
-<h2 id="requirements">Requirements</h2>
-<ol>
-<li>Installed Python 3.10.6 on your local machine</li>
-<li>&hellip;</li>
-</ol>
-<h2 id="getting-started">Getting-Started</h2>
-<ol>
-<li>Clone this repository (for help see this <a href="https://help.github.com/articles/cloning-a-repository/">tutorial</a>).</li>
-<li>Install or update your Virtual Environment by following this section <a href="https://github.com/gfs-zurich/gfs-functions/blob/main/README.md#Virtual-Environment">Pipenv virtual environment</a></li>
-<li>&hellip;</li>
-</ol>
-<h2 id="virtual-environment">Virtual-Environment</h2>
-<h3 id="install-pipenv-package">Install Pipenv Package</h3>
-<p>In this project, we are using Pipenv for dependency management. Thus, you need the <code>pipenv</code> CLI tool installed on your computer:</p>
-<ul>
-<li>open <code>cmd</code> or <code>powershell</code></li>
-<li><code>pip install pipenv</code></li>
-</ul>
-<h3 id="first-install-of-environment">First install of Environment</h3>
-<p>As soon this package is installed, you can install all required packages for this project by executing the following command inside the root project folder:</p>
-<ul>
-<li>open <code>cmd</code> or <code>powershell</code></li>
-<li><code>cd /your/local/github/repofolder/</code></li>
-<li><code>pipenv install</code></li>
-<li>restart VSCode</li>
-<li>choose the newly created <strong>gfs-functions</strong> virtual environment python interpreter (for help see this <a href="https://code.visualstudio.com/docs/python/environments#_working-with-python-interpreters">tutorial</a></li>
-</ul>
-<h3 id="environment-already-installed-update-dependencies">Environment already installed (update dependencies)</h3>
-<p>If your environment exists and you only want to update the dependencies use these steps:</p>
-<ul>
-<li>open <code>cmd</code> or <code>powershell</code></li>
-<li><code>cd /your/local/github/repofolder/</code></li>
-<li><code>pipenv sync</code></li>
-</ul>
-<h3 id="add-new-dependency">Add new Dependency</h3>
-<p>If you need another dependency, not yet defined in the <code>Pipfile</code>, you can install it using this command and it will also be added to the dependency list.</p>
-<ul>
-<li>open <code>cmd</code> or <code>powershell</code></li>
-<li><code>cd /your/local/github/repofolder/</code></li>
-<li><code>pipenv install &lt;package&gt;</code></li>
-</ul>
-<h2 id="featured-files">Featured Files</h2>
-<ul>
-<li><a href="Pipfile">Pipfile for package dependencies</a></li>
-<li><a href=".gitignore">Git Ignore</a></li>
-<li>&hellip;</li>
-</ul>
-<h2 id="file-folder-structure">File &amp; Folder Structure</h2>
-<pre><code class="language-markdown">+---.vscode            # VS-Code settings
-+---data               # Data Folder with example files
-+---docs               # Automatically generated documentation files
-+---functions          # Main function folder
-|   +---graphy         # Functions for graph creation
-|   +---matrixmixer    # Functions for table creation
-|   +---metatables     # Functions for SPSS file data preprocessing
-|   \---tools          # Functions for general tasks
-+---gfs-projects       # Repository with project files
-+---output             # Folder for outputs
-+---resources          # Folder with resources for maps
-+---templates          # Folder with all template files
-|   +---fonts          # .ttf files with project fonts
-|   +---logo           # gfs logo files
-|   +---mapping        # JSON files with standard variable mappings
-|   +---powerpoint     # Templates of Powerpoint presentations
-|   +---shapefiles     # Shapefiles for maps
-|   \---translations   # JSON files used for language translations
-+---test               # test functions
-+---uml                # UML diagrams for documentation
-</code></pre>
-<h2 id="add-documentation">Add documentation</h2>
-<p>The documentation will be added to the <strong><a href="https://github.com/gfs-zurich/gfs-zurich.github.io">gfs-zurich.github.io</a></strong> repository. To get the documentation into the repository, clone it into the <code>./docs</code> folder as <code><a title="functions" href="#functions">functions</a></code>. Then run the following command in the root folder of this repository to create the updated documentation:</p>
-<pre><code class="language-powershell">pdoc --html --output-dir docs functions --config show_source_code=False -f
-</code></pre>
-<p>or use (be sure to install draw.io.exe locally)</p>
-<pre><code class="language-powershell">pipenv run .\documentation.bat
-</code></pre>
-<h2 id="uml">UML</h2>
-<h3 id="workflow-fur-metatable-datapreprocessing">Workflow für Metatable / Datapreprocessing</h3>
-<p><img alt="Workflow für Metatable / Datapreprocessing" src="ressources/UML_gfs_repos_metatable_workflow.svg"></p>
-<h2 id="removing-jupyter-notebook-output-when-committing-to-a-git-repository">Removing Jupyter notebook output when committing to a Git repository</h2>
-<p>You can remove the Jupyter notebook output without your interaction by using a Git hook. Here are the steps to set up a pre-commit hook to automatically remove the output from the Jupyter notebook cells before committing the code:</p>
-<ul>
-<li>Open your terminal and navigate to the Git repository where your Jupyter notebook is located.</li>
-<li>Create a new file called pre-commit in the .git/hooks directory of the repository by running the following command:</li>
-</ul>
-<pre><code class="language-powershell">
-type nul &gt; .git/hooks/pre-commit
-
-</code></pre>
-<ul>
-<li>Open the pre-commit file in a text editor and add the following code:</li>
-</ul>
-<pre><code class="language-powershell">
-#!/bin/bash
-
-# Find Jupyter notebook files that have been changed
-changed_notebooks=$(git diff --cached --name-only --diff-filter=ACM | grep '.ipynb$')
-
-# If no notebooks have been changed, exit with a success status
-if [ -z &quot;$changed_notebooks&quot; ]; then
-  exit 0
-fi
-
-# Remove output from changed notebooks
-for notebook in $changed_notebooks; do
-  jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace &quot;$notebook&quot;
-done
-
-# Add changes to the commit
-git add $changed_notebooks
-
-# Exit with a success status
-exit 0
-
-
-</code></pre>
-<ul>
-<li>Save and close the file.</li>
-</ul>
-<p>Now, every time you run the git commit command, the pre-commit script will automatically remove the output from the Jupyter notebook cells before committing the code, without any further interaction required from you.
-By modifying the pre-commit script in this way, you can ensure that the Jupyter notebook output is removed only from the notebooks that are being committed, and not from all notebooks in the repository.</p>
+<h1 id="data-gathering">Data Gathering</h1>
+<p><a href="#Data Gathering"><em>How can I edit pdoc's HTML template?</em></a></p>
 </section>
 <section>
 <h2 class="section-title" id="header-submodules">Sub-modules</h2>
@@ -1720,28 +1579,7 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <h1>Index</h1>
 <div class="toc">
 <ul>
-<li><a href="#gfs-functions">gfs-functions</a><ul>
-<li><a href="#project-objectives">Project objectives</a></li>
-<li><a href="#technologies">Technologies</a></li>
-<li><a href="#requirements">Requirements</a></li>
-<li><a href="#getting-started">Getting-Started</a></li>
-<li><a href="#virtual-environment">Virtual-Environment</a><ul>
-<li><a href="#install-pipenv-package">Install Pipenv Package</a></li>
-<li><a href="#first-install-of-environment">First install of Environment</a></li>
-<li><a href="#environment-already-installed-update-dependencies">Environment already installed (update dependencies)</a></li>
-<li><a href="#add-new-dependency">Add new Dependency</a></li>
-</ul>
-</li>
-<li><a href="#featured-files">Featured Files</a></li>
-<li><a href="#file-folder-structure">File &amp; Folder Structure</a></li>
-<li><a href="#add-documentation">Add documentation</a></li>
-<li><a href="#uml">UML</a><ul>
-<li><a href="#workflow-fur-metatable-datapreprocessing">Workflow für Metatable / Datapreprocessing</a></li>
-</ul>
-</li>
-<li><a href="#removing-jupyter-notebook-output-when-committing-to-a-git-repository">Removing Jupyter notebook output when committing to a Git repository</a></li>
-</ul>
-</li>
+<li><a href="#data-gathering">Data Gathering</a></li>
 </ul>
 </div>
 <ul id="index">
