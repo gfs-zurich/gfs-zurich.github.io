@@ -65,7 +65,7 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="functions.metatables.create_age_break"><code class="name flex">
-<span>def <span class="ident">create_age_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str) ‑> None</span>
+<span>def <span class="ident">create_age_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S12_1', new_break_name: str = 'age_break') ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a standard age break.</p>
@@ -96,6 +96,36 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <dd>Name of the newly created break</dd>
 </dl></div>
 </dd>
+<dt id="functions.metatables.create_education_break"><code class="name flex">
+<span>def <span class="ident">create_education_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S15', new_break_name: str = 'education_break') ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a standard education break.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.metatables.MetaTable2" href="#functions.metatables.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+</dl></div>
+</dd>
+<dt id="functions.metatables.create_employment_break"><code class="name flex">
+<span>def <span class="ident">create_employment_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S13', new_break_name: str = 'employment_break') ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a standard employment break.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.metatables.MetaTable2" href="#functions.metatables.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+</dl></div>
+</dd>
 <dt id="functions.metatables.create_grossregion_break"><code class="name flex">
 <span>def <span class="ident">create_grossregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str) ‑> None</span>
 </code></dt>
@@ -109,6 +139,36 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <dd>Name of the original variable</dd>
 <dt><strong><code>original_variable_type</code></strong> :&ensp;<code>str</code></dt>
 <dd>Type of the original variable. "plz" if it represents the Postleitzahl and "gdenr" if it represents the Gemeindenummer.</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+</dl></div>
+</dd>
+<dt id="functions.metatables.create_method_break"><code class="name flex">
+<span>def <span class="ident">create_method_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'method_break', new_break_name: str = 'method_break', other_category_break: str = 'Andere') ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a standard method break.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.metatables.MetaTable2" href="#functions.metatables.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+</dl></div>
+</dd>
+<dt id="functions.metatables.create_sex_break"><code class="name flex">
+<span>def <span class="ident">create_sex_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S11', new_break_name: str = 'sex_break') ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a standard sex break.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.metatables.MetaTable2" href="#functions.metatables.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
 </dl></div>
@@ -685,7 +745,11 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <ul class="">
 <li><code><a title="functions.metatables.create_age_break" href="#functions.metatables.create_age_break">create_age_break</a></code></li>
 <li><code><a title="functions.metatables.create_canton_break" href="#functions.metatables.create_canton_break">create_canton_break</a></code></li>
+<li><code><a title="functions.metatables.create_education_break" href="#functions.metatables.create_education_break">create_education_break</a></code></li>
+<li><code><a title="functions.metatables.create_employment_break" href="#functions.metatables.create_employment_break">create_employment_break</a></code></li>
 <li><code><a title="functions.metatables.create_grossregion_break" href="#functions.metatables.create_grossregion_break">create_grossregion_break</a></code></li>
+<li><code><a title="functions.metatables.create_method_break" href="#functions.metatables.create_method_break">create_method_break</a></code></li>
+<li><code><a title="functions.metatables.create_sex_break" href="#functions.metatables.create_sex_break">create_sex_break</a></code></li>
 <li><code><a title="functions.metatables.create_siedlungsart_break" href="#functions.metatables.create_siedlungsart_break">create_siedlungsart_break</a></code></li>
 <li><code><a title="functions.metatables.create_sprachregion_break" href="#functions.metatables.create_sprachregion_break">create_sprachregion_break</a></code></li>
 </ul>

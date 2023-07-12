@@ -207,7 +207,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <div class="desc"></div>
 </dd>
 <dt id="functions.create_age_break"><code class="name flex">
-<span>def <span class="ident">create_age_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str) ‑> None</span>
+<span>def <span class="ident">create_age_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S12_1', new_break_name: str = 'age_break') ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a standard age break.</p>
@@ -364,6 +364,36 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <dd>Name of the newly created break</dd>
 </dl></div>
 </dd>
+<dt id="functions.create_education_break"><code class="name flex">
+<span>def <span class="ident">create_education_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S15', new_break_name: str = 'education_break') ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a standard education break.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+</dl></div>
+</dd>
+<dt id="functions.create_employment_break"><code class="name flex">
+<span>def <span class="ident">create_employment_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S13', new_break_name: str = 'employment_break') ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a standard employment break.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+</dl></div>
+</dd>
 <dt id="functions.create_grossregion_break"><code class="name flex">
 <span>def <span class="ident">create_grossregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str) ‑> None</span>
 </code></dt>
@@ -381,11 +411,41 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <dd>Name of the newly created break</dd>
 </dl></div>
 </dd>
+<dt id="functions.create_method_break"><code class="name flex">
+<span>def <span class="ident">create_method_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'method_break', new_break_name: str = 'method_break', other_category_break: str = 'Andere') ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a standard method break.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+</dl></div>
+</dd>
 <dt id="functions.create_piechart"><code class="name flex">
 <span>def <span class="ident">create_piechart</span></span>(<span>info: dict, variables: list, breaks: list = None, break_labels_rename: dict[str, str] = None, legend_labels_rename: dict[str, str] = None, legend_position: str = 'bottom', legend_title_custom_text: str = 'auto', title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_color: int = 999, value_labels_show_min: float = 0.8, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', value_labels_size: float = 16, legend_labels_size: float = 12, hole_size: float = 0, show_legend: bool = True, show_legend_title: Optional[bool] = None, show_count: bool = False, select_variable_levels: list[int] = None, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, return_figure: bool = False, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto')</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
+</dd>
+<dt id="functions.create_sex_break"><code class="name flex">
+<span>def <span class="ident">create_sex_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S11', new_break_name: str = 'sex_break') ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a standard sex break.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+</dl></div>
 </dd>
 <dt id="functions.create_siedlungsart_break"><code class="name flex">
 <span>def <span class="ident">create_siedlungsart_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str) ‑> None</span>
@@ -801,7 +861,7 @@ string after tag. Defaults to ''.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MatrixMixer.export_excel"><code class="name flex">
-<span>def <span class="ident">export_excel</span></span>(<span>self, show_title_page: bool = True) ‑> None</span>
+<span>def <span class="ident">export_excel</span></span>(<span>self, show_title_page: bool = True, show_combined_sheet: bool = False) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Exports the matrices from the MatrixMixer to Excel.</p></div>
@@ -1792,8 +1852,12 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><code><a title="functions.create_age_break" href="#functions.create_age_break">create_age_break</a></code></li>
 <li><code><a title="functions.create_barchart" href="#functions.create_barchart">create_barchart</a></code></li>
 <li><code><a title="functions.create_canton_break" href="#functions.create_canton_break">create_canton_break</a></code></li>
+<li><code><a title="functions.create_education_break" href="#functions.create_education_break">create_education_break</a></code></li>
+<li><code><a title="functions.create_employment_break" href="#functions.create_employment_break">create_employment_break</a></code></li>
 <li><code><a title="functions.create_grossregion_break" href="#functions.create_grossregion_break">create_grossregion_break</a></code></li>
+<li><code><a title="functions.create_method_break" href="#functions.create_method_break">create_method_break</a></code></li>
 <li><code><a title="functions.create_piechart" href="#functions.create_piechart">create_piechart</a></code></li>
+<li><code><a title="functions.create_sex_break" href="#functions.create_sex_break">create_sex_break</a></code></li>
 <li><code><a title="functions.create_siedlungsart_break" href="#functions.create_siedlungsart_break">create_siedlungsart_break</a></code></li>
 <li><code><a title="functions.create_sprachregion_break" href="#functions.create_sprachregion_break">create_sprachregion_break</a></code></li>
 <li><code><a title="functions.create_stacked_barchart" href="#functions.create_stacked_barchart">create_stacked_barchart</a></code></li>
