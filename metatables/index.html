@@ -126,6 +126,21 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <dd>Name of the newly created break</dd>
 </dl></div>
 </dd>
+<dt id="functions.metatables.create_gdenr_from_plz"><code class="name flex">
+<span>def <span class="ident">create_gdenr_from_plz</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_variable: str) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates Gemeindenummer from PLZ based on a JSON mapping file.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.metatables.MetaTable2" href="#functions.metatables.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>new_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created variable</dd>
+</dl></div>
+</dd>
 <dt id="functions.metatables.create_grossregion_break"><code class="name flex">
 <span>def <span class="ident">create_grossregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str) ‑> None</span>
 </code></dt>
@@ -159,7 +174,7 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 </dl></div>
 </dd>
 <dt id="functions.metatables.create_sex_break"><code class="name flex">
-<span>def <span class="ident">create_sex_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S11', new_break_name: str = 'sex_break') ‑> None</span>
+<span>def <span class="ident">create_sex_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S11', new_break_name: str = 'sex_break', use_non_binary: bool = True) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a standard sex break.</p>
@@ -171,6 +186,8 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <dd>Name of the original variable</dd>
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
+<dt><strong><code>use_non_binary</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Include "diverse" sex if True, only use binary sex otherwise</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.create_siedlungsart_break"><code class="name flex">
@@ -560,6 +577,17 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <dd>If end is True the column is moved to the end, if end is False the column is moved to the beginning. Defaults to True.</dd>
 </dl></div>
 </dd>
+<dt id="functions.metatables.MetaTable2.move_columns"><code class="name flex">
+<span>def <span class="ident">move_columns</span></span>(<span>self, column_order: list)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Moves columns based on the desired order in the MetaTable.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>column_order</code></strong> :&ensp;<code>list</code></dt>
+<dd>The desired column order.</dd>
+</dl></div>
+</dd>
 <dt id="functions.metatables.MetaTable2.nested_to_tuple_dict"><code class="name flex">
 <span>def <span class="ident">nested_to_tuple_dict</span></span>(<span>self, nested_dict)</span>
 </code></dt>
@@ -747,6 +775,7 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <li><code><a title="functions.metatables.create_canton_break" href="#functions.metatables.create_canton_break">create_canton_break</a></code></li>
 <li><code><a title="functions.metatables.create_education_break" href="#functions.metatables.create_education_break">create_education_break</a></code></li>
 <li><code><a title="functions.metatables.create_employment_break" href="#functions.metatables.create_employment_break">create_employment_break</a></code></li>
+<li><code><a title="functions.metatables.create_gdenr_from_plz" href="#functions.metatables.create_gdenr_from_plz">create_gdenr_from_plz</a></code></li>
 <li><code><a title="functions.metatables.create_grossregion_break" href="#functions.metatables.create_grossregion_break">create_grossregion_break</a></code></li>
 <li><code><a title="functions.metatables.create_method_break" href="#functions.metatables.create_method_break">create_method_break</a></code></li>
 <li><code><a title="functions.metatables.create_sex_break" href="#functions.metatables.create_sex_break">create_sex_break</a></code></li>
@@ -789,6 +818,7 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <li><code><a title="functions.metatables.MetaTable2.measure" href="#functions.metatables.MetaTable2.measure">measure</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.meta" href="#functions.metatables.MetaTable2.meta">meta</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.move_column" href="#functions.metatables.MetaTable2.move_column">move_column</a></code></li>
+<li><code><a title="functions.metatables.MetaTable2.move_columns" href="#functions.metatables.MetaTable2.move_columns">move_columns</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.nested_to_tuple_dict" href="#functions.metatables.MetaTable2.nested_to_tuple_dict">nested_to_tuple_dict</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.output_path" href="#functions.metatables.MetaTable2.output_path">output_path</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.project_name" href="#functions.metatables.MetaTable2.project_name">project_name</a></code></li>
