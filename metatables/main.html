@@ -196,7 +196,7 @@
 <div class="desc"><p>Exports an excel-file that makes changing the meta data very simple.</p></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.export_data"><code class="name flex">
-<span>def <span class="ident">export_data</span></span>(<span>self, file_name: str = 'fertig')</span>
+<span>def <span class="ident">export_data</span></span>(<span>self, file_name: str = 'fertig', missing_dictionary: dict = None)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Exports a .SAV-file and a gfs-meta JSON-file.</p>
@@ -204,6 +204,8 @@
 <dl>
 <dt><strong><code>file_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>File name of the .sav file</dd>
+<dt><strong><code>missing_dictionary</code></strong> :&ensp;<code>dict</code></dt>
+<dd>This adds a dictionary with missing values for SPSS. Please don't use this! this is very badly implemented and only temporary!</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.get_intersection_counts"><code class="name flex">

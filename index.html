@@ -222,7 +222,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 </dl></div>
 </dd>
 <dt id="functions.create_barchart"><code class="name flex">
-<span>def <span class="ident">create_barchart</span></span>(<span>info: dict, variables: list, breaks: Optional[list] = None, legend_break: Optional[list] = None, barchart_mean: bool = False, break_labels_rename: Optional[dict[str, str]] = None, left_labels_rename: Optional[dict[str, str]] = None, legend_labels_rename: Optional[dict[str, str]] = None, left_labels_wrap: int = 50, left_labels_width: int = 999, show_mean: bool = False, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', legend_title_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, legend_position: str = 'right', return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: Optional[list[str]] = None, value_labels_show_min: float = 0, value_labels_add_after: Optional[list[list[str]]] = None, weight: str = 'auto', order_by: Optional[dict] = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', bar_gap=999, bar_width: float = 999, bar_min_size: float = 0, break_distance: float = 999, label_size: float = 16, value_labels_size: float = 999, legend_labels_size: float = 14, show_legend: bool = True, show_total: bool = True, show_count: bool = False, show_all_bars: bool = False, show_legend_title: Optional[bool] = None, select_variable_levels: Optional[list[int]] = None, select_min_count: int = 0, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: Optional[dict] = None, save_figure: bool = True, return_figure: bool = False, df: Union[pandas.core.frame.DataFrame, str] = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto') ‑> Optional[tuple]</span>
+<span>def <span class="ident">create_barchart</span></span>(<span>info: dict, variables: list, breaks: Optional[list] = None, legend_break: Optional[list] = None, barchart_mean: bool = False, break_labels_rename: Optional[dict[str, str]] = None, left_labels_rename: Optional[dict[str, str]] = None, legend_labels_rename: Optional[dict[str, str]] = None, left_labels_wrap: int = 50, left_labels_width: int = 999, show_mean: bool = False, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', legend_title_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, legend_position: str = 'right', return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: Optional[list[str]] = None, value_labels_show_min: float = 0, value_labels_add_after: Optional[list[list[str]]] = None, weight: str = 'auto', order_by: Optional[dict] = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', bar_gap=999, bar_width: float = 999, bar_min_size: float = 0, break_distance: float = 999, label_size: float = 16, value_labels_size: float = 999, legend_labels_size: float = 14, show_legend: bool = True, show_total_legend: bool = True, show_total: bool = True, show_count: bool = False, show_all_bars: bool = False, show_legend_title: Optional[bool] = None, select_variable_levels: Optional[list[int]] = None, select_min_count: int = 0, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: Optional[dict] = None, save_figure: bool = True, return_figure: bool = False, df: Union[pandas.core.frame.DataFrame, str] = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto') ‑> Optional[tuple]</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a barchart</p>
@@ -316,6 +316,8 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <dd>Sets the size of legend. Defaults to 14.</dd>
 <dt><strong><code>show_legend</code></strong> :&ensp;<code>bool</code>, optional</dt>
 <dd>Turns legend on and off. ~ False. Defaults to True.</dd>
+<dt><strong><code>show_total_legend</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Turns Total in legend on and off. ~ False. Defaults to True.</dd>
 <dt><strong><code>show_total</code></strong> :&ensp;<code>bool</code>, optional</dt>
 <dd>Turns total bar on and off. ~ False. Defaults to True.</dd>
 <dt><strong><code>show_count</code></strong> :&ensp;<code>bool</code>, optional</dt>
@@ -604,6 +606,17 @@ defaults to ''
 :type return_figure: bool, optional</p>
 <p>:return: If return_data is on it returns the plot data, so it can be viewed.
 :rtype: <em>type</em></p></div>
+</dd>
+<dt id="functions.create_total_column"><code class="name flex">
+<span>def <span class="ident">create_total_column</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates the total column used in many standard tasks.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+</dl></div>
 </dd>
 <dt id="functions.create_wordcloud"><code class="name flex">
 <span>def <span class="ident">create_wordcloud</span></span>(<span>info: dict, variables: list[str], language_column: str, translate_to: int = 564, transform: str = 'no', font_name: str = 'arial', title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_custom: str = 'auto', weight: str = 'auto', title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', label_size: float = 16, value_labels_size: float = 999, show_count: bool = False, remove_words: Optional[list[str]] = None, min_font_size: int = 0, min_count: int = 1, max_words: int = 200, standard_arguments: dict = None, save_figure: bool = True, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto') ‑> Optional[tuple]</span>
@@ -1244,7 +1257,7 @@ string after tag. Defaults to ''.</dd>
 <div class="desc"><p>Exports an excel-file that makes changing the meta data very simple.</p></div>
 </dd>
 <dt id="functions.MetaTable2.export_data"><code class="name flex">
-<span>def <span class="ident">export_data</span></span>(<span>self, file_name: str = 'fertig')</span>
+<span>def <span class="ident">export_data</span></span>(<span>self, file_name: str = 'fertig', missing_dictionary: dict = None)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Exports a .SAV-file and a gfs-meta JSON-file.</p>
@@ -1252,6 +1265,8 @@ string after tag. Defaults to ''.</dd>
 <dl>
 <dt><strong><code>file_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>File name of the .sav file</dd>
+<dt><strong><code>missing_dictionary</code></strong> :&ensp;<code>dict</code></dt>
+<dd>This adds a dictionary with missing values for SPSS. Please don't use this! this is very badly implemented and only temporary!</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.get_intersection_counts"><code class="name flex">
@@ -1896,6 +1911,7 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><code><a title="functions.create_siedlungsart_break" href="#functions.create_siedlungsart_break">create_siedlungsart_break</a></code></li>
 <li><code><a title="functions.create_sprachregion_break" href="#functions.create_sprachregion_break">create_sprachregion_break</a></code></li>
 <li><code><a title="functions.create_stacked_barchart" href="#functions.create_stacked_barchart">create_stacked_barchart</a></code></li>
+<li><code><a title="functions.create_total_column" href="#functions.create_total_column">create_total_column</a></code></li>
 <li><code><a title="functions.create_wordcloud" href="#functions.create_wordcloud">create_wordcloud</a></code></li>
 <li><code><a title="functions.get_answer_list" href="#functions.get_answer_list">get_answer_list</a></code></li>
 <li><code><a title="functions.get_word_frequencies" href="#functions.get_word_frequencies">get_word_frequencies</a></code></li>
