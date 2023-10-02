@@ -328,7 +328,14 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <span>def <span class="ident">calculate_weight</span></span>(<span>self, column: str, target_values: dict)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Calculates the weights for a given weight column based on the target values. You need to create the weight before you can calculate it.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the weight column</dd>
+<dt><strong><code>target_values</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary with the target values for each intersection. This is a nested dictionary and it accepts absolute values. Can be like {1: {1: 20, 2: 25}, 2: {1: 40, 2: 50}}</dd>
+</dl></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.copy_column"><code class="name flex">
 <span>def <span class="ident">copy_column</span></span>(<span>self, old_column: str, new_column: str, same_group: bool = True, add_to_group: bool = True)</span>
@@ -349,25 +356,71 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <span>def <span class="ident">copy_group</span></span>(<span>self, old_group: str, new_group: str)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Creates a copy of a column group and gives it a new name.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>old_group</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the group to be copied</dd>
+<dt><strong><code>new_group</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the new group</dd>
+</dl></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.create_column"><code class="name flex">
-<span>def <span class="ident">create_column</span></span>(<span>self, column: str, label: str, value_labels: Union[dict[int, str], str, ForwardRef(None)] = None)</span>
+<span>def <span class="ident">create_column</span></span>(<span>self, column: str, label: str, value_labels: Union[dict[int, str], str, ForwardRef(None)] = None, measure: str = 'scale')</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Creates a new column in the MetaTable and the DataFrame.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the column</dd>
+<dt><strong><code>label</code></strong> :&ensp;<code>str</code></dt>
+<dd>Label of the column</dd>
+<dt><strong><code>value_labels</code></strong> :&ensp;<code>Union[dict[int, str], str]</code>, optional</dt>
+<dd>Value labels of the column. Defaults to None.</dd>
+<dt><strong><code>measure</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Measure of the column. Defaults to 'scale'.</dd>
+</dl></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.create_group"><code class="name flex">
-<span>def <span class="ident">create_group</span></span>(<span>self, group_name: str, columns: list[str], kind: str, measure: str = 'auto', lfm: str = 'yes', mean: str = 'auto', group_label: str = 'auto', group_value_labels: Union[dict[int, str], str] = 'auto')</span>
+<span>def <span class="ident">create_group</span></span>(<span>self, group_name: str, columns: list[str], kind: str, measure: str = 'auto', lfm: str = 'yes', mean: str = 'auto', group_label: str = 'auto', group_value_labels: Union[dict[int, str], str] = 'auto', missing_values: Union[list[float], str] = 'auto')</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Creates a new group in the MetaTable.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>group_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the group</dd>
+<dt><strong><code>columns</code></strong> :&ensp;<code>list[str]</code></dt>
+<dd>List of columns that belong to the group</dd>
+<dt><strong><code>kind</code></strong> :&ensp;<code>str</code></dt>
+<dd>Kind of the group. Can be 'multi' or 'batch'</dd>
+<dt><strong><code>measure</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Measure of the group. Can be 'string', 'nominal', 'scale' or 'ordinal'. Defaults to 'auto'.</dd>
+<dt><strong><code>lfm</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Decides if the value labels of to group should be used for all columns in the group. Can be 'yes' or 'no'. Defaults to 'yes'.</dd>
+<dt><strong><code>mean</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Decides if there is a useful mean value for a group of columns. Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
+<dt><strong><code>group_label</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Label of the group. Defaults to 'auto'.</dd>
+<dt><strong><code>group_value_labels</code></strong> :&ensp;<code>Union[dict[int, str], str]</code>, optional</dt>
+<dd>Value labels of the group. Defaults to 'auto'.</dd>
+<dt><strong><code>missing_values</code></strong> :&ensp;<code>Union[list[float], str]</code>, optional</dt>
+<dd>List of missing values of the group. Defaults to 'auto'.</dd>
+</dl></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.create_weight"><code class="name flex">
 <span>def <span class="ident">create_weight</span></span>(<span>self, name: str, columns: list[str])</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Creates a new weight based on the given columns.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the new weight</dd>
+<dt><strong><code>columns</code></strong> :&ensp;<code>list[str]</code></dt>
+<dd>List of columns that should be used to calculate the weight.</dd>
+</dl></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.delete_column"><code class="name flex">
 <span>def <span class="ident">delete_column</span></span>(<span>self, column: str)</span>
@@ -395,16 +448,32 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <span>def <span class="ident">encode</span></span>(<span>self, old_column: str, new_column: str, values: Optional[dict[int, str]] = None, keep_untouched_values: bool = True)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Encodes a column based on a dictionary with the new values.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>old_column</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the column</dd>
+<dt><strong><code>new_column</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the new column</dd>
+<dt><strong><code>values</code></strong> :&ensp;<code>Optional[dict[int, str]]</code></dt>
+<dd>A dictionary with the new values and the old values that should be replaced. Can be {1: "yes", 2: "no"}. This will replace all values from "yes" to 1 and "no" to 2.</dd>
+<dt><strong><code>keep_untouched_values</code></strong> :&ensp;<code>bool</code></dt>
+<dd>This will keep the old labels of the column and just add the new ones instead of replacing all labels. Defaults to True.</dd>
+</dl></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.export_config"><code class="name flex">
 <span>def <span class="ident">export_config</span></span>(<span>self, export_df: bool = True)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Exports an excel-file that makes changing the meta data very simple.</p></div>
+<div class="desc"><p>Exports an excel-file that makes changing the meta data very simple.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>export_df</code></strong> :&ensp;<code>bool</code></dt>
+<dd>If True it will also export the data. Defaults to True.</dd>
+</dl></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.export_data"><code class="name flex">
-<span>def <span class="ident">export_data</span></span>(<span>self, file_name: str = 'fertig', missing_dictionary: dict = None)</span>
+<span>def <span class="ident">export_data</span></span>(<span>self, file_name: str = 'fertig')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Exports a .SAV-file and a gfs-meta JSON-file.</p>
@@ -412,8 +481,19 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <dl>
 <dt><strong><code>file_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>File name of the .sav file</dd>
-<dt><strong><code>missing_dictionary</code></strong> :&ensp;<code>dict</code></dt>
-<dd>This adds a dictionary with missing values for SPSS. Please don't use this! this is very badly implemented and only temporary!</dd>
+</dl></div>
+</dd>
+<dt id="functions.metatables.MetaTable2.filter_label"><code class="name flex">
+<span>def <span class="ident">filter_label</span></span>(<span>self, column: str, filter_label: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the filter_label of a column.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the column</dd>
+<dt><strong><code>filter_label</code></strong> :&ensp;<code>str</code></dt>
+<dd>New filter_label of the column. This label adds information about the filter that was used for that question in the questionnaire.</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.get_intersection_counts"><code class="name flex">
@@ -421,6 +501,19 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 </code></dt>
 <dd>
 <div class="desc"></div>
+</dd>
+<dt id="functions.metatables.MetaTable2.group_filter_label"><code class="name flex">
+<span>def <span class="ident">group_filter_label</span></span>(<span>self, group: str, filter_label: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the filter_label of a group of columns.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>group</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the group</dd>
+<dt><strong><code>filter_label</code></strong> :&ensp;<code>str</code></dt>
+<dd>New filter_label of the group. This label adds information about the filter that was used for that question in the questionnaire.</dd>
+</dl></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.group_has_mean"><code class="name flex">
 <span>def <span class="ident">group_has_mean</span></span>(<span>self, group: str, mean: str)</span>
@@ -459,6 +552,8 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <dd>Name of the group of columns</dd>
 <dt><strong><code>text</code></strong> :&ensp;<code>str</code></dt>
 <dd>New text of the group_label</dd>
+<dt><strong><code>verbose</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Prints warnings if True. Defaults to True.</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.group_lfm"><code class="name flex">
@@ -485,6 +580,19 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <dd>Name of the group</dd>
 <dt><strong><code>measure</code></strong> :&ensp;<code>str</code></dt>
 <dd>New measure of the group. Should be "nominal", "string", "scale" or "ordinal"</dd>
+</dl></div>
+</dd>
+<dt id="functions.metatables.MetaTable2.group_missing_values"><code class="name flex">
+<span>def <span class="ident">group_missing_values</span></span>(<span>self, group: str, missing_values: list[float])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the missing values of a group of columns.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>group</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the group</dd>
+<dt><strong><code>missing_values</code></strong> :&ensp;<code>list[float]</code></dt>
+<dd>New missing values of the group.</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.group_value_labels"><code class="name flex">
@@ -532,6 +640,8 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <dd>Name of the column</dd>
 <dt><strong><code>text</code></strong> :&ensp;<code>str</code></dt>
 <dd>New text of the item_label</dd>
+<dt><strong><code>verbose</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Prints warnings if True. Defaults to True.</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.kind"><code class="name flex">
@@ -577,6 +687,19 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <dd>New measure of the column. Should be "nominal", "string", "scale" or "ordinal"</dd>
 </dl></div>
 </dd>
+<dt id="functions.metatables.MetaTable2.missing_values"><code class="name flex">
+<span>def <span class="ident">missing_values</span></span>(<span>self, column: str, missing_values: list[float])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the missing values of a column.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the column</dd>
+<dt><strong><code>missing_values</code></strong> :&ensp;<code>list[float]</code></dt>
+<dd>New missing values of the column.</dd>
+</dl></div>
+</dd>
 <dt id="functions.metatables.MetaTable2.move_column"><code class="name flex">
 <span>def <span class="ident">move_column</span></span>(<span>self, column: str, end: bool = True)</span>
 </code></dt>
@@ -611,13 +734,35 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <span>def <span class="ident">recode</span></span>(<span>self, old_column: str, new_column: str, values: dict[int, typing.Any], keep_untouched_codes: bool = True)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Recodes a column based on a dictionary with the new values.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>old_column</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the column</dd>
+<dt><strong><code>new_column</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the new column</dd>
+<dt><strong><code>values</code></strong> :&ensp;<code>dict[int, Any]</code></dt>
+<dd>A dictionary with the new values and the old values that should be replaced Can be {1: range(1, 20), 2: [20, 21], 3: 22}. This will replace all values from 1 to 19 with 1, 20 and 21 with 2 and 22 with 3.</dd>
+<dt><strong><code>keep_untouched_codes</code></strong> :&ensp;<code>bool</code></dt>
+<dd>This will keep the old labels of the column and just add the new ones instead of replacing all labels. Defaults to True.</dd>
+</dl></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.recode_group"><code class="name flex">
 <span>def <span class="ident">recode_group</span></span>(<span>self, old_group: str, new_group: str, values: dict[int, typing.Any], keep_untouched_codes: bool = True)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Recodes a group of columns based on a dictionary with the new values.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>old_group</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the group</dd>
+<dt><strong><code>new_group</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the new group</dd>
+<dt><strong><code>values</code></strong> :&ensp;<code>dict[int, Any]</code></dt>
+<dd>A dictionary with the new values and the old values that should be replaced Can be {1: range(1, 20), 2: [20, 21], 3: 22}. This will replace all values from 1 to 19 with 1, 20 and 21 with 2 and 22 with 3.</dd>
+<dt><strong><code>keep_untouched_codes</code></strong> :&ensp;<code>bool</code></dt>
+<dd>This will keep the old labels of the column and just add the new ones instead of replacing all labels. Defaults to True.</dd>
+</dl></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.remove_from_group"><code class="name flex">
 <span>def <span class="ident">remove_from_group</span></span>(<span>self, column: str)</span>
@@ -730,6 +875,8 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <dd>Name of the column</dd>
 <dt><strong><code>text</code></strong> :&ensp;<code>str</code></dt>
 <dd>New text of the label</dd>
+<dt><strong><code>verbose</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Prints warnings if True. Defaults to True.</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.tuple_to_nested_dict"><code class="name flex">
@@ -816,12 +963,15 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <li><code><a title="functions.metatables.MetaTable2.encode" href="#functions.metatables.MetaTable2.encode">encode</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.export_config" href="#functions.metatables.MetaTable2.export_config">export_config</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.export_data" href="#functions.metatables.MetaTable2.export_data">export_data</a></code></li>
+<li><code><a title="functions.metatables.MetaTable2.filter_label" href="#functions.metatables.MetaTable2.filter_label">filter_label</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.get_intersection_counts" href="#functions.metatables.MetaTable2.get_intersection_counts">get_intersection_counts</a></code></li>
+<li><code><a title="functions.metatables.MetaTable2.group_filter_label" href="#functions.metatables.MetaTable2.group_filter_label">group_filter_label</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.group_has_mean" href="#functions.metatables.MetaTable2.group_has_mean">group_has_mean</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.group_kind" href="#functions.metatables.MetaTable2.group_kind">group_kind</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.group_label" href="#functions.metatables.MetaTable2.group_label">group_label</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.group_lfm" href="#functions.metatables.MetaTable2.group_lfm">group_lfm</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.group_measure" href="#functions.metatables.MetaTable2.group_measure">group_measure</a></code></li>
+<li><code><a title="functions.metatables.MetaTable2.group_missing_values" href="#functions.metatables.MetaTable2.group_missing_values">group_missing_values</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.group_value_labels" href="#functions.metatables.MetaTable2.group_value_labels">group_value_labels</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.groups" href="#functions.metatables.MetaTable2.groups">groups</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.has_mean" href="#functions.metatables.MetaTable2.has_mean">has_mean</a></code></li>
@@ -831,6 +981,7 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <li><code><a title="functions.metatables.MetaTable2.make_quota_check" href="#functions.metatables.MetaTable2.make_quota_check">make_quota_check</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.measure" href="#functions.metatables.MetaTable2.measure">measure</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.meta" href="#functions.metatables.MetaTable2.meta">meta</a></code></li>
+<li><code><a title="functions.metatables.MetaTable2.missing_values" href="#functions.metatables.MetaTable2.missing_values">missing_values</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.move_column" href="#functions.metatables.MetaTable2.move_column">move_column</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.move_columns" href="#functions.metatables.MetaTable2.move_columns">move_columns</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.nested_to_tuple_dict" href="#functions.metatables.MetaTable2.nested_to_tuple_dict">nested_to_tuple_dict</a></code></li>
