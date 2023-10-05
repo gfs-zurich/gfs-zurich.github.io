@@ -182,10 +182,6 @@ These are graphical interfaces for various plots inside the technology stack of 
 <div class="desc"><p>gfs-metatables
 These are tools for preprocessing inside the technology stack of <a href="https://github.com/gfs-zurich">gfs-zürich</a>.</p></div>
 </dd>
-<dt><code class="name"><a title="functions.playground" href="playground/index.html">functions.playground</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
 <dt><code class="name"><a title="functions.tools" href="tools/index.html">functions.tools</a></code></dt>
 <dd>
 <div class="desc"><p>gfs-tools
@@ -370,6 +366,21 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <dd>Name of the newly created break</dd>
 </dl></div>
 </dd>
+<dt id="functions.create_count_employee_break"><code class="name flex">
+<span>def <span class="ident">create_count_employee_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'count_employee_break') ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a standard count employee break.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+</dl></div>
+</dd>
 <dt id="functions.create_education_break"><code class="name flex">
 <span>def <span class="ident">create_education_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S15', new_break_name: str = 'education_break') ‑> None</span>
 </code></dt>
@@ -390,6 +401,21 @@ These are tools for various tasks inside the technology stack of <a href="https:
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a standard employment break.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+</dl></div>
+</dd>
+<dt id="functions.create_founding_year_break"><code class="name flex">
+<span>def <span class="ident">create_founding_year_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'founding_year_break') ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a standard founding year break.</p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></dt>
@@ -428,6 +454,51 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <dd>Name of the original variable</dd>
 <dt><strong><code>original_variable_type</code></strong> :&ensp;<code>str</code></dt>
 <dd>Type of the original variable. "plz" if it represents the Postleitzahl and "gdenr" if it represents the Gemeindenummer.</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+</dl></div>
+</dd>
+<dt id="functions.create_industry_sector_break"><code class="name flex">
+<span>def <span class="ident">create_industry_sector_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'industry_sector_break') ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a standard industry sector (Branche) break.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+</dl></div>
+</dd>
+<dt id="functions.create_lead_time_break"><code class="name flex">
+<span>def <span class="ident">create_lead_time_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'lead_time_break', year: int = 2023) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a standard lead time break.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+</dl></div>
+</dd>
+<dt id="functions.create_market_change_break"><code class="name flex">
+<span>def <span class="ident">create_market_change_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'market_change_break') ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a standard market change break.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
 </dl></div>
@@ -620,6 +691,21 @@ defaults to ''
 <dl>
 <dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></dt>
 <dd>The Metatable that needs editing</dd>
+</dl></div>
+</dd>
+<dt id="functions.create_winner_loser_break"><code class="name flex">
+<span>def <span class="ident">create_winner_loser_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'winner_loser_break') ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a standard winner/loser break.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
 </dl></div>
 </dd>
 <dt id="functions.create_wordcloud"><code class="name flex">
@@ -2042,7 +2128,6 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><code><a title="functions.graphy" href="graphy/index.html">functions.graphy</a></code></li>
 <li><code><a title="functions.matrixmixer" href="matrixmixer/index.html">functions.matrixmixer</a></code></li>
 <li><code><a title="functions.metatables" href="metatables/index.html">functions.metatables</a></code></li>
-<li><code><a title="functions.playground" href="playground/index.html">functions.playground</a></code></li>
 <li><code><a title="functions.tools" href="tools/index.html">functions.tools</a></code></li>
 </ul>
 </li>
@@ -2053,10 +2138,15 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><code><a title="functions.create_age_break" href="#functions.create_age_break">create_age_break</a></code></li>
 <li><code><a title="functions.create_barchart" href="#functions.create_barchart">create_barchart</a></code></li>
 <li><code><a title="functions.create_canton_break" href="#functions.create_canton_break">create_canton_break</a></code></li>
+<li><code><a title="functions.create_count_employee_break" href="#functions.create_count_employee_break">create_count_employee_break</a></code></li>
 <li><code><a title="functions.create_education_break" href="#functions.create_education_break">create_education_break</a></code></li>
 <li><code><a title="functions.create_employment_break" href="#functions.create_employment_break">create_employment_break</a></code></li>
+<li><code><a title="functions.create_founding_year_break" href="#functions.create_founding_year_break">create_founding_year_break</a></code></li>
 <li><code><a title="functions.create_gdenr_from_plz" href="#functions.create_gdenr_from_plz">create_gdenr_from_plz</a></code></li>
 <li><code><a title="functions.create_grossregion_break" href="#functions.create_grossregion_break">create_grossregion_break</a></code></li>
+<li><code><a title="functions.create_industry_sector_break" href="#functions.create_industry_sector_break">create_industry_sector_break</a></code></li>
+<li><code><a title="functions.create_lead_time_break" href="#functions.create_lead_time_break">create_lead_time_break</a></code></li>
+<li><code><a title="functions.create_market_change_break" href="#functions.create_market_change_break">create_market_change_break</a></code></li>
 <li><code><a title="functions.create_method_break" href="#functions.create_method_break">create_method_break</a></code></li>
 <li><code><a title="functions.create_piechart" href="#functions.create_piechart">create_piechart</a></code></li>
 <li><code><a title="functions.create_sex_break" href="#functions.create_sex_break">create_sex_break</a></code></li>
@@ -2064,6 +2154,7 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><code><a title="functions.create_sprachregion_break" href="#functions.create_sprachregion_break">create_sprachregion_break</a></code></li>
 <li><code><a title="functions.create_stacked_barchart" href="#functions.create_stacked_barchart">create_stacked_barchart</a></code></li>
 <li><code><a title="functions.create_total_column" href="#functions.create_total_column">create_total_column</a></code></li>
+<li><code><a title="functions.create_winner_loser_break" href="#functions.create_winner_loser_break">create_winner_loser_break</a></code></li>
 <li><code><a title="functions.create_wordcloud" href="#functions.create_wordcloud">create_wordcloud</a></code></li>
 <li><code><a title="functions.get_answer_list" href="#functions.get_answer_list">get_answer_list</a></code></li>
 <li><code><a title="functions.get_word_frequencies" href="#functions.get_word_frequencies">get_word_frequencies</a></code></li>
