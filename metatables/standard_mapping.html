@@ -31,7 +31,7 @@
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="functions.metatables.standard_mapping.create_age_break"><code class="name flex">
-<span>def <span class="ident">create_age_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S12_1', new_break_name: str = 'age_break') ‑> None</span>
+<span>def <span class="ident">create_age_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S12_1', new_break_name: str = 'age_break', dont_know_code: bool = False) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a standard age break.</p>
@@ -43,6 +43,8 @@
 <dd>Name of the original variable</dd>
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.standard_mapping.create_canton_break"><code class="name flex">
@@ -63,7 +65,7 @@
 </dl></div>
 </dd>
 <dt id="functions.metatables.standard_mapping.create_count_employee_break"><code class="name flex">
-<span>def <span class="ident">create_count_employee_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'count_employee_break') ‑> None</span>
+<span>def <span class="ident">create_count_employee_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'count_employee_break', dont_know_code: bool = False) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a standard count employee break.</p>
@@ -78,7 +80,7 @@
 </dl></div>
 </dd>
 <dt id="functions.metatables.standard_mapping.create_education_break"><code class="name flex">
-<span>def <span class="ident">create_education_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S15', new_break_name: str = 'education_break') ‑> None</span>
+<span>def <span class="ident">create_education_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S15', new_break_name: str = 'education_break', dont_know_code: bool = False) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a standard education break.</p>
@@ -90,6 +92,8 @@
 <dd>Name of the original variable</dd>
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.standard_mapping.create_employment_break"><code class="name flex">
@@ -108,7 +112,7 @@
 </dl></div>
 </dd>
 <dt id="functions.metatables.standard_mapping.create_founding_year_break"><code class="name flex">
-<span>def <span class="ident">create_founding_year_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'founding_year_break') ‑> None</span>
+<span>def <span class="ident">create_founding_year_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'founding_year_break', dont_know_code: bool = False) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a standard founding year break.</p>
@@ -120,6 +124,8 @@
 <dd>Name of the original variable</dd>
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.standard_mapping.create_gdenr_from_plz"><code class="name flex">
@@ -155,10 +161,10 @@
 </dl></div>
 </dd>
 <dt id="functions.metatables.standard_mapping.create_industry_sector_break"><code class="name flex">
-<span>def <span class="ident">create_industry_sector_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'industry_sector_break') ‑> None</span>
+<span>def <span class="ident">create_industry_sector_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'industry_sector_break', dont_know_code: bool = False, values: {} = {}, value_labels: {} = {}) ‑> None</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Creates a standard industry sector (Branche) break.</p>
+<div class="desc"><p>Creates a standard industry sector (Branche, NOGA Code) break.</p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>metatable</code></strong> :&ensp;<code>MetaTable2</code></dt>
@@ -167,10 +173,16 @@
 <dd>Name of the original variable</dd>
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
+<dt><strong><code>values</code></strong> :&ensp;<code>dict</code></dt>
+<dd>dictionary with industry sector values (NOGA)</dd>
+<dt><strong><code>value_labels</code></strong> :&ensp;<code>dict</code></dt>
+<dd>dictionary with industry sector value labels (NOGA)</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.standard_mapping.create_lead_time_break"><code class="name flex">
-<span>def <span class="ident">create_lead_time_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'lead_time_break', year: int = 2023) ‑> None</span>
+<span>def <span class="ident">create_lead_time_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'lead_time_break', year: int = 2023, dont_know_code: bool = False) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a standard lead time break.</p>
@@ -182,10 +194,12 @@
 <dd>Name of the original variable</dd>
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.standard_mapping.create_market_change_break"><code class="name flex">
-<span>def <span class="ident">create_market_change_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'market_change_break') ‑> None</span>
+<span>def <span class="ident">create_market_change_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'market_change_break', dont_know_code: bool = False) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a standard market change break.</p>
@@ -197,6 +211,8 @@
 <dd>Name of the original variable</dd>
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.standard_mapping.create_method_break"><code class="name flex">
@@ -212,10 +228,46 @@
 <dd>Name of the original variable</dd>
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
+<dt><strong><code>other_category_break</code></strong> :&ensp;<code>str</code></dt>
+<dd>Nome of the "Others" category</dd>
+</dl></div>
+</dd>
+<dt id="functions.metatables.standard_mapping.create_role_break"><code class="name flex">
+<span>def <span class="ident">create_role_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variables: str, new_break_name: str = 'role_break', dont_know_code: bool = False) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a standard role break.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code>MetaTable2</code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
+</dl></div>
+</dd>
+<dt id="functions.metatables.standard_mapping.create_role_year_break"><code class="name flex">
+<span>def <span class="ident">create_role_year_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'create_role_year_break', dont_know_code: bool = False) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a standard role year break.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code>MetaTable2</code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.standard_mapping.create_sex_break"><code class="name flex">
-<span>def <span class="ident">create_sex_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S11', new_break_name: str = 'sex_break', use_non_binary: bool = True) ‑> None</span>
+<span>def <span class="ident">create_sex_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S11', new_break_name: str = 'sex_break', use_non_binary: bool = True, dont_know_code: bool = False) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a standard sex break.</p>
@@ -229,6 +281,8 @@
 <dd>Name of the newly created break</dd>
 <dt><strong><code>use_non_binary</code></strong> :&ensp;<code>bool</code></dt>
 <dd>Include "diverse" sex if True, only use binary sex otherwise</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.standard_mapping.create_siedlungsart_break"><code class="name flex">
@@ -334,6 +388,8 @@
 <li><code><a title="functions.metatables.standard_mapping.create_lead_time_break" href="#functions.metatables.standard_mapping.create_lead_time_break">create_lead_time_break</a></code></li>
 <li><code><a title="functions.metatables.standard_mapping.create_market_change_break" href="#functions.metatables.standard_mapping.create_market_change_break">create_market_change_break</a></code></li>
 <li><code><a title="functions.metatables.standard_mapping.create_method_break" href="#functions.metatables.standard_mapping.create_method_break">create_method_break</a></code></li>
+<li><code><a title="functions.metatables.standard_mapping.create_role_break" href="#functions.metatables.standard_mapping.create_role_break">create_role_break</a></code></li>
+<li><code><a title="functions.metatables.standard_mapping.create_role_year_break" href="#functions.metatables.standard_mapping.create_role_year_break">create_role_year_break</a></code></li>
 <li><code><a title="functions.metatables.standard_mapping.create_sex_break" href="#functions.metatables.standard_mapping.create_sex_break">create_sex_break</a></code></li>
 <li><code><a title="functions.metatables.standard_mapping.create_siedlungsart_break" href="#functions.metatables.standard_mapping.create_siedlungsart_break">create_siedlungsart_break</a></code></li>
 <li><code><a title="functions.metatables.standard_mapping.create_sprachregion_break" href="#functions.metatables.standard_mapping.create_sprachregion_break">create_sprachregion_break</a></code></li>

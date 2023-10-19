@@ -237,7 +237,7 @@
 </dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.encode"><code class="name flex">
-<span>def <span class="ident">encode</span></span>(<span>self, old_column: str, new_column: str, values: Optional[dict[int, str]] = None, keep_untouched_values: bool = True)</span>
+<span>def <span class="ident">encode</span></span>(<span>self, old_column: str, new_column: str, values: Optional[dict[str, int]] = None)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Encodes a column based on a dictionary with the new values.</p>
@@ -247,10 +247,8 @@
 <dd>Name of the column</dd>
 <dt><strong><code>new_column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the new column</dd>
-<dt><strong><code>values</code></strong> :&ensp;<code>Optional[dict[int, str]]</code></dt>
-<dd>A dictionary with the new values and the old values that should be replaced. Can be {1: "yes", 2: "no"}. This will replace all values from "yes" to 1 and "no" to 2.</dd>
-<dt><strong><code>keep_untouched_values</code></strong> :&ensp;<code>bool</code></dt>
-<dd>This will keep the old labels of the column and just add the new ones instead of replacing all labels. Defaults to True.</dd>
+<dt><strong><code>values</code></strong> :&ensp;<code>Optional[dict[str, int]]</code></dt>
+<dd>A dictionary with the new values and the old values that should be replaced. Can be {"yes": 1, "no": 2}. This will replace all values from "yes" to 1 and "no" to 2.</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.export_config"><code class="name flex">
