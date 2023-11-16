@@ -31,18 +31,20 @@
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="functions.tools.load_and_render_panel_email.load_and_render_panel_email"><code class="name flex">
-<span>def <span class="ident">load_and_render_panel_email</span></span>(<span>invitation_reason: str, study_code: str, length_min: float, template_html: str = 'Vorlage_Mail_EinladungUmfrage_dt.html', output_file_path: str = 'Vorlage_Mail_EinladungUmfrage_dt.html', input_file_path: str = './templates/polittrends_invitation_templates/')</span>
+<span>def <span class="ident">load_and_render_panel_email</span></span>(<span>invitation_reason: str, end_of_study: str, study_code: str, length_min: float, template_html: str = 'Vorlage_Mail_EinladungUmfrage_dt.html', output_file_path: str = 'Vorlage_Mail_EinladungUmfrage_dt.html', input_file_path: str = './templates/polittrends_invitation_templates/')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>creates a panel invitation email by adding the invitationreason,
 the studynr and the length of the study to the panel templates,
-Points and Value values are calculated from the length of the study</p>
+Points and CHF values are calculated from the length of the study</p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>invitation_reason</code></strong> :&ensp;<code>str</code></dt>
 <dd>Reason for Invitation</dd>
+<dt><strong><code>invitation_reason</code></strong> :&ensp;<code>str</code></dt>
+<dd>End of Study, as a string but should be a date (eg. 16. November 2023)</dd>
 <dt><strong><code>study_code</code></strong> :&ensp;<code>str</code></dt>
-<dd>Code from Managerames (eg: 999923528)</dd>
+<dd>Code from Manageframes (eg: 999923528)</dd>
 <dt><strong><code>length_min</code></strong> :&ensp;<code>float</code></dt>
 <dd>length of the study in minutes</dd>
 <dt><strong><code>template_html</code></strong> :&ensp;<code>str</code></dt>
