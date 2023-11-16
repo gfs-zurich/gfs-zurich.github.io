@@ -4,9 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>functions.tools API documentation</title>
-<meta name="description" content="gfs-tools
-These are tools for various tasks inside the technology stack of [gfs-zürich](https://github.com/gfs-zurich)." />
+<title>functions.tools.load_and_render_panel_email API documentation</title>
+<meta name="description" content="" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -20,48 +19,41 @@ These are tools for various tasks inside the technology stack of [gfs-zürich](h
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>functions.tools</code></h1>
+<h1 class="title">Module <code>functions.tools.load_and_render_panel_email</code></h1>
 </header>
 <section id="section-intro">
-<h1 id="gfs-tools">gfs-tools</h1>
-<p>These are tools for various tasks inside the technology stack of <a href="https://github.com/gfs-zurich">gfs-zürich</a>.</p>
 </section>
 <section>
-<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt><code class="name"><a title="functions.tools.documentation" href="documentation.html">functions.tools.documentation</a></code></dt>
+<dt id="functions.tools.load_and_render_panel_email.load_and_render_panel_email"><code class="name flex">
+<span>def <span class="ident">load_and_render_panel_email</span></span>(<span>invitation_reason: str, study_code: str, length_min: float, template_html: str = 'Vorlage_Mail_EinladungUmfrage_dt.html', output_file_path: str = 'Vorlage_Mail_EinladungUmfrage_dt.html', input_file_path: str = './templates/polittrends_invitation_templates/')</span>
+</code></dt>
 <dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="functions.tools.load_and_render_panel_email" href="load_and_render_panel_email.html">functions.tools.load_and_render_panel_email</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="functions.tools.mapping" href="mapping.html">functions.tools.mapping</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="functions.tools.metatable_old" href="metatable_old.html">functions.tools.metatable_old</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="functions.tools.perimeter_search" href="perimeter_search.html">functions.tools.perimeter_search</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="functions.tools.radius_paint" href="radius_paint.html">functions.tools.radius_paint</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="functions.tools.zip_matcher" href="zip_matcher.html">functions.tools.zip_matcher</a></code></dt>
-<dd>
-<div class="desc"></div>
+<div class="desc"><p>creates a panel invitation email by adding the invitationreason,
+the studynr and the length of the study to the panel templates,
+Points and Value values are calculated from the length of the study</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>invitation_reason</code></strong> :&ensp;<code>str</code></dt>
+<dd>Reason for Invitation</dd>
+<dt><strong><code>study_code</code></strong> :&ensp;<code>str</code></dt>
+<dd>Code from Managerames (eg: 999923528)</dd>
+<dt><strong><code>length_min</code></strong> :&ensp;<code>float</code></dt>
+<dd>length of the study in minutes</dd>
+<dt><strong><code>template_html</code></strong> :&ensp;<code>str</code></dt>
+<dd>template file name</dd>
+<dt><strong><code>output_file_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>file name to be saved</dd>
+<dt><strong><code>input_file_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>folder for templates</dd>
+</dl></div>
 </dd>
 </dl>
-</section>
-<section>
-</section>
-<section>
 </section>
 <section>
 </section>
@@ -69,25 +61,17 @@ These are tools for various tasks inside the technology stack of [gfs-zürich](h
 <nav id="sidebar">
 <h1>Index</h1>
 <div class="toc">
-<ul>
-<li><a href="#gfs-tools">gfs-tools</a></li>
-</ul>
+<ul></ul>
 </div>
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
-<li><code><a title="functions" href="../index.html">functions</a></code></li>
+<li><code><a title="functions.tools" href="index.html">functions.tools</a></code></li>
 </ul>
 </li>
-<li><h3><a href="#header-submodules">Sub-modules</a></h3>
-<ul>
-<li><code><a title="functions.tools.documentation" href="documentation.html">functions.tools.documentation</a></code></li>
-<li><code><a title="functions.tools.load_and_render_panel_email" href="load_and_render_panel_email.html">functions.tools.load_and_render_panel_email</a></code></li>
-<li><code><a title="functions.tools.mapping" href="mapping.html">functions.tools.mapping</a></code></li>
-<li><code><a title="functions.tools.metatable_old" href="metatable_old.html">functions.tools.metatable_old</a></code></li>
-<li><code><a title="functions.tools.perimeter_search" href="perimeter_search.html">functions.tools.perimeter_search</a></code></li>
-<li><code><a title="functions.tools.radius_paint" href="radius_paint.html">functions.tools.radius_paint</a></code></li>
-<li><code><a title="functions.tools.zip_matcher" href="zip_matcher.html">functions.tools.zip_matcher</a></code></li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="functions.tools.load_and_render_panel_email.load_and_render_panel_email" href="#functions.tools.load_and_render_panel_email.load_and_render_panel_email">load_and_render_panel_email</a></code></li>
 </ul>
 </li>
 </ul>
