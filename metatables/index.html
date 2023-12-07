@@ -98,6 +98,23 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <dd>should the dont know code be recoded</dd>
 </dl></div>
 </dd>
+<dt id="functions.metatables.create_apartment_search_simple_break"><code class="name flex">
+<span>def <span class="ident">create_apartment_search_simple_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'WOHNUNGSSUCHE', new_break_name: str = 'apartment_search_break', dont_know_code: bool = False) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a standard apartment_search break.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.metatables.MetaTable2" href="#functions.metatables.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
+</dl></div>
+</dd>
 <dt id="functions.metatables.create_canton_break"><code class="name flex">
 <span>def <span class="ident">create_canton_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str) ‑> None</span>
 </code></dt>
@@ -608,11 +625,14 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <dt><strong><code>kind</code></strong> :&ensp;<code>str</code></dt>
 <dd>Kind of the group. Can be 'multi' or 'batch'</dd>
 <dt><strong><code>measure</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Measure of the group. Can be 'string', 'nominal', 'scale' or 'ordinal'. Defaults to 'auto'.</dd>
+<dd>Measure of the group. Can be 'string', 'nominal', 'scale' or 'ordinal'.
+Defaults to 'auto'.</dd>
 <dt><strong><code>lfm</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Decides if the value labels of to group should be used for all columns in the group. Can be 'yes' or 'no'. Defaults to 'yes'.</dd>
+<dd>Decides if the value labels of to group should be used for all columns in the group.
+Can be 'yes' or 'no'. Defaults to 'yes'.</dd>
 <dt><strong><code>mean</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Decides if there is a useful mean value for a group of columns. Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
+<dd>Decides if there is a useful mean value for a group of columns.
+Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dt><strong><code>group_label</code></strong> :&ensp;<code>str</code>, optional</dt>
 <dd>Label of the group. Defaults to 'auto'.</dd>
 <dt><strong><code>group_value_labels</code></strong> :&ensp;<code>Union[dict[int, str], str]</code>, optional</dt>
@@ -1143,6 +1163,7 @@ These are tools for preprocessing inside the technology stack of [gfs-zürich](h
 <ul class="">
 <li><code><a title="functions.metatables.create_age_break" href="#functions.metatables.create_age_break">create_age_break</a></code></li>
 <li><code><a title="functions.metatables.create_apartment_search_break" href="#functions.metatables.create_apartment_search_break">create_apartment_search_break</a></code></li>
+<li><code><a title="functions.metatables.create_apartment_search_simple_break" href="#functions.metatables.create_apartment_search_simple_break">create_apartment_search_simple_break</a></code></li>
 <li><code><a title="functions.metatables.create_canton_break" href="#functions.metatables.create_canton_break">create_canton_break</a></code></li>
 <li><code><a title="functions.metatables.create_cantonal_banc_break" href="#functions.metatables.create_cantonal_banc_break">create_cantonal_banc_break</a></code></li>
 <li><code><a title="functions.metatables.create_count_employee_break" href="#functions.metatables.create_count_employee_break">create_count_employee_break</a></code></li>
