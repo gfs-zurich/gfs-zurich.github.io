@@ -480,6 +480,48 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dd>New measure of the column. Should be "nominal", "string", "scale" or "ordinal"</dd>
 </dl></div>
 </dd>
+<dt id="functions.metatables.main.MetaTable2.merge_open_questions"><code class="name flex">
+<span>def <span class="ident">merge_open_questions</span></span>(<span>self, df_open_questions: pandas.core.frame.DataFrame, columns: list, code_list: dict, group_name: str, group_label: str = '', merge_Id: str = 'CODERESP', group_kind='multi')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>merges open questions with the metatable dataframe</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df_open_questions</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>open question dataframe</dd>
+<dt><strong><code>columns</code></strong> :&ensp;<code>list</code></dt>
+<dd>list of columns to merge (normally a group)</dd>
+<dt><strong><code>code_list</code></strong> :&ensp;<code>dict</code></dt>
+<dd>dictionary with the new code list (used for group value labels)</dd>
+<dt><strong><code>group_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>group name to use</dd>
+<dt><strong><code>group_label</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Label for the group. Defaults to "".</dd>
+<dt><strong><code>merge_Id</code></strong> :&ensp;<code>str</code></dt>
+<dd>id to merge columns on, defaults to CODERESP</dd>
+<dt><strong><code>group_kind</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>kind of group. Defaults to 'multi'.</dd>
+</dl></div>
+</dd>
+<dt id="functions.metatables.main.MetaTable2.merge_semiopen_questions"><code class="name flex">
+<span>def <span class="ident">merge_semiopen_questions</span></span>(<span>self, df_semiopen_questions: pandas.core.frame.DataFrame, columns: list, code_list: dict, group_name: str, merge_Id: str = 'CODERESP')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>merges semi open questions with the metatable dataframe</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df_semiopen_questions</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>semiopen questions dataframe</dd>
+<dt><strong><code>columns</code></strong> :&ensp;<code>list</code></dt>
+<dd>list of columns to merge (normally a group)</dd>
+<dt><strong><code>code_list</code></strong> :&ensp;<code>dict</code></dt>
+<dd>dictionary with the new code list (used for group value labels)</dd>
+<dt><strong><code>group_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>group name to use</dd>
+<dt><strong><code>merge_Id</code></strong> :&ensp;<code>str</code></dt>
+<dd>id to merge columns on, defaults to CODERESP</dd>
+</dl></div>
+</dd>
 <dt id="functions.metatables.main.MetaTable2.missing_values"><code class="name flex">
 <span>def <span class="ident">missing_values</span></span>(<span>self, column: str, missing_values: list[float])</span>
 </code></dt>
@@ -745,6 +787,8 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <li><code><a title="functions.metatables.main.MetaTable2.kind" href="#functions.metatables.main.MetaTable2.kind">kind</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.make_quota_check" href="#functions.metatables.main.MetaTable2.make_quota_check">make_quota_check</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.measure" href="#functions.metatables.main.MetaTable2.measure">measure</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable2.merge_open_questions" href="#functions.metatables.main.MetaTable2.merge_open_questions">merge_open_questions</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable2.merge_semiopen_questions" href="#functions.metatables.main.MetaTable2.merge_semiopen_questions">merge_semiopen_questions</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.meta" href="#functions.metatables.main.MetaTable2.meta">meta</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.missing_values" href="#functions.metatables.main.MetaTable2.missing_values">missing_values</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.move_column" href="#functions.metatables.main.MetaTable2.move_column">move_column</a></code></li>
