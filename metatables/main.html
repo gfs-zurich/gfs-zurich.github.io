@@ -129,6 +129,23 @@
 <dd>Dictionary with the target values for each intersection. This is a nested dictionary and it accepts absolute values. Can be like {1: {1: 20, 2: 25}, 2: {1: 40, 2: 50}}</dd>
 </dl></div>
 </dd>
+<dt id="functions.metatables.main.MetaTable2.check_sav_prebreak"><code class="name flex">
+<span>def <span class="ident">check_sav_prebreak</span></span>(<span>self, method: str = 'CATI', Interviewer_Column='ENQ2', Interview_Duration_Column='DURINT', Date_Column='DATE')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>checks and prints multiple key features of a sav file from nebu</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>method</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>string to indicate the method. Defaults to "CATI".</dd>
+<dt><strong><code>Interviewer_Column</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Interviewer Code Column. Defaults to "ENQ2".</dd>
+<dt><strong><code>Interview_Duration_Column</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Interview Duration Column. Defaults to "DURINT".</dd>
+<dt><strong><code>Date_Column</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Interview Date Column. Defaults to "DATE".</dd>
+</dl></div>
+</dd>
 <dt id="functions.metatables.main.MetaTable2.copy_column"><code class="name flex">
 <span>def <span class="ident">copy_column</span></span>(<span>self, old_column: str, new_column: str, same_group: bool = True, add_to_group: bool = True)</span>
 </code></dt>
@@ -451,7 +468,7 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.make_quota_check"><code class="name flex">
-<span>def <span class="ident">make_quota_check</span></span>(<span>self, columns: list[str], filename_quotas: str = 'cross_tab', filename_quota_check: str = 'quota_check', save_quota_check: bool = False)</span>
+<span>def <span class="ident">make_quota_check</span></span>(<span>self, columns: list[str], filename_quotas: str = 'cross_tab', filename_quota_check: str = 'quota_check', calc_quota_difference: bool = False, save_quota_check: bool = False)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Calculates the difference between a crosstab and a quota</p>
@@ -463,6 +480,8 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dd>name of the excel file where the crosstab is</dd>
 <dt><strong><code>filename_quota_check</code></strong> :&ensp;<code>str</code>, optional</dt>
 <dd>name of the excel file where the difference in quotas is saved</dd>
+<dt><strong><code>calc_quota_difference</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>boolean to indicate if difference in quota is calculated</dd>
 <dt><strong><code>save_quota_check</code></strong> :&ensp;<code>bool</code>, optional</dt>
 <dd>boolean to indicate if difference in quota is saved in an excel file</dd>
 </dl></div>
@@ -758,6 +777,7 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <ul class="">
 <li><code><a title="functions.metatables.main.MetaTable2.add_to_group" href="#functions.metatables.main.MetaTable2.add_to_group">add_to_group</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.calculate_weight" href="#functions.metatables.main.MetaTable2.calculate_weight">calculate_weight</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable2.check_sav_prebreak" href="#functions.metatables.main.MetaTable2.check_sav_prebreak">check_sav_prebreak</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.columns" href="#functions.metatables.main.MetaTable2.columns">columns</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.copy_column" href="#functions.metatables.main.MetaTable2.copy_column">copy_column</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.copy_group" href="#functions.metatables.main.MetaTable2.copy_group">copy_group</a></code></li>
