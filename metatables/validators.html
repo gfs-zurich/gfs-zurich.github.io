@@ -34,13 +34,46 @@
 <span>def <span class="ident">make_categorical_validator</span></span>(<span>value_type, values)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Generate a categorical validator function for attribute validation.</p>
+<p>This function returns a validator function that checks if the provided
+attribute value is of the specified value_type and belongs to the specified
+set of allowed values.</p>
+<h2 id="parameters">Parameters</h2>
+<p>value_type (type): The expected data type of the attribute value.
+values (list): The list of allowed values for the attribute.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Callable</code></dt>
+<dd>A validator function for attribute validation.</dd>
+</dl>
+<h2 id="example">Example</h2>
+<p>categorical_validator = make_categorical_validator(str, ['value1', 'value2'])
+@attr.s
+class MyClass:
+my_attribute = attr.ib(validator=categorical_validator)</p></div>
 </dd>
 <dt id="functions.metatables.validators.make_range_validator"><code class="name flex">
 <span>def <span class="ident">make_range_validator</span></span>(<span>value_type, min_value, max_value)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Generate a range validator function for attribute validation.</p>
+<p>This function returns a validator function that checks if the provided
+attribute value is of the specified value_type and falls within the specified
+range.</p>
+<h2 id="parameters">Parameters</h2>
+<p>value_type (type): The expected data type of the attribute value.
+min_value (Any): The minimum allowed value for the attribute.
+max_value (Any): The maximum allowed value for the attribute.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Callable</code></dt>
+<dd>A validator function for attribute validation.</dd>
+</dl>
+<h2 id="example">Example</h2>
+<p>range_validator = make_range_validator(int, 1, 10)
+@attr.s
+class MyClass:
+my_attribute = attr.ib(validator=range_validator)</p></div>
 </dd>
 </dl>
 </section>
@@ -52,17 +85,17 @@
 <span>(</span><span>*args, **kwargs)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>dict() -&gt; new empty dictionary
-dict(mapping) -&gt; new dictionary initialized from a mapping object's
-(key, value) pairs
-dict(iterable) -&gt; new dictionary initialized as if via:
-d = {}
-for k, v in iterable:
-d[k] = v
-dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
-in the keyword argument list.
-For example:
-dict(one=1, two=2)</p></div>
+<div class="desc"><p>A custom dictionary for storing value labels in a MetaTable.</p>
+<p>This class is designed to enforce that keys are of type 'int' and values
+are of type 'str'.</p>
+<h2 id="attributes">Attributes</h2>
+<p>Inherits from dict.</p>
+<h2 id="methods">Methods</h2>
+<p><strong>setitem</strong>(key, value):
+Overrides the <strong>setitem</strong> method to enforce the data types of keys and values.</p>
+<h2 id="example">Example</h2>
+<p>labels_dict = LabelsDict()
+labels_dict[1] = 'Label 1'</p></div>
 <h3>Ancestors</h3>
 <ul class="hlist">
 <li>builtins.dict</li>

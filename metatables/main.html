@@ -117,27 +117,29 @@
 </dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.calculate_weight"><code class="name flex">
-<span>def <span class="ident">calculate_weight</span></span>(<span>self, column: str, target_values: dict)</span>
+<span>def <span class="ident">calculate_weight</span></span>(<span>self, column: str, target_values: dict, return_df: bool = False)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Calculates the weights for a given weight column based on the target values. You need to create the weight before you can calculate it.</p>
+<div class="desc"><p>Calculates the weights for a given weight column based on the target values. You need to create the weight
+before you can calculate it.</p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the weight column</dd>
 <dt><strong><code>target_values</code></strong> :&ensp;<code>dict</code></dt>
-<dd>Dictionary with the target values for each intersection. This is a nested dictionary and it accepts absolute values. Can be like {1: {1: 20, 2: 25}, 2: {1: 40, 2: 50}}</dd>
+<dd>Dictionary with the target values for each intersection.
+This is a nested dictionary and it accepts absolute values. Can be like {1: {1: 20, 2: 25}, 2: {1: 40, 2: 50}}</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.check_sav_prebreak"><code class="name flex">
-<span>def <span class="ident">check_sav_prebreak</span></span>(<span>self, method: str = 'CATI', Interviewer_Column='ENQ2', Interview_Duration_Column='DURINT', Date_Column='DATE')</span>
+<span>def <span class="ident">check_sav_prebreak</span></span>(<span>self, method: str = 'CATI', Interviewer_Column: str = 'ENQ2', Interview_Duration_Column: str = 'DURINT', Date_Column: str = 'DATE')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>checks and prints multiple key features of a sav file from nebu</p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>method</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>string to indicate the method. Defaults to "CATI".</dd>
+<dd>string to indicate the method. Defaults to "CATI". possible values are "CATI" or "OTHER"</dd>
 <dt><strong><code>Interviewer_Column</code></strong> :&ensp;<code>str</code>, optional</dt>
 <dd>Interviewer Code Column. Defaults to "ENQ2".</dd>
 <dt><strong><code>Interview_Duration_Column</code></strong> :&ensp;<code>str</code>, optional</dt>
@@ -158,7 +160,8 @@
 <dt><strong><code>new_column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the new column</dd>
 <dt><strong><code>same_group</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>If True the column will be added to the same group as the copied column. Defaults to True.</dd>
+<dd>If True the column will be added to the same group as the copied column.
+Defaults to True.</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.copy_group"><code class="name flex">
@@ -268,7 +271,8 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dt><strong><code>new_column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the new column</dd>
 <dt><strong><code>values</code></strong> :&ensp;<code>Optional[dict[str, int]]</code></dt>
-<dd>A dictionary with the new values and the old values that should be replaced. Can be {"yes": 1, "no": 2}. This will replace all values from "yes" to 1 and "no" to 2.</dd>
+<dd>A dictionary with the new values and the old values that should be
+replaced. Can be {"yes": 1, "no": 2}. This will replace all values from "yes" to 1 and "no" to 2.</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.export_config"><code class="name flex">
@@ -303,7 +307,8 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the column</dd>
 <dt><strong><code>filter_label</code></strong> :&ensp;<code>str</code></dt>
-<dd>New filter_label of the column. This label adds information about the filter that was used for that question in the questionnaire.</dd>
+<dd>New filter_label of the column. This label adds information about the filter
+that was used for that question in the questionnaire.</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.get_intersection_counts"><code class="name flex">
@@ -322,7 +327,8 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dt><strong><code>group</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the group</dd>
 <dt><strong><code>filter_label</code></strong> :&ensp;<code>str</code></dt>
-<dd>New filter_label of the group. This label adds information about the filter that was used for that question in the questionnaire.</dd>
+<dd>New filter_label of the group. This label adds information about the filter
+that was used for that question in the questionnaire.</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.group_has_mean"><code class="name flex">
@@ -415,9 +421,10 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dt><strong><code>group</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the group</dd>
 <dt><strong><code>value_labels</code></strong> :&ensp;<code>Union[dict[int, str], str]</code></dt>
-<dd>A dictionary with new labels {1 : "label for code 1", 2: "label for code 2"} or the column name with the labels to be used "column_name"</dd>
-<dt><strong><code>keep_untouched_codes</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>This will keep the old labels of the column and just add the new ones instead of replacing all labels. Defaults to False.</dd>
+<dd>A dictionary with new labels
+{1 : "label for code 1", 2: "label for code 2"} or the column name with the labels to be used "column_name"
+keep_untouched_codes (bool, optional): This will keep the old labels of the column and just add
+the new ones instead of replacing all labels. Defaults to False.</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.has_mean"><code class="name flex">
@@ -596,9 +603,12 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dt><strong><code>new_column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the new column</dd>
 <dt><strong><code>values</code></strong> :&ensp;<code>dict[int, Any]</code></dt>
-<dd>A dictionary with the new values and the old values that should be replaced Can be {1: range(1, 20), 2: [20, 21], 3: 22}. This will replace all values from 1 to 19 with 1, 20 and 21 with 2 and 22 with 3.</dd>
+<dd>A dictionary with the new values and the old values that should be replaced
+Can be {1: range(1, 20), 2: [20, 21], 3: 22}. This will replace all values from 1 to 19 with 1, 20 and 21 with 2
+and 22 with 3.</dd>
 <dt><strong><code>keep_untouched_codes</code></strong> :&ensp;<code>bool</code></dt>
-<dd>This will keep the old labels of the column and just add the new ones instead of replacing all labels. Defaults to True.</dd>
+<dd>This will keep the old labels of the column and just add
+the new ones instead of replacing all labels. Defaults to True.</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.recode_group"><code class="name flex">
@@ -613,9 +623,12 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dt><strong><code>new_group</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the new group</dd>
 <dt><strong><code>values</code></strong> :&ensp;<code>dict[int, Any]</code></dt>
-<dd>A dictionary with the new values and the old values that should be replaced Can be {1: range(1, 20), 2: [20, 21], 3: 22}. This will replace all values from 1 to 19 with 1, 20 and 21 with 2 and 22 with 3.</dd>
+<dd>A dictionary with the new values and the old values that should be replaced
+Can be {1: range(1, 20), 2: [20, 21], 3: 22}. This will replace all values from 1 to 19 with 1, 20 and 21 with 2
+and 22 with 3.</dd>
 <dt><strong><code>keep_untouched_codes</code></strong> :&ensp;<code>bool</code></dt>
-<dd>This will keep the old labels of the column and just add the new ones instead of replacing all labels. Defaults to True.</dd>
+<dd>This will keep the old labels of the column and just add
+the new ones instead of replacing all labels. Defaults to True.</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.remove_from_group"><code class="name flex">
@@ -628,6 +641,15 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the column</dd>
 </dl></div>
+</dd>
+<dt id="functions.metatables.main.MetaTable2.remove_speeders"><code class="name flex">
+<span>def <span class="ident">remove_speeders</span></span>(<span>self, speeder_value: float = None, Interview_Duration_Column: str = 'DURINT') ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Remove speeder rows from the DataFrame where interview duration is below the calculated speeder threshold.</p>
+<p>Parameters:
+- speeder_value (float): The precalculated speeder threshold value. If not provided, it will be calculated using _calculate_speeder_value.
+- Interview_Duration_Column (str): Name of the column containing interview durations. Default is "DURINT".</p></div>
 </dd>
 <dt id="functions.metatables.main.MetaTable2.rename_column"><code class="name flex">
 <span>def <span class="ident">rename_column</span></span>(<span>self, name: str, new_name: str)</span>
@@ -749,9 +771,10 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the column</dd>
 <dt><strong><code>value_labels</code></strong> :&ensp;<code>Union[dict[int, str], str]</code></dt>
-<dd>A dictionary with new labels {1 : "label for code 1", 2: "label for code 2"} or the column name with the labels to be used "column_name"</dd>
-<dt><strong><code>keep_untouched_codes</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>This will keep the old labels of the column and just add the new ones instead of replacing all labels. Defaults to False.</dd>
+<dd>A dictionary with new labels
+{1 : "label for code 1", 2: "label for code 2"} or the column name with the labels to be used "column_name"
+keep_untouched_codes (bool, optional): This will keep the old labels of the column and just add
+the new ones instead of replacing all labels. Defaults to False.</dd>
 </dl></div>
 </dd>
 </dl>
@@ -821,6 +844,7 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <li><code><a title="functions.metatables.main.MetaTable2.recode" href="#functions.metatables.main.MetaTable2.recode">recode</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.recode_group" href="#functions.metatables.main.MetaTable2.recode_group">recode_group</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.remove_from_group" href="#functions.metatables.main.MetaTable2.remove_from_group">remove_from_group</a></code></li>
+<li><code><a title="functions.metatables.main.MetaTable2.remove_speeders" href="#functions.metatables.main.MetaTable2.remove_speeders">remove_speeders</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.rename_column" href="#functions.metatables.main.MetaTable2.rename_column">rename_column</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.select_columns" href="#functions.metatables.main.MetaTable2.select_columns">select_columns</a></code></li>
 <li><code><a title="functions.metatables.main.MetaTable2.show_column_info" href="#functions.metatables.main.MetaTable2.show_column_info">show_column_info</a></code></li>

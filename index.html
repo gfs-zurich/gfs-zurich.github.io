@@ -168,10 +168,13 @@ By modifying the pre-commit script in this way, you can ensure that the Jupyter 
 <section>
 <h2 class="section-title" id="header-submodules">Sub-modules</h2>
 <dl>
+<dt><code class="name"><a title="functions.aioli" href="aioli/index.html">functions.aioli</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt><code class="name"><a title="functions.graphy" href="graphy/index.html">functions.graphy</a></code></dt>
 <dd>
-<div class="desc"><p>gfs-graphy
-These are graphical interfaces for various plots inside the technology stack of <a href="https://github.com/gfs-zurich">gfs-zürich</a> …</p></div>
+<div class="desc"><p>gfs-graphy …</p></div>
 </dd>
 <dt><code class="name"><a title="functions.matrixmixer" href="matrixmixer/index.html">functions.matrixmixer</a></code></dt>
 <dd>
@@ -258,7 +261,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 </dl></div>
 </dd>
 <dt id="functions.create_barchart"><code class="name flex">
-<span>def <span class="ident">create_barchart</span></span>(<span>info: dict, variables: list, breaks: Optional[list] = None, legend_break: Optional[list] = None, barchart_mean: bool = False, break_labels_rename: Optional[dict[str, str]] = None, left_labels_rename: Optional[dict[str, str]] = None, legend_labels_rename: Optional[dict[str, str]] = None, left_labels_wrap: int = 50, left_labels_width: int = 999, show_mean: bool = False, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', legend_title_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, legend_position: str = 'right', return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: Optional[list[str]] = None, value_labels_show_min: float = 0, value_labels_add_after: Optional[list[list[str]]] = None, weight: str = 'auto', order_by: Optional[dict] = None, title_remove_before: str = '', title_remove_after: str = '', title_add_end: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', bar_gap=999, bar_width: float = 999, bar_min_size: float = 0, break_distance: float = 999, label_size: float = 16, value_labels_size: float = 999, legend_labels_size: float = 14, show_legend: bool = True, show_total_legend: bool = True, show_total: bool = True, show_count: bool = False, show_all_bars: bool = False, show_legend_title: Optional[bool] = None, select_variable_levels: Optional[list[int]] = None, select_min_count: int = 0, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: Optional[dict] = None, save_figure: bool = True, return_figure: bool = False, df: Union[pandas.core.frame.DataFrame, str] = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto') ‑> Optional[tuple]</span>
+<span>def <span class="ident">create_barchart</span></span>(<span>info: dict, variables: list, breaks: Optional[list] = None, legend_break: Optional[list] = None, barchart_mean: bool = False, break_labels_rename: Optional[dict[str, str]] = None, left_labels_rename: Optional[dict[str, str]] = None, legend_labels_rename: Optional[dict[str, str]] = None, left_labels_wrap: int = 50, left_labels_width: int = 999, show_mean: bool = False, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', legend_title_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, legend_position: str = 'right', return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: Optional[list[str]] = None, value_labels_show_min: float = 0, value_labels_add_after: Optional[list[list[str]]] = None, weight: str = 'auto', order_by: Optional[dict] = None, title_remove_before: str = '', title_remove_after: str = '', title_add_end: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', bar_gap=999, bar_width: float = 999, bar_min_size: float = 0, break_distance: float = 999, label_size: float = 16, value_labels_size: float = 999, legend_labels_size: float = 14, show_legend: bool = True, show_total_legend: bool = True, show_total: bool = True, show_count: bool = False, show_index: bool = False, show_all_bars: bool = False, show_legend_title: Optional[bool] = None, select_variable_levels: Optional[list[int]] = None, select_min_count: int = 0, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: Optional[dict] = None, save_figure: bool = True, return_figure: bool = False, df: Union[pandas.core.frame.DataFrame, str] = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto') ‑> Optional[tuple]</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a barchart</p>
@@ -360,6 +363,8 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <dd>Turns total bar on and off. ~ False. Defaults to True.</dd>
 <dt><strong><code>show_count</code></strong> :&ensp;<code>bool</code>, optional</dt>
 <dd>Turns counts in variable labels on and off. ~ True. Defaults to False.</dd>
+<dt><strong><code>show_index</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Turns index in variable labels on and off. ~ True. Defaults to False.</dd>
 <dt><strong><code>show_all_bars</code></strong> :&ensp;<code>bool</code>, optional</dt>
 <dd>Turns counts bars with zero observations on and off. ~ True. Defaults to False.</dd>
 <dt><strong><code>show_legend_title</code></strong> :&ensp;<code>bool</code>, optional</dt>
@@ -434,6 +439,30 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <dd>Name of the original variable</dd>
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
+</dl></div>
+</dd>
+<dt id="functions.create_custom_break"><code class="name flex">
+<span>def <span class="ident">create_custom_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str, recode_values: tuple[dict[int, range], bool], value_labels: dict[int, str], single_label: str, measure: str = 'nominal') ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a custom break in the specified Metatable.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing.</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable.</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break.</dd>
+<dt><strong><code>recode_values</code></strong> :&ensp;<code>Tuple[Dict[int, range], bool]</code></dt>
+<dd>Tuple with recode values and
+whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True).</dd>
+<dt><strong><code>value_labels</code></strong> :&ensp;<code>Dict[int, str]</code></dt>
+<dd>Value labels dictionary, e.g., {1: '1-5', 2: '6-10'}.</dd>
+<dt><strong><code>single_label</code></strong> :&ensp;<code>str</code></dt>
+<dd>Single label of the break.</dd>
+<dt><strong><code>measure</code></strong> :&ensp;<code>str</code></dt>
+<dd>Break measure, nominal, scale, etc. Default is 'nominal'.</dd>
 </dl></div>
 </dd>
 <dt id="functions.create_education_break"><code class="name flex">
@@ -556,7 +585,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 </dl></div>
 </dd>
 <dt id="functions.create_lead_time_break"><code class="name flex">
-<span>def <span class="ident">create_lead_time_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'lead_time_break', year: int = 2023, dont_know_code: bool = False) ‑> None</span>
+<span>def <span class="ident">create_lead_time_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'lead_time_break', year: int = 2024, dont_know_code: bool = False) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a standard lead time break.</p>
@@ -700,7 +729,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 </dl></div>
 </dd>
 <dt id="functions.create_sprachregion_break"><code class="name flex">
-<span>def <span class="ident">create_sprachregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str) ‑> None</span>
+<span>def <span class="ident">create_sprachregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str, regions: dict = {1: 'D-CH', 2: 'W-CH', 3: 'I-CH'}) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a sprachregion break based on a JSON mapping file.</p>
@@ -714,10 +743,11 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <dd>Type of the original variable. "plz" if it represents the Postleitzahl and "gdenr" if it represents the Gemeindenummer.</dd>
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
-</dl></div>
+</dl>
+<p>regions (dict(int:str)): dictionary to only use certain sprachregions</p></div>
 </dd>
 <dt id="functions.create_stacked_barchart"><code class="name flex">
-<span>def <span class="ident">create_stacked_barchart</span></span>(<span>info: dict, variables: list, breaks: list = None, break_labels_rename: dict[str, str] = None, left_labels_rename: dict[str, str] = None, legend_labels_rename: dict[str, str] = None, left_labels_wrap: int = 50, left_labels_width: int = 999, show_mean: bool = False, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_type: str = 'diverging', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_color: int = 999, value_labels_show_min: float = 0.8, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', value_labels_add_after: str = '', bar_width: float = 999, break_distance: float = 999, label_size: float = 16, value_labels_size: float = 16, legend_labels_size: float = 14, show_legend: bool = True, show_total: bool = True, show_count: bool = False, mean_name: str = 'MW', mean_transform: function = &lt;function &lt;lambda&gt;&gt;, mean_custom: list[str] = None, select_variable_levels: list[int] = None, select_variables: list[int] = None, select_min_count: int = 0, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, return_figure: bool = False, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto')</span>
+<span>def <span class="ident">create_stacked_barchart</span></span>(<span>info: dict, variables: list, breaks: list = None, break_labels_rename: dict[str, str] = None, left_labels_rename: dict[str, str] = None, legend_labels_rename: dict[str, str] = None, left_labels_wrap: int = 50, left_labels_width: int = 999, show_mean: bool = False, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_type: str = 'diverging', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_color: int = 999, value_labels_show_min: float = 0.8, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', value_labels_add_after: str = '', bar_width: float = 999, break_distance: float = 999, label_size: float = 16, value_labels_size: float = 16, legend_labels_size: float = 14, show_legend: bool = True, show_total: bool = True, show_count: bool = False, show_index: bool = False, mean_name: str = 'MW', mean_transform: function = &lt;function &lt;lambda&gt;&gt;, mean_custom: list[str] = None, select_variable_levels: list[int] = None, select_variables: list[int] = None, select_min_count: int = 0, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, return_figure: bool = False, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a stacked barchart</p>
@@ -806,6 +836,8 @@ defaults to ''
 :type show_total: bool, optional</p>
 <p>:param show_count: Turns counts in variable labels on and off. ~ True, defaults to False
 :type show_count: bool, optional</p>
+<p>:param show_index: Turns index in variable labels on and off. ~ True, defaults to False
+:type show_index: bool, optional</p>
 <p>:param mean_name: Changes name written above the mean values, defaults to 'MW'
 :type mean_name: str, optional</p>
 <p>:param mean_transform: Changes the size of the mean values with a transformation. lambda n: -n + 2 changes n to the negative value of n and adds 2, defaults to lambda n: n
@@ -986,6 +1018,34 @@ string after tag. Defaults to ''.</dd>
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="functions.load_and_render_panel_email"><code class="name flex">
+<span>def <span class="ident">load_and_render_panel_email</span></span>(<span>invitation_reason: str, end_of_study: str, study_code: str, length_min: float, points: Union[float, int] = 'auto', template_html: str = 'Vorlage_Mail_EinladungUmfrage_dt.html', output_file_path: str = 'Vorlage_Mail_EinladungUmfrage_dt.html', input_file_path: str = './templates/polittrends_invitation_templates/')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>creates a panel invitation email by adding the invitationreason,
+the studynr and the length of the study to the panel templates,
+Points and CHF values are calculated from the length of the study,
+other languages can be chosen y using another template</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>invitation_reason</code></strong> :&ensp;<code>str</code></dt>
+<dd>Reason for Invitation</dd>
+<dt><strong><code>end_of_study</code></strong> :&ensp;<code>str</code></dt>
+<dd>End of Study, as a string but should be a date (eg. 16. November 2023)</dd>
+<dt><strong><code>study_code</code></strong> :&ensp;<code>str</code></dt>
+<dd>Code from Manageframes (eg: 999923528)</dd>
+<dt><strong><code>length_min</code></strong> :&ensp;<code>float</code></dt>
+<dd>length of the study in minutes</dd>
+<dt><strong><code>points</code></strong> :&ensp;<code>Union[float, int]</code></dt>
+<dd>points for the study, if 'auto' points are calculated from length_min</dd>
+<dt><strong><code>template_html</code></strong> :&ensp;<code>str</code></dt>
+<dd>template file name</dd>
+<dt><strong><code>output_file_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>file name to be saved</dd>
+<dt><strong><code>input_file_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>folder for templates</dd>
+</dl></div>
+</dd>
 <dt id="functions.print_word_frequencies"><code class="name flex">
 <span>def <span class="ident">print_word_frequencies</span></span>(<span>df, column, min_count)</span>
 </code></dt>
@@ -1069,7 +1129,7 @@ string after tag. Defaults to ''.</dd>
 <dl>
 <dt id="functions.MatrixMixer"><code class="flex name class">
 <span>class <span class="ident">MatrixMixer</span></span>
-<span>(</span><span>meta_table: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, breaks: list = [['tz']], language: list = 'de', weight: list = 'tz')</span>
+<span>(</span><span>meta_table: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, breaks: list = [['tz']], language: list = 'de', weight: list = 'tz', special_variables_last: bool = True)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Assembles multiple tables with descriptive statistics and exports them to excel.</p>
@@ -1083,6 +1143,8 @@ string after tag. Defaults to ''.</dd>
 <dd>Selects the language of the Matrix. Defaults to 'de'.</dd>
 <dt><strong><code>weight</code></strong> :&ensp;<code>str</code></dt>
 <dd>Turns weight on if weight variable name is added. "gewicht", defaults to 'tz'</dd>
+<dt><strong><code>special_variables_last</code></strong> :&ensp;<code>bool</code></dt>
+<dd>If True, special variables will be shown at the bottom. Defaults to True.</dd>
 </dl>
 <p>Method generated by attrs for class MatrixMixer.</p></div>
 <h3>Class variables</h3>
@@ -1099,6 +1161,10 @@ string after tag. Defaults to ''.</dd>
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="functions.MatrixMixer.special_variables_last"><code class="name">var <span class="ident">special_variables_last</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="functions.MatrixMixer.weight"><code class="name">var <span class="ident">weight</span> : list</code></dt>
 <dd>
 <div class="desc"></div>
@@ -1106,8 +1172,14 @@ string after tag. Defaults to ''.</dd>
 </dl>
 <h3>Methods</h3>
 <dl>
+<dt id="functions.MatrixMixer.add_title_page_info"><code class="name flex">
+<span>def <span class="ident">add_title_page_info</span></span>(<span>self, study_title: str, clients: list[str], survey_methodology: str, sampling: str, quota_features: str, address_origin: list[str], population: str, weighting: str, survey_period: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="functions.MatrixMixer.create_matrix"><code class="name flex">
-<span>def <span class="ident">create_matrix</span></span>(<span>self, question: str, breaks: list[list[str]] = 'auto', weight: str = 'auto') ‑> None</span>
+<span>def <span class="ident">create_matrix</span></span>(<span>self, question: str, breaks: list[list[str]] = 'auto', weight: str = 'auto', order_descending: Union[str, bool] = 'auto', special_variables: Union[str, list[int]] = 'auto') ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a single matrix and saves it to the MatrixMixer object.</p>
@@ -1119,10 +1191,14 @@ string after tag. Defaults to ''.</dd>
 <dd>Selects the breaks used in matrix. Defaults to 'auto'.</dd>
 <dt><strong><code>weight</code></strong> :&ensp;<code>str</code>, optional</dt>
 <dd>Selects the weight used in matrix. Defaults to 'auto'.</dd>
+<dt><strong><code>order_descending</code></strong> :&ensp;<code>Union[str, bool]</code>, optional</dt>
+<dd>Orders the values descending or not. Use either False or True. Defaults to 'auto'.</dd>
+<dt><strong><code>special_variables</code></strong> :&ensp;<code>Union[str, list[int]]</code>, optional</dt>
+<dd>List of special variables which will appear at the bottom. Could be something like [96, 97, 98, 99999997, 99999998]. Defaults to 'auto'.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MatrixMixer.export_excel"><code class="name flex">
-<span>def <span class="ident">export_excel</span></span>(<span>self, show_title_page: bool = True, show_combined_sheet: bool = False) ‑> None</span>
+<span>def <span class="ident">export_excel</span></span>(<span>self, show_title_page: bool = True, show_combined_sheet: bool = True, show_percentage_sheet: bool = True, show_absolute_sheet: bool = False, show_debugging_sheet: bool = False) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Exports the matrices from the MatrixMixer to Excel.</p></div>
@@ -1409,27 +1485,29 @@ string after tag. Defaults to ''.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.calculate_weight"><code class="name flex">
-<span>def <span class="ident">calculate_weight</span></span>(<span>self, column: str, target_values: dict)</span>
+<span>def <span class="ident">calculate_weight</span></span>(<span>self, column: str, target_values: dict, return_df: bool = False)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Calculates the weights for a given weight column based on the target values. You need to create the weight before you can calculate it.</p>
+<div class="desc"><p>Calculates the weights for a given weight column based on the target values. You need to create the weight
+before you can calculate it.</p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the weight column</dd>
 <dt><strong><code>target_values</code></strong> :&ensp;<code>dict</code></dt>
-<dd>Dictionary with the target values for each intersection. This is a nested dictionary and it accepts absolute values. Can be like {1: {1: 20, 2: 25}, 2: {1: 40, 2: 50}}</dd>
+<dd>Dictionary with the target values for each intersection.
+This is a nested dictionary and it accepts absolute values. Can be like {1: {1: 20, 2: 25}, 2: {1: 40, 2: 50}}</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.check_sav_prebreak"><code class="name flex">
-<span>def <span class="ident">check_sav_prebreak</span></span>(<span>self, method: str = 'CATI', Interviewer_Column='ENQ2', Interview_Duration_Column='DURINT', Date_Column='DATE')</span>
+<span>def <span class="ident">check_sav_prebreak</span></span>(<span>self, method: str = 'CATI', Interviewer_Column: str = 'ENQ2', Interview_Duration_Column: str = 'DURINT', Date_Column: str = 'DATE')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>checks and prints multiple key features of a sav file from nebu</p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>method</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>string to indicate the method. Defaults to "CATI".</dd>
+<dd>string to indicate the method. Defaults to "CATI". possible values are "CATI" or "OTHER"</dd>
 <dt><strong><code>Interviewer_Column</code></strong> :&ensp;<code>str</code>, optional</dt>
 <dd>Interviewer Code Column. Defaults to "ENQ2".</dd>
 <dt><strong><code>Interview_Duration_Column</code></strong> :&ensp;<code>str</code>, optional</dt>
@@ -1450,7 +1528,8 @@ string after tag. Defaults to ''.</dd>
 <dt><strong><code>new_column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the new column</dd>
 <dt><strong><code>same_group</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>If True the column will be added to the same group as the copied column. Defaults to True.</dd>
+<dd>If True the column will be added to the same group as the copied column.
+Defaults to True.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.copy_group"><code class="name flex">
@@ -1560,7 +1639,8 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dt><strong><code>new_column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the new column</dd>
 <dt><strong><code>values</code></strong> :&ensp;<code>Optional[dict[str, int]]</code></dt>
-<dd>A dictionary with the new values and the old values that should be replaced. Can be {"yes": 1, "no": 2}. This will replace all values from "yes" to 1 and "no" to 2.</dd>
+<dd>A dictionary with the new values and the old values that should be
+replaced. Can be {"yes": 1, "no": 2}. This will replace all values from "yes" to 1 and "no" to 2.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.export_config"><code class="name flex">
@@ -1595,7 +1675,8 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the column</dd>
 <dt><strong><code>filter_label</code></strong> :&ensp;<code>str</code></dt>
-<dd>New filter_label of the column. This label adds information about the filter that was used for that question in the questionnaire.</dd>
+<dd>New filter_label of the column. This label adds information about the filter
+that was used for that question in the questionnaire.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.get_intersection_counts"><code class="name flex">
@@ -1614,7 +1695,8 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dt><strong><code>group</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the group</dd>
 <dt><strong><code>filter_label</code></strong> :&ensp;<code>str</code></dt>
-<dd>New filter_label of the group. This label adds information about the filter that was used for that question in the questionnaire.</dd>
+<dd>New filter_label of the group. This label adds information about the filter
+that was used for that question in the questionnaire.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.group_has_mean"><code class="name flex">
@@ -1707,9 +1789,10 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dt><strong><code>group</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the group</dd>
 <dt><strong><code>value_labels</code></strong> :&ensp;<code>Union[dict[int, str], str]</code></dt>
-<dd>A dictionary with new labels {1 : "label for code 1", 2: "label for code 2"} or the column name with the labels to be used "column_name"</dd>
-<dt><strong><code>keep_untouched_codes</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>This will keep the old labels of the column and just add the new ones instead of replacing all labels. Defaults to False.</dd>
+<dd>A dictionary with new labels
+{1 : "label for code 1", 2: "label for code 2"} or the column name with the labels to be used "column_name"
+keep_untouched_codes (bool, optional): This will keep the old labels of the column and just add
+the new ones instead of replacing all labels. Defaults to False.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.has_mean"><code class="name flex">
@@ -1888,9 +1971,12 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dt><strong><code>new_column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the new column</dd>
 <dt><strong><code>values</code></strong> :&ensp;<code>dict[int, Any]</code></dt>
-<dd>A dictionary with the new values and the old values that should be replaced Can be {1: range(1, 20), 2: [20, 21], 3: 22}. This will replace all values from 1 to 19 with 1, 20 and 21 with 2 and 22 with 3.</dd>
+<dd>A dictionary with the new values and the old values that should be replaced
+Can be {1: range(1, 20), 2: [20, 21], 3: 22}. This will replace all values from 1 to 19 with 1, 20 and 21 with 2
+and 22 with 3.</dd>
 <dt><strong><code>keep_untouched_codes</code></strong> :&ensp;<code>bool</code></dt>
-<dd>This will keep the old labels of the column and just add the new ones instead of replacing all labels. Defaults to True.</dd>
+<dd>This will keep the old labels of the column and just add
+the new ones instead of replacing all labels. Defaults to True.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.recode_group"><code class="name flex">
@@ -1905,9 +1991,12 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dt><strong><code>new_group</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the new group</dd>
 <dt><strong><code>values</code></strong> :&ensp;<code>dict[int, Any]</code></dt>
-<dd>A dictionary with the new values and the old values that should be replaced Can be {1: range(1, 20), 2: [20, 21], 3: 22}. This will replace all values from 1 to 19 with 1, 20 and 21 with 2 and 22 with 3.</dd>
+<dd>A dictionary with the new values and the old values that should be replaced
+Can be {1: range(1, 20), 2: [20, 21], 3: 22}. This will replace all values from 1 to 19 with 1, 20 and 21 with 2
+and 22 with 3.</dd>
 <dt><strong><code>keep_untouched_codes</code></strong> :&ensp;<code>bool</code></dt>
-<dd>This will keep the old labels of the column and just add the new ones instead of replacing all labels. Defaults to True.</dd>
+<dd>This will keep the old labels of the column and just add
+the new ones instead of replacing all labels. Defaults to True.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.remove_from_group"><code class="name flex">
@@ -1920,6 +2009,15 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the column</dd>
 </dl></div>
+</dd>
+<dt id="functions.MetaTable2.remove_speeders"><code class="name flex">
+<span>def <span class="ident">remove_speeders</span></span>(<span>self, speeder_value: float = None, Interview_Duration_Column: str = 'DURINT') ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Remove speeder rows from the DataFrame where interview duration is below the calculated speeder threshold.</p>
+<p>Parameters:
+- speeder_value (float): The precalculated speeder threshold value. If not provided, it will be calculated using _calculate_speeder_value.
+- Interview_Duration_Column (str): Name of the column containing interview durations. Default is "DURINT".</p></div>
 </dd>
 <dt id="functions.MetaTable2.rename_column"><code class="name flex">
 <span>def <span class="ident">rename_column</span></span>(<span>self, name: str, new_name: str)</span>
@@ -2041,9 +2139,10 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the column</dd>
 <dt><strong><code>value_labels</code></strong> :&ensp;<code>Union[dict[int, str], str]</code></dt>
-<dd>A dictionary with new labels {1 : "label for code 1", 2: "label for code 2"} or the column name with the labels to be used "column_name"</dd>
-<dt><strong><code>keep_untouched_codes</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>This will keep the old labels of the column and just add the new ones instead of replacing all labels. Defaults to False.</dd>
+<dd>A dictionary with new labels
+{1 : "label for code 1", 2: "label for code 2"} or the column name with the labels to be used "column_name"
+keep_untouched_codes (bool, optional): This will keep the old labels of the column and just add
+the new ones instead of replacing all labels. Defaults to False.</dd>
 </dl></div>
 </dd>
 </dl>
@@ -2328,6 +2427,7 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <ul id="index">
 <li><h3><a href="#header-submodules">Sub-modules</a></h3>
 <ul>
+<li><code><a title="functions.aioli" href="aioli/index.html">functions.aioli</a></code></li>
 <li><code><a title="functions.graphy" href="graphy/index.html">functions.graphy</a></code></li>
 <li><code><a title="functions.matrixmixer" href="matrixmixer/index.html">functions.matrixmixer</a></code></li>
 <li><code><a title="functions.metatables" href="metatables/index.html">functions.metatables</a></code></li>
@@ -2345,6 +2445,7 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><code><a title="functions.create_canton_break" href="#functions.create_canton_break">create_canton_break</a></code></li>
 <li><code><a title="functions.create_cantonal_banc_break" href="#functions.create_cantonal_banc_break">create_cantonal_banc_break</a></code></li>
 <li><code><a title="functions.create_count_employee_break" href="#functions.create_count_employee_break">create_count_employee_break</a></code></li>
+<li><code><a title="functions.create_custom_break" href="#functions.create_custom_break">create_custom_break</a></code></li>
 <li><code><a title="functions.create_education_break" href="#functions.create_education_break">create_education_break</a></code></li>
 <li><code><a title="functions.create_employment_break" href="#functions.create_employment_break">create_employment_break</a></code></li>
 <li><code><a title="functions.create_founding_year_break" href="#functions.create_founding_year_break">create_founding_year_break</a></code></li>
@@ -2368,6 +2469,7 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><code><a title="functions.create_wordcloud" href="#functions.create_wordcloud">create_wordcloud</a></code></li>
 <li><code><a title="functions.get_answer_list" href="#functions.get_answer_list">get_answer_list</a></code></li>
 <li><code><a title="functions.get_word_frequencies" href="#functions.get_word_frequencies">get_word_frequencies</a></code></li>
+<li><code><a title="functions.load_and_render_panel_email" href="#functions.load_and_render_panel_email">load_and_render_panel_email</a></code></li>
 <li><code><a title="functions.print_word_frequencies" href="#functions.print_word_frequencies">print_word_frequencies</a></code></li>
 <li><code><a title="functions.save_presentation" href="#functions.save_presentation">save_presentation</a></code></li>
 <li><code><a title="functions.show_stats" href="#functions.show_stats">show_stats</a></code></li>
@@ -2380,12 +2482,14 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <ul>
 <li>
 <h4><code><a title="functions.MatrixMixer" href="#functions.MatrixMixer">MatrixMixer</a></code></h4>
-<ul class="two-column">
+<ul class="">
+<li><code><a title="functions.MatrixMixer.add_title_page_info" href="#functions.MatrixMixer.add_title_page_info">add_title_page_info</a></code></li>
 <li><code><a title="functions.MatrixMixer.breaks" href="#functions.MatrixMixer.breaks">breaks</a></code></li>
 <li><code><a title="functions.MatrixMixer.create_matrix" href="#functions.MatrixMixer.create_matrix">create_matrix</a></code></li>
 <li><code><a title="functions.MatrixMixer.export_excel" href="#functions.MatrixMixer.export_excel">export_excel</a></code></li>
 <li><code><a title="functions.MatrixMixer.language" href="#functions.MatrixMixer.language">language</a></code></li>
 <li><code><a title="functions.MatrixMixer.meta_table" href="#functions.MatrixMixer.meta_table">meta_table</a></code></li>
+<li><code><a title="functions.MatrixMixer.special_variables_last" href="#functions.MatrixMixer.special_variables_last">special_variables_last</a></code></li>
 <li><code><a title="functions.MatrixMixer.weight" href="#functions.MatrixMixer.weight">weight</a></code></li>
 </ul>
 </li>
@@ -2458,6 +2562,7 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><code><a title="functions.MetaTable2.recode" href="#functions.MetaTable2.recode">recode</a></code></li>
 <li><code><a title="functions.MetaTable2.recode_group" href="#functions.MetaTable2.recode_group">recode_group</a></code></li>
 <li><code><a title="functions.MetaTable2.remove_from_group" href="#functions.MetaTable2.remove_from_group">remove_from_group</a></code></li>
+<li><code><a title="functions.MetaTable2.remove_speeders" href="#functions.MetaTable2.remove_speeders">remove_speeders</a></code></li>
 <li><code><a title="functions.MetaTable2.rename_column" href="#functions.MetaTable2.rename_column">rename_column</a></code></li>
 <li><code><a title="functions.MetaTable2.select_columns" href="#functions.MetaTable2.select_columns">select_columns</a></code></li>
 <li><code><a title="functions.MetaTable2.show_column_info" href="#functions.MetaTable2.show_column_info">show_column_info</a></code></li>

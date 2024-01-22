@@ -30,6 +30,12 @@
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
+<dt id="functions.matrixmixer.significances.create_output"><code class="name flex">
+<span>def <span class="ident">create_output</span></span>(<span>text, array, p_value, p_critical=0.05)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="functions.matrixmixer.significances.find_nominal_significances"><code class="name flex">
 <span>def <span class="ident">find_nominal_significances</span></span>(<span>table, break_object, code, break_value_labels)</span>
 </code></dt>
@@ -37,13 +43,19 @@
 <div class="desc"></div>
 </dd>
 <dt id="functions.matrixmixer.significances.find_ordinal_significances"><code class="name flex">
-<span>def <span class="ident">find_ordinal_significances</span></span>(<span>table, break_object, break_value_labels)</span>
+<span>def <span class="ident">find_ordinal_significances</span></span>(<span>table: dict, break_object: dict, break_value_labels: list, alpha: float = 0.05) ‑> None</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Identify ordinal significances in a break object and update the provided table.</p>
+<p>Parameters:
+- table (dict): The table to update with notes and significances.
+- break_object (dict): The break object containing information about comparisons.
+- break_value_labels (list): List of labels for break values.</p>
+<p>Returns:
+- None: The function updates the provided table and break object in-place.</p></div>
 </dd>
-<dt id="functions.matrixmixer.significances.manual_ttest_ind"><code class="name flex">
-<span>def <span class="ident">manual_ttest_ind</span></span>(<span>arr1, arr2)</span>
+<dt id="functions.matrixmixer.significances.find_ordinal_significances_non_corrected"><code class="name flex">
+<span>def <span class="ident">find_ordinal_significances_non_corrected</span></span>(<span>table, break_object, break_value_labels)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -66,9 +78,10 @@
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
+<li><code><a title="functions.matrixmixer.significances.create_output" href="#functions.matrixmixer.significances.create_output">create_output</a></code></li>
 <li><code><a title="functions.matrixmixer.significances.find_nominal_significances" href="#functions.matrixmixer.significances.find_nominal_significances">find_nominal_significances</a></code></li>
 <li><code><a title="functions.matrixmixer.significances.find_ordinal_significances" href="#functions.matrixmixer.significances.find_ordinal_significances">find_ordinal_significances</a></code></li>
-<li><code><a title="functions.matrixmixer.significances.manual_ttest_ind" href="#functions.matrixmixer.significances.manual_ttest_ind">manual_ttest_ind</a></code></li>
+<li><code><a title="functions.matrixmixer.significances.find_ordinal_significances_non_corrected" href="#functions.matrixmixer.significances.find_ordinal_significances_non_corrected">find_ordinal_significances_non_corrected</a></code></li>
 </ul>
 </li>
 </ul>

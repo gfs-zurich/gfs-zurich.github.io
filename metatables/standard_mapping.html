@@ -130,6 +130,30 @@
 <dd>Name of the newly created break</dd>
 </dl></div>
 </dd>
+<dt id="functions.metatables.standard_mapping.create_custom_break"><code class="name flex">
+<span>def <span class="ident">create_custom_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str, recode_values: tuple[dict[int, range], bool], value_labels: dict[int, str], single_label: str, measure: str = 'nominal') ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a custom break in the specified Metatable.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code>MetaTable2</code></dt>
+<dd>The Metatable that needs editing.</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable.</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break.</dd>
+<dt><strong><code>recode_values</code></strong> :&ensp;<code>Tuple[Dict[int, range], bool]</code></dt>
+<dd>Tuple with recode values and
+whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True).</dd>
+<dt><strong><code>value_labels</code></strong> :&ensp;<code>Dict[int, str]</code></dt>
+<dd>Value labels dictionary, e.g., {1: '1-5', 2: '6-10'}.</dd>
+<dt><strong><code>single_label</code></strong> :&ensp;<code>str</code></dt>
+<dd>Single label of the break.</dd>
+<dt><strong><code>measure</code></strong> :&ensp;<code>str</code></dt>
+<dd>Break measure, nominal, scale, etc. Default is 'nominal'.</dd>
+</dl></div>
+</dd>
 <dt id="functions.metatables.standard_mapping.create_education_break"><code class="name flex">
 <span>def <span class="ident">create_education_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S15', new_break_name: str = 'education_break', dont_know_code: bool = False) ‑> None</span>
 </code></dt>
@@ -250,7 +274,7 @@
 </dl></div>
 </dd>
 <dt id="functions.metatables.standard_mapping.create_lead_time_break"><code class="name flex">
-<span>def <span class="ident">create_lead_time_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'lead_time_break', year: int = 2023, dont_know_code: bool = False) ‑> None</span>
+<span>def <span class="ident">create_lead_time_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'lead_time_break', year: int = 2024, dont_know_code: bool = False) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a standard lead time break.</p>
@@ -388,7 +412,7 @@
 </dl></div>
 </dd>
 <dt id="functions.metatables.standard_mapping.create_sprachregion_break"><code class="name flex">
-<span>def <span class="ident">create_sprachregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str) ‑> None</span>
+<span>def <span class="ident">create_sprachregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str, regions: dict = {1: 'D-CH', 2: 'W-CH', 3: 'I-CH'}) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a sprachregion break based on a JSON mapping file.</p>
@@ -402,7 +426,8 @@
 <dd>Type of the original variable. "plz" if it represents the Postleitzahl and "gdenr" if it represents the Gemeindenummer.</dd>
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
-</dl></div>
+</dl>
+<p>regions (dict(int:str)): dictionary to only use certain sprachregions</p></div>
 </dd>
 <dt id="functions.metatables.standard_mapping.create_total_column"><code class="name flex">
 <span>def <span class="ident">create_total_column</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>)</span>
@@ -467,6 +492,7 @@
 <li><code><a title="functions.metatables.standard_mapping.create_canton_break" href="#functions.metatables.standard_mapping.create_canton_break">create_canton_break</a></code></li>
 <li><code><a title="functions.metatables.standard_mapping.create_cantonal_banc_break" href="#functions.metatables.standard_mapping.create_cantonal_banc_break">create_cantonal_banc_break</a></code></li>
 <li><code><a title="functions.metatables.standard_mapping.create_count_employee_break" href="#functions.metatables.standard_mapping.create_count_employee_break">create_count_employee_break</a></code></li>
+<li><code><a title="functions.metatables.standard_mapping.create_custom_break" href="#functions.metatables.standard_mapping.create_custom_break">create_custom_break</a></code></li>
 <li><code><a title="functions.metatables.standard_mapping.create_education_break" href="#functions.metatables.standard_mapping.create_education_break">create_education_break</a></code></li>
 <li><code><a title="functions.metatables.standard_mapping.create_employment_break" href="#functions.metatables.standard_mapping.create_employment_break">create_employment_break</a></code></li>
 <li><code><a title="functions.metatables.standard_mapping.create_founding_year_break" href="#functions.metatables.standard_mapping.create_founding_year_break">create_founding_year_break</a></code></li>
