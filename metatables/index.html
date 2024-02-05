@@ -591,6 +591,8 @@ before you can calculate it.</p>
 <dt><strong><code>target_values</code></strong> :&ensp;<code>dict</code></dt>
 <dd>Dictionary with the target values for each intersection.
 This is a nested dictionary and it accepts absolute values. Can be like {1: {1: 20, 2: 25}, 2: {1: 40, 2: 50}}</dd>
+<dt><strong><code>return_df</code></strong> :&ensp;<code>bool</code></dt>
+<dd>If True it will return the weighted dataframe. Defaults to False.</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.check_sav_prebreak"><code class="name flex">
@@ -739,7 +741,18 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <span>def <span class="ident">export_coding_excel</span></span>(<span>self, column_lists, filename: str = 'toCode', darker_columns: list = None, use_value_labels: bool = True) ‑> None</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Exports a .xlsx-file with the given columns and their value labels. This is mostly used for coding open questions.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>column_lists</code></strong> :&ensp;<code>list[list[str]]</code></dt>
+<dd>List of lists with the columns that should be exported. Can be [['CODERESP'], ['F1@', 'F1_01', 'F1_02', 'F1_03']]. All columns of every sublist will have the same background color.</dd>
+<dt><strong><code>filename</code></strong> :&ensp;<code>str</code></dt>
+<dd>File name of the .xlsx file. Defaults to 'toCode'.</dd>
+<dt><strong><code>darker_columns</code></strong> :&ensp;<code>list</code></dt>
+<dd>List of columns that should have a darker background color. Defaults to None.</dd>
+<dt><strong><code>use_value_labels</code></strong> :&ensp;<code>bool</code></dt>
+<dd>If True it will display the value labels instead of the codes. Defaults to True.</dd>
+</dl></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.export_config"><code class="name flex">
 <span>def <span class="ident">export_config</span></span>(<span>self, export_df: bool = True)</span>
@@ -780,7 +793,12 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <span>def <span class="ident">get_intersection_counts</span></span>(<span>self, categorical_columns: list[str])</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get the count for all combinations of the given columns.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>categorical_columns</code></strong> :&ensp;<code>list[str]</code></dt>
+<dd>List of columns that should be used to calculate the intersection counts.</dd>
+</dl></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.group_filter_label"><code class="name flex">
 <span>def <span class="ident">group_filter_label</span></span>(<span>self, group: str, filter_label: str)</span>
@@ -990,6 +1008,8 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dd>id to merge columns on, defaults to CODERESP</dd>
 <dt><strong><code>group_kind</code></strong> :&ensp;<code>str</code>, optional</dt>
 <dd>kind of group. Defaults to 'multi'.</dd>
+<dt><strong><code>measure</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>measure of the group. Defaults to 'auto'.</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.merge_semiopen_questions"><code class="name flex">
@@ -1048,12 +1068,6 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dd>The desired column order.</dd>
 </dl></div>
 </dd>
-<dt id="functions.metatables.MetaTable2.nested_to_tuple_dict"><code class="name flex">
-<span>def <span class="ident">nested_to_tuple_dict</span></span>(<span>self, nested_dict)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
 <dt id="functions.metatables.MetaTable2.recode"><code class="name flex">
 <span>def <span class="ident">recode</span></span>(<span>self, old_column: str, new_column: str, values: dict[int, typing.Any], keep_untouched_codes: bool = True)</span>
 </code></dt>
@@ -1104,9 +1118,13 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 </code></dt>
 <dd>
 <div class="desc"><p>Remove speeder rows from the DataFrame where interview duration is below the calculated speeder threshold.</p>
-<p>Parameters:
-- speeder_value (float): The precalculated speeder threshold value. If not provided, it will be calculated using _calculate_speeder_value.
-- Interview_Duration_Column (str): Name of the column containing interview durations. Default is "DURINT".</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>speeder_value</code></strong> :&ensp;<code>float</code></dt>
+<dd>The precalculated speeder threshold value. If not provided, it will be calculated using _calculate_speeder_value.</dd>
+<dt><strong><code>Interview_Duration_Column</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the column containing interview durations. Default is "DURINT".</dd>
+</dl></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.rename_column"><code class="name flex">
 <span>def <span class="ident">rename_column</span></span>(<span>self, name: str, new_name: str)</span>
@@ -1128,7 +1146,7 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <div class="desc"><p>Selects columns and removes the others</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>column</code></strong> :&ensp;<code>list</code></dt>
+<dt><strong><code>columns</code></strong> :&ensp;<code>list</code></dt>
 <dd>Names of the columns to select</dd>
 </dl></div>
 </dd>
@@ -1211,12 +1229,6 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dt><strong><code>verbose</code></strong> :&ensp;<code>bool</code></dt>
 <dd>Prints warnings if True. Defaults to True.</dd>
 </dl></div>
-</dd>
-<dt id="functions.metatables.MetaTable2.tuple_to_nested_dict"><code class="name flex">
-<span>def <span class="ident">tuple_to_nested_dict</span></span>(<span>self, tuple_dict)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.value_labels"><code class="name flex">
 <span>def <span class="ident">value_labels</span></span>(<span>self, column: str, value_labels: Union[dict[int, str], str], keep_untouched_codes: bool = False)</span>
@@ -1335,7 +1347,6 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <li><code><a title="functions.metatables.MetaTable2.missing_values" href="#functions.metatables.MetaTable2.missing_values">missing_values</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.move_column" href="#functions.metatables.MetaTable2.move_column">move_column</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.move_columns" href="#functions.metatables.MetaTable2.move_columns">move_columns</a></code></li>
-<li><code><a title="functions.metatables.MetaTable2.nested_to_tuple_dict" href="#functions.metatables.MetaTable2.nested_to_tuple_dict">nested_to_tuple_dict</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.output_path" href="#functions.metatables.MetaTable2.output_path">output_path</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.project_name" href="#functions.metatables.MetaTable2.project_name">project_name</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.project_number" href="#functions.metatables.MetaTable2.project_number">project_number</a></code></li>
@@ -1352,7 +1363,6 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <li><code><a title="functions.metatables.MetaTable2.show_group_info" href="#functions.metatables.MetaTable2.show_group_info">show_group_info</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.show_group_meta" href="#functions.metatables.MetaTable2.show_group_meta">show_group_meta</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.single_label" href="#functions.metatables.MetaTable2.single_label">single_label</a></code></li>
-<li><code><a title="functions.metatables.MetaTable2.tuple_to_nested_dict" href="#functions.metatables.MetaTable2.tuple_to_nested_dict">tuple_to_nested_dict</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.value_labels" href="#functions.metatables.MetaTable2.value_labels">value_labels</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.weights" href="#functions.metatables.MetaTable2.weights">weights</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.year" href="#functions.metatables.MetaTable2.year">year</a></code></li>
