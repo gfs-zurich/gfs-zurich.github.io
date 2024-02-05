@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>functions API documentation</title>
-<meta name="description" content="![gfs-zh](ressources/gfs-zh.svg) …" />
+<meta name="description" content="&lt;img src=&#34;https://gfs-zh.ch/wp-content/uploads/2021/06/LOGO_gfs-zh_org-RGB.svg&#34; width=&#34;400&#34;&gt; …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,7 +22,7 @@
 <h1 class="title">Package <code>functions</code></h1>
 </header>
 <section id="section-intro">
-<p><img alt="gfs-zh" src="ressources/gfs-zh.svg"></p>
+<p><img src="https://gfs-zh.ch/wp-content/uploads/2021/06/LOGO_gfs-zh_org-RGB.svg" width="400"></p>
 <h1 id="gfs-functions">gfs-functions</h1>
 <p>This repository is a part of the technology stack of <a href="https://github.com/gfs-zurich">gfs-zürich</a>. It contains functions to create graphs and tables with python.</p>
 <h2 id="project-objectives">Project objectives</h2>
@@ -184,6 +184,10 @@ By modifying the pre-commit script in this way, you can ensure that the Jupyter 
 <dd>
 <div class="desc"><p>gfs-metatables
 These are tools for preprocessing inside the technology stack of <a href="https://github.com/gfs-zurich">gfs-zürich</a>.</p></div>
+</dd>
+<dt><code class="name"><a title="functions.playground" href="playground/index.html">functions.playground</a></code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 <dt><code class="name"><a title="functions.tools" href="tools/index.html">functions.tools</a></code></dt>
 <dd>
@@ -1528,8 +1532,7 @@ This is a nested dictionary and it accepts absolute values. Can be like {1: {1: 
 <dt><strong><code>new_column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the new column</dd>
 <dt><strong><code>same_group</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>If True the column will be added to the same group as the copied column.
-Defaults to True.</dd>
+<dd>If True the column will be added to the same group as the copied column. Defaults to True.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.copy_group"><code class="name flex">
@@ -1639,9 +1642,14 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dt><strong><code>new_column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the new column</dd>
 <dt><strong><code>values</code></strong> :&ensp;<code>Optional[dict[str, int]]</code></dt>
-<dd>A dictionary with the new values and the old values that should be
-replaced. Can be {"yes": 1, "no": 2}. This will replace all values from "yes" to 1 and "no" to 2.</dd>
+<dd>A dictionary with the new values and the old values that should be replaced. Can be {"yes": 1, "no": 2}. This will replace all values from "yes" to 1 and "no" to 2.</dd>
 </dl></div>
+</dd>
+<dt id="functions.MetaTable2.export_coding_excel"><code class="name flex">
+<span>def <span class="ident">export_coding_excel</span></span>(<span>self, column_lists, filename: str = 'toCode', darker_columns: list = None, use_value_labels: bool = True) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 <dt id="functions.MetaTable2.export_config"><code class="name flex">
 <span>def <span class="ident">export_config</span></span>(<span>self, export_df: bool = True)</span>
@@ -1675,8 +1683,7 @@ replaced. Can be {"yes": 1, "no": 2}. This will replace all values from "yes" to
 <dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the column</dd>
 <dt><strong><code>filter_label</code></strong> :&ensp;<code>str</code></dt>
-<dd>New filter_label of the column. This label adds information about the filter
-that was used for that question in the questionnaire.</dd>
+<dd>New filter_label of the column. This label adds information about the filter that was used for that question in the questionnaire.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.get_intersection_counts"><code class="name flex">
@@ -1695,8 +1702,7 @@ that was used for that question in the questionnaire.</dd>
 <dt><strong><code>group</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the group</dd>
 <dt><strong><code>filter_label</code></strong> :&ensp;<code>str</code></dt>
-<dd>New filter_label of the group. This label adds information about the filter
-that was used for that question in the questionnaire.</dd>
+<dd>New filter_label of the group. This label adds information about the filter that was used for that question in the questionnaire.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.group_has_mean"><code class="name flex">
@@ -1789,10 +1795,9 @@ that was used for that question in the questionnaire.</dd>
 <dt><strong><code>group</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the group</dd>
 <dt><strong><code>value_labels</code></strong> :&ensp;<code>Union[dict[int, str], str]</code></dt>
-<dd>A dictionary with new labels
-{1 : "label for code 1", 2: "label for code 2"} or the column name with the labels to be used "column_name"
-keep_untouched_codes (bool, optional): This will keep the old labels of the column and just add
-the new ones instead of replacing all labels. Defaults to False.</dd>
+<dd>A dictionary with new labels {1 : "label for code 1", 2: "label for code 2"} or the column name with the labels to be used "column_name"</dd>
+<dt><strong><code>keep_untouched_codes</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>This will keep the old labels of the column and just add the new ones instead of replacing all labels. Defaults to False.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.has_mean"><code class="name flex">
@@ -1875,7 +1880,7 @@ the new ones instead of replacing all labels. Defaults to False.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.merge_open_questions"><code class="name flex">
-<span>def <span class="ident">merge_open_questions</span></span>(<span>self, df_open_questions: pandas.core.frame.DataFrame, columns: list, code_list: dict, group_name: str, group_label: str = '', merge_Id: str = 'CODERESP', group_kind='multi')</span>
+<span>def <span class="ident">merge_open_questions</span></span>(<span>self, df_open_questions: pandas.core.frame.DataFrame, columns: list, code_list: dict, group_name: str, group_label: str = '', merge_Id: str = 'CODERESP', group_kind='multi', measure: str = 'auto')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>merges open questions with the metatable dataframe</p>
@@ -1971,12 +1976,9 @@ the new ones instead of replacing all labels. Defaults to False.</dd>
 <dt><strong><code>new_column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the new column</dd>
 <dt><strong><code>values</code></strong> :&ensp;<code>dict[int, Any]</code></dt>
-<dd>A dictionary with the new values and the old values that should be replaced
-Can be {1: range(1, 20), 2: [20, 21], 3: 22}. This will replace all values from 1 to 19 with 1, 20 and 21 with 2
-and 22 with 3.</dd>
+<dd>A dictionary with the new values and the old values that should be replaced Can be {1: range(1, 20), 2: [20, 21], 3: 22}. This will replace all values from 1 to 19 with 1, 20 and 21 with 2 and 22 with 3.</dd>
 <dt><strong><code>keep_untouched_codes</code></strong> :&ensp;<code>bool</code></dt>
-<dd>This will keep the old labels of the column and just add
-the new ones instead of replacing all labels. Defaults to True.</dd>
+<dd>This will keep the old labels of the column and just add the new ones instead of replacing all labels. Defaults to True.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.recode_group"><code class="name flex">
@@ -1991,12 +1993,9 @@ the new ones instead of replacing all labels. Defaults to True.</dd>
 <dt><strong><code>new_group</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the new group</dd>
 <dt><strong><code>values</code></strong> :&ensp;<code>dict[int, Any]</code></dt>
-<dd>A dictionary with the new values and the old values that should be replaced
-Can be {1: range(1, 20), 2: [20, 21], 3: 22}. This will replace all values from 1 to 19 with 1, 20 and 21 with 2
-and 22 with 3.</dd>
+<dd>A dictionary with the new values and the old values that should be replaced Can be {1: range(1, 20), 2: [20, 21], 3: 22}. This will replace all values from 1 to 19 with 1, 20 and 21 with 2 and 22 with 3.</dd>
 <dt><strong><code>keep_untouched_codes</code></strong> :&ensp;<code>bool</code></dt>
-<dd>This will keep the old labels of the column and just add
-the new ones instead of replacing all labels. Defaults to True.</dd>
+<dd>This will keep the old labels of the column and just add the new ones instead of replacing all labels. Defaults to True.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.remove_from_group"><code class="name flex">
@@ -2139,10 +2138,9 @@ the new ones instead of replacing all labels. Defaults to True.</dd>
 <dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the column</dd>
 <dt><strong><code>value_labels</code></strong> :&ensp;<code>Union[dict[int, str], str]</code></dt>
-<dd>A dictionary with new labels
-{1 : "label for code 1", 2: "label for code 2"} or the column name with the labels to be used "column_name"
-keep_untouched_codes (bool, optional): This will keep the old labels of the column and just add
-the new ones instead of replacing all labels. Defaults to False.</dd>
+<dd>A dictionary with new labels {1 : "label for code 1", 2: "label for code 2"} or the column name with the labels to be used "column_name"</dd>
+<dt><strong><code>keep_untouched_codes</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>This will keep the old labels of the column and just add the new ones instead of replacing all labels. Defaults to False.</dd>
 </dl></div>
 </dd>
 </dl>
@@ -2431,6 +2429,7 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><code><a title="functions.graphy" href="graphy/index.html">functions.graphy</a></code></li>
 <li><code><a title="functions.matrixmixer" href="matrixmixer/index.html">functions.matrixmixer</a></code></li>
 <li><code><a title="functions.metatables" href="metatables/index.html">functions.metatables</a></code></li>
+<li><code><a title="functions.playground" href="playground/index.html">functions.playground</a></code></li>
 <li><code><a title="functions.tools" href="tools/index.html">functions.tools</a></code></li>
 </ul>
 </li>
@@ -2529,6 +2528,7 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><code><a title="functions.MetaTable2.delete_group" href="#functions.MetaTable2.delete_group">delete_group</a></code></li>
 <li><code><a title="functions.MetaTable2.df" href="#functions.MetaTable2.df">df</a></code></li>
 <li><code><a title="functions.MetaTable2.encode" href="#functions.MetaTable2.encode">encode</a></code></li>
+<li><code><a title="functions.MetaTable2.export_coding_excel" href="#functions.MetaTable2.export_coding_excel">export_coding_excel</a></code></li>
 <li><code><a title="functions.MetaTable2.export_config" href="#functions.MetaTable2.export_config">export_config</a></code></li>
 <li><code><a title="functions.MetaTable2.export_data" href="#functions.MetaTable2.export_data">export_data</a></code></li>
 <li><code><a title="functions.MetaTable2.filter_label" href="#functions.MetaTable2.filter_label">filter_label</a></code></li>
