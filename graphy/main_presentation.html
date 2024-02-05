@@ -40,13 +40,16 @@
 <span>def <span class="ident">add_text_slide</span></span>(<span>info: dict, text: list[str], my_title: str = 'gfs-zürich, Markt- & Sozialforschung') ‑> None</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
-</dd>
-<dt id="functions.graphy.main_presentation.add_title_slide"><code class="name flex">
-<span>def <span class="ident">add_title_slide</span></span>(<span>info: dict) ‑> None</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
+<div class="desc"><p>Adds a text slide to the presentation</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>info</code></strong> :&ensp;<code>dict</code></dt>
+<dd>The presentation object</dd>
+<dt><strong><code>text</code></strong> :&ensp;<code>list[str]</code></dt>
+<dd>The text that should be added to the slide. Each element in the list will be a new line.</dd>
+<dt><strong><code>my_title</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The title of the slide. Defaults to 'gfs-zürich, Markt- &amp; Sozialforschung'.</dd>
+</dl></div>
 </dd>
 <dt id="functions.graphy.main_presentation.add_to_graph_list"><code class="name flex">
 <span>def <span class="ident">add_to_graph_list</span></span>(<span>info: dict, position_1_text: str, position_2_text: str, position_3_text: str) ‑> None</span>
@@ -70,7 +73,12 @@
 <span>def <span class="ident">save_presentation</span></span>(<span>info: dict) ‑> None</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Saves the presentation</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>info</code></strong> :&ensp;<code>dict</code></dt>
+<dd>The presentation object</dd>
+</dl></div>
 </dd>
 <dt id="functions.graphy.main_presentation.show_param_as_title"><code class="name flex">
 <span>def <span class="ident">show_param_as_title</span></span>(<span>param, i, param_2='', j='')</span>
@@ -83,46 +91,52 @@
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a new presentation</p>
-<p>:param name: Changes the name of the presentation
-:type name: str</p>
-<p>:param df: The current data file ~ usually df
-:type df: pd.DataFrame</p>
-<p>:param meta: The current meta data file ~ usually meta
-:type meta: pyreadstat._readstat_parser.metadata_container</p>
-<p>:param output_path: Changes path and name of the output files, defaults to "./output/"
-:type output_path: str, optional</p>
-<p>:param template_path: Sets path of pptx-template file, defaults to './templates/'
-:type template_path: str, optional</p>
-<p>:param template_custom: Choose a custom template, defaults to 'auto'
-:type template_custom: str, optional</p>
-<p>:param color_theme: Sets color theme for graph. ~ 'test', 'gfs', defaults to 'standard'
-:type color_theme: str, optional</p>
-<p>:param language: Sets language for texts like subtitle and tag. ~ 'fr', 'en', 'it', defaults to 'de'
-:type language: str, optional</p>
-<p>:param value_labels_color: Sets threshold for black or white label color. Use 0 for all black labels and 255 for all white. Use numbers between for a mix, defaults to 130
-:type value_labels_color: int, optional</p>
-<p>:param weight: Turns weight on if weight variable name is added. ~ "gewicht", defaults to ''
-:type weight: str, optional</p>
-<p>:param bar_width_barchart: Sets the width of the barchart bars, defaults to 0.7
-:type bar_width_barchart: float, optional</p>
-<p>:param bar_width_stacked_barchart: Sets the width of the stacked barchart bars, defaults to 0.8
-:type bar_width_stacked_barchart: float, optional</p>
-<p>:param bar_gap_barchart: Sets the gap between the bars within a group, defaults to 0.15
-:type bar_gap_barchart: float, optional</p>
-<p>:param break_distance: Sets the distance between the breaks, defaults to 0.5
-:type break_distance: float, optional</p>
-<p>:param count_name: Changes the name of the count. ~ if "K" is passed in, counts look like "K = 42", defaults to 'N'
-:type count_name: str, optional</p>
-<p>:param logo_side: Changes the position of the logo on the presentation slides, ~ 'left', defaults to 'right'
-:type logo_side: str, optional</p>
-<p>:param export_svg: Exports graphs as .svg files if True, defaults to False
-:type export_svg: bool, optional</p>
-<p>:param standard_arguments: Adds some standard arguments that normally don't need to be changed, defaults to {}
-:type standard_arguments: dict, optional</p>
-<p>:param show_page_number: Turns page number on PowerPoint on and off ~ True, defaults to False
-:type show_page_number: bool, optional</p>
-<p>:return: Returns a dictionary with presentation info, the presentation object and some info about the plot theme.
-:rtype: dict</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Changes the name of the presentation</dd>
+<dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>The current data file ~ usually df</dd>
+<dt><strong><code>meta</code></strong> :&ensp;<code>pyreadstat._readstat_parser.metadata_container</code></dt>
+<dd>The current meta data file ~ usually meta</dd>
+<dt><strong><code>output_path</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Changes path and name of the output files. Defaults to "./output/".</dd>
+<dt><strong><code>template_path</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Sets path of pptx-template file. Defaults to './templates/'.</dd>
+<dt><strong><code>template_custom</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Choose a custom template. Defaults to 'auto'.</dd>
+<dt><strong><code>color_theme</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Sets color theme for graph. ~ 'test', 'gfs'. Defaults to 'standard'.</dd>
+<dt><strong><code>language</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Sets language for texts like subtitle and tag. ~ 'fr', 'en', 'it'. Defaults to 'de'.</dd>
+<dt><strong><code>value_labels_color</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Sets threshold for black or white label color. Use 0 for all black labels and 255 for all white. Use numbers between for a mix. Defaults to 130.</dd>
+<dt><strong><code>weight</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Turns weight on if weight variable name is added. ~ "gewicht". Defaults to ''.</dd>
+<dt><strong><code>bar_width_barchart</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>Sets the width of the barchart bars. Defaults to 0.7.</dd>
+<dt><strong><code>bar_width_stacked_barchart</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>Sets the width of the stacked barchart bars. Defaults to 0.8.</dd>
+<dt><strong><code>bar_gap_barchart</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>Sets the gap between the bars within a group. Defaults to 0.15.</dd>
+<dt><strong><code>break_distance</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>Sets the distance between the breaks. Defaults to 0.5.</dd>
+<dt><strong><code>count_name</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Changes the name of the count. ~ if "K" is passed in, counts look like "K = 42". Defaults to 'N'.</dd>
+<dt><strong><code>logo_side</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Changes the position of the logo on the presentation slides. ~ 'left'. Defaults to 'right'.</dd>
+<dt><strong><code>export_svg</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Exports graphs as .svg files if True. Defaults to False.</dd>
+<dt><strong><code>standard_arguments</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>Adds some standard arguments that normally don't need to be changed. Defaults to {}.</dd>
+<dt><strong><code>show_page_number</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Turns page number on PowerPoint on and off ~ True. Defaults to False.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>Returns a dictionary with presentation info, the presentation object and some info about the plot theme.</dd>
+</dl></div>
 </dd>
 </dl>
 </section>
@@ -144,7 +158,6 @@
 <ul class="">
 <li><code><a title="functions.graphy.main_presentation.add_graph_slide" href="#functions.graphy.main_presentation.add_graph_slide">add_graph_slide</a></code></li>
 <li><code><a title="functions.graphy.main_presentation.add_text_slide" href="#functions.graphy.main_presentation.add_text_slide">add_text_slide</a></code></li>
-<li><code><a title="functions.graphy.main_presentation.add_title_slide" href="#functions.graphy.main_presentation.add_title_slide">add_title_slide</a></code></li>
 <li><code><a title="functions.graphy.main_presentation.add_to_graph_list" href="#functions.graphy.main_presentation.add_to_graph_list">add_to_graph_list</a></code></li>
 <li><code><a title="functions.graphy.main_presentation.delete_all_files_in_folder" href="#functions.graphy.main_presentation.delete_all_files_in_folder">delete_all_files_in_folder</a></code></li>
 <li><code><a title="functions.graphy.main_presentation.export_figure" href="#functions.graphy.main_presentation.export_figure">export_figure</a></code></li>
