@@ -30,6 +30,34 @@
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
+<dt id="functions.graphy.main_presentation.add_combined_graphs_slide"><code class="name flex">
+<span>def <span class="ident">add_combined_graphs_slide</span></span>(<span>info: dict, figures: list, title_text: str, subtitle_text: str, tag_text: str, group_images: bool = True, share_y_labels: bool = True) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>combines a list of plotly figures onto a grid and saves it as a powerpoint slied</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>info</code></strong> :&ensp;<code>dict</code></dt>
+<dd>The presentation object</dd>
+<dt><strong><code>figures</code></strong> :&ensp;<code>list</code></dt>
+<dd>list of plotly figures, make sure to use single instances of them, in doubt make a deepcopy</dd>
+<dt><strong><code>title_text</code></strong> :&ensp;<code>str</code></dt>
+<dd>title_text</dd>
+<dt><strong><code>subtitle_text</code></strong> :&ensp;<code>str</code></dt>
+<dd>subtitle_text</dd>
+<dt><strong><code>tag_text</code></strong> :&ensp;<code>str</code></dt>
+<dd>tag_text</dd>
+<dt><strong><code>group_images</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>determines whether images are grouped in the slide. Defaults to True.</dd>
+<dt><strong><code>share_y_labels</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>determines whether images share the y axis labels row-wise. Defaults to True.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>if an invalid number of figures is entered, only 2 to 9 figures are valid</dd>
+</dl></div>
+</dd>
 <dt id="functions.graphy.main_presentation.add_graph_slide"><code class="name flex">
 <span>def <span class="ident">add_graph_slide</span></span>(<span>info: dict, position_1_text: str, position_2_text: str, position_3_text: str) ‑> None</span>
 </code></dt>
@@ -156,6 +184,7 @@
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
+<li><code><a title="functions.graphy.main_presentation.add_combined_graphs_slide" href="#functions.graphy.main_presentation.add_combined_graphs_slide">add_combined_graphs_slide</a></code></li>
 <li><code><a title="functions.graphy.main_presentation.add_graph_slide" href="#functions.graphy.main_presentation.add_graph_slide">add_graph_slide</a></code></li>
 <li><code><a title="functions.graphy.main_presentation.add_text_slide" href="#functions.graphy.main_presentation.add_text_slide">add_text_slide</a></code></li>
 <li><code><a title="functions.graphy.main_presentation.add_to_graph_list" href="#functions.graphy.main_presentation.add_to_graph_list">add_to_graph_list</a></code></li>

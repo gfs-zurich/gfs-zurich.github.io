@@ -134,6 +134,34 @@ Example:</p>
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
+<dt id="functions.graphy.add_combined_graphs_slide"><code class="name flex">
+<span>def <span class="ident">add_combined_graphs_slide</span></span>(<span>info: dict, figures: list, title_text: str, subtitle_text: str, tag_text: str, group_images: bool = True, share_y_labels: bool = True) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>combines a list of plotly figures onto a grid and saves it as a powerpoint slied</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>info</code></strong> :&ensp;<code>dict</code></dt>
+<dd>The presentation object</dd>
+<dt><strong><code>figures</code></strong> :&ensp;<code>list</code></dt>
+<dd>list of plotly figures, make sure to use single instances of them, in doubt make a deepcopy</dd>
+<dt><strong><code>title_text</code></strong> :&ensp;<code>str</code></dt>
+<dd>title_text</dd>
+<dt><strong><code>subtitle_text</code></strong> :&ensp;<code>str</code></dt>
+<dd>subtitle_text</dd>
+<dt><strong><code>tag_text</code></strong> :&ensp;<code>str</code></dt>
+<dd>tag_text</dd>
+<dt><strong><code>group_images</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>determines whether images are grouped in the slide. Defaults to True.</dd>
+<dt><strong><code>share_y_labels</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>determines whether images share the y axis labels row-wise. Defaults to True.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>if an invalid number of figures is entered, only 2 to 9 figures are valid</dd>
+</dl></div>
+</dd>
 <dt id="functions.graphy.add_text_slide"><code class="name flex">
 <span>def <span class="ident">add_text_slide</span></span>(<span>info: dict, text: list[str], my_title: str = 'gfs-zürich, Markt- & Sozialforschung') ‑> None</span>
 </code></dt>
@@ -527,10 +555,22 @@ string after tag. Defaults to ''.</dd>
 </dl></div>
 </dd>
 <dt id="functions.graphy.get_answer_list"><code class="name flex">
-<span>def <span class="ident">get_answer_list</span></span>(<span>df, column)</span>
+<span>def <span class="ident">get_answer_list</span></span>(<span>df, column) ‑> list</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get a list of answers from a column in a data frame.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>The data frame.</dd>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>The column name.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>A list of answers.</dd>
+</dl></div>
 </dd>
 <dt id="functions.graphy.get_word_frequencies"><code class="name flex">
 <span>def <span class="ident">get_word_frequencies</span></span>(<span>german_answers: list[str], transform: str, remove_words: Optional[list[str]] = None, min_count: int = 1) ‑> dict</span>
@@ -932,6 +972,7 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
+<li><code><a title="functions.graphy.add_combined_graphs_slide" href="#functions.graphy.add_combined_graphs_slide">add_combined_graphs_slide</a></code></li>
 <li><code><a title="functions.graphy.add_text_slide" href="#functions.graphy.add_text_slide">add_text_slide</a></code></li>
 <li><code><a title="functions.graphy.create_barchart" href="#functions.graphy.create_barchart">create_barchart</a></code></li>
 <li><code><a title="functions.graphy.create_piechart" href="#functions.graphy.create_piechart">create_piechart</a></code></li>
