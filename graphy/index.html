@@ -162,8 +162,42 @@ Example:</p>
 <dd>if an invalid number of figures is entered, only 2 to 9 figures are valid</dd>
 </dl></div>
 </dd>
+<dt id="functions.graphy.add_table_slide"><code class="name flex">
+<span>def <span class="ident">add_table_slide</span></span>(<span>info: dict, title_text: str, table: pandas.core.frame.DataFrame, table_width: float = 22.5, table_height: float = 5.0, table_top_distance: float = 4.5, table_left_distance: float = 1.5, column_titles: None | list[str] = None, column_alignments: None | list[str] = None, column_widths: None | list[int] = None, bold_cells: None | list[tuple[int, int]] = None, font_size: int = 14, row_heights: None | list[float] = None, cells_with_custom_color: None | dict = None, show_table_background_color: bool = True, title_font_size: int = 20, table_font_name: str = 'Leelawadee UI', cells_with_hyperlinks: None | dict = None) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds a table slide to the presentation</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>info</code></strong> :&ensp;<code>dict</code></dt>
+<dd>The presentation object</dd>
+<dt><strong><code>title_text</code></strong> :&ensp;<code>str</code></dt>
+<dd>The title of the slide</dd>
+<dt><strong><code>table</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>The table that should be added to the slide</dd>
+<dt><strong><code>table_width</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>The width of the table. Defaults to 22.5.</dd>
+<dt><strong><code>table_height</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>The height of the table. Defaults to 5.0.</dd>
+<dt>column_alignments (None | list[str], optional): The alignment of the columns. Defaults to None. If None, all columns will be aligned left. If a list is passed, it should contain the alignment for each column in the table. The alignment can be 1 (left), 2 (center), or 3 (right).</dt>
+<dt>column_titles (None | list[str], optional): The titles of the columns. Defaults to None. If None, the table will not have column titles. If a list is passed, it should contain the title for each column in the table.</dt>
+<dt>column_widths (None | list[int], optional): The width of the columns. Defaults to None. If None, all columns will have the same width. If a list is passed, it should contain the width for each column in the table. The values should be integers and only the relative width is important.</dt>
+<dt>bold_cells (None | list[tuple[int, int]], optional): The cells that should be bold. Defaults to None. If None, no cells will be bold. If a list is passed, it should contain the row and column index of the cells that should be bold.</dt>
+<dt><strong><code>font_size</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>The font size of the text in the table. Defaults to 14.</dd>
+<dt>row_heights (None | list[float], optional): The height of the rows. Defaults to None. If None, all rows will have the automatic height. If a list is passed, it should contain the height for each row in the table.</dt>
+<dt>cells_with_custom_color (None | dict, optional): The cells that should have a custom color. Defaults to None. If None, no cells will have a custom color. If a dictionary is passed, it should contain the row and column index of the cells as keys and the color as values. The color should be a string with the hex code of the color.</dt>
+<dt><strong><code>show_table_background_color</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Determines if the table background color should be shown. Defaults to True.</dd>
+<dt><strong><code>title_font_size</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>The font size of the title. Defaults to 20.</dd>
+<dt><strong><code>table_font_name</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The name of the font used in the whole table.</dd>
+</dl>
+<p>cells_with_hyperlinks (None | dict, optional): The cells that should have a hyperlink. Defaults to None. If None, no cells will have a hyperlink. If a dictionary is passed, it should contain the row and column index of the cells as keys and the hyperlink as values. The hyperlink should be a string with the address of the hyperlink.</p></div>
+</dd>
 <dt id="functions.graphy.add_text_slide"><code class="name flex">
-<span>def <span class="ident">add_text_slide</span></span>(<span>info: dict, text: list[str], my_title: str = 'gfs-zürich, Markt- & Sozialforschung') ‑> None</span>
+<span>def <span class="ident">add_text_slide</span></span>(<span>info: dict, text: list[dict] | list[str], my_title: str = 'gfs-zürich, Markt- & Sozialforschung') ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Adds a text slide to the presentation</p>
@@ -171,14 +205,13 @@ Example:</p>
 <dl>
 <dt><strong><code>info</code></strong> :&ensp;<code>dict</code></dt>
 <dd>The presentation object</dd>
-<dt><strong><code>text</code></strong> :&ensp;<code>list[str]</code></dt>
-<dd>The text that should be added to the slide. Each element in the list will be a new line.</dd>
+<dt>text (list[dict] | list[str]): The text that should be added to the slide. If a list of dictionaries is passed, each dictionary should contain a "text" key with the text that should be added to the slide. Additionally, the dictionary can contain a "size" key with the font size of the text, a "bold" key with a boolean value that determines if the text should be bold, a "hyperlink" key that adds a link as the value, and a "color" key with the color of the text. If a list of strings is passed, each string will be added to the slide as a paragraph.</dt>
 <dt><strong><code>my_title</code></strong> :&ensp;<code>str</code>, optional</dt>
 <dd>The title of the slide. Defaults to 'gfs-zürich, Markt- &amp; Sozialforschung'.</dd>
 </dl></div>
 </dd>
 <dt id="functions.graphy.create_barchart"><code class="name flex">
-<span>def <span class="ident">create_barchart</span></span>(<span>info: dict, variables: list, breaks: Optional[list] = None, legend_break: Optional[list] = None, barchart_mean: bool = False, break_labels_rename: Optional[dict[str, str]] = None, left_labels_rename: Optional[dict[str, str]] = None, legend_labels_rename: Optional[dict[str, str]] = None, left_labels_wrap: int = 50, left_labels_width: int = 999, show_mean: bool = False, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', legend_title_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, legend_position: str = 'right', return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: Optional[list[str]] = None, value_labels_show_min: float = 0, value_labels_add_after: Optional[list[list[str]]] = None, weight: str = 'auto', order_by: Optional[dict] = None, title_remove_before: str = '', title_remove_after: str = '', title_add_end: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', bar_gap=999, bar_width: float = 999, bar_min_size: float = 0, break_distance: float = 999, label_size: float = 16, value_labels_size: float = 999, legend_labels_size: float = 14, show_legend: bool = True, show_total_legend: bool = True, show_total: bool = True, show_count: bool = False, show_index: bool = False, show_all_bars: bool = False, show_legend_title: Optional[bool] = None, select_variable_levels: Optional[list[int]] = None, select_min_count: int = 0, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: Optional[dict] = None, save_figure: bool = True, return_figure: bool = False, df: Union[pandas.core.frame.DataFrame, str] = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto') ‑> Optional[tuple]</span>
+<span>def <span class="ident">create_barchart</span></span>(<span>info: dict, variables: list, breaks: Optional[list] = None, legend_break: Optional[list] = None, barchart_mean: bool = False, break_labels_rename: Optional[dict[str, str]] = None, left_labels_rename: Optional[dict[str, str]] = None, legend_labels_rename: Optional[dict[str, str]] = None, left_labels_wrap: int = 50, left_labels_width: int = 999, show_mean: bool = False, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', legend_title_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, legend_position: str = 'right', return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: None | list[str] = None, value_labels_show_min: float = 0, value_labels_add_after: Optional[list[list[str]]] = None, weight: str = 'auto', order_by: None | dict = None, title_remove_before: str = '', title_remove_after: str = '', title_add_end: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', bar_gap=999, bar_width: float = 999, bar_min_size: float = 0, break_distance: float = 999, label_size: float = 16, value_labels_size: float = 999, legend_labels_size: float = 14, show_legend: bool = True, show_total_legend: bool = True, show_total: bool = True, show_count: bool = False, show_index: bool = False, show_all_bars: bool = False, show_legend_title: Optional[bool] = None, select_variable_levels: None | list[int] = None, select_min_count: int = 0, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: None | dict = None, save_figure: bool = True, return_figure: bool = False, df: Union[pandas.core.frame.DataFrame, str] = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto') ‑> Optional[tuple]</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a barchart</p>
@@ -430,7 +463,7 @@ Example:</p>
 </dl></div>
 </dd>
 <dt id="functions.graphy.create_wordcloud"><code class="name flex">
-<span>def <span class="ident">create_wordcloud</span></span>(<span>info: dict, variables: list[str], language_column: str, translate_to: int = 564, transform: str = 'no', font_name: str = 'arial', title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_custom: str = 'auto', weight: str = 'auto', title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', label_size: float = 16, value_labels_size: float = 999, show_count: bool = False, remove_words: Optional[list[str]] = None, min_font_size: int = 0, min_count: int = 1, max_words: int = 200, standard_arguments: dict = None, save_figure: bool = True, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto') ‑> Optional[tuple]</span>
+<span>def <span class="ident">create_wordcloud</span></span>(<span>info: dict, variables: list[str], language_column: str, translate_to: int = 564, transform: str = 'no', font_name: str = 'arial', title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_custom: str = 'auto', weight: str = 'auto', title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', label_size: float = 16, value_labels_size: float = 999, show_count: bool = False, remove_words: None | list[str] = None, min_font_size: int = 0, min_count: int = 1, max_words: int = 200, standard_arguments: dict = None, save_figure: bool = True, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto') ‑> Optional[tuple]</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a barchart</p>
@@ -573,7 +606,7 @@ string after tag. Defaults to ''.</dd>
 </dl></div>
 </dd>
 <dt id="functions.graphy.get_word_frequencies"><code class="name flex">
-<span>def <span class="ident">get_word_frequencies</span></span>(<span>german_answers: list[str], transform: str, remove_words: Optional[list[str]] = None, min_count: int = 1) ‑> dict</span>
+<span>def <span class="ident">get_word_frequencies</span></span>(<span>german_answers: list[str], transform: str, remove_words: None | list[str] = None, min_count: int = 1) ‑> dict</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Get word frequencies from a list of german answers.</p>
@@ -973,6 +1006,7 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
 <li><code><a title="functions.graphy.add_combined_graphs_slide" href="#functions.graphy.add_combined_graphs_slide">add_combined_graphs_slide</a></code></li>
+<li><code><a title="functions.graphy.add_table_slide" href="#functions.graphy.add_table_slide">add_table_slide</a></code></li>
 <li><code><a title="functions.graphy.add_text_slide" href="#functions.graphy.add_text_slide">add_text_slide</a></code></li>
 <li><code><a title="functions.graphy.create_barchart" href="#functions.graphy.create_barchart">create_barchart</a></code></li>
 <li><code><a title="functions.graphy.create_piechart" href="#functions.graphy.create_piechart">create_piechart</a></code></li>
