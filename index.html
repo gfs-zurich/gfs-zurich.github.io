@@ -785,6 +785,8 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 <dd>A list variable levels used to select and order variables. ~ [2, 1, 99999997]. Defaults to None.</dd>
 <dt><strong><code>select_min_count</code></strong> :&ensp;<code>int</code>, optional</dt>
 <dd>Selects all bars with higher count than given. ~ 10 means that only bars with more than 10 observations will be selected. Defaults to 0.</dd>
+<dt><strong><code>break_x_axis</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Moves the breaks to the x Axis and the left labels to the legend, mostly used for time-series data. Defaults to False.</dd>
 <dt><strong><code>special_variables</code></strong> :&ensp;<code>list[int]</code>, optional</dt>
 <dd>A list variable levels that will be treated differently. They will appear gray in the graph and have not effect on the mean calculation. ~ [16, 99999997]. Defaults to [96, 97, 98, 99999996, 99999997, 99999998].</dd>
 <dt><strong><code>standard_arguments</code></strong> :&ensp;<code>dict</code>, optional</dt>
