@@ -30,11 +30,16 @@
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt id="functions.matrixmixer.significances.bonferroni_correction_example"><code class="name flex">
-<span>def <span class="ident">bonferroni_correction_example</span></span>(<span>)</span>
+<dt id="functions.matrixmixer.significances.bonferroni_correction"><code class="name flex">
+<span>def <span class="ident">bonferroni_correction</span></span>(<span>n, alpha)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Perform Bonferroni correction on p-values.</p>
+<p>Parameters:
+n (int): number of tests performed
+alpha (float): Desired family-wise error rate.</p>
+<p>Returns:
+corrected_alpha (float): Corrected significance level after Bonferroni correction.</p></div>
 </dd>
 <dt id="functions.matrixmixer.significances.find_nominal_significances"><code class="name flex">
 <span>def <span class="ident">find_nominal_significances</span></span>(<span>table, break_object, code, break_value_labels)</span>
@@ -72,7 +77,7 @@
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
-<li><code><a title="functions.matrixmixer.significances.bonferroni_correction_example" href="#functions.matrixmixer.significances.bonferroni_correction_example">bonferroni_correction_example</a></code></li>
+<li><code><a title="functions.matrixmixer.significances.bonferroni_correction" href="#functions.matrixmixer.significances.bonferroni_correction">bonferroni_correction</a></code></li>
 <li><code><a title="functions.matrixmixer.significances.find_nominal_significances" href="#functions.matrixmixer.significances.find_nominal_significances">find_nominal_significances</a></code></li>
 <li><code><a title="functions.matrixmixer.significances.find_ordinal_significances" href="#functions.matrixmixer.significances.find_ordinal_significances">find_ordinal_significances</a></code></li>
 <li><code><a title="functions.matrixmixer.significances.manual_ttest_ind" href="#functions.matrixmixer.significances.manual_ttest_ind">manual_ttest_ind</a></code></li>

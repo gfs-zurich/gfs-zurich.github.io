@@ -31,10 +31,21 @@
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="functions.metatables.excel.create_excel_workbook"><code class="name flex">
-<span>def <span class="ident">create_excel_workbook</span></span>(<span>output_path, temp_data, df, export_df, export_quotacheck=False)</span>
+<span>def <span class="ident">create_excel_workbook</span></span>(<span>output_path: str, temp_data: dict, df: pandas.core.frame.DataFrame, export_df: bool)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Exports the gfs-config excel file.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>output_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>The path to the output folder.</dd>
+<dt><strong><code>temp_data</code></strong> :&ensp;<code>dict</code></dt>
+<dd>A dictionary containing the temporary data. This is the meta data before the export.</dd>
+<dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>The DataFrame.</dd>
+<dt><strong><code>export_df</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether the DataFrame should be exported or not.</dd>
+</dl></div>
 </dd>
 </dl>
 </section>
