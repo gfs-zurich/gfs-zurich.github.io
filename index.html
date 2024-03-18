@@ -23,7 +23,7 @@
 </header>
 <section id="section-intro">
 <p><img src="https://gfs-zh.ch/wp-content/uploads/2021/06/LOGO_gfs-zh_org-RGB.svg" width="400"></p>
-<h1 id="gfs-functions">gfs-functions</h1>
+<h1 id="gfs_functions">gfs_functions</h1>
 <p>This repository is a part of the technology stack of <a href="https://github.com/gfs-zurich">gfs-zürich</a>. It contains functions to create graphs and tables with python.</p>
 <h2 id="project-objectives">Project objectives</h2>
 <ul>
@@ -51,7 +51,7 @@
 <h2 id="getting-started">Getting-Started</h2>
 <ol>
 <li>Clone this repository (for help see this <a href="https://help.github.com/articles/cloning-a-repository/">tutorial</a>).</li>
-<li>Install or update your Virtual Environment by following this section <a href="https://github.com/gfs-zurich/gfs-functions/blob/main/README.md#Virtual-Environment">Pipenv virtual environment</a></li>
+<li>Install or update your Virtual Environment by following this section <a href="https://github.com/gfs-zurich/gfs_functions/blob/main/README.md#Virtual-Environment">Pipenv virtual environment</a></li>
 <li>&hellip;</li>
 </ol>
 <h2 id="virtual-environment">Virtual-Environment</h2>
@@ -68,7 +68,7 @@
 <li><code>cd /your/local/github/repofolder/</code></li>
 <li><code>pipenv install</code></li>
 <li>restart VSCode</li>
-<li>choose the newly created <strong>gfs-functions</strong> virtual environment python interpreter (for help see this <a href="https://code.visualstudio.com/docs/python/environments#_working-with-python-interpreters">tutorial</a></li>
+<li>choose the newly created <strong>gfs_functions</strong> virtual environment python interpreter (for help see this <a href="https://code.visualstudio.com/docs/python/environments#_working-with-python-interpreters">tutorial</a></li>
 </ul>
 <h3 id="environment-already-installed-update-dependencies">Environment already installed (update dependencies)</h3>
 <p>If your environment exists and you only want to update the dependencies use these steps:</p>
@@ -99,7 +99,7 @@
 |   +---matrixmixer    # Functions for table creation
 |   +---metatables     # Functions for SPSS file data preprocessing
 |   \---tools          # Functions for general tasks
-+---gfs-projects       # Repository with project files
++---gfs_projects       # Repository with project files
 +---output             # Folder for outputs
 +---resources          # Folder with resources for maps
 +---templates          # Folder with all template files
@@ -183,6 +183,10 @@ By modifying the pre-commit script in this way, you can ensure that the Jupyter 
 <dt><code class="name"><a title="functions.metatables" href="metatables/index.html">functions.metatables</a></code></dt>
 <dd>
 <div class="desc"><p>gfs-metatables …</p></div>
+</dd>
+<dt><code class="name"><a title="functions.playground" href="playground/index.html">functions.playground</a></code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 <dt><code class="name"><a title="functions.tools" href="tools/index.html">functions.tools</a></code></dt>
 <dd>
@@ -1402,7 +1406,7 @@ other languages can be chosen y using another template</p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>meta_table</code></strong> :&ensp;<code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></dt>
-<dd>MetaTable created using gfs-functions</dd>
+<dd>MetaTable created using gfs_functions</dd>
 <dt><strong><code>breaks</code></strong> :&ensp;<code>list[str]</code></dt>
 <dd>Selects the breaks used by default. Defaults to ['tz'].</dd>
 <dt><strong><code>language</code></strong> :&ensp;<code>str</code></dt>
@@ -1464,10 +1468,25 @@ other languages can be chosen y using another template</p>
 </dl></div>
 </dd>
 <dt id="functions.MatrixMixer.export_excel"><code class="name flex">
-<span>def <span class="ident">export_excel</span></span>(<span>self, show_title_page: bool = True, show_combined_sheet: bool = True, show_percentage_sheet: bool = True, show_absolute_sheet: bool = False, show_debugging_sheet: bool = False) ‑> None</span>
+<span>def <span class="ident">export_excel</span></span>(<span>self, show_title_page: bool = True, show_combined_sheet: bool = True, show_percentage_sheet: bool = True, show_absolute_sheet: bool = False, show_debugging_sheet: bool = False, table_name: str = 'tabellenband.xlsx') ‑> None</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Exports the matrices from the MatrixMixer to Excel.</p></div>
+<div class="desc"><p>Exports the matrices from the MatrixMixer to Excel.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>show_title_page</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>show a title page. Defaults to True.</dd>
+<dt><strong><code>show_combined_sheet</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>shows sheet with combined values. Defaults to True.</dd>
+<dt><strong><code>show_percentage_sheet</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>shows sheet with percentage values. Defaults to True.</dd>
+<dt><strong><code>show_absolute_sheet</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>shows sheet with absolute values. Defaults to False.</dd>
+<dt><strong><code>show_debugging_sheet</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>shows all sheets for debugging purposes. Defaults to False.</dd>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Name of the exported table file. Defaults to tabellenband.xlsx.</dd>
+</dl></div>
 </dd>
 </dl>
 </dd>
@@ -1668,7 +1687,7 @@ other languages can be chosen y using another template</p>
 </dd>
 <dt id="functions.MetaTable2"><code class="flex name class">
 <span>class <span class="ident">MetaTable2</span></span>
-<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, project_number: int, project_name: str, columns: dict[str, <a title="functions.metatables.column.Column" href="metatables/column.html#functions.metatables.column.Column">Column</a>] = _Nothing.NOTHING, groups: dict[str, <a title="functions.metatables.group.Group" href="metatables/group.html#functions.metatables.group.Group">Group</a>] = _Nothing.NOTHING, weights: dict[str, <a title="functions.metatables.weight.Weight" href="metatables/weight.html#functions.metatables.weight.Weight">Weight</a>] = _Nothing.NOTHING, year: str = '2023', output_path: str = '//172.16.20.100/daten/PROJEKTE_PythonOutputs/', projects_path: str = './gfs-projects/')</span>
+<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, project_number: int, project_name: str, columns: dict[str, <a title="functions.metatables.column.Column" href="metatables/column.html#functions.metatables.column.Column">Column</a>] = _Nothing.NOTHING, groups: dict[str, <a title="functions.metatables.group.Group" href="metatables/group.html#functions.metatables.group.Group">Group</a>] = _Nothing.NOTHING, weights: dict[str, <a title="functions.metatables.weight.Weight" href="metatables/weight.html#functions.metatables.weight.Weight">Weight</a>] = _Nothing.NOTHING, year: str = '2023', output_path: str = '//172.16.20.100/daten/PROJEKTE_PythonOutputs/', projects_path: str = './gfs_projects/')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates MetaTable object that makes data wrangling of files read with pyreadstat easy.</p>
@@ -1691,7 +1710,7 @@ other languages can be chosen y using another template</p>
 <dt><strong><code>output_path</code></strong> :&ensp;<code>str</code>, optional</dt>
 <dd>Path of the output. Defaults to '//172.16.20.100/daten/PROJEKTE_PythonOutputs/'.</dd>
 <dt><strong><code>projects_path</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Path of the git projects folder. Defaults to './gfs-projects/'.</dd>
+<dd>Path of the git projects folder. Defaults to './gfs_projects/'.</dd>
 </dl>
 <p>Method generated by attrs for class MetaTable2.</p></div>
 <h3>Class variables</h3>
@@ -2672,7 +2691,7 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <h1>Index</h1>
 <div class="toc">
 <ul>
-<li><a href="#gfs-functions">gfs-functions</a><ul>
+<li><a href="#gfs_functions">gfs_functions</a><ul>
 <li><a href="#project-objectives">Project objectives</a></li>
 <li><a href="#technologies">Technologies</a></li>
 <li><a href="#requirements">Requirements</a></li>
@@ -2703,6 +2722,7 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><code><a title="functions.graphy" href="graphy/index.html">functions.graphy</a></code></li>
 <li><code><a title="functions.matrixmixer" href="matrixmixer/index.html">functions.matrixmixer</a></code></li>
 <li><code><a title="functions.metatables" href="metatables/index.html">functions.metatables</a></code></li>
+<li><code><a title="functions.playground" href="playground/index.html">functions.playground</a></code></li>
 <li><code><a title="functions.tools" href="tools/index.html">functions.tools</a></code></li>
 </ul>
 </li>

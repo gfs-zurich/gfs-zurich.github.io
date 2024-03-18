@@ -62,7 +62,7 @@
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>meta_table</code></strong> :&ensp;<code>MetaTable2</code></dt>
-<dd>MetaTable created using gfs-functions</dd>
+<dd>MetaTable created using gfs_functions</dd>
 <dt><strong><code>breaks</code></strong> :&ensp;<code>list[str]</code></dt>
 <dd>Selects the breaks used by default. Defaults to ['tz'].</dd>
 <dt><strong><code>language</code></strong> :&ensp;<code>str</code></dt>
@@ -124,10 +124,25 @@
 </dl></div>
 </dd>
 <dt id="functions.matrixmixer.MatrixMixer.export_excel"><code class="name flex">
-<span>def <span class="ident">export_excel</span></span>(<span>self, show_title_page: bool = True, show_combined_sheet: bool = True, show_percentage_sheet: bool = True, show_absolute_sheet: bool = False, show_debugging_sheet: bool = False) ‑> None</span>
+<span>def <span class="ident">export_excel</span></span>(<span>self, show_title_page: bool = True, show_combined_sheet: bool = True, show_percentage_sheet: bool = True, show_absolute_sheet: bool = False, show_debugging_sheet: bool = False, table_name: str = 'tabellenband.xlsx') ‑> None</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Exports the matrices from the MatrixMixer to Excel.</p></div>
+<div class="desc"><p>Exports the matrices from the MatrixMixer to Excel.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>show_title_page</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>show a title page. Defaults to True.</dd>
+<dt><strong><code>show_combined_sheet</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>shows sheet with combined values. Defaults to True.</dd>
+<dt><strong><code>show_percentage_sheet</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>shows sheet with percentage values. Defaults to True.</dd>
+<dt><strong><code>show_absolute_sheet</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>shows sheet with absolute values. Defaults to False.</dd>
+<dt><strong><code>show_debugging_sheet</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>shows all sheets for debugging purposes. Defaults to False.</dd>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Name of the exported table file. Defaults to tabellenband.xlsx.</dd>
+</dl></div>
 </dd>
 </dl>
 </dd>
