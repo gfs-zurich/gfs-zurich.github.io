@@ -106,7 +106,7 @@
 </dl></div>
 </dd>
 <dt id="functions.graphy.main_presentation.add_text_slide"><code class="name flex">
-<span>def <span class="ident">add_text_slide</span></span>(<span>info: dict, text: Union[list[dict], list[str]], my_title: str = 'gfs-zürich, Markt- & Sozialforschung') ‑> None</span>
+<span>def <span class="ident">add_text_slide</span></span>(<span>info: dict, text: Union[list[dict], list[str]], my_title: str = 'gfs-zürich, Markt- & Sozialforschung', vertical_alignment: str = 'top') ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Adds a text slide to the presentation</p>
@@ -115,9 +115,11 @@
 <dt><strong><code>info</code></strong> :&ensp;<code>dict</code></dt>
 <dd>The presentation object</dd>
 <dt><strong><code>text</code></strong> :&ensp;<code>Union[list[dict], list[str]]</code></dt>
-<dd>The text that should be added to the slide. If a list of dictionaries is passed, each dictionary should contain a "text" key with the text that should be added to the slide. Additionally, the dictionary can contain a "size" key with the font size of the text, a "bold" key with a boolean value that determines if the text should be bold, a "hyperlink" key that adds a link as the value, and a "color" key with the color of the text. If a list of strings is passed, each string will be added to the slide as a paragraph.</dd>
+<dd>The text that should be added to the slide. If a list of dictionaries is passed, each dictionary should contain a "text" key with the text that should be added to the slide. Additionally, the dictionary can contain a "size" key with the font size of the text, a "bold" key with a boolean value that determines if the text should be bold, a "hyperlink" key that adds a link as the value, a "alignment" key that changes the text alignment (left, center, right) and a "color" key with the color of the text. If a list of strings is passed, each string will be added to the slide as a paragraph.</dd>
 <dt><strong><code>my_title</code></strong> :&ensp;<code>str</code>, optional</dt>
 <dd>The title of the slide. Defaults to 'gfs-zürich, Markt- &amp; Sozialforschung'.</dd>
+<dt><strong><code>vertical_alignment</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The vertical alignment of the text. Defaults to 'top'.</dd>
 </dl></div>
 </dd>
 <dt id="functions.graphy.main_presentation.add_to_graph_list"><code class="name flex">

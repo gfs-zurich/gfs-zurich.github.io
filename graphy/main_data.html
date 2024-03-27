@@ -34,37 +34,37 @@
 <span>def <span class="ident">add_break</span></span>(<span>df, meta, variable, my_break, weight, select_variable_levels, i, b, very_first_variable)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Add the break to the plot data frame</p></div>
 </dd>
 <dt id="functions.graphy.main_data.add_break_2"><code class="name flex">
 <span>def <span class="ident">add_break_2</span></span>(<span>df, meta, variable, my_break, my_break_2, weight, select_variable_levels, i, b, m, very_first_variable)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Add the second level break to the plot data frame</p></div>
 </dd>
 <dt id="functions.graphy.main_data.add_label_length"><code class="name flex">
 <span>def <span class="ident">add_label_length</span></span>(<span>x_break: pandas.core.frame.DataFrame, label_size: int, info: dict) ‑> pandas.core.frame.DataFrame</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Calculate the label length for the left labels and the break labels combined</p></div>
 </dd>
 <dt id="functions.graphy.main_data.add_label_wrap"><code class="name flex">
 <span>def <span class="ident">add_label_wrap</span></span>(<span>x: pandas.core.frame.DataFrame, length: int) ‑> pandas.core.frame.DataFrame</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Wrap the left labels</p></div>
 </dd>
 <dt id="functions.graphy.main_data.add_legend_break_total"><code class="name flex">
 <span>def <span class="ident">add_legend_break_total</span></span>(<span>x: pandas.core.frame.DataFrame) ‑> pandas.core.frame.DataFrame</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Add the total to the legend break in the plot data frame</p></div>
 </dd>
 <dt id="functions.graphy.main_data.add_mean"><code class="name flex">
 <span>def <span class="ident">add_mean</span></span>(<span>x: pandas.core.frame.DataFrame, special_variables: list[int]) ‑> pandas.core.frame.DataFrame</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Calculate the mean for the plot data frame</p></div>
 </dd>
 <dt id="functions.graphy.main_data.add_percentage"><code class="name flex">
 <span>def <span class="ident">add_percentage</span></span>(<span>x: pandas.core.frame.DataFrame) ‑> pandas.core.frame.DataFrame</span>
@@ -76,55 +76,68 @@
 <span>def <span class="ident">add_special_column</span></span>(<span>x: pandas.core.frame.DataFrame, special: list[int], special_column: str, level_column: str, special_last: bool, total_first: bool) ‑> pandas.core.frame.DataFrame</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Add a special column to the plot data frame. It helps with ordering the data frame</p></div>
 </dd>
 <dt id="functions.graphy.main_data.add_total"><code class="name flex">
 <span>def <span class="ident">add_total</span></span>(<span>x: pandas.core.frame.DataFrame) ‑> pandas.core.frame.DataFrame</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Add the overall total to the plot data frame</p></div>
 </dd>
 <dt id="functions.graphy.main_data.add_total_column"><code class="name flex">
 <span>def <span class="ident">add_total_column</span></span>(<span>x: pandas.core.frame.DataFrame) ‑> pandas.core.frame.DataFrame</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Calculate the total column for the plot data frame</p></div>
 </dd>
 <dt id="functions.graphy.main_data.add_variable"><code class="name flex">
 <span>def <span class="ident">add_variable</span></span>(<span>df, meta, variable, weight, select_variable_levels, i, very_first_variable)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Add the variable to the plot data frame</p></div>
 </dd>
 <dt id="functions.graphy.main_data.add_variable_copy"><code class="name flex">
 <span>def <span class="ident">add_variable_copy</span></span>(<span>x: pandas.core.frame.DataFrame, new_variable: str, old_variable: str)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Add a copy of a variable to the data frame</p></div>
 </dd>
 <dt id="functions.graphy.main_data.create_base_df"><code class="name flex">
 <span>def <span class="ident">create_base_df</span></span>(<span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, variables: list, breaks: list, breaks_2: list, weight: str, select_variable_levels: list[int], special_variables: list[int]) ‑> pandas.core.frame.DataFrame</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Create the base data frame for the plotting</p></div>
 </dd>
 <dt id="functions.graphy.main_data.label_add_count"><code class="name flex">
 <span>def <span class="ident">label_add_count</span></span>(<span>info: dict, x: pandas.core.frame.DataFrame, show_count: bool, variable: str, count_from_total: bool = False) ‑> pandas.core.frame.DataFrame</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Add count to the left labels</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>info</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Information about the presentation</dd>
+<dt><strong><code>x</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>Plot data frame</dd>
+<dt><strong><code>show_count</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Decide if count should be shown</dd>
+<dt><strong><code>variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Variable to count</dd>
+<dt><strong><code>count_from_total</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Count from total or from the break</dd>
+</dl></div>
 </dd>
 <dt id="functions.graphy.main_data.label_add_index"><code class="name flex">
 <span>def <span class="ident">label_add_index</span></span>(<span>info: dict, x: pandas.core.frame.DataFrame, show_index: bool, variable: str, index_from_total: bool = False) ‑> pandas.core.frame.DataFrame</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Add index to the left labels (index is the count of the break). This is mainly used for debugging.</p></div>
 </dd>
 <dt id="functions.graphy.main_data.order_barchart"><code class="name flex">
 <span>def <span class="ident">order_barchart</span></span>(<span>x: pandas.core.frame.DataFrame, order_by: dict, show_mean: bool, one_option: bool, break_x_axis: bool = False) ‑> pandas.core.frame.DataFrame</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Order the plot data frame for a barchart</p></div>
 </dd>
 <dt id="functions.graphy.main_data.order_by_column"><code class="name flex">
 <span>def <span class="ident">order_by_column</span></span>(<span>x: pandas.core.frame.DataFrame, order_by: str, order_ascending: str) ‑> pandas.core.frame.DataFrame</span>
@@ -136,13 +149,13 @@
 <span>def <span class="ident">order_stacked_barchart</span></span>(<span>x: pandas.core.frame.DataFrame, order_by: dict, left_by_mean: bool) ‑> pandas.core.frame.DataFrame</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Order the plot data frame for a stacked barchart</p></div>
 </dd>
 <dt id="functions.graphy.main_data.remove_label_text"><code class="name flex">
 <span>def <span class="ident">remove_label_text</span></span>(<span>x: pandas.core.frame.DataFrame, remove_text_before_label: str, remove_text_after_label: str, label_text_column: str) ‑> pandas.core.frame.DataFrame</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Remove text before or after the label in the labels</p></div>
 </dd>
 <dt id="functions.graphy.main_data.remove_total"><code class="name flex">
 <span>def <span class="ident">remove_total</span></span>(<span>x: pandas.core.frame.DataFrame, show_total: bool, variable: str, index_variable: str) ‑> pandas.core.frame.DataFrame</span>
@@ -154,7 +167,7 @@
 <span>def <span class="ident">rename_labels</span></span>(<span>x: pandas.core.frame.DataFrame, rename_values: dict[str, str], column: str) ‑> pandas.core.frame.DataFrame</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Rename the values in the left labels based on the dictionary given in rename_values</p></div>
 </dd>
 </dl>
 </section>
