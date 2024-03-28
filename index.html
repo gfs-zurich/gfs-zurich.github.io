@@ -602,6 +602,25 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 <dd>Name of the newly created variable</dd>
 </dl></div>
 </dd>
+<dt id="functions.create_gender_break"><code class="name flex">
+<span>def <span class="ident">create_gender_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S11', new_break_name: str = 'gender_break', use_non_binary: bool = True, dont_know_code: bool = False) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a standard gender break.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+<dt><strong><code>use_non_binary</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Include "diverse" gender if True, only use binary gender otherwise</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
+</dl></div>
+</dd>
 <dt id="functions.create_grossregion_break"><code class="name flex">
 <span>def <span class="ident">create_grossregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str) ‑> None</span>
 </code></dt>
@@ -2175,6 +2194,12 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dd>boolean to indicate if difference in quota is saved in an excel file</dd>
 </dl></div>
 </dd>
+<dt id="functions.MetaTable2.make_quota_check_sankey"><code class="name flex">
+<span>def <span class="ident">make_quota_check_sankey</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="functions.MetaTable2.measure"><code class="name flex">
 <span>def <span class="ident">measure</span></span>(<span>self, column: str, measure: str)</span>
 </code></dt>
@@ -2752,6 +2777,7 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><code><a title="functions.create_employment_break" href="#functions.create_employment_break">create_employment_break</a></code></li>
 <li><code><a title="functions.create_founding_year_break" href="#functions.create_founding_year_break">create_founding_year_break</a></code></li>
 <li><code><a title="functions.create_gdenr_from_plz" href="#functions.create_gdenr_from_plz">create_gdenr_from_plz</a></code></li>
+<li><code><a title="functions.create_gender_break" href="#functions.create_gender_break">create_gender_break</a></code></li>
 <li><code><a title="functions.create_grossregion_break" href="#functions.create_grossregion_break">create_grossregion_break</a></code></li>
 <li><code><a title="functions.create_income_break" href="#functions.create_income_break">create_income_break</a></code></li>
 <li><code><a title="functions.create_industry_sector_break" href="#functions.create_industry_sector_break">create_industry_sector_break</a></code></li>
@@ -2852,6 +2878,7 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><code><a title="functions.MetaTable2.item_label" href="#functions.MetaTable2.item_label">item_label</a></code></li>
 <li><code><a title="functions.MetaTable2.kind" href="#functions.MetaTable2.kind">kind</a></code></li>
 <li><code><a title="functions.MetaTable2.make_quota_check" href="#functions.MetaTable2.make_quota_check">make_quota_check</a></code></li>
+<li><code><a title="functions.MetaTable2.make_quota_check_sankey" href="#functions.MetaTable2.make_quota_check_sankey">make_quota_check_sankey</a></code></li>
 <li><code><a title="functions.MetaTable2.measure" href="#functions.MetaTable2.measure">measure</a></code></li>
 <li><code><a title="functions.MetaTable2.merge_open_questions" href="#functions.MetaTable2.merge_open_questions">merge_open_questions</a></code></li>
 <li><code><a title="functions.MetaTable2.merge_semiopen_questions" href="#functions.MetaTable2.merge_semiopen_questions">merge_semiopen_questions</a></code></li>
