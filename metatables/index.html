@@ -251,6 +251,25 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 <dd>Name of the newly created variable</dd>
 </dl></div>
 </dd>
+<dt id="functions.metatables.create_gender_break"><code class="name flex">
+<span>def <span class="ident">create_gender_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S11', new_break_name: str = 'gender_break', use_non_binary: bool = True, dont_know_code: bool = False) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a standard gender break.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.metatables.MetaTable2" href="#functions.metatables.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+<dt><strong><code>use_non_binary</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Include "diverse" gender if True, only use binary gender otherwise</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
+</dl></div>
+</dd>
 <dt id="functions.metatables.create_grossregion_break"><code class="name flex">
 <span>def <span class="ident">create_grossregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str) ‑> None</span>
 </code></dt>
@@ -495,7 +514,7 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 <dl>
 <dt id="functions.metatables.MetaTable2"><code class="flex name class">
 <span>class <span class="ident">MetaTable2</span></span>
-<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, project_number: int, project_name: str, columns: dict[str, <a title="functions.metatables.column.Column" href="column.html#functions.metatables.column.Column">Column</a>] = _Nothing.NOTHING, groups: dict[str, <a title="functions.metatables.group.Group" href="group.html#functions.metatables.group.Group">Group</a>] = _Nothing.NOTHING, weights: dict[str, <a title="functions.metatables.weight.Weight" href="weight.html#functions.metatables.weight.Weight">Weight</a>] = _Nothing.NOTHING, year: str = '2024', output_path: str = '//172.16.20.100/daten/PROJEKTE_PythonOutputs/', projects_path: str = './gfs_projects/')</span>
+<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, project_number: int, project_name: str, columns: dict[str, <a title="functions.metatables.column.Column" href="column.html#functions.metatables.column.Column">Column</a>] = _Nothing.NOTHING, groups: dict[str, <a title="functions.metatables.group.Group" href="group.html#functions.metatables.group.Group">Group</a>] = _Nothing.NOTHING, weights: dict[str, <a title="functions.metatables.weight.Weight" href="weight.html#functions.metatables.weight.Weight">Weight</a>] = _Nothing.NOTHING, year: str = '2024', output_path: str = './output/', projects_path: str = './gfs_projects/')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates MetaTable object that makes data wrangling of files read with pyreadstat easy.</p>
@@ -516,7 +535,7 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 <dt><strong><code>year</code></strong> :&ensp;<code>str</code></dt>
 <dd>current year. Is used to choose the save folder</dd>
 <dt><strong><code>output_path</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Path of the output. Defaults to '//172.16.20.100/daten/PROJEKTE_PythonOutputs/'.</dd>
+<dd>Path of the output. Defaults to './output/'.</dd>
 <dt><strong><code>projects_path</code></strong> :&ensp;<code>str</code>, optional</dt>
 <dd>Path of the git projects folder. Defaults to './gfs_projects/'.</dd>
 </dl>
@@ -593,6 +612,12 @@ This is a nested dictionary and it accepts absolute values. Can be like {1: {1: 
 <dt><strong><code>return_df</code></strong> :&ensp;<code>bool</code></dt>
 <dd>If True it will return the weighted dataframe. Defaults to False.</dd>
 </dl></div>
+</dd>
+<dt id="functions.metatables.MetaTable2.check_duplicates"><code class="name flex">
+<span>def <span class="ident">check_duplicates</span></span>(<span>self, row)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.check_sav_prebreak"><code class="name flex">
 <span>def <span class="ident">check_sav_prebreak</span></span>(<span>self, method: str = 'CATI', Interviewer_Column: str = 'ENQ2', Interview_Duration_Column: str = 'DURINT', Date_Column: str = 'DATE')</span>
@@ -973,6 +998,12 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dd>boolean to indicate if difference in quota is saved in an excel file</dd>
 </dl></div>
 </dd>
+<dt id="functions.metatables.MetaTable2.make_quota_check_sankey"><code class="name flex">
+<span>def <span class="ident">make_quota_check_sankey</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="functions.metatables.MetaTable2.measure"><code class="name flex">
 <span>def <span class="ident">measure</span></span>(<span>self, column: str, measure: str)</span>
 </code></dt>
@@ -1286,6 +1317,7 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <li><code><a title="functions.metatables.create_employment_break" href="#functions.metatables.create_employment_break">create_employment_break</a></code></li>
 <li><code><a title="functions.metatables.create_founding_year_break" href="#functions.metatables.create_founding_year_break">create_founding_year_break</a></code></li>
 <li><code><a title="functions.metatables.create_gdenr_from_plz" href="#functions.metatables.create_gdenr_from_plz">create_gdenr_from_plz</a></code></li>
+<li><code><a title="functions.metatables.create_gender_break" href="#functions.metatables.create_gender_break">create_gender_break</a></code></li>
 <li><code><a title="functions.metatables.create_grossregion_break" href="#functions.metatables.create_grossregion_break">create_grossregion_break</a></code></li>
 <li><code><a title="functions.metatables.create_income_break" href="#functions.metatables.create_income_break">create_income_break</a></code></li>
 <li><code><a title="functions.metatables.create_industry_sector_break" href="#functions.metatables.create_industry_sector_break">create_industry_sector_break</a></code></li>
@@ -1309,6 +1341,7 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <ul class="">
 <li><code><a title="functions.metatables.MetaTable2.add_to_group" href="#functions.metatables.MetaTable2.add_to_group">add_to_group</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.calculate_weight" href="#functions.metatables.MetaTable2.calculate_weight">calculate_weight</a></code></li>
+<li><code><a title="functions.metatables.MetaTable2.check_duplicates" href="#functions.metatables.MetaTable2.check_duplicates">check_duplicates</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.check_sav_prebreak" href="#functions.metatables.MetaTable2.check_sav_prebreak">check_sav_prebreak</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.columns" href="#functions.metatables.MetaTable2.columns">columns</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.copy_column" href="#functions.metatables.MetaTable2.copy_column">copy_column</a></code></li>
@@ -1339,6 +1372,7 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <li><code><a title="functions.metatables.MetaTable2.item_label" href="#functions.metatables.MetaTable2.item_label">item_label</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.kind" href="#functions.metatables.MetaTable2.kind">kind</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.make_quota_check" href="#functions.metatables.MetaTable2.make_quota_check">make_quota_check</a></code></li>
+<li><code><a title="functions.metatables.MetaTable2.make_quota_check_sankey" href="#functions.metatables.MetaTable2.make_quota_check_sankey">make_quota_check_sankey</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.measure" href="#functions.metatables.MetaTable2.measure">measure</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.merge_open_questions" href="#functions.metatables.MetaTable2.merge_open_questions">merge_open_questions</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.merge_semiopen_questions" href="#functions.metatables.MetaTable2.merge_semiopen_questions">merge_semiopen_questions</a></code></li>

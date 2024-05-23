@@ -24,13 +24,65 @@
 <section id="section-intro">
 <h1 id="gfs-graphy">gfs-graphy</h1>
 <p>These are graphical interfaces for various plots inside the technology stack of <a href="https://github.com/gfs-zurich">gfs-zürich</a>.</p>
-<h2 id="multi-line-labels">Multi-line Labels</h2>
+<h2 id="available-plot-types">Available Plot Types</h2>
+<ul>
+<li>Barchart</li>
+<li>Linechart</li>
+<li>Maps</li>
+<li>Piechart</li>
+<li>Stacked Barchart</li>
+<li>Wordcloud</li>
+</ul>
+<h2 id="break-label-formatting">Break label Formatting</h2>
+<h3 id="multi-line-breaks-break-line">Multi Line Breaks (Break Line)</h3>
 <p>To break labels onto multiple lines, <code>&lt;br&gt;</code> can be used.</p>
+<p>Plot Example without break line (<code>&lt;br&gt;</code>):
+<img alt="Langer Break Name ohne Umbruch" src="ressources/fig_no_br.svg"></p>
+<pre><code class="language-python">create_barchart(
+    info, [&quot;F1_1&quot;],
+     break_labels_rename={'Quartalsbreak': 'Langer Break Name ohne Umbruch'}
+)
+</code></pre>
+<p>Plot Example with break line (<code>&lt;br&gt;</code>):
+<img alt="Langer Break Name mit Umbruch" src="ressources/fig_br.svg"></p>
+<pre><code class="language-python">create_barchart(
+    info, [&quot;F1_1&quot;],
+     break_labels_rename={'Quartalsbreak': 'Langer Break Name&lt;br&gt;mit Umbruch',}
+)
+</code></pre>
+<h3 id="cursive-italic">Cursive (Italic)</h3>
+<p>To set labels to print in italic, <code>&lt;i&gt;</code> can be used.
+Plot Example with break line (<code>&lt;i&gt;</code>):
+<img alt="Italic Break Label" src="ressources/fig_italic.svg"></p>
+<pre><code class="language-python">create_barchart(
+    info, [&quot;F1_1&quot;],
+     break_labels_rename={'Quartalsbreak': '&lt;i&gt;Kursiv / Italic Break name',}
+)
+</code></pre>
+<h3 id="others">Others</h3>
+<table>
+<thead>
+<tr>
+<th>label</th>
+<th>usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>X&lt;sup&gt;2&lt;/sup&gt;</code></td>
+<td>X<sup>2</sup></td>
+</tr>
+<tr>
+<td><code>X&lt;sub&gt;2&lt;/sub&gt;</code></td>
+<td>X<sub>2</sub></td>
+</tr>
+</tbody>
+</table>
 <h2 id="standardarguments-for-plots">Standardarguments for Plots</h2>
 <p>use the standardarguments in the gfs plots by supplying it in the "standard_arguments" parameter.
 Example:</p>
 <pre><code class="language-python">create_barchart(
-    info, [&quot;SGE1_1&quot;], standard_arguments={&quot;tick_values&quot;: [0, 20, 40, 60, 80, 100]}
+    info, [&quot;F1_1&quot;], standard_arguments={&quot;tick_values&quot;: [0, 20, 40, 60, 80, 100]}
 )
 </code></pre>
 <table>
@@ -522,7 +574,7 @@ Example:</p>
 <dt><strong><code>select_min_count</code></strong> :&ensp;<code>int</code>, optional</dt>
 <dd>Selects all bars with higher count than given. ~ 10 means that only bars with more than 10 observations will be selected. Defaults to 0.</dd>
 <dt><strong><code>break_x_axis</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>Moves the breaks to the x Axis and the left labels to the legend, mostly used for time-series data. Defaults to False.</dd>
+<dd>Moves the breaks to the x Axis and the left labels to the legend, if you have only one variable this happens per default, mostly used for time-series data. Defaults to False.</dd>
 <dt><strong><code>special_variables</code></strong> :&ensp;<code>list[int]</code>, optional</dt>
 <dd>A list variable levels that will be treated differently. They will appear gray in the graph and have not effect on the mean calculation. ~ [16, 99999997]. Defaults to [96, 97, 98, 99999996, 99999997, 99999998].</dd>
 <dt><strong><code>standard_arguments</code></strong> :&ensp;<code>dict</code>, optional</dt>
@@ -1182,7 +1234,13 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <div class="toc">
 <ul>
 <li><a href="#gfs-graphy">gfs-graphy</a><ul>
-<li><a href="#multi-line-labels">Multi-line Labels</a></li>
+<li><a href="#available-plot-types">Available Plot Types</a></li>
+<li><a href="#break-label-formatting">Break label Formatting</a><ul>
+<li><a href="#multi-line-breaks-break-line">Multi Line Breaks (Break Line)</a></li>
+<li><a href="#cursive-italic">Cursive (Italic)</a></li>
+<li><a href="#others">Others</a></li>
+</ul>
+</li>
 <li><a href="#standardarguments-for-plots">Standardarguments for Plots</a></li>
 </ul>
 </li>
