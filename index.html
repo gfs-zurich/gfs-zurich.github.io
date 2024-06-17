@@ -1477,7 +1477,28 @@ other languages can be chosen y using another template</p>
 <span>def <span class="ident">add_title_page_info</span></span>(<span>self, study_title: str, clients: list[str], survey_methodology: str, sampling: str, quota_features: str, address_origin: list[str], population: str, weighting: str, survey_period: str)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>sets title page info </p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>study_title</code></strong> :&ensp;<code>str</code></dt>
+<dd>title of study</dd>
+<dt><strong><code>clients</code></strong> :&ensp;<code>list[str]</code></dt>
+<dd>list of clients</dd>
+<dt><strong><code>survey_methodology</code></strong> :&ensp;<code>str</code></dt>
+<dd>method used in study</dd>
+<dt><strong><code>sampling</code></strong> :&ensp;<code>str</code></dt>
+<dd>sampling teqnique used</dd>
+<dt><strong><code>quota_features</code></strong> :&ensp;<code>str</code></dt>
+<dd>feautures to quota was set on</dd>
+<dt><strong><code>address_origin</code></strong> :&ensp;<code>list[str]</code></dt>
+<dd>origin of adresses</dd>
+<dt><strong><code>population</code></strong> :&ensp;<code>str</code></dt>
+<dd>population of study</dd>
+<dt><strong><code>weighting</code></strong> :&ensp;<code>str</code></dt>
+<dd>weighting variables or factors</dd>
+<dt><strong><code>survey_period</code></strong> :&ensp;<code>str</code></dt>
+<dd>period in which the survey took place</dd>
+</dl></div>
 </dd>
 <dt id="functions.MatrixMixer.create_matrix"><code class="name flex">
 <span>def <span class="ident">create_matrix</span></span>(<span>self, question: str, breaks: list[list[str]] = 'auto', weight: str = 'auto', order_descending: Union[str, bool] = 'auto', special_variables: Union[str, list[int]] = 'auto') ‑> None</span>
@@ -1720,7 +1741,7 @@ other languages can be chosen y using another template</p>
 </dd>
 <dt id="functions.MetaTable2"><code class="flex name class">
 <span>class <span class="ident">MetaTable2</span></span>
-<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, project_number: int, project_name: str, columns: dict[str, <a title="functions.metatables.column.Column" href="metatables/column.html#functions.metatables.column.Column">Column</a>] = _Nothing.NOTHING, groups: dict[str, <a title="functions.metatables.group.Group" href="metatables/group.html#functions.metatables.group.Group">Group</a>] = _Nothing.NOTHING, weights: dict[str, <a title="functions.metatables.weight.Weight" href="metatables/weight.html#functions.metatables.weight.Weight">Weight</a>] = _Nothing.NOTHING, year: str = '2024', output_path: str = './output/', projects_path: str = './gfs_projects/')</span>
+<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, project_number: int, project_name: str, columns: dict[str, <a title="functions.metatables.column.Column" href="metatables/column.html#functions.metatables.column.Column">Column</a>] = _Nothing.NOTHING, groups: dict[str, <a title="functions.metatables.group.Group" href="metatables/group.html#functions.metatables.group.Group">Group</a>] = _Nothing.NOTHING, weights: dict[str, <a title="functions.metatables.weight.Weight" href="metatables/weight.html#functions.metatables.weight.Weight">Weight</a>] = _Nothing.NOTHING, year: str = '2024', vorname_nachname: str = '', output_path: str = './output/', projects_path: str = './gfs_projects/')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates MetaTable object that makes data wrangling of files read with pyreadstat easy.</p>
@@ -1789,6 +1810,13 @@ other languages can be chosen y using another template</p>
 <div class="desc"></div>
 </dd>
 </dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="functions.MetaTable2.vorname_nachname"><code class="name">var <span class="ident">vorname_nachname</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
 <h3>Methods</h3>
 <dl>
 <dt id="functions.MetaTable2.add_column_to_group"><code class="name flex">
@@ -1836,7 +1864,17 @@ This is a nested dictionary and it accepts absolute values. Can be like {1: {1: 
 <span>def <span class="ident">check_duplicates</span></span>(<span>self, row)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>function to check for duplicates in a row</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>row</code></strong> :&ensp;<code>np.array</code></dt>
+<dd>row to apply the function to</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>if duplicates exist returns True, else False</dd>
+</dl></div>
 </dd>
 <dt id="functions.MetaTable2.check_sav_prebreak"><code class="name flex">
 <span>def <span class="ident">check_sav_prebreak</span></span>(<span>self, method: str = 'CATI', Interviewer_Column: str = 'ENQ2', Interview_Duration_Column: str = 'DURINT', Date_Column: str = 'DATE')</span>
@@ -2216,12 +2254,6 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dt><strong><code>save_quota_check</code></strong> :&ensp;<code>bool</code>, optional</dt>
 <dd>boolean to indicate if difference in quota is saved in an excel file</dd>
 </dl></div>
-</dd>
-<dt id="functions.MetaTable2.make_quota_check_sankey"><code class="name flex">
-<span>def <span class="ident">make_quota_check_sankey</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
 </dd>
 <dt id="functions.MetaTable2.measure"><code class="name flex">
 <span>def <span class="ident">measure</span></span>(<span>self, column: str, measure: str)</span>
@@ -2908,7 +2940,6 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><code><a title="functions.MetaTable2.item_label" href="#functions.MetaTable2.item_label">item_label</a></code></li>
 <li><code><a title="functions.MetaTable2.kind" href="#functions.MetaTable2.kind">kind</a></code></li>
 <li><code><a title="functions.MetaTable2.make_quota_check" href="#functions.MetaTable2.make_quota_check">make_quota_check</a></code></li>
-<li><code><a title="functions.MetaTable2.make_quota_check_sankey" href="#functions.MetaTable2.make_quota_check_sankey">make_quota_check_sankey</a></code></li>
 <li><code><a title="functions.MetaTable2.measure" href="#functions.MetaTable2.measure">measure</a></code></li>
 <li><code><a title="functions.MetaTable2.merge_open_questions" href="#functions.MetaTable2.merge_open_questions">merge_open_questions</a></code></li>
 <li><code><a title="functions.MetaTable2.merge_semiopen_questions" href="#functions.MetaTable2.merge_semiopen_questions">merge_semiopen_questions</a></code></li>
@@ -2933,6 +2964,7 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><code><a title="functions.MetaTable2.show_group_meta" href="#functions.MetaTable2.show_group_meta">show_group_meta</a></code></li>
 <li><code><a title="functions.MetaTable2.single_label" href="#functions.MetaTable2.single_label">single_label</a></code></li>
 <li><code><a title="functions.MetaTable2.value_labels" href="#functions.MetaTable2.value_labels">value_labels</a></code></li>
+<li><code><a title="functions.MetaTable2.vorname_nachname" href="#functions.MetaTable2.vorname_nachname">vorname_nachname</a></code></li>
 <li><code><a title="functions.MetaTable2.weights" href="#functions.MetaTable2.weights">weights</a></code></li>
 <li><code><a title="functions.MetaTable2.year" href="#functions.MetaTable2.year">year</a></code></li>
 </ul>
