@@ -34,7 +34,7 @@
 <dl>
 <dt id="functions.matrixmixer.main.MatrixMixer"><code class="flex name class">
 <span>class <span class="ident">MatrixMixer</span></span>
-<span>(</span><span>meta_table: <a title="functions.metatables.main.MetaTable2" href="../metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, breaks: list = [['tz']], language: list = 'de', weight: list = 'tz', special_variables_last: bool = True, study_title: str = 'Studie')</span>
+<span>(</span><span>meta_table: <a title="functions.metatables.main.MetaTable2" href="../metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, breaks: list = [['tz']], language: list = 'de', weight: list = 'tz', special_variables_last: bool = True, study_title: str = 'Studie', significance_level: str = 0.05)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Assembles multiple tables with descriptive statistics and exports them to excel.</p>
@@ -68,6 +68,10 @@
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="functions.matrixmixer.main.MatrixMixer.significance_level"><code class="name">var <span class="ident">significance_level</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="functions.matrixmixer.main.MatrixMixer.special_variables_last"><code class="name">var <span class="ident">special_variables_last</span> : bool</code></dt>
 <dd>
 <div class="desc"></div>
@@ -90,7 +94,7 @@
 <div class="desc"></div>
 </dd>
 <dt id="functions.matrixmixer.main.MatrixMixer.create_matrix"><code class="name flex">
-<span>def <span class="ident">create_matrix</span></span>(<span>self, question: str, breaks: list[list[str]] = 'auto', weight: str = 'auto', order_descending: Union[str, bool] = 'auto', special_variables: Union[str, list[int]] = 'auto', alpha: float = 0.05) ‑> None</span>
+<span>def <span class="ident">create_matrix</span></span>(<span>self, question: str, breaks: list[list[str]] = 'auto', weight: str = 'auto', order_descending: Union[str, bool] = 'auto', special_variables: Union[str, list[int]] = 'auto') ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a single matrix and saves it to the MatrixMixer object.</p>
@@ -158,6 +162,7 @@
 <li><code><a title="functions.matrixmixer.main.MatrixMixer.export_excel" href="#functions.matrixmixer.main.MatrixMixer.export_excel">export_excel</a></code></li>
 <li><code><a title="functions.matrixmixer.main.MatrixMixer.language" href="#functions.matrixmixer.main.MatrixMixer.language">language</a></code></li>
 <li><code><a title="functions.matrixmixer.main.MatrixMixer.meta_table" href="#functions.matrixmixer.main.MatrixMixer.meta_table">meta_table</a></code></li>
+<li><code><a title="functions.matrixmixer.main.MatrixMixer.significance_level" href="#functions.matrixmixer.main.MatrixMixer.significance_level">significance_level</a></code></li>
 <li><code><a title="functions.matrixmixer.main.MatrixMixer.special_variables_last" href="#functions.matrixmixer.main.MatrixMixer.special_variables_last">special_variables_last</a></code></li>
 <li><code><a title="functions.matrixmixer.main.MatrixMixer.study_title" href="#functions.matrixmixer.main.MatrixMixer.study_title">study_title</a></code></li>
 <li><code><a title="functions.matrixmixer.main.MatrixMixer.weight" href="#functions.matrixmixer.main.MatrixMixer.weight">weight</a></code></li>

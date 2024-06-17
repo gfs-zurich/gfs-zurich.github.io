@@ -1420,7 +1420,7 @@ other languages can be chosen y using another template</p>
 <dl>
 <dt id="functions.MatrixMixer"><code class="flex name class">
 <span>class <span class="ident">MatrixMixer</span></span>
-<span>(</span><span>meta_table: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, breaks: list = [['tz']], language: list = 'de', weight: list = 'tz', special_variables_last: bool = True, study_title: str = 'Studie')</span>
+<span>(</span><span>meta_table: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, breaks: list = [['tz']], language: list = 'de', weight: list = 'tz', special_variables_last: bool = True, study_title: str = 'Studie', significance_level: str = 0.05)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Assembles multiple tables with descriptive statistics and exports them to excel.</p>
@@ -1454,6 +1454,10 @@ other languages can be chosen y using another template</p>
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="functions.MatrixMixer.significance_level"><code class="name">var <span class="ident">significance_level</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="functions.MatrixMixer.special_variables_last"><code class="name">var <span class="ident">special_variables_last</span> : bool</code></dt>
 <dd>
 <div class="desc"></div>
@@ -1476,7 +1480,7 @@ other languages can be chosen y using another template</p>
 <div class="desc"></div>
 </dd>
 <dt id="functions.MatrixMixer.create_matrix"><code class="name flex">
-<span>def <span class="ident">create_matrix</span></span>(<span>self, question: str, breaks: list[list[str]] = 'auto', weight: str = 'auto', order_descending: Union[str, bool] = 'auto', special_variables: Union[str, list[int]] = 'auto', alpha: float = 0.05) ‑> None</span>
+<span>def <span class="ident">create_matrix</span></span>(<span>self, question: str, breaks: list[list[str]] = 'auto', weight: str = 'auto', order_descending: Union[str, bool] = 'auto', special_variables: Union[str, list[int]] = 'auto') ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a single matrix and saves it to the MatrixMixer object.</p>
@@ -1787,6 +1791,19 @@ other languages can be chosen y using another template</p>
 </dl>
 <h3>Methods</h3>
 <dl>
+<dt id="functions.MetaTable2.add_column_to_group"><code class="name flex">
+<span>def <span class="ident">add_column_to_group</span></span>(<span>self, column: str, group: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds column to a group.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the column</dd>
+<dt><strong><code>group</code></strong> :&ensp;<code>str</code></dt>
+<dd>Group to add the column</dd>
+</dl></div>
+</dd>
 <dt id="functions.MetaTable2.add_to_group"><code class="name flex">
 <span>def <span class="ident">add_to_group</span></span>(<span>self, column: str)</span>
 </code></dt>
@@ -2220,7 +2237,7 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.merge_open_questions"><code class="name flex">
-<span>def <span class="ident">merge_open_questions</span></span>(<span>self, df_open_questions: pandas.core.frame.DataFrame, columns: list, code_list: dict, group_name: str, group_label: str = '', merge_Id: str = 'CODERESP', group_kind='multi', measure: str = 'auto')</span>
+<span>def <span class="ident">merge_open_questions</span></span>(<span>self, df_open_questions: pandas.core.frame.DataFrame, columns: list, code_list: dict, group_name: str, group_label: str = '', merge_Id: str = 'CODERESP', group_kind='multi', measure: str = 'auto', check_for_duplicates: bool = True)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>merges open questions with the metatable dataframe</p>
@@ -2242,10 +2259,12 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dd>kind of group. Defaults to 'multi'.</dd>
 <dt><strong><code>measure</code></strong> :&ensp;<code>str</code>, optional</dt>
 <dd>measure of the group. Defaults to 'auto'.</dd>
+<dt><strong><code>check_for_duplicates</code></strong> :&ensp;<code>True</code>, optional</dt>
+<dd>check duplicates overrule parameter, duplicates are not checked if set to False. Defaults to 'True'.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.merge_semiopen_questions"><code class="name flex">
-<span>def <span class="ident">merge_semiopen_questions</span></span>(<span>self, df_semiopen_questions: pandas.core.frame.DataFrame, columns: list, code_list: dict, group_name: str, merge_Id: str = 'CODERESP')</span>
+<span>def <span class="ident">merge_semiopen_questions</span></span>(<span>self, df_semiopen_questions: pandas.core.frame.DataFrame, columns: list, code_list: dict, group_name: str, merge_Id: str = 'CODERESP', check_for_duplicates: bool = True)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>merges semi open questions with the metatable dataframe</p>
@@ -2261,6 +2280,8 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dd>group name to use</dd>
 <dt><strong><code>merge_Id</code></strong> :&ensp;<code>str</code></dt>
 <dd>id to merge columns on, defaults to CODERESP</dd>
+<dt><strong><code>check_for_duplicates</code></strong> :&ensp;<code>True</code>, optional</dt>
+<dd>check duplicates overrule parameter, duplicates are not checked if set to False. Defaults to 'True'.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.missing_values"><code class="name flex">
@@ -2824,6 +2845,7 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><code><a title="functions.MatrixMixer.export_excel" href="#functions.MatrixMixer.export_excel">export_excel</a></code></li>
 <li><code><a title="functions.MatrixMixer.language" href="#functions.MatrixMixer.language">language</a></code></li>
 <li><code><a title="functions.MatrixMixer.meta_table" href="#functions.MatrixMixer.meta_table">meta_table</a></code></li>
+<li><code><a title="functions.MatrixMixer.significance_level" href="#functions.MatrixMixer.significance_level">significance_level</a></code></li>
 <li><code><a title="functions.MatrixMixer.special_variables_last" href="#functions.MatrixMixer.special_variables_last">special_variables_last</a></code></li>
 <li><code><a title="functions.MatrixMixer.study_title" href="#functions.MatrixMixer.study_title">study_title</a></code></li>
 <li><code><a title="functions.MatrixMixer.weight" href="#functions.MatrixMixer.weight">weight</a></code></li>
@@ -2852,6 +2874,7 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li>
 <h4><code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></h4>
 <ul class="">
+<li><code><a title="functions.MetaTable2.add_column_to_group" href="#functions.MetaTable2.add_column_to_group">add_column_to_group</a></code></li>
 <li><code><a title="functions.MetaTable2.add_to_group" href="#functions.MetaTable2.add_to_group">add_to_group</a></code></li>
 <li><code><a title="functions.MetaTable2.calculate_weight" href="#functions.MetaTable2.calculate_weight">calculate_weight</a></code></li>
 <li><code><a title="functions.MetaTable2.check_duplicates" href="#functions.MetaTable2.check_duplicates">check_duplicates</a></code></li>
