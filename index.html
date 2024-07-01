@@ -2359,6 +2359,21 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dd>The desired column order.</dd>
 </dl></div>
 </dd>
+<dt id="functions.MetaTable2.randomise_divers_gender"><code class="name flex">
+<span>def <span class="ident">randomise_divers_gender</span></span>(<span>self, gender_column='S11', divers_values: list = [3], seed: int = 12345)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>randomises the divers gender value to either 1 or 2 with a change of 50/50, asserts that 1 and 2 are male and female values</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>gender_column</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>column name which has the values for gender. Defaults to "S11".</dd>
+<dt>divers_values (list(int), optional): values which equals to divers labels, if multiple are given the \</dt>
+<dt>randomisation is executed for each label sequentially. Defaults to 3.</dt>
+<dt><strong><code>seed</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>randomised seed, should normally not be changed. Defaults to 12345.</dd>
+</dl></div>
+</dd>
 <dt id="functions.MetaTable2.recode"><code class="name flex">
 <span>def <span class="ident">recode</span></span>(<span>self, old_column: str, new_column: str, values: dict[int, typing.Any], keep_untouched_codes: bool = True)</span>
 </code></dt>
@@ -2958,6 +2973,7 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><code><a title="functions.MetaTable2.project_name" href="#functions.MetaTable2.project_name">project_name</a></code></li>
 <li><code><a title="functions.MetaTable2.project_number" href="#functions.MetaTable2.project_number">project_number</a></code></li>
 <li><code><a title="functions.MetaTable2.projects_path" href="#functions.MetaTable2.projects_path">projects_path</a></code></li>
+<li><code><a title="functions.MetaTable2.randomise_divers_gender" href="#functions.MetaTable2.randomise_divers_gender">randomise_divers_gender</a></code></li>
 <li><code><a title="functions.MetaTable2.recode" href="#functions.MetaTable2.recode">recode</a></code></li>
 <li><code><a title="functions.MetaTable2.recode_group" href="#functions.MetaTable2.recode_group">recode_group</a></code></li>
 <li><code><a title="functions.MetaTable2.remove_from_group" href="#functions.MetaTable2.remove_from_group">remove_from_group</a></code></li>
