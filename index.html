@@ -1747,7 +1747,7 @@ other languages can be chosen y using another template</p>
 </dd>
 <dt id="functions.MetaTable2"><code class="flex name class">
 <span>class <span class="ident">MetaTable2</span></span>
-<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, project_number: int, project_name: str, columns: dict[str, <a title="functions.metatables.column.Column" href="metatables/column.html#functions.metatables.column.Column">Column</a>] = _Nothing.NOTHING, groups: dict[str, <a title="functions.metatables.group.Group" href="metatables/group.html#functions.metatables.group.Group">Group</a>] = _Nothing.NOTHING, weights: dict[str, <a title="functions.metatables.weight.Weight" href="metatables/weight.html#functions.metatables.weight.Weight">Weight</a>] = _Nothing.NOTHING, year: str = '2024', vorname_nachname: str = '', output_path: str = './output/', projects_path: str = './gfs_projects/')</span>
+<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, project_number: int, project_name: str, columns: dict[str, <a title="functions.metatables.column.Column" href="metatables/column.html#functions.metatables.column.Column">Column</a>] = _Nothing.NOTHING, groups: dict[str, <a title="functions.metatables.group.Group" href="metatables/group.html#functions.metatables.group.Group">Group</a>] = _Nothing.NOTHING, weights: dict[str, <a title="functions.metatables.weight.Weight" href="metatables/weight.html#functions.metatables.weight.Weight">Weight</a>] = _Nothing.NOTHING, year: str = '2024', output_path: str = './output/', projects_path: str = './gfs_projects/')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates MetaTable object that makes data wrangling of files read with pyreadstat easy.</p>
@@ -1812,13 +1812,6 @@ other languages can be chosen y using another template</p>
 <div class="desc"></div>
 </dd>
 <dt id="functions.MetaTable2.year"><code class="name">var <span class="ident">year</span> : str</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
-<h3>Instance variables</h3>
-<dl>
-<dt id="functions.MetaTable2.vorname_nachname"><code class="name">var <span class="ident">vorname_nachname</span> : str</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -2445,6 +2438,19 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <dd>New name of the column</dd>
 </dl></div>
 </dd>
+<dt id="functions.MetaTable2.rename_group"><code class="name flex">
+<span>def <span class="ident">rename_group</span></span>(<span>self, group: str, new_group_name: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>renames a group</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>group</code></strong> :&ensp;<code>str</code></dt>
+<dd>group to rename</dd>
+<dt><strong><code>new_group_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>new group name</dd>
+</dl></div>
+</dd>
 <dt id="functions.MetaTable2.select_columns"><code class="name flex">
 <span>def <span class="ident">select_columns</span></span>(<span>self, columns: list)</span>
 </code></dt>
@@ -2979,6 +2985,7 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><code><a title="functions.MetaTable2.remove_from_group" href="#functions.MetaTable2.remove_from_group">remove_from_group</a></code></li>
 <li><code><a title="functions.MetaTable2.remove_speeders" href="#functions.MetaTable2.remove_speeders">remove_speeders</a></code></li>
 <li><code><a title="functions.MetaTable2.rename_column" href="#functions.MetaTable2.rename_column">rename_column</a></code></li>
+<li><code><a title="functions.MetaTable2.rename_group" href="#functions.MetaTable2.rename_group">rename_group</a></code></li>
 <li><code><a title="functions.MetaTable2.select_columns" href="#functions.MetaTable2.select_columns">select_columns</a></code></li>
 <li><code><a title="functions.MetaTable2.show_column_info" href="#functions.MetaTable2.show_column_info">show_column_info</a></code></li>
 <li><code><a title="functions.MetaTable2.show_column_meta" href="#functions.MetaTable2.show_column_meta">show_column_meta</a></code></li>
@@ -2987,7 +2994,6 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><code><a title="functions.MetaTable2.show_group_meta" href="#functions.MetaTable2.show_group_meta">show_group_meta</a></code></li>
 <li><code><a title="functions.MetaTable2.single_label" href="#functions.MetaTable2.single_label">single_label</a></code></li>
 <li><code><a title="functions.MetaTable2.value_labels" href="#functions.MetaTable2.value_labels">value_labels</a></code></li>
-<li><code><a title="functions.MetaTable2.vorname_nachname" href="#functions.MetaTable2.vorname_nachname">vorname_nachname</a></code></li>
 <li><code><a title="functions.MetaTable2.weights" href="#functions.MetaTable2.weights">weights</a></code></li>
 <li><code><a title="functions.MetaTable2.year" href="#functions.MetaTable2.year">year</a></code></li>
 </ul>
