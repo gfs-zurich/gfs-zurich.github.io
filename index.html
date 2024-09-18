@@ -466,7 +466,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 </dl></div>
 </dd>
 <dt id="functions.create_canton_break"><code class="name flex">
-<span>def <span class="ident">create_canton_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str) ‑> None</span>
+<span>def <span class="ident">create_canton_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str, dont_know_code: bool = False) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a canton break based on a JSON mapping file.</p>
@@ -480,6 +480,8 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <dd>Type of the original variable. "plz" if it represents the Postleitzahl and "gdenr" if it represents the Gemeindenummer.</dd>
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
 </dl></div>
 </dd>
 <dt id="functions.create_cantonal_banc_break"><code class="name flex">
@@ -588,7 +590,7 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 </dl></div>
 </dd>
 <dt id="functions.create_gdenr_from_plz"><code class="name flex">
-<span>def <span class="ident">create_gdenr_from_plz</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_variable: str) ‑> None</span>
+<span>def <span class="ident">create_gdenr_from_plz</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_variable: str, dont_know_code: bool = False) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates Gemeindenummer from PLZ based on a JSON mapping file.</p>
@@ -600,6 +602,27 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 <dd>Name of the original variable</dd>
 <dt><strong><code>new_variable</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created variable</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
+</dl></div>
+</dd>
+<dt id="functions.create_gemeindegrösse_break"><code class="name flex">
+<span>def <span class="ident">create_gemeindegrösse_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str, dont_know_code: bool = False) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a gemeindegrösse break based on a JSON mapping file.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>original_variable_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>Type of the original variable. "plz" if it represents the Postleitzahl and "gdenr" if it represents the Gemeindenummer.</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
 </dl></div>
 </dd>
 <dt id="functions.create_gender_break"><code class="name flex">
@@ -622,7 +645,7 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 </dl></div>
 </dd>
 <dt id="functions.create_grossregion_break"><code class="name flex">
-<span>def <span class="ident">create_grossregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str) ‑> None</span>
+<span>def <span class="ident">create_grossregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str, dont_know_code: bool = False) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a grossregion break based on a JSON mapping file.</p>
@@ -636,6 +659,8 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 <dd>Type of the original variable. "plz" if it represents the Postleitzahl and "gdenr" if it represents the Gemeindenummer.</dd>
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
 </dl></div>
 </dd>
 <dt id="functions.create_income_break"><code class="name flex">
@@ -938,7 +963,7 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 </dl></div>
 </dd>
 <dt id="functions.create_siedlungsart_break"><code class="name flex">
-<span>def <span class="ident">create_siedlungsart_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str) ‑> None</span>
+<span>def <span class="ident">create_siedlungsart_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str, dont_know_code: bool = False) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a siedlungsart break based on a JSON mapping file.</p>
@@ -952,10 +977,12 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 <dd>Type of the original variable. "plz" if it represents the Postleitzahl and "gdenr" if it represents the Gemeindenummer.</dd>
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
 </dl></div>
 </dd>
 <dt id="functions.create_sprachregion_break"><code class="name flex">
-<span>def <span class="ident">create_sprachregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str, regions: dict = {1: 'D-CH', 2: 'W-CH', 3: 'I-CH'}) ‑> None</span>
+<span>def <span class="ident">create_sprachregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str, regions: dict = {1: 'D-CH', 2: 'W-CH', 3: 'I-CH'}, dont_know_code: bool = False) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a sprachregion break based on a JSON mapping file.</p>
@@ -969,8 +996,10 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 <dd>Type of the original variable. "plz" if it represents the Postleitzahl and "gdenr" if it represents the Gemeindenummer.</dd>
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
-</dl>
-<p>regions (dict(int:str)): dictionary to only use certain sprachregions</p></div>
+<dt>regions (dict(int:str)): dictionary to only use certain sprachregions</dt>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
+</dl></div>
 </dd>
 <dt id="functions.create_stacked_barchart"><code class="name flex">
 <span>def <span class="ident">create_stacked_barchart</span></span>(<span>info: dict, variables: list, breaks: list = None, break_labels_rename: dict[str, str] = None, left_labels_rename: dict[str, str] = None, legend_labels_rename: dict[str, str] = None, left_labels_wrap: int = 50, left_labels_width: int = 999, show_mean: bool = False, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_type: str = 'diverging', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_color: int = 999, value_labels_show_min: float = 0.8, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', value_labels_add_after: str = '', bar_width: float = 999, break_distance: float = 999, label_size: float = 16, value_labels_size: float = 16, legend_labels_size: float = 14, show_legend: bool = True, show_total: bool = True, show_count: bool = False, show_index: bool = False, mean_name: str = 'MW', mean_transform: function = &lt;function &lt;lambda&gt;&gt;, mean_custom: list[str] = None, select_variable_levels: list[int] = None, select_variables: list[int] = None, select_min_count: int = 0, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, return_figure: bool = False, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto')</span>
@@ -2863,6 +2892,7 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><code><a title="functions.create_employment_break" href="#functions.create_employment_break">create_employment_break</a></code></li>
 <li><code><a title="functions.create_founding_year_break" href="#functions.create_founding_year_break">create_founding_year_break</a></code></li>
 <li><code><a title="functions.create_gdenr_from_plz" href="#functions.create_gdenr_from_plz">create_gdenr_from_plz</a></code></li>
+<li><code><a title="functions.create_gemeindegrösse_break" href="#functions.create_gemeindegrösse_break">create_gemeindegrösse_break</a></code></li>
 <li><code><a title="functions.create_gender_break" href="#functions.create_gender_break">create_gender_break</a></code></li>
 <li><code><a title="functions.create_grossregion_break" href="#functions.create_grossregion_break">create_grossregion_break</a></code></li>
 <li><code><a title="functions.create_income_break" href="#functions.create_income_break">create_income_break</a></code></li>
