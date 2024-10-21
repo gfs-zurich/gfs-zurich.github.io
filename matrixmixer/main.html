@@ -94,7 +94,7 @@
 <h3>Methods</h3>
 <dl>
 <dt id="functions.matrixmixer.main.MatrixMixer.add_title_page_info"><code class="name flex">
-<span>def <span class="ident">add_title_page_info</span></span>(<span>self, study_title: str, clients: list[str], survey_methodology: str, sampling: str, quota_features: str, address_origin: list[str], population: str, weighting: str, survey_period: str)</span>
+<span>def <span class="ident">add_title_page_info</span></span>(<span>self, study_title: str, clients: list[str], survey_methodology: str, sampling: str, quota_features: str, address_origin: list[str], population: str, weighting: str, survey_period: str, random_sample: str = None)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>sets title page info </p>
@@ -118,6 +118,8 @@
 <dd>weighting variables or factors</dd>
 <dt><strong><code>survey_period</code></strong> :&ensp;<code>str</code></dt>
 <dd>period in which the survey took place</dd>
+<dt><strong><code>random_sample</code></strong> :&ensp;<code>str</code></dt>
+<dd>used to overwrite the random sample string, default is n = (number of recipients)</dd>
 </dl></div>
 </dd>
 <dt id="functions.matrixmixer.main.MatrixMixer.create_matrix"><code class="name flex">

@@ -334,7 +334,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 </dl></div>
 </dd>
 <dt id="functions.create_barchart"><code class="name flex">
-<span>def <span class="ident">create_barchart</span></span>(<span>info: dict, variables: list, breaks: Optional[list] = None, legend_break: Optional[list] = None, barchart_mean: bool = False, break_labels_rename: Optional[dict[str, str]] = None, left_labels_rename: Optional[dict[str, str]] = None, legend_labels_rename: Optional[dict[str, str]] = None, left_labels_wrap: int = 50, left_labels_width: int = 999, show_mean: bool = False, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', legend_title_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, legend_position: str = 'right', return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: Optional[None] = None, value_labels_show_min: float = 0, value_labels_add_after: Optional[list[list[str]]] = None, weight: str = 'auto', order_by: Optional[None] = None, title_remove_before: str = '', title_remove_after: str = '', title_add_end: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', bar_gap=999, bar_width: float = 999, bar_min_size: float = 0, break_distance: float = 999, label_size: float = 16, value_labels_size: float = 999, legend_labels_size: float = 14, show_legend: bool = True, show_total_legend: bool = True, show_total: bool = True, show_count: bool = False, show_index: bool = False, show_all_bars: bool = False, show_legend_title: Optional[bool] = None, select_variable_levels: Optional[None] = None, select_min_count: int = 0, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: Optional[None] = None, save_figure: bool = True, return_figure: bool = False, df: Union[pandas.core.frame.DataFrame, str] = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto') ‑> Optional[tuple]</span>
+<span>def <span class="ident">create_barchart</span></span>(<span>info: dict, variables: list, breaks: Optional[list] = None, legend_break: Optional[list] = None, barchart_mean: bool = False, break_labels_rename: Optional[dict[str, str]] = None, left_labels_rename: Optional[dict[str, str]] = None, legend_labels_rename: Optional[dict[str, str]] = None, left_labels_wrap: int = 50, left_labels_width: int = 999, show_mean: bool = False, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', legend_title_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, legend_position: str = 'right', return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: Optional[None] = None, value_labels_show_min: float = 0, value_labels_add_after: Optional[list[list[str]]] = None, value_labels_transform: function = &lt;function &lt;lambda&gt;&gt;, weight: str = 'auto', order_by: Optional[None] = None, title_remove_before: str = '', title_remove_after: str = '', title_add_end: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', bar_gap: float = 999, bar_width: float = 999, bar_min_size: float = 0, break_distance: float = 999, label_size: float = 16, value_labels_size: float = 999, legend_labels_size: float = 14, show_legend: bool = True, show_total_legend: bool = True, show_total: bool = True, show_count: bool = False, show_index: bool = False, show_all_bars: bool = False, show_legend_title: Optional[bool] = None, select_variable_levels: Optional[None] = None, select_min_count: int = 0, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: Optional[None] = None, save_figure: bool = True, return_figure: bool = False, df: Union[pandas.core.frame.DataFrame, str] = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto') ‑> Optional[tuple]</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a barchart</p>
@@ -426,6 +426,8 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <dd>Sets the size of labels. Defaults to 16.</dd>
 <dt><strong><code>value_labels_size</code></strong> :&ensp;<code>float</code>, optional</dt>
 <dd>Sets the size of value labels. Defaults to 999.</dd>
+<dt><strong><code>value_labels_transform</code></strong> :&ensp;<code>LambdaType</code>, optional</dt>
+<dd>Changes the size of the value_labels values with a transformation. lambda n: -n + 2 changes n to the negative value of n and adds 2. Defaults to lambda n: n.</dd>
 <dt><strong><code>legend_labels_size</code></strong> :&ensp;<code>float</code>, optional</dt>
 <dd>Sets the size of legend. Defaults to 14.</dd>
 <dt><strong><code>show_legend</code></strong> :&ensp;<code>bool</code>, optional</dt>
@@ -558,7 +560,7 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 </dl></div>
 </dd>
 <dt id="functions.create_employment_break"><code class="name flex">
-<span>def <span class="ident">create_employment_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S13', new_break_name: str = 'employment_break') ‑> None</span>
+<span>def <span class="ident">create_employment_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S13', new_break_name: str = 'employment_break', dont_know_code: bool = False) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a standard employment break.</p>
@@ -570,6 +572,8 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 <dd>Name of the original variable</dd>
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
 </dl></div>
 </dd>
 <dt id="functions.create_founding_year_break"><code class="name flex">
@@ -639,7 +643,7 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
 <dt><strong><code>use_non_binary</code></strong> :&ensp;<code>bool</code></dt>
-<dd>Include "diverse" gender if True, only use binary gender otherwise</dd>
+<dd>Include "divers" gender if True, only use binary gender otherwise</dd>
 <dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
 <dd>should the dont know code be recoded</dd>
 </dl></div>
@@ -656,7 +660,8 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 <dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the original variable</dd>
 <dt><strong><code>original_variable_type</code></strong> :&ensp;<code>str</code></dt>
-<dd>Type of the original variable. "plz" if it represents the Postleitzahl and "gdenr" if it represents the Gemeindenummer.</dd>
+<dd>Type of the original variable. "plz" if it represents the Postleitzahl and
+"gdenr" if it represents the Gemeindenummer.</dd>
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
 <dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
@@ -681,7 +686,7 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 </dl></div>
 </dd>
 <dt id="functions.create_industry_sector_break"><code class="name flex">
-<span>def <span class="ident">create_industry_sector_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'industry_sector_break', dont_know_code: bool = False, values: {} = {}, value_labels: {} = {}) ‑> None</span>
+<span>def <span class="ident">create_industry_sector_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'industry_sector_break', dont_know_code: bool = False, values: dict = {}, value_labels: dict = {}) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a standard industry sector (Branche, NOGA Code) break.</p>
@@ -870,7 +875,7 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 </dl></div>
 </dd>
 <dt id="functions.create_method_break"><code class="name flex">
-<span>def <span class="ident">create_method_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'method_break', new_break_name: str = 'method_break', other_category_break: str = 'Andere') ‑> None</span>
+<span>def <span class="ident">create_method_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'method_break', new_break_name: str = 'method_break', other_category_break: str = 'Andere', dont_know_code: bool = False) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a standard method break.</p>
@@ -883,7 +888,9 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
 <dt><strong><code>other_category_break</code></strong> :&ensp;<code>str</code></dt>
-<dd>Nome of the "Others" category</dd>
+<dd>Name of the "Others" category</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
 </dl></div>
 </dd>
 <dt id="functions.create_ownership_break"><code class="name flex">
@@ -982,7 +989,7 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 </dl></div>
 </dd>
 <dt id="functions.create_sprachregion_break"><code class="name flex">
-<span>def <span class="ident">create_sprachregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str, regions: dict = {1: 'D-CH', 2: 'W-CH', 3: 'I-CH'}, dont_know_code: bool = False) ‑> None</span>
+<span>def <span class="ident">create_sprachregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str, dont_know_code: bool = False) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a sprachregion break based on a JSON mapping file.</p>
@@ -996,7 +1003,6 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 <dd>Type of the original variable. "plz" if it represents the Postleitzahl and "gdenr" if it represents the Gemeindenummer.</dd>
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
-<dt>regions (dict(int:str)): dictionary to only use certain sprachregions</dt>
 <dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
 <dd>should the dont know code be recoded</dd>
 </dl></div>
@@ -1116,7 +1122,7 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 </dl></div>
 </dd>
 <dt id="functions.create_total_column"><code class="name flex">
-<span>def <span class="ident">create_total_column</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>)</span>
+<span>def <span class="ident">create_total_column</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates the total column used in many standard tasks.</p>
@@ -1127,7 +1133,7 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 </dl></div>
 </dd>
 <dt id="functions.create_winner_loser_break"><code class="name flex">
-<span>def <span class="ident">create_winner_loser_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'winner_loser_break') ‑> None</span>
+<span>def <span class="ident">create_winner_loser_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'winner_loser_break', dont_know_code: bool = False) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a standard winner/loser break.</p>
@@ -1139,6 +1145,8 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 <dd>Name of the original variable</dd>
 <dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the newly created break</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
 </dl></div>
 </dd>
 <dt id="functions.create_wordcloud"><code class="name flex">
@@ -1509,7 +1517,7 @@ other languages can be chosen y using another template</p>
 <h3>Methods</h3>
 <dl>
 <dt id="functions.MatrixMixer.add_title_page_info"><code class="name flex">
-<span>def <span class="ident">add_title_page_info</span></span>(<span>self, study_title: str, clients: list[str], survey_methodology: str, sampling: str, quota_features: str, address_origin: list[str], population: str, weighting: str, survey_period: str)</span>
+<span>def <span class="ident">add_title_page_info</span></span>(<span>self, study_title: str, clients: list[str], survey_methodology: str, sampling: str, quota_features: str, address_origin: list[str], population: str, weighting: str, survey_period: str, random_sample: str = None)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>sets title page info </p>
@@ -1533,6 +1541,8 @@ other languages can be chosen y using another template</p>
 <dd>weighting variables or factors</dd>
 <dt><strong><code>survey_period</code></strong> :&ensp;<code>str</code></dt>
 <dd>period in which the survey took place</dd>
+<dt><strong><code>random_sample</code></strong> :&ensp;<code>str</code></dt>
+<dd>used to overwrite the random sample string, default is n = (number of recipients)</dd>
 </dl></div>
 </dd>
 <dt id="functions.MatrixMixer.create_matrix"><code class="name flex">
@@ -1889,7 +1899,7 @@ This is a nested dictionary and it accepts absolute values. Can be like {1: {1: 
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.check_duplicates"><code class="name flex">
-<span>def <span class="ident">check_duplicates</span></span>(<span>self, row)</span>
+<span>def <span class="ident">check_duplicates</span></span>(<span>self, row: <built-in function array>) ‑> bool</span>
 </code></dt>
 <dd>
 <div class="desc"><p>function to check for duplicates in a row</p>
@@ -1905,14 +1915,15 @@ This is a nested dictionary and it accepts absolute values. Can be like {1: {1: 
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.check_sav_prebreak"><code class="name flex">
-<span>def <span class="ident">check_sav_prebreak</span></span>(<span>self, method: str = 'CATI', Interviewer_Column: str = 'ENQ2', Interview_Duration_Column: str = 'DURINT', Date_Column: str = 'DATE')</span>
+<span>def <span class="ident">check_sav_prebreak</span></span>(<span>self, method: str = 'CATI', Interviewer_Column: str = 'ENQ2', Interview_Duration_Column: str = 'DURINT', Date_Column: str = 'DATE') ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>checks and prints multiple key features of a sav file from nebu</p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>method</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>string to indicate the method. Defaults to "CATI". possible values are "CATI" or "OTHER"</dd>
+<dd>string to indicate the method. Defaults to "CATI". possible values are "CATI" or
+"OTHER"</dd>
 <dt><strong><code>Interviewer_Column</code></strong> :&ensp;<code>str</code>, optional</dt>
 <dd>Interviewer Code Column. Defaults to "ENQ2".</dd>
 <dt><strong><code>Interview_Duration_Column</code></strong> :&ensp;<code>str</code>, optional</dt>
@@ -2047,24 +2058,27 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.export_coding_excel"><code class="name flex">
-<span>def <span class="ident">export_coding_excel</span></span>(<span>self, column_lists, filename: str = 'toCode', darker_columns: list = None, use_value_labels: bool = True) ‑> None</span>
+<span>def <span class="ident">export_coding_excel</span></span>(<span>self, column_lists: list[list[str]], filename: str = 'toCode', darker_columns: list = None, use_value_labels: bool = False) ‑> None</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Exports a .xlsx-file with the given columns and their value labels. This is mostly used for coding open questions.</p>
+<div class="desc"><p>Exports a .xlsx-file with the given columns and their value labels. This is mostly used for coding open
+questions.</p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>column_lists</code></strong> :&ensp;<code>list[list[str]]</code></dt>
-<dd>List of lists with the columns that should be exported. Can be [['CODERESP'], ['F1@', 'F1_01', 'F1_02', 'F1_03']]. All columns of every sublist will have the same background color.</dd>
+<dd>List of lists with the columns that should be exported.
+Can be [['CODERESP'], ['F1@', 'F1_01', 'F1_02', 'F1_03']]. All columns of every sublist
+will have the same background color.</dd>
 <dt><strong><code>filename</code></strong> :&ensp;<code>str</code></dt>
 <dd>File name of the .xlsx file. Defaults to 'toCode'.</dd>
 <dt><strong><code>darker_columns</code></strong> :&ensp;<code>list</code></dt>
 <dd>List of columns that should have a darker background color. Defaults to None.</dd>
 <dt><strong><code>use_value_labels</code></strong> :&ensp;<code>bool</code></dt>
-<dd>If True it will display the value labels instead of the codes. Defaults to True.</dd>
+<dd>If True it will display the value labels instead of the codes. Defaults to False.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.export_config"><code class="name flex">
-<span>def <span class="ident">export_config</span></span>(<span>self, export_df: bool = True)</span>
+<span>def <span class="ident">export_config</span></span>(<span>self, export_df: bool = True, gfs_config_name: str = 'gfs-config')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Exports an excel-file that makes changing the meta data very simple.</p>
@@ -2075,7 +2089,7 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.export_data"><code class="name flex">
-<span>def <span class="ident">export_data</span></span>(<span>self, file_name: str = 'fertig')</span>
+<span>def <span class="ident">export_data</span></span>(<span>self, file_name: str = 'fertig') ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Exports a .SAV-file and a gfs-meta JSON-file.</p>
@@ -2231,10 +2245,22 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.import_config"><code class="name flex">
-<span>def <span class="ident">import_config</span></span>(<span>self)</span>
+<span>def <span class="ident">import_config</span></span>(<span>self, gfs_config_name: str = 'gfs-config') ‑> None</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Imports the gfs-config excel-file and updates the MetaTable according to the changes made in excel.</p></div>
+<div class="desc"><p>Imports the gfs-config excel-file and updates the MetaTable according to the changes made in excel.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>gfs_config_name</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>name of config if it should not be default or multiple configs are used. Defaults to "gfs-config".</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>FileNotFoundError</code></dt>
+<dd>if a config file is not found</dd>
+<dt><code>ValueError</code></dt>
+<dd><em>description</em></dd>
+</dl></div>
 </dd>
 <dt id="functions.MetaTable2.item_label"><code class="name flex">
 <span>def <span class="ident">item_label</span></span>(<span>self, column: str, text: str, verbose: bool = True)</span>
@@ -2297,7 +2323,7 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.merge_open_questions"><code class="name flex">
-<span>def <span class="ident">merge_open_questions</span></span>(<span>self, df_open_questions: pandas.core.frame.DataFrame, columns: list, code_list: dict, group_name: str, group_label: str = '', merge_Id: str = 'CODERESP', group_kind='multi', measure: str = 'auto', check_for_duplicates: bool = True)</span>
+<span>def <span class="ident">merge_open_questions</span></span>(<span>self, df_open_questions: pandas.core.frame.DataFrame, columns: list, code_list: dict, group_name: str, group_label: str = '', merge_Id: str = 'CODERESP', group_kind='multi', measure: str = 'auto', check_for_duplicates: bool = True) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>merges open questions with the metatable dataframe</p>
@@ -2324,7 +2350,7 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MetaTable2.merge_semiopen_questions"><code class="name flex">
-<span>def <span class="ident">merge_semiopen_questions</span></span>(<span>self, df_semiopen_questions: pandas.core.frame.DataFrame, columns: list, code_list: dict, group_name: str, merge_Id: str = 'CODERESP', check_for_duplicates: bool = True)</span>
+<span>def <span class="ident">merge_semiopen_questions</span></span>(<span>self, df_semiopen_questions: pandas.core.frame.DataFrame, columns: list, code_list: dict, group_name: str, merge_Id: str = 'CODERESP', check_for_duplicates: bool = True) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>merges semi open questions with the metatable dataframe</p>
@@ -2449,7 +2475,8 @@ Can be 'yes' or 'no'. Defaults to 'auto'.</dd>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>speeder_value</code></strong> :&ensp;<code>float</code></dt>
-<dd>The precalculated speeder threshold value. If not provided, it will be calculated using _calculate_speeder_value.</dd>
+<dd>The precalculated speeder threshold value. If not provided, it will be calculated
+using _calculate_speeder_value.</dd>
 <dt><strong><code>Interview_Duration_Column</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of the column containing interview durations. Default is "DURINT".</dd>
 </dl></div>
