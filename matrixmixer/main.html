@@ -123,7 +123,7 @@
 </dl></div>
 </dd>
 <dt id="functions.matrixmixer.main.MatrixMixer.create_matrix"><code class="name flex">
-<span>def <span class="ident">create_matrix</span></span>(<span>self, question: str, breaks: list[list[str]] = 'auto', weight: str = 'auto', order_descending: Union[str, bool] = 'auto', special_variables: Union[str, list[int]] = 'auto') ‑> None</span>
+<span>def <span class="ident">create_matrix</span></span>(<span>self, question: str, breaks: list[list[str]] = 'auto', weight: str = 'auto', order_descending: Union[str, bool] = 'auto', special_variables: Union[str, list[int]] = 'auto', nps: bool = False) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a single matrix and saves it to the MatrixMixer object.</p>
@@ -139,8 +139,8 @@
 <dd>Orders the values descending or not. Use either False or True. Defaults to 'auto'.</dd>
 <dt><strong><code>special_variables</code></strong> :&ensp;<code>Union[str, list[int]]</code>, optional</dt>
 <dd>List of special variables which will appear at the bottom. Could be something like [96, 97, 98, 99999997, 99999998]. Defaults to 'auto'.</dd>
-<dt><strong><code>alpha</code></strong> :&ensp;<code>float</code>, optional</dt>
-<dd>significance level for the hypothesis tests. Defaults to 0.05.</dd>
+<dt><strong><code>nps</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>add nps to the matrix. Defaults to False.</dd>
 </dl></div>
 </dd>
 <dt id="functions.matrixmixer.main.MatrixMixer.export_excel"><code class="name flex">
