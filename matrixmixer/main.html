@@ -34,7 +34,7 @@
 <dl>
 <dt id="functions.matrixmixer.main.MatrixMixer"><code class="flex name class">
 <span>class <span class="ident">MatrixMixer</span></span>
-<span>(</span><span>meta_table: <a title="functions.metatables.main.MetaTable2" href="../metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, breaks: list = [['tz']], language: list = 'de', weight: list = 'tz', special_variables_last: bool = True, study_title: str = 'Studie', significance_level: str = 0.05, column_width: int = 15)</span>
+<span>(</span><span>meta_table: <a title="functions.metatables.main.MetaTable2" href="../metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, breaks: list = [['tz']], language: list = 'de', weight: list = 'tz', special_variables_last: bool = True, study_title: str = 'Studie', significance_level: str = 0.05, use_conf_interval: str = False, conf_interval: str = 0.95, column_width: int = 15, hide_total_break: int = False)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Assembles multiple tables with descriptive statistics and exports them to excel.</p>
@@ -66,6 +66,14 @@
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="functions.matrixmixer.main.MatrixMixer.conf_interval"><code class="name">var <span class="ident">conf_interval</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="functions.matrixmixer.main.MatrixMixer.hide_total_break"><code class="name">var <span class="ident">hide_total_break</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="functions.matrixmixer.main.MatrixMixer.language"><code class="name">var <span class="ident">language</span> : list</code></dt>
 <dd>
 <div class="desc"></div>
@@ -83,6 +91,10 @@
 <div class="desc"></div>
 </dd>
 <dt id="functions.matrixmixer.main.MatrixMixer.study_title"><code class="name">var <span class="ident">study_title</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="functions.matrixmixer.main.MatrixMixer.use_conf_interval"><code class="name">var <span class="ident">use_conf_interval</span> : str</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -123,7 +135,7 @@
 </dl></div>
 </dd>
 <dt id="functions.matrixmixer.main.MatrixMixer.create_matrix"><code class="name flex">
-<span>def <span class="ident">create_matrix</span></span>(<span>self, question: str, breaks: list[list[str]] = 'auto', weight: str = 'auto', order_descending: Union[str, bool] = 'auto', special_variables: Union[str, list[int]] = 'auto', nps: bool = False) ‑> None</span>
+<span>def <span class="ident">create_matrix</span></span>(<span>self, question: str, breaks: list[list[str]] = 'auto', weight: str = 'auto', order_descending: Union[str, bool] = 'auto', special_variables: Union[str, list[int]] = 'auto', nps: bool = False, groupings: list = None) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a single matrix and saves it to the MatrixMixer object.</p>
@@ -188,13 +200,16 @@
 <li><code><a title="functions.matrixmixer.main.MatrixMixer.add_title_page_info" href="#functions.matrixmixer.main.MatrixMixer.add_title_page_info">add_title_page_info</a></code></li>
 <li><code><a title="functions.matrixmixer.main.MatrixMixer.breaks" href="#functions.matrixmixer.main.MatrixMixer.breaks">breaks</a></code></li>
 <li><code><a title="functions.matrixmixer.main.MatrixMixer.column_width" href="#functions.matrixmixer.main.MatrixMixer.column_width">column_width</a></code></li>
+<li><code><a title="functions.matrixmixer.main.MatrixMixer.conf_interval" href="#functions.matrixmixer.main.MatrixMixer.conf_interval">conf_interval</a></code></li>
 <li><code><a title="functions.matrixmixer.main.MatrixMixer.create_matrix" href="#functions.matrixmixer.main.MatrixMixer.create_matrix">create_matrix</a></code></li>
 <li><code><a title="functions.matrixmixer.main.MatrixMixer.export_excel" href="#functions.matrixmixer.main.MatrixMixer.export_excel">export_excel</a></code></li>
+<li><code><a title="functions.matrixmixer.main.MatrixMixer.hide_total_break" href="#functions.matrixmixer.main.MatrixMixer.hide_total_break">hide_total_break</a></code></li>
 <li><code><a title="functions.matrixmixer.main.MatrixMixer.language" href="#functions.matrixmixer.main.MatrixMixer.language">language</a></code></li>
 <li><code><a title="functions.matrixmixer.main.MatrixMixer.meta_table" href="#functions.matrixmixer.main.MatrixMixer.meta_table">meta_table</a></code></li>
 <li><code><a title="functions.matrixmixer.main.MatrixMixer.significance_level" href="#functions.matrixmixer.main.MatrixMixer.significance_level">significance_level</a></code></li>
 <li><code><a title="functions.matrixmixer.main.MatrixMixer.special_variables_last" href="#functions.matrixmixer.main.MatrixMixer.special_variables_last">special_variables_last</a></code></li>
 <li><code><a title="functions.matrixmixer.main.MatrixMixer.study_title" href="#functions.matrixmixer.main.MatrixMixer.study_title">study_title</a></code></li>
+<li><code><a title="functions.matrixmixer.main.MatrixMixer.use_conf_interval" href="#functions.matrixmixer.main.MatrixMixer.use_conf_interval">use_conf_interval</a></code></li>
 <li><code><a title="functions.matrixmixer.main.MatrixMixer.weight" href="#functions.matrixmixer.main.MatrixMixer.weight">weight</a></code></li>
 </ul>
 </li>

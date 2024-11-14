@@ -46,7 +46,33 @@
 <span>def <span class="ident">raise_errors</span></span>(<span>globals_dict: dict, variable: Any, type: Any, min_value: Union[float, int, ForwardRef(None)] = None, max_value: Union[float, int, ForwardRef(None)] = None, min_length: Optional[int] = None, max_length: Optional[int] = None) ‑> None</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>raises errors if there are invalid parameters</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>globals_dict</code></strong> :&ensp;<code>dict</code></dt>
+<dd>all variables</dd>
+<dt><strong><code>variable</code></strong> :&ensp;<code>Any</code></dt>
+<dd>variable to check</dd>
+<dt><strong><code>type</code></strong> :&ensp;<code>Any</code></dt>
+<dd>assumed type of the parameter</dd>
+<dt><strong><code>min_value</code></strong> :&ensp;<code>Union[float, int, None]</code>, optional</dt>
+<dd>minimum value of the parameter. Defaults to None.</dd>
+<dt><strong><code>max_value</code></strong> :&ensp;<code>Union[float, int, None]</code>, optional</dt>
+<dd>maximum value of the parameter. Defaults to None.</dd>
+<dt><strong><code>min_length</code></strong> :&ensp;<code>Optional[int]</code>, optional</dt>
+<dd>minimum length of the parameter. Defaults to None.</dd>
+<dt><strong><code>max_length</code></strong> :&ensp;<code>Optional[int]</code>, optional</dt>
+<dd>maximum length of the parameter. Defaults to None.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>if a parameter has the wrong value</dd>
+<dt><code>TypeError</code></dt>
+<dd>if a parameter has the wrong type</dd>
+<dt><code>NotImplementedError</code></dt>
+<dd>if a type of parameter is not implemented</dd>
+</dl></div>
 </dd>
 </dl>
 </section>
