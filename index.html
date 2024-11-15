@@ -1564,7 +1564,7 @@ other languages can be chosen y using another template</p>
 </dl></div>
 </dd>
 <dt id="functions.MatrixMixer.create_matrix"><code class="name flex">
-<span>def <span class="ident">create_matrix</span></span>(<span>self, question: str, breaks: list[list[str]] = 'auto', weight: str = 'auto', order_descending: Union[str, bool] = 'auto', special_variables: Union[str, list[int]] = 'auto', nps: bool = False, groupings: list = None) ‑> None</span>
+<span>def <span class="ident">create_matrix</span></span>(<span>self, question: str, breaks: list[list[str]] = 'auto', weight: str = 'auto', order_descending: Union[str, bool] = 'auto', special_variables: Union[str, list[int]] = 'auto', nps: bool = False, groupings: dict = None) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a single matrix and saves it to the MatrixMixer object.</p>
@@ -1582,6 +1582,8 @@ other languages can be chosen y using another template</p>
 <dd>List of special variables which will appear at the bottom. Could be something like [96, 97, 98, 99999997, 99999998]. Defaults to 'auto'.</dd>
 <dt><strong><code>nps</code></strong> :&ensp;<code>bool</code>, optional</dt>
 <dd>add nps to the matrix. Defaults to False.</dd>
+<dt><strong><code>groupings</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>groupings dictionary to create variables boxes. Defaults to None.</dd>
 </dl></div>
 </dd>
 <dt id="functions.MatrixMixer.export_excel"><code class="name flex">
