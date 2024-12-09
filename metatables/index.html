@@ -515,7 +515,7 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 </dl></div>
 </dd>
 <dt id="functions.metatables.create_total_column"><code class="name flex">
-<span>def <span class="ident">create_total_column</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>) ‑> None</span>
+<span>def <span class="ident">create_total_column</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, name: str = 'tz') ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates the total column used in many standard tasks.</p>
@@ -523,6 +523,8 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 <dl>
 <dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.metatables.MetaTable2" href="#functions.metatables.MetaTable2">MetaTable2</a></code></dt>
 <dd>The Metatable that needs editing</dd>
+<dt><strong><code>name</code></strong> :&ensp;<code>str</code></dt>
+<dd>name to overwrite the column name, Defaults to tz.</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.create_winner_loser_break"><code class="name flex">
@@ -676,6 +678,12 @@ This is a nested dictionary and it accepts absolute values. Can be like {1: {1: 
 <dt><code>bool</code></dt>
 <dd>if duplicates exist returns True, else False</dd>
 </dl></div>
+</dd>
+<dt id="functions.metatables.MetaTable2.check_missing_columns"><code class="name flex">
+<span>def <span class="ident">check_missing_columns</span></span>(<span>self, expected_columns: list)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 <dt id="functions.metatables.MetaTable2.check_sav_prebreak"><code class="name flex">
 <span>def <span class="ident">check_sav_prebreak</span></span>(<span>self, method: str = 'CATI', Interviewer_Column: str = 'ENQ2', Interview_Duration_Column: str = 'DURINT', Date_Column: str = 'DATE') ‑> None</span>
@@ -1445,6 +1453,7 @@ using _calculate_speeder_value.</dd>
 <li><code><a title="functions.metatables.MetaTable2.add_to_group" href="#functions.metatables.MetaTable2.add_to_group">add_to_group</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.calculate_weight" href="#functions.metatables.MetaTable2.calculate_weight">calculate_weight</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.check_duplicates" href="#functions.metatables.MetaTable2.check_duplicates">check_duplicates</a></code></li>
+<li><code><a title="functions.metatables.MetaTable2.check_missing_columns" href="#functions.metatables.MetaTable2.check_missing_columns">check_missing_columns</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.check_sav_prebreak" href="#functions.metatables.MetaTable2.check_sav_prebreak">check_sav_prebreak</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.columns" href="#functions.metatables.MetaTable2.columns">columns</a></code></li>
 <li><code><a title="functions.metatables.MetaTable2.copy_column" href="#functions.metatables.MetaTable2.copy_column">copy_column</a></code></li>

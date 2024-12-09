@@ -482,7 +482,7 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 </dl></div>
 </dd>
 <dt id="functions.metatables.standard_mapping.create_total_column"><code class="name flex">
-<span>def <span class="ident">create_total_column</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>) ‑> None</span>
+<span>def <span class="ident">create_total_column</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, name: str = 'tz') ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates the total column used in many standard tasks.</p>
@@ -490,6 +490,8 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 <dl>
 <dt><strong><code>metatable</code></strong> :&ensp;<code>MetaTable2</code></dt>
 <dd>The Metatable that needs editing</dd>
+<dt><strong><code>name</code></strong> :&ensp;<code>str</code></dt>
+<dd>name to overwrite the column name, Defaults to tz.</dd>
 </dl></div>
 </dd>
 <dt id="functions.metatables.standard_mapping.create_winner_loser_break"><code class="name flex">
