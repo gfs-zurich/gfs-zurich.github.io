@@ -707,7 +707,7 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 </dl></div>
 </dd>
 <dt id="functions.create_lead_time_break"><code class="name flex">
-<span>def <span class="ident">create_lead_time_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'lead_time_break', year: int = 2024, dont_know_code: bool = False) ‑> None</span>
+<span>def <span class="ident">create_lead_time_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, new_break_name: str = 'lead_time_break', year: int = 2025, dont_know_code: bool = False) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a standard lead time break.</p>
@@ -911,10 +911,100 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 </dl></div>
 </dd>
 <dt id="functions.create_piechart"><code class="name flex">
-<span>def <span class="ident">create_piechart</span></span>(<span>info: dict, variables: list, breaks: list = None, break_labels_rename: dict[str, str] = None, legend_labels_rename: dict[str, str] = None, legend_position: str = 'bottom', legend_title_custom_text: str = 'auto', title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_color: int = 999, value_labels_show_min: float = 0.8, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', value_labels_size: float = 16, legend_labels_size: float = 12, hole_size: float = 0, show_legend: bool = True, show_legend_title: Optional[bool] = None, show_count: bool = False, select_variable_levels: list[int] = None, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, return_figure: bool = False, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto')</span>
+<span>def <span class="ident">create_piechart</span></span>(<span>info: dict, variables: list, breaks: list = None, break_labels_rename: dict[str, str] = None, legend_labels_rename: dict[str, str] = None, legend_position: str = 'bottom', legend_title_custom_text: str = 'auto', title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_color: int = 999, value_labels_show_min: float = 0.8, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', value_labels_size: float = 16, legend_labels_size: float = 12, hole_size: float = 0.4, show_legend: bool = True, show_legend_title: Optional[bool] = None, show_count: bool = False, show_decimals: bool = False, select_variable_levels: list[int] = None, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, return_figure: bool = False, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto')</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Creates a piechart or donutchart, depends on hole size parameter</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>info</code></strong> :&ensp;<code>dict</code></dt>
+<dd>A dictionary with info about the presentation. Has info like number of slides, presentation name and the presentation object itself ~ usually info</dd>
+<dt><strong><code>variables</code></strong> :&ensp;<code>list</code></dt>
+<dd>A list of variables. If multiple are added, function doesn't accept any breaks. ~ ['AW2'] / ['AW1_1', 'AW1_2', &hellip;]</dd>
+<dt><strong><code>breaks</code></strong> :&ensp;<code>list</code>, optional</dt>
+<dd>A list of breaks. ~ ['alter_break', 'sex_break']. Defaults to None.</dd>
+<dt><strong><code>break_labels_rename</code></strong> :&ensp;<code>dict[str, str]</code>, optional</dt>
+<dd>Renames the breaks. ~ {'old_name': 'new_name'}. Defaults to None.</dd>
+<dt><strong><code>legend_labels_rename</code></strong> :&ensp;<code>dict[str, str]</code>, optional</dt>
+<dd>Renames the labels of the different legend levels. ~ {'old_name', 'new_name'}. Defaults to None.</dd>
+<dt><strong><code>legend_position</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Sets the position of the legend. ~ 'bottom'. Defaults to 'right'.
+legend_title_custom_text (str, optional): Creates a custom legend title, if title is desired. Defaults to 'auto'.</dd>
+<dt><strong><code>title_custom_text</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Creates custom title text, if automatic text isn't desired.Defaults to 'auto'.</dd>
+<dt><strong><code>subtitle_custom_text</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Creates custom subtitle text, if automatic text isn't desired. Defaults to 'auto'.</dd>
+<dt><strong><code>tag_custom_text</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Creates custom tag text, if automatic text isn't desired. Defaults to 'auto'.</dd>
+<dt><strong><code>title_position</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Sets the position of the title text. ~ 0 = don't show, 1, 2, 3 are possible positions on plot. Defaults to 1.</dd>
+<dt><strong><code>subtitle_position</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Sets the position of the subtitle text. ~ 0 = don't show, 1, 2, 3 are possible positions on plot. Defaults to 2.</dd>
+<dt><strong><code>tag_position</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Sets the position of the tag text. ~ 0 = don't show, 1, 2, 3 are possible positions on plot. Defaults to 3.</dd>
+<dt><strong><code>return_data</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Returns the data frame, that is used to construct the graph, so it can be viewed. The data frame will be printed out if the parameter is True. This doesn't affect the graph in any way. Defaults to False.</dd>
+<dt><strong><code>color_theme</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Sets color theme for graph. ~ 'test', 'gfs'. Defaults to 'auto'.</dd>
+<dt><strong><code>color_type</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Sets color value type. ~ 'diverging', 'single_hue'. Defaults to 'groups'.</dd>
+<dt><strong><code>color_direction</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Sets direction of color pattern. ~ 'backward'. Defaults to 'forward'.</dd>
+<dt><strong><code>color_custom</code></strong> :&ensp;<code>list[str]</code>, optional</dt>
+<dd>Uses custom colors ~ ['#131366', '#454578']. Defaults to None.</dd>
+<dt><strong><code>value_labels_color</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Sets threshold for black or white label color. Use 0 for all black labels and 255 for all white. Use numbers between for a mix. Defaults to 999.</dd>
+<dt><strong><code>value_labels_show_min</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>Sets threshold showing labels by %. Use 0 to show all labels and 100 to show none. Use numbers between for a mix. Defaults to 0.</dd>
+<dt><strong><code>weight</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Turns weight on if weight variable name is added. ~ "gewicht". Defaults to 'auto'.</dd>
+<dt><strong><code>order_by</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>A dictionary. Orders the plot by any variable in the x data frame. ~ {'mean': 'asc'} / {1: 'desc'}. Defaults to None.</dd>
+<dt><strong><code>title_remove_before</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Removes the label text before the given string. ~ "? " deletes everything up until and including the question mark. Defaults to ''.</dd>
+<dt><strong><code>title_remove_after</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Removes the label text after the given string. ~ ". Bitte" deletes everything after and including the punctuation mark that. Defaults to ''.</dd>
+<dt><strong><code>tag_add_before</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Adds text before the tag text. ~ "Meine Zusatzinfo, ', " adds this string before tag. Defaults to ''.</dd>
+<dt><strong><code>tag_add_after</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Adds text after the tag text. ~ "Meine Zusatzinfo, ', " adds this string after tag. Defaults to ''.</dd>
+<dt><strong><code>subtitle_add_before</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Adds text before the tag text. ~ "Filter: F3 = 'Ja', " adds this string before tag. Defaults to ''.</dd>
+<dt><strong><code>subtitle_add_after</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Adds text after the tag text. ~ "Filter: F3 = 'Ja', " adds this string after tag. Defaults to ''.</dd>
+<dt><strong><code>value_labels_size</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>Sets the size of value labels. Defaults to 999.</dd>
+<dt><strong><code>legend_labels_size</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>Sets the size of legend. Defaults to 12.</dd>
+<dt><strong><code>hole_size</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>defines the hole size in a donut chart. Defaults to 0.4.</dd>
+<dt><strong><code>show_legend</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Turns legend on and off. ~ False. Defaults to True.
+show_legend_title (bool, optional): Toggles legend title. ~ True / False. Defaults to None, which means automatic.</dd>
+<dt><strong><code>show_count</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Turns counts in variable labels on and off. ~ True. Defaults to False.</dd>
+<dt><strong><code>show_decimals</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>rounds the decimals of the labels to 1 if set to true. Defaults to False.</dd>
+<dt><strong><code>select_variable_levels</code></strong> :&ensp;<code>list[int]</code>, optional</dt>
+<dd>A list variable levels used to select and order variables. ~ [2, 1, 99999997]. Defaults to None.</dd>
+<dt><strong><code>special_variables</code></strong> :&ensp;<code>list[int]</code>, optional</dt>
+<dd>A list variable levels that will be treated differently. They will appear gray in the graph and have not effect on the mean calculation. ~ [16, 99999997]. Defaults to [96, 97, 98, 99999996, 99999997, 99999998].</dd>
+<dt><strong><code>standard_arguments</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>Adds some standard arguments that normally don't need to be changed. Defaults to None.</dd>
+<dt><strong><code>save_figure</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>Turns figure export on and off. Defaults to True.</dd>
+<dt><strong><code>return_figure</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Turns figure return on and off. Defaults to False.</dd>
+<dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code>, optional</dt>
+<dd>The current data file ~ usually df. Defaults to 'auto'.</dd>
+<dt><strong><code>meta</code></strong> :&ensp;<code>pyreadstat._readstat_parser.metadata_container</code>, optional</dt>
+<dd>The current meta data file ~ usually meta. Defaults to 'auto'.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Optional[tuple]</code></dt>
+<dd>returns df and meta objects if return_data is True</dd>
+</dl></div>
 </dd>
 <dt id="functions.create_role_break"><code class="name flex">
 <span>def <span class="ident">create_role_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variables: str, new_break_name: str = 'role_break', dont_know_code: bool = False) ‑> None</span>
@@ -1152,80 +1242,73 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 </dl></div>
 </dd>
 <dt id="functions.create_wordcloud"><code class="name flex">
-<span>def <span class="ident">create_wordcloud</span></span>(<span>info: dict, variables: list[str], language_column: str, translate_to: int = 564, transform: str = 'no', font_name: str = 'arial', title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_custom: str = 'auto', weight: str = 'auto', title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', label_size: float = 16, value_labels_size: float = 999, show_count: bool = False, remove_words: Optional[None] = None, min_font_size: int = 0, min_count: int = 1, max_words: int = 200, translation_file: str = None, standard_arguments: dict = None, save_figure: bool = True, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto') ‑> Optional[tuple]</span>
+<span>def <span class="ident">create_wordcloud</span></span>(<span>info: dict, variables: list[str], language_column: str, translate_to: int = 564, transform: str = 'no', font_name: str = 'arial', title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_custom: str = 'auto', title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', remove_words: Optional[None] = None, min_font_size: int = 0, min_count: int = 1, max_words: int = 200, translation_file_path: str = None, standard_arguments: dict = None, save_figure: bool = True, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto') ‑> Optional[tuple]</span>
 </code></dt>
 <dd>
 <div class="desc"><p>generates a wordcloud plot, also translates open answers into a language</p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>info</code></strong> :&ensp;<code>dict</code></dt>
-<dd><em>description</em></dd>
-<dt><strong><code>variables</code></strong> :&ensp;<code>list[str]</code></dt>
-<dd><em>description</em></dd>
+<dd>A dictionary with info about the presentation. Has info like number of slides,
+presentation name and the presentation object itself ~ usually info
+variables (list): A list of variables. If multiple are added, function doesn't accept any breaks. ~ ['AW2'] /
+['AW1_1', 'AW1_2', &hellip;]</dd>
 <dt><strong><code>language_column</code></strong> :&ensp;<code>str</code></dt>
-<dd><em>description</em></dd>
+<dd>The column that contains the language information.</dd>
 <dt><strong><code>translate_to</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd><em>description</em>. Defaults to 564.</dd>
+<dd>language code to translate to, matches nebu language code. Defaults to 564.</dd>
 <dt><strong><code>transform</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd><em>description</em>. Defaults to 'no'.</dd>
+<dd>How to transform the words. ~ 'upper', 'lower', 'no'. Defaults to 'no'.</dd>
 <dt><strong><code>font_name</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd><em>description</em>. Defaults to 'arial'.</dd>
+<dd>font to use. Defaults to 'arial'.</dd>
 <dt><strong><code>title_custom_text</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd><em>description</em>. Defaults to 'auto'.</dd>
+<dd>Creates custom title text, if automatic text isn't desired.Defaults to 'auto'.</dd>
 <dt><strong><code>subtitle_custom_text</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd><em>description</em>. Defaults to 'auto'.</dd>
+<dd>Creates custom subtitle text, if automatic text isn't desired. Defaults to 'auto'.</dd>
 <dt><strong><code>tag_custom_text</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd><em>description</em>. Defaults to 'auto'.</dd>
+<dd>Creates custom tag text, if automatic text isn't desired. Defaults to 'auto'.</dd>
 <dt><strong><code>title_position</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd><em>description</em>. Defaults to 1.</dd>
+<dd>Sets the position of the title text. ~ 0 = don't show, 1, 2, 3 are possible positions on plot. Defaults to 1.</dd>
 <dt><strong><code>subtitle_position</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd><em>description</em>. Defaults to 2.</dd>
+<dd>Sets the position of the subtitle text. ~ 0 = don't show, 1, 2, 3 are possible positions on plot. Defaults to 2.</dd>
 <dt><strong><code>tag_position</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd><em>description</em>. Defaults to 3.</dd>
+<dd>Sets the position of the tag text. ~ 0 = don't show, 1, 2, 3 are possible positions on plot. Defaults to 3.</dd>
 <dt><strong><code>return_data</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd><em>description</em>. Defaults to False.</dd>
+<dd>Returns the data frame, that is used to construct the graph, so it can be viewed. The data frame will be printed out if the parameter is True. This doesn't affect the graph in any way. Defaults to False.</dd>
 <dt><strong><code>color_theme</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd><em>description</em>. Defaults to 'auto'.</dd>
+<dd>Sets color theme for graph. ~ 'test', 'gfs'. Defaults to 'auto'.</dd>
 <dt><strong><code>color_custom</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd><em>description</em>. Defaults to 'auto'.</dd>
-<dt><strong><code>weight</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd><em>description</em>. Defaults to 'auto'.</dd>
+<dd>Uses custom colors ~ ['#131366', '#454578']. Defaults to None.</dd>
 <dt><strong><code>title_remove_before</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd><em>description</em>. Defaults to ''.</dd>
+<dd>Removes the label text before the given string. ~ "? " deletes everything up until and including the question mark. Defaults to ''.</dd>
 <dt><strong><code>title_remove_after</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd><em>description</em>. Defaults to ''.</dd>
+<dd>Removes the label text after the given string. ~ ". Bitte" deletes everything after and including the punctuation mark that. Defaults to ''.</dd>
 <dt><strong><code>tag_add_before</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd><em>description</em>. Defaults to ''.</dd>
+<dd>Adds text before the tag text. ~ "Meine Zusatzinfo, ', " adds this string before tag. Defaults to ''.</dd>
 <dt><strong><code>tag_add_after</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd><em>description</em>. Defaults to ''.</dd>
+<dd>Adds text after the tag text. ~ "Meine Zusatzinfo, ', " adds this string after tag. Defaults to ''.</dd>
 <dt><strong><code>subtitle_add_before</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd><em>description</em>. Defaults to ''.</dd>
+<dd>Adds text before the tag text. ~ "Filter: F3 = 'Ja', " adds this string before tag. Defaults to ''.</dd>
 <dt><strong><code>subtitle_add_after</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd><em>description</em>. Defaults to ''.</dd>
-<dt><strong><code>label_size</code></strong> :&ensp;<code>float</code>, optional</dt>
-<dd><em>description</em>. Defaults to 16.</dd>
-<dt><strong><code>value_labels_size</code></strong> :&ensp;<code>float</code>, optional</dt>
-<dd><em>description</em>. Defaults to 999.</dd>
-<dt><strong><code>show_count</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd><em>description</em>. Defaults to False.</dd>
+<dd>Adds text after the tag text. ~ "Filter: F3 = 'Ja', " adds this string after tag. Defaults to ''.</dd>
 <dt><strong><code>remove_words</code></strong> :&ensp;<code>Optional[list[str]]</code>, optional</dt>
-<dd><em>description</em>. Defaults to None.</dd>
+<dd>Words to remove in the wordcloud. Defaults to None.</dd>
 <dt><strong><code>min_font_size</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd><em>description</em>. Defaults to 0.</dd>
+<dd>minimal font size to be displayed. Defaults to 0.</dd>
 <dt><strong><code>min_count</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd><em>description</em>. Defaults to 1.</dd>
+<dd>minimum count of word frequency to be displayed. Defaults to 1.</dd>
 <dt><strong><code>max_words</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd><em>description</em>. Defaults to 200.</dd>
-<dt><strong><code>translation_file</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd><em>description</em>. Defaults to None.</dd>
+<dd>max word count to be displayed. Defaults to 200.</dd>
+<dt><strong><code>translation_file_path</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>path to file to already translated texts. Defaults to None.</dd>
 <dt><strong><code>standard_arguments</code></strong> :&ensp;<code>dict</code>, optional</dt>
-<dd><em>description</em>. Defaults to None.</dd>
+<dd>Adds some standard arguments that normally don't need to be changed. Defaults to None.</dd>
 <dt><strong><code>save_figure</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd><em>description</em>. Defaults to True.</dd>
+<dd>Turns figure export on and off. Defaults to True.</dd>
 <dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code>, optional</dt>
-<dd><em>description</em>. Defaults to 'auto'.</dd>
+<dd>The current data file ~ usually df. Defaults to 'auto'.</dd>
 <dt><strong><code>meta</code></strong> :&ensp;<code>pyreadstat._readstat_parser.metadata_container</code>, optional</dt>
-<dd><em>description</em>. Defaults to 'auto'.</dd>
+<dd>The current meta data file ~ usually meta. Defaults to 'auto'.</dd>
 </dl>
 <h2 id="raises">Raises</h2>
 <dl>
@@ -1398,7 +1481,7 @@ other languages can be chosen y using another template</p>
 </dl></div>
 </dd>
 <dt id="functions.translate_column"><code class="name flex">
-<span>def <span class="ident">translate_column</span></span>(<span>info: dict, open_question_column: str, language_column: str, translate_to: int, df: pandas.core.frame.DataFrame, translation_file: str) ‑> None</span>
+<span>def <span class="ident">translate_column</span></span>(<span>info: dict, open_question_column: str, language_column: str, translate_to: int, df: pandas.core.frame.DataFrame, translation_file_path: str) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Translates a column to a different language. Saves the translations to a JSON-file.</p>
@@ -1414,7 +1497,7 @@ other languages can be chosen y using another template</p>
 <dd>The language code to translate to.</dd>
 <dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
 <dd>The data frame that contains the columns.</dd>
-<dt><strong><code>translation_file</code></strong> :&ensp;<code>str</code></dt>
+<dt><strong><code>translation_file_path</code></strong> :&ensp;<code>str</code></dt>
 <dd>file path to take the saved translations from.</dd>
 </dl></div>
 </dd>
