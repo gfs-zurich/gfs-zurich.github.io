@@ -133,6 +133,54 @@
 <dd>
 <div class="desc"><p>Add index to the left labels (index is the count of the break). This is mainly used for debugging.</p></div>
 </dd>
+<dt id="functions.graphy.main_data.legend_label_add_count"><code class="name flex">
+<span>def <span class="ident">legend_label_add_count</span></span>(<span>info: dict, x: pandas.core.frame.DataFrame, show_count_legend: bool, variable: str, grouped_once: bool = False, grouped_twice: bool = False) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Add count to the legend labels</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>info</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Information about the presentation</dd>
+<dt><strong><code>x</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>Plot data frame</dd>
+<dt><strong><code>show_count_legend</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Decide if count should be shown in elgend</dd>
+<dt><strong><code>variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Variable to count</dd>
+<dt><strong><code>grouped_once</code></strong> :&ensp;<code>bool</code></dt>
+<dd>variable grouped once</dd>
+<dt><strong><code>grouped_twice</code></strong> :&ensp;<code>bool</code></dt>
+<dd>variable grouped twice</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>changed dataframe</dd>
+</dl></div>
+</dd>
+<dt id="functions.graphy.main_data.legend_label_add_index"><code class="name flex">
+<span>def <span class="ident">legend_label_add_index</span></span>(<span>info: dict, x: pandas.core.frame.DataFrame, show_index_legend: bool, variable: str) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Add index to the legend labels (index is the label of the break). This is mainly used for debugging.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>info</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Information about the presentation</dd>
+<dt><strong><code>x</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>Plot data frame</dd>
+<dt><strong><code>show_count_legend</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Decide if count should be shown in legend</dd>
+<dt><strong><code>variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Variable to count</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>changed dataframe</dd>
+</dl></div>
+</dd>
 <dt id="functions.graphy.main_data.order_barchart"><code class="name flex">
 <span>def <span class="ident">order_barchart</span></span>(<span>x: pandas.core.frame.DataFrame, order_by: dict, show_mean: bool, one_option: bool, break_x_axis: bool = False) ‑> pandas.core.frame.DataFrame</span>
 </code></dt>
@@ -202,6 +250,8 @@
 <li><code><a title="functions.graphy.main_data.create_base_df" href="#functions.graphy.main_data.create_base_df">create_base_df</a></code></li>
 <li><code><a title="functions.graphy.main_data.label_add_count" href="#functions.graphy.main_data.label_add_count">label_add_count</a></code></li>
 <li><code><a title="functions.graphy.main_data.label_add_index" href="#functions.graphy.main_data.label_add_index">label_add_index</a></code></li>
+<li><code><a title="functions.graphy.main_data.legend_label_add_count" href="#functions.graphy.main_data.legend_label_add_count">legend_label_add_count</a></code></li>
+<li><code><a title="functions.graphy.main_data.legend_label_add_index" href="#functions.graphy.main_data.legend_label_add_index">legend_label_add_index</a></code></li>
 <li><code><a title="functions.graphy.main_data.order_barchart" href="#functions.graphy.main_data.order_barchart">order_barchart</a></code></li>
 <li><code><a title="functions.graphy.main_data.order_by_column" href="#functions.graphy.main_data.order_by_column">order_by_column</a></code></li>
 <li><code><a title="functions.graphy.main_data.order_stacked_barchart" href="#functions.graphy.main_data.order_stacked_barchart">order_stacked_barchart</a></code></li>
