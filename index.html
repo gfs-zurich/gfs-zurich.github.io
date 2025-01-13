@@ -918,10 +918,10 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 </dl></div>
 </dd>
 <dt id="functions.create_piechart"><code class="name flex">
-<span>def <span class="ident">create_piechart</span></span>(<span>info: dict, variables: list, breaks: list = None, break_labels_rename: dict[str, str] = None, legend_labels_rename: dict[str, str] = None, legend_position: str = 'bottom', legend_title_custom_text: str = 'auto', title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_color: int = 999, value_labels_show_min: float = 0.8, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', value_labels_size: float = 16, legend_labels_size: float = 12, hole_size: float = 0.4, show_legend: bool = True, show_legend_title: Optional[bool] = None, show_count: bool = False, show_decimals: bool = False, select_variable_levels: list[int] = None, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, return_figure: bool = False, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto')</span>
+<span>def <span class="ident">create_piechart</span></span>(<span>info: dict, variables: list, breaks: list = None, break_labels_rename: dict[str, str] = None, legend_labels_rename: dict[str, str] = None, legend_position: str = 'bottom', legend_title_custom_text: str = 'auto', title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_color: int = 999, value_labels_show_min: float = 0.8, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', value_labels_size: float = 16, legend_labels_size: float = 12, hole_size: float = 0.4, show_legend: bool = True, show_legend_title: Optional[bool] = None, show_count: bool = False, show_decimals: bool = False, select_variable_levels: list[int] = None, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, return_figure: bool = False, random_parameter: bool = True, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto')</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Creates a piechart or donutchart, depends on hole size parameter</p>
+<div class="desc"><p>Creates a piechart or donutchart, depends on hole size parameter, default is now 0.4</p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>info</code></strong> :&ensp;<code>dict</code></dt>
@@ -1006,6 +1006,8 @@ show_legend_title (bool, optional): Toggles legend title. ~ True / False. Defaul
 <dd>The current data file ~ usually df. Defaults to 'auto'.</dd>
 <dt><strong><code>meta</code></strong> :&ensp;<code>pyreadstat._readstat_parser.metadata_container</code>, optional</dt>
 <dd>The current meta data file ~ usually meta. Defaults to 'auto'.</dd>
+<dt><strong><code>random_parameter</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>macht random sache. Defaults to True.</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
@@ -1515,7 +1517,7 @@ other languages can be chosen y using another template</p>
 <dl>
 <dt id="functions.MatrixMixer"><code class="flex name class">
 <span>class <span class="ident">MatrixMixer</span></span>
-<span>(</span><span>meta_table: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, breaks: list = [['tz']], language: list = 'de', weight: list = 'tz', special_variables_last: bool = True, study_title: str = 'Studie', significance_level: str = 0.05, use_conf_interval: str = False, conf_interval: str = 0.95, column_width: int = 15, hide_total_break: int = False)</span>
+<span>(</span><span>meta_table: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, breaks: list = [['tz']], language: str = 'de', weight: str = 'tz', special_variables_last: bool = True, study_title: str = 'Studie', significance_level: float = 0.05, use_conf_interval: bool = False, conf_interval: float = 0.95, column_width: int = 15, hide_total_break: bool = False)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Assembles multiple tables with descriptive statistics and exports them to excel.</p>
@@ -1553,15 +1555,15 @@ other languages can be chosen y using another template</p>
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="functions.MatrixMixer.conf_interval"><code class="name">var <span class="ident">conf_interval</span> : str</code></dt>
+<dt id="functions.MatrixMixer.conf_interval"><code class="name">var <span class="ident">conf_interval</span> : float</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="functions.MatrixMixer.hide_total_break"><code class="name">var <span class="ident">hide_total_break</span> : int</code></dt>
+<dt id="functions.MatrixMixer.hide_total_break"><code class="name">var <span class="ident">hide_total_break</span> : bool</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="functions.MatrixMixer.language"><code class="name">var <span class="ident">language</span> : list</code></dt>
+<dt id="functions.MatrixMixer.language"><code class="name">var <span class="ident">language</span> : str</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -1569,7 +1571,7 @@ other languages can be chosen y using another template</p>
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="functions.MatrixMixer.significance_level"><code class="name">var <span class="ident">significance_level</span> : str</code></dt>
+<dt id="functions.MatrixMixer.significance_level"><code class="name">var <span class="ident">significance_level</span> : float</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -1581,11 +1583,11 @@ other languages can be chosen y using another template</p>
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="functions.MatrixMixer.use_conf_interval"><code class="name">var <span class="ident">use_conf_interval</span> : str</code></dt>
+<dt id="functions.MatrixMixer.use_conf_interval"><code class="name">var <span class="ident">use_conf_interval</span> : bool</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="functions.MatrixMixer.weight"><code class="name">var <span class="ident">weight</span> : list</code></dt>
+<dt id="functions.MatrixMixer.weight"><code class="name">var <span class="ident">weight</span> : str</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -1864,7 +1866,7 @@ other languages can be chosen y using another template</p>
 </dd>
 <dt id="functions.MetaTable2"><code class="flex name class">
 <span>class <span class="ident">MetaTable2</span></span>
-<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, project_number: int, project_name: str, columns: dict[str, <a title="functions.metatables.column.Column" href="metatables/column.html#functions.metatables.column.Column">Column</a>] = _Nothing.NOTHING, groups: dict[str, <a title="functions.metatables.group.Group" href="metatables/group.html#functions.metatables.group.Group">Group</a>] = _Nothing.NOTHING, weights: dict[str, <a title="functions.metatables.weight.Weight" href="metatables/weight.html#functions.metatables.weight.Weight">Weight</a>] = _Nothing.NOTHING, year: str = '2024', output_path: str = './output/', projects_path: str = './gfs_projects/')</span>
+<span>(</span><span>df: pandas.core.frame.DataFrame, meta: pyreadstat._readstat_parser.metadata_container, project_number: int, project_name: str, columns: dict[str, <a title="functions.metatables.column.Column" href="metatables/column.html#functions.metatables.column.Column">Column</a>] = _Nothing.NOTHING, groups: dict[str, <a title="functions.metatables.group.Group" href="metatables/group.html#functions.metatables.group.Group">Group</a>] = _Nothing.NOTHING, weights: dict[str, <a title="functions.metatables.weight.Weight" href="metatables/weight.html#functions.metatables.weight.Weight">Weight</a>] = _Nothing.NOTHING, year: str = '2025', output_path: str = './output/', projects_path: str = './gfs_projects/')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates MetaTable object that makes data wrangling of files read with pyreadstat easy.</p>
