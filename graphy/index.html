@@ -605,10 +605,10 @@ Example:</p>
 </dl></div>
 </dd>
 <dt id="functions.graphy.create_piechart"><code class="name flex">
-<span>def <span class="ident">create_piechart</span></span>(<span>info: dict, variables: list, breaks: list = None, break_labels_rename: dict[str, str] = None, legend_labels_rename: dict[str, str] = None, legend_position: str = 'bottom', legend_title_custom_text: str = 'auto', title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_color: int = 999, value_labels_show_min: float = 0.8, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', value_labels_size: float = 16, legend_labels_size: float = 12, hole_size: float = 0.4, show_legend: bool = True, show_legend_title: Optional[bool] = None, show_count: bool = False, show_decimals: bool = False, select_variable_levels: list[int] = None, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, return_figure: bool = False, random_parameter: bool = True, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto')</span>
+<span>def <span class="ident">create_piechart</span></span>(<span>info: dict, variables: list, breaks: list = None, break_labels_rename: dict[str, str] = None, legend_labels_rename: dict[str, str] = None, legend_position: str = 'bottom', legend_title_custom_text: str = 'auto', title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_color: int = 999, value_labels_show_min: float = 0.8, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', value_labels_size: float = 16, legend_labels_size: float = 12, hole_size: float = 0.4, show_legend: bool = True, show_legend_title: Optional[bool] = None, show_count: bool = False, show_decimals: bool = False, select_variable_levels: list[int] = None, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, return_figure: bool = False, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto')</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Creates a piechart or donutchart, depends on hole size parameter, default is now 0.4</p>
+<div class="desc"><p>Creates a piechart or donutchart, depends on hole size parameter</p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>info</code></strong> :&ensp;<code>dict</code></dt>
@@ -693,8 +693,6 @@ show_legend_title (bool, optional): Toggles legend title. ~ True / False. Defaul
 <dd>The current data file ~ usually df. Defaults to 'auto'.</dd>
 <dt><strong><code>meta</code></strong> :&ensp;<code>pyreadstat._readstat_parser.metadata_container</code>, optional</dt>
 <dd>The current meta data file ~ usually meta. Defaults to 'auto'.</dd>
-<dt><strong><code>random_parameter</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>macht random sache. Defaults to True.</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
