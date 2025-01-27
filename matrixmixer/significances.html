@@ -57,28 +57,11 @@ alpha (float): Desired family-wise error rate.</p>
 <p>Returns:
 corrected_alpha (float): Corrected significance level after Bonferroni correction.</p></div>
 </dd>
-<dt id="functions.matrixmixer.significances.find_mean_significances"><code class="name flex">
-<span>def <span class="ident">find_mean_significances</span></span>(<span>table: dict, break_object: dict, break_value_labels: dict, alpha: float)</span>
+<dt id="functions.matrixmixer.significances.find_nominal_significances"><code class="name flex">
+<span>def <span class="ident">find_nominal_significances</span></span>(<span>table: dict, break_object: dict, code: int, break_value_labels: dict, alpha: float)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>finds all significanes of a mean aka scale variable, sets all variables for the dictionaries objects</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>table</code></strong> :&ensp;<code>dict</code></dt>
-<dd>table object to add significances to</dd>
-<dt><strong><code>break_object</code></strong> :&ensp;<code>dict</code></dt>
-<dd>break object to add significances to</dd>
-<dt><strong><code>break_value_labels</code></strong> :&ensp;<code>dict</code></dt>
-<dd>value labels of the break</dd>
-<dt><strong><code>alpha</code></strong> :&ensp;<code>float</code>, optional</dt>
-<dd>significance level. Defaults to 0.05.</dd>
-</dl></div>
-</dd>
-<dt id="functions.matrixmixer.significances.find_sample_significances"><code class="name flex">
-<span>def <span class="ident">find_sample_significances</span></span>(<span>table: dict, break_object: dict, code: int, break_value_labels: dict, alpha: float)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>finds all significanes of a samples aka nominal variable, sets all variables for the dictionaries objects</p>
+<div class="desc"><p>finds all significanes of a nominal variable, sets all variables for the dictionaries objects</p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>table</code></strong> :&ensp;<code>dict</code></dt>
@@ -87,6 +70,23 @@ corrected_alpha (float): Corrected significance level after Bonferroni correctio
 <dd>break object to add significances to</dd>
 <dt><strong><code>code</code></strong> :&ensp;<code>int</code></dt>
 <dd>code of the answer</dd>
+<dt><strong><code>break_value_labels</code></strong> :&ensp;<code>dict</code></dt>
+<dd>value labels of the break</dd>
+<dt><strong><code>alpha</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>significance level. Defaults to 0.05.</dd>
+</dl></div>
+</dd>
+<dt id="functions.matrixmixer.significances.find_ordinal_significances"><code class="name flex">
+<span>def <span class="ident">find_ordinal_significances</span></span>(<span>table: dict, break_object: dict, break_value_labels: dict, alpha: float)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>finds all significanes of a ordinal or scale variable, sets all variables for the dictionaries objects</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>table</code></strong> :&ensp;<code>dict</code></dt>
+<dd>table object to add significances to</dd>
+<dt><strong><code>break_object</code></strong> :&ensp;<code>dict</code></dt>
+<dd>break object to add significances to</dd>
 <dt><strong><code>break_value_labels</code></strong> :&ensp;<code>dict</code></dt>
 <dd>value labels of the break</dd>
 <dt><strong><code>alpha</code></strong> :&ensp;<code>float</code>, optional</dt>
@@ -147,8 +147,8 @@ corrected_alpha (float): Corrected significance level after Bonferroni correctio
 <ul class="">
 <li><code><a title="functions.matrixmixer.significances.alpha_two_to_one_tailed" href="#functions.matrixmixer.significances.alpha_two_to_one_tailed">alpha_two_to_one_tailed</a></code></li>
 <li><code><a title="functions.matrixmixer.significances.bonferroni_correction" href="#functions.matrixmixer.significances.bonferroni_correction">bonferroni_correction</a></code></li>
-<li><code><a title="functions.matrixmixer.significances.find_mean_significances" href="#functions.matrixmixer.significances.find_mean_significances">find_mean_significances</a></code></li>
-<li><code><a title="functions.matrixmixer.significances.find_sample_significances" href="#functions.matrixmixer.significances.find_sample_significances">find_sample_significances</a></code></li>
+<li><code><a title="functions.matrixmixer.significances.find_nominal_significances" href="#functions.matrixmixer.significances.find_nominal_significances">find_nominal_significances</a></code></li>
+<li><code><a title="functions.matrixmixer.significances.find_ordinal_significances" href="#functions.matrixmixer.significances.find_ordinal_significances">find_ordinal_significances</a></code></li>
 <li><code><a title="functions.matrixmixer.significances.manual_ttest_ind" href="#functions.matrixmixer.significances.manual_ttest_ind">manual_ttest_ind</a></code></li>
 <li><code><a title="functions.matrixmixer.significances.manual_ztest_prop" href="#functions.matrixmixer.significances.manual_ztest_prop">manual_ztest_prop</a></code></li>
 </ul>
