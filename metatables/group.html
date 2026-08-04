@@ -34,7 +34,7 @@
 <dl>
 <dt id="functions.metatables.group.Group"><code class="flex name class">
 <span>class <span class="ident">Group</span></span>
-<span>(</span><span>name: str, kind: str, columns: list[str] = _Nothing.NOTHING, value_labels: dict[int, str] = _Nothing.NOTHING, measure: str = 'nominal', missing_values: list = _Nothing.NOTHING, label: str = '', lfm: str = 'yes', mean: str = '', filter_label: Optional[str] = '')</span>
+<span>(</span><span>name: str, kind: str, columns: list[str] = _Nothing.NOTHING, value_labels: dict[int, str] = _Nothing.NOTHING, measure: str = 'nominal', missing_values: list = _Nothing.NOTHING, label: str = '', lfm: str = 'yes', mean: str = '', filter_label: str | None = '')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Represents a group in a dataset with metadata information.</p>
@@ -83,7 +83,7 @@ filter_label='Filter Label'
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="functions.metatables.group.Group.filter_label"><code class="name">var <span class="ident">filter_label</span> : Optional[str]</code></dt>
+<dt id="functions.metatables.group.Group.filter_label"><code class="name">var <span class="ident">filter_label</span> : str | None</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>

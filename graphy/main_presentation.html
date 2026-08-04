@@ -31,7 +31,7 @@
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="functions.graphy.main_presentation.add_combined_graphs_slide"><code class="name flex">
-<span>def <span class="ident">add_combined_graphs_slide</span></span>(<span>info: dict, figures: list, title_text: str, subtitle_text: str, tag_text: str, group_images: bool = True, share_y_labels: bool = True) ‑> None</span>
+<span>def <span class="ident">add_combined_graphs_slide</span></span>(<span>info: dict, figures: list, title_text: str, subtitle_text: str, tag_text: str, group_images: bool = True, share_y_labels: bool = True, chapter_title: str = '') ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>combines a list of plotly figures onto a grid and saves it as a powerpoint slied</p>
@@ -59,7 +59,7 @@
 </dl></div>
 </dd>
 <dt id="functions.graphy.main_presentation.add_graph_slide"><code class="name flex">
-<span>def <span class="ident">add_graph_slide</span></span>(<span>info: dict, position_1_text: str, position_2_text: str, position_3_text: str) ‑> None</span>
+<span>def <span class="ident">add_graph_slide</span></span>(<span>info: dict, position_1_text: str, position_2_text: str, position_3_text: str, chapter_title: str = '') ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -71,7 +71,7 @@
 <div class="desc"></div>
 </dd>
 <dt id="functions.graphy.main_presentation.add_table_slide"><code class="name flex">
-<span>def <span class="ident">add_table_slide</span></span>(<span>info: dict, title_text: str, table: pandas.core.frame.DataFrame, table_width: float = 22.5, table_height: float = 5.0, table_top_distance: float = 4.5, table_left_distance: float = 1.5, column_titles: Optional[None] = None, column_alignments: Optional[None] = None, column_widths: Optional[None] = None, bold_cells: Optional[None] = None, font_size: int = 14, row_heights: Optional[None] = None, cells_with_custom_color: Optional[None] = None, show_table_background_color: bool = True, title_font_size: int = 20, table_font_name: str = 'Leelawadee UI', cells_with_hyperlinks: Optional[None] = None) ‑> None</span>
+<span>def <span class="ident">add_table_slide</span></span>(<span>info: dict, title_text: str, table: pandas.core.frame.DataFrame, table_width: float = 22.5, table_height: float = 5.0, table_top_distance: float = 4.5, table_left_distance: float = 1.5, column_titles: Optional[None] = None, column_alignments: Optional[None] = None, column_widths: Optional[None] = None, bold_cells: Optional[None] = None, font_size: int = 14, row_heights: Optional[None] = None, cells_with_custom_color: Optional[None] = None, show_table_background_color: bool = True, title_font_size: int = 20, cells_with_background_color: Optional[None] = None, table_font_name: str = 'Leelawadee UI', cells_with_hyperlinks: Optional[None] = None) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Adds a table slide to the presentation</p>
@@ -126,6 +126,23 @@
 <dd>The title of the slide. Defaults to 'gfs-zürich, Markt- &amp; Sozialforschung'.</dd>
 <dt><strong><code>vertical_alignment</code></strong> :&ensp;<code>str</code>, optional</dt>
 <dd>The vertical alignment of the text. Defaults to 'top'.</dd>
+</dl></div>
+</dd>
+<dt id="functions.graphy.main_presentation.add_text_slide_subtitle"><code class="name flex">
+<span>def <span class="ident">add_text_slide_subtitle</span></span>(<span>info: dict, text: Union[list[dict], list[str]], my_title: str = 'gfs-zürich, Markt- & Sozialforschung', vertical_alignment: str = 'top') ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Fügt eine Textfolie mit nur einem Titel hinzu (kein Textbereich).</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>info</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Präsentationsobjekt.</dd>
+<dt><strong><code>text</code></strong> :&ensp;<code>Union[list[dict], list[str]]</code></dt>
+<dd>Text (z. B. Kapitelüberschrift), wird im Titel angezeigt.</dd>
+<dt><strong><code>my_title</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Titeltext der Folie. Standard: 'gfs-zürich, Markt- &amp; Sozialforschung'.</dd>
+<dt><strong><code>vertical_alignment</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Vertikale Ausrichtung des Titels (top/middle/bottom).</dd>
 </dl></div>
 </dd>
 <dt id="functions.graphy.main_presentation.add_to_graph_list"><code class="name flex">
@@ -244,6 +261,7 @@
 <li><code><a title="functions.graphy.main_presentation.add_graph_slide_maps" href="#functions.graphy.main_presentation.add_graph_slide_maps">add_graph_slide_maps</a></code></li>
 <li><code><a title="functions.graphy.main_presentation.add_table_slide" href="#functions.graphy.main_presentation.add_table_slide">add_table_slide</a></code></li>
 <li><code><a title="functions.graphy.main_presentation.add_text_slide" href="#functions.graphy.main_presentation.add_text_slide">add_text_slide</a></code></li>
+<li><code><a title="functions.graphy.main_presentation.add_text_slide_subtitle" href="#functions.graphy.main_presentation.add_text_slide_subtitle">add_text_slide_subtitle</a></code></li>
 <li><code><a title="functions.graphy.main_presentation.add_to_graph_list" href="#functions.graphy.main_presentation.add_to_graph_list">add_to_graph_list</a></code></li>
 <li><code><a title="functions.graphy.main_presentation.delete_all_files_in_folder" href="#functions.graphy.main_presentation.delete_all_files_in_folder">delete_all_files_in_folder</a></code></li>
 <li><code><a title="functions.graphy.main_presentation.export_figure" href="#functions.graphy.main_presentation.export_figure">export_figure</a></code></li>

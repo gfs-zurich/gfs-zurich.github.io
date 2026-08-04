@@ -197,7 +197,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="functions.add_combined_graphs_slide"><code class="name flex">
-<span>def <span class="ident">add_combined_graphs_slide</span></span>(<span>info: dict, figures: list, title_text: str, subtitle_text: str, tag_text: str, group_images: bool = True, share_y_labels: bool = True) ‑> None</span>
+<span>def <span class="ident">add_combined_graphs_slide</span></span>(<span>info: dict, figures: list, title_text: str, subtitle_text: str, tag_text: str, group_images: bool = True, share_y_labels: bool = True, chapter_title: str = '') ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>combines a list of plotly figures onto a grid and saves it as a powerpoint slied</p>
@@ -225,7 +225,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 </dl></div>
 </dd>
 <dt id="functions.add_table_slide"><code class="name flex">
-<span>def <span class="ident">add_table_slide</span></span>(<span>info: dict, title_text: str, table: pandas.core.frame.DataFrame, table_width: float = 22.5, table_height: float = 5.0, table_top_distance: float = 4.5, table_left_distance: float = 1.5, column_titles: Optional[None] = None, column_alignments: Optional[None] = None, column_widths: Optional[None] = None, bold_cells: Optional[None] = None, font_size: int = 14, row_heights: Optional[None] = None, cells_with_custom_color: Optional[None] = None, show_table_background_color: bool = True, title_font_size: int = 20, table_font_name: str = 'Leelawadee UI', cells_with_hyperlinks: Optional[None] = None) ‑> None</span>
+<span>def <span class="ident">add_table_slide</span></span>(<span>info: dict, title_text: str, table: pandas.core.frame.DataFrame, table_width: float = 22.5, table_height: float = 5.0, table_top_distance: float = 4.5, table_left_distance: float = 1.5, column_titles: Optional[None] = None, column_alignments: Optional[None] = None, column_widths: Optional[None] = None, bold_cells: Optional[None] = None, font_size: int = 14, row_heights: Optional[None] = None, cells_with_custom_color: Optional[None] = None, show_table_background_color: bool = True, title_font_size: int = 20, cells_with_background_color: Optional[None] = None, table_font_name: str = 'Leelawadee UI', cells_with_hyperlinks: Optional[None] = None) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Adds a table slide to the presentation</p>
@@ -282,6 +282,23 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <dd>The vertical alignment of the text. Defaults to 'top'.</dd>
 </dl></div>
 </dd>
+<dt id="functions.add_text_slide_subtitle"><code class="name flex">
+<span>def <span class="ident">add_text_slide_subtitle</span></span>(<span>info: dict, text: Union[list[dict], list[str]], my_title: str = 'gfs-zürich, Markt- & Sozialforschung', vertical_alignment: str = 'top') ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Fügt eine Textfolie mit nur einem Titel hinzu (kein Textbereich).</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>info</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Präsentationsobjekt.</dd>
+<dt><strong><code>text</code></strong> :&ensp;<code>Union[list[dict], list[str]]</code></dt>
+<dd>Text (z. B. Kapitelüberschrift), wird im Titel angezeigt.</dd>
+<dt><strong><code>my_title</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Titeltext der Folie. Standard: 'gfs-zürich, Markt- &amp; Sozialforschung'.</dd>
+<dt><strong><code>vertical_alignment</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Vertikale Ausrichtung des Titels (top/middle/bottom).</dd>
+</dl></div>
+</dd>
 <dt id="functions.create_age_break"><code class="name flex">
 <span>def <span class="ident">create_age_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str = 'S12_1', new_break_name: str = 'age_break', dont_know_code: bool = False) ‑> None</span>
 </code></dt>
@@ -334,7 +351,7 @@ These are tools for various tasks inside the technology stack of <a href="https:
 </dl></div>
 </dd>
 <dt id="functions.create_barchart"><code class="name flex">
-<span>def <span class="ident">create_barchart</span></span>(<span>info: dict, variables: list, breaks: Optional[list] = None, legend_break: Optional[list] = None, barchart_mean: bool = False, break_labels_rename: Optional[dict[str, str]] = None, left_labels_rename: Optional[dict[str, str]] = None, legend_labels_rename: Optional[dict[str, str]] = None, left_labels_wrap: int = 50, left_labels_width: int = 999, show_mean: bool = False, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', legend_title_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, legend_position: str = 'right', return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: Optional[None] = None, value_labels_show_min: float = 0, value_labels_add_after: Optional[list[list[str]]] = None, value_labels_transform: function = &lt;function &lt;lambda&gt;&gt;, weight: str = 'auto', order_by: Optional[None] = None, title_remove_before: str = '', title_remove_after: str = '', title_add_end: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', bar_gap: float = 999, bar_width: float = 999, bar_min_size: float = 0, break_distance: float = 999, label_size: float = 16, value_labels_size: float = 999, legend_labels_size: float = 14, show_legend: bool = True, show_total_legend: bool = True, show_total: bool = True, show_count: bool = False, show_index: bool = False, show_count_legend: bool = False, show_index_legend: bool = False, show_all_bars: bool = False, show_legend_title: Optional[bool] = None, select_variable_levels: Optional[None] = None, select_variables: Optional[None] = None, select_min_count: int = 0, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: Optional[None] = None, save_figure: bool = True, return_figure: bool = False, df: Union[pandas.core.frame.DataFrame, str] = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto') ‑> Optional[tuple]</span>
+<span>def <span class="ident">create_barchart</span></span>(<span>info: dict, variables: list, breaks: Optional[list] = None, legend_break: Optional[list] = None, barchart_mean: bool = False, break_labels_rename: Optional[dict[str, str]] = None, left_labels_rename: Optional[dict[str, str]] = None, left_labels_rename_by_level: Optional[dict[int, str]] = None, legend_labels_rename: Optional[dict[str, str]] = None, left_labels_wrap: int = 50, left_labels_width: int = 999, show_mean: bool = False, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', legend_title_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, legend_position: str = 'right', return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: Optional[None] = None, value_labels_show_min: float = 0, value_labels_add_after: Optional[list[list[str]]] = None, value_labels_transform: function = &lt;function &lt;lambda&gt;&gt;, weight: str = 'auto', order_by: Optional[None] = None, title_remove_before: str = '', title_remove_after: str = '', title_add_end: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', bar_gap: float = 999, bar_width: float = 999, bar_min_size: float = 0, break_distance: float = 999, label_size: float = 16, value_labels_size: float = 999, legend_labels_size: float = 14, show_legend: bool = True, show_total_legend: bool = True, show_total: bool = True, show_count: bool = False, show_index: bool = False, show_count_legend: bool = False, show_index_legend: bool = False, show_all_bars: bool = False, show_legend_title: Optional[bool] = None, select_variable_levels: Optional[None] = None, select_variables: Optional[None] = None, select_min_count: int = 0, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: Optional[None] = None, save_figure: bool = True, return_figure: bool = False, df: Union[pandas.core.frame.DataFrame, str] = 'auto', chapter_title: str = '', meta: pyreadstat._readstat_parser.metadata_container = 'auto') ‑> Optional[tuple]</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a barchart</p>
@@ -354,6 +371,8 @@ These are tools for various tasks inside the technology stack of <a href="https:
 <dd>Renames the breaks. ~ {'old_name': 'new_name'}. Defaults to None.</dd>
 <dt><strong><code>left_labels_rename</code></strong> :&ensp;<code>dict[str, str]</code>, optional</dt>
 <dd>Renames the labels of the different break levels. ~ {'old_name', 'new_name'}. Defaults to None.</dd>
+<dt>left_labels_rename_by_level dict[int, str], optional): Renames the labels of the different break levels by index.
+~ {'index', 'new_name'}. Defaults to None.</dt>
 <dt><strong><code>legend_labels_rename</code></strong> :&ensp;<code>dict[str, str]</code>, optional</dt>
 <dd>Renames the labels of the different legend levels. ~ {'old_name', 'new_name'}. Defaults to None.</dd>
 <dt><strong><code>left_labels_wrap</code></strong> :&ensp;<code>int</code>, optional</dt>
@@ -918,7 +937,7 @@ whether to keep untouched codes, e.g., ({1: range(1, 6), 2: range(6, 11)}, True)
 </dl></div>
 </dd>
 <dt id="functions.create_piechart"><code class="name flex">
-<span>def <span class="ident">create_piechart</span></span>(<span>info: dict, variables: list, breaks: list = None, break_labels_rename: dict[str, str] = None, legend_labels_rename: dict[str, str] = None, legend_position: str = 'right', legend_x: Optional[float] = None, legend_y: Optional[float] = None, legend_title_custom_text: str = '', title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_color: int = 999, value_labels_show_min: float = 0.8, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', value_labels_size: float = 16, legend_labels_size: float = 12, hole_size: float = 0.4, show_legend: bool = True, show_legend_title: Optional[bool] = None, show_count: bool = False, show_decimals: bool = False, select_variable_levels: list[int] = None, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, return_figure: bool = False, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto')</span>
+<span>def <span class="ident">create_piechart</span></span>(<span>info: dict, variables: list, breaks: list = None, break_labels_rename: dict[str, str] = None, legend_labels_rename: dict[str, str] = None, legend_position: str = 'right', legend_x: Optional[float] = None, legend_y: Optional[float] = None, legend_title_custom_text: str = '', title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_type: str = 'groups', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_color: int = 999, value_labels_show_min: float = 0.8, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', value_labels_size: float = 16, legend_labels_size: float = 12, hole_size: float = 0.4, show_legend: bool = True, show_legend_title: Optional[bool] = None, show_count: bool = False, show_decimals: bool = False, select_variable_levels: list[int] = None, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, return_figure: bool = False, df: pandas.core.frame.DataFrame = 'auto', chapter_title: str = '', meta: pyreadstat._readstat_parser.metadata_container = 'auto')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a piechart or donutchart, depends on hole size parameter</p>
@@ -1087,6 +1106,63 @@ show_legend_title (bool, optional): Toggles legend title. ~ True / False. Defaul
 <dd>should the dont know code be recoded</dd>
 </dl></div>
 </dd>
+<dt id="functions.create_siedlungsart_break_2020"><code class="name flex">
+<span>def <span class="ident">create_siedlungsart_break_2020</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str, dont_know_code: bool = False) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a siedlungsart break based on a JSON mapping file.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>original_variable_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>Type of the original variable. "gdenr" if it represents the Gemeindenummer.</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
+</dl></div>
+</dd>
+<dt id="functions.create_siedlungsart_break_2020_V2"><code class="name flex">
+<span>def <span class="ident">create_siedlungsart_break_2020_V2</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str, dont_know_code: bool = False) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a siedlungsart break based on a JSON mapping file.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>original_variable_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>Type of the original variable. "gdenr" if it represents the Gemeindenummer.</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
+</dl></div>
+</dd>
+<dt id="functions.create_siedlungsart_break_HR_GDETYP2020_L1"><code class="name flex">
+<span>def <span class="ident">create_siedlungsart_break_HR_GDETYP2020_L1</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str, dont_know_code: bool = False) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a siedlungsart break based on a JSON mapping file.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>metatable</code></strong> :&ensp;<code><a title="functions.MetaTable2" href="#functions.MetaTable2">MetaTable2</a></code></dt>
+<dd>The Metatable that needs editing</dd>
+<dt><strong><code>original_variable</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the original variable</dd>
+<dt><strong><code>original_variable_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>Type of the original variable. "gdenr" if it represents the Gemeindenummer.</dd>
+<dt><strong><code>new_break_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the newly created break</dd>
+<dt><strong><code>dont_know_code</code></strong> :&ensp;<code>bool</code></dt>
+<dd>should the dont know code be recoded</dd>
+</dl></div>
+</dd>
 <dt id="functions.create_sprachregion_break"><code class="name flex">
 <span>def <span class="ident">create_sprachregion_break</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, original_variable: str, original_variable_type: str, new_break_name: str, dont_know_code: bool = False) ‑> None</span>
 </code></dt>
@@ -1107,118 +1183,67 @@ show_legend_title (bool, optional): Toggles legend title. ~ True / False. Defaul
 </dl></div>
 </dd>
 <dt id="functions.create_stacked_barchart"><code class="name flex">
-<span>def <span class="ident">create_stacked_barchart</span></span>(<span>info: dict, variables: list, breaks: list = None, break_labels_rename: dict[str, str] = None, left_labels_rename: dict[str, str] = None, legend_labels_rename: dict[str, str] = None, left_labels_wrap: int = 50, left_labels_width: int = 999, show_mean: bool = False, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_type: str = 'diverging', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_color: int = 999, value_labels_show_min: float = 0.8, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', value_labels_add_after: str = '', bar_width: float = 999, break_distance: float = 999, label_size: float = 16, value_labels_size: float = 16, legend_labels_size: float = 14, show_legend: bool = True, show_total: bool = True, show_count: bool = False, show_index: bool = False, mean_name: str = 'MW', mean_transform: function = &lt;function &lt;lambda&gt;&gt;, mean_custom: list[str] = None, select_variable_levels: list[int] = None, select_variables: list[int] = None, select_min_count: int = 0, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, return_figure: bool = False, df: pandas.core.frame.DataFrame = 'auto', meta: pyreadstat._readstat_parser.metadata_container = 'auto')</span>
+<span>def <span class="ident">create_stacked_barchart</span></span>(<span>info: dict, variables: list, breaks: list = None, break_labels_rename: dict[str, str] = None, left_labels_rename: dict[str, str] = None, left_labels_rename_by_level: dict[int, str] = None, legend_labels_rename: dict[str, str] = None, left_labels_wrap: int = 50, left_labels_width: int = 999, show_mean: bool = False, title_custom_text: str = 'auto', subtitle_custom_text: str = 'auto', tag_custom_text: str = 'auto', title_position: int = 1, subtitle_position: int = 2, tag_position: int = 3, return_data: bool = False, color_theme: str = 'auto', color_type: str = 'diverging', color_direction: str = 'forward', color_custom: list[str] = None, value_labels_color: int = 999, value_labels_show_min: float = 0.8, weight: str = 'auto', order_by: dict = None, title_remove_before: str = '', title_remove_after: str = '', tag_add_before: str = '', tag_add_after: str = '', subtitle_add_before: str = '', subtitle_add_after: str = '', left_labels_remove_before: str = '', left_labels_remove_after: str = '', value_labels_add_after: str = '', bar_width: float = 999, break_distance: float = 999, label_size: float = 16, value_labels_size: float = 16, legend_labels_size: float = 14, show_legend: bool = True, show_total: bool = True, show_count: bool = False, show_index: bool = False, mean_name: str = 'MW', mean_transform: function = &lt;function &lt;lambda&gt;&gt;, mean_custom: list[str] = None, select_variable_levels: list[int] = None, select_variables: list[int] = None, select_min_count: int = 0, special_variables: list[int] = [96, 97, 98, 99999996, 99999997, 99999998], standard_arguments: dict = None, save_figure: bool = True, return_figure: bool = False, df: pandas.core.frame.DataFrame = 'auto', chapter_title: str = '', graph_title: str | None = None, graph_title_size: int = 26, graph_title_margin: int = 35, graph_title_x: float = 0.0, graph_title_y: int = 0, meta: pyreadstat._readstat_parser.metadata_container = 'auto')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a stacked barchart</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>info</code></strong> :&ensp;<code>dict</code></dt>
-<dd>A dictionary with info about the presentation. Has info like number of slides, presentation name and the presentation object itself ~ usually info</dd>
-<dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
-<dd>The current data file ~ usually df</dd>
-<dt><strong><code>meta</code></strong> :&ensp;<code>pyreadstat._readstat_parser.metadata_container</code></dt>
-<dd>The current meta data file ~ usually meta</dd>
-<dt><strong><code>variables</code></strong> :&ensp;<code>list[str]</code></dt>
-<dd>A list of variables. If multiple are added, function doesn't accept any breaks. ~ ['AW2'] / ['AW1_1', 'AW1_2', &hellip;]</dd>
-<dt><strong><code>breaks</code></strong> :&ensp;<code>list[str]</code>, optional</dt>
-<dd>A list of breaks. ~ ['alter_break', 'sex_break']. Defaults to [].</dd>
-<dt><strong><code>break_labels_rename</code></strong> :&ensp;<code>dict[str, str]</code>, optional</dt>
-<dd>Renames the breaks. ~ {'old_name': 'new_name'}. Defaults to {}.</dd>
-<dt><strong><code>left_labels_rename</code></strong> :&ensp;<code>dict[str, str]</code>, optional</dt>
-<dd>Renames the labels of the different break levels. ~ {'old_name', 'new_name'}. Defaults to {}.</dd>
-<dt><strong><code>legend_labels_rename</code></strong> :&ensp;<code>dict[str, str]</code>, optional</dt>
-<dd>Renames the labels of the variable in legend. ~ {'old_name', 'new_name'}. Defaults to {}.</dd>
-<dt><strong><code>left_labels_wrap</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd>Wraps the variable labels. Defaults to 50.</dd>
-<dt><strong><code>left_labels_width</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd>Changes the space allocated to the y-label. Defaults to 999 (which means automatic).</dd>
-<dt><strong><code>show_mean</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>Turns the mean annotations on. ~ True. Defaults to False.</dd>
-<dt><strong><code>title_custom_text</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Creates custom title text, if automatic text isn't desired. Defaults to "auto".</dd>
-<dt><strong><code>subtitle_custom_text</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Creates custom subtitle text, if automatic text isn't desired. Defaults to "auto".</dd>
-<dt><strong><code>tag_custom_text</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Creates custom tag text, if automatic text isn't desired. Defaults to "auto".</dd>
-<dt><strong><code>title_position</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd>Sets the position of the title text. ~ 0 = don't show, 1, 2, 3 are possible positions on plot. Defaults to 1.</dd>
-<dt><strong><code>subtitle_position</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd>Sets the position of the subtitle text. ~ 0 = don't show, 1, 2, 3 are possible positions on plot. Defaults to 2.</dd>
-<dt><strong><code>tag_position</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd>Sets the position of the tag text. ~ 0 = don't show, 1, 2, 3 are possible positions on plot. Defaults to 3.</dd>
-<dt><strong><code>return_data</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>Returns the data frame, that is used to construct the graph, so it can be viewed. The data frame will be printed out if the parameter is True. This doesn't affect the graph in any way. Defaults to False.</dd>
-<dt><strong><code>color_theme</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Sets color theme for graph. ~ 'test', 'gfs'. Defaults to 'standard'.</dd>
-<dt><strong><code>color_type</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Sets color value type. ~ 'groups', 'single_hue'. Defaults to 'diverging'.</dd>
-<dt><strong><code>color_direction</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Sets direction of color pattern. ~ 'backward'. Defaults to 'forward'.</dd>
-<dt><strong><code>value_labels_color</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd>Sets threshold for black or white label color. Use 0 for all black labels and 255 for all white. Use numbers between for a mix. Defaults to 130.</dd>
-<dt><strong><code>value_labels_show_min</code></strong> :&ensp;<code>float</code>, optional</dt>
-<dd>Sets threshold showing labels by %. Use 0 to show all labels and 100 to show none. Use numbers between for a mix. Defaults to 0.8.</dd>
-<dt><strong><code>weight</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Turns weight on if weight variable name is added. ~ "gewicht". Defaults to ''.</dd>
-<dt><strong><code>order_by</code></strong> :&ensp;<code>dict</code>, optional</dt>
-<dd>A dictionary. Orders the plot by any variable in the x data frame. ~ {'mean': 'asc'} / {1: 'desc'}. Defaults to {}.</dd>
-<dt><strong><code>title_remove_before</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Removes the label text before the given string. ~ "? " deletes everything up until and including the question mark. Defaults to ''.</dd>
-<dt><strong><code>title_remove_after</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Removes the label text after the given string. ~ ". Bitte" deletes everything after and including the punctuation mark that. Defaults to ''.</dd>
-<dt><strong><code>tag_add_before</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Adds text before the tag text. ~ "Meine Zusatzinfo, ', " adds this string before tag. Defaults to ''.</dd>
-<dt><strong><code>tag_add_after</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Adds text after the tag text. ~ "Meine Zusatzinfo, ', " adds this string after tag. Defaults to ''.</dd>
-<dt><strong><code>subtitle_add_before</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Adds text before the tag text. ~ "Filter: F3 = 'Ja', " adds this string before tag. Defaults to ''.</dd>
-<dt><strong><code>subtitle_add_after</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Adds text after the tag text. ~ "Filter: F3 = 'Ja', " adds this string after tag. Defaults to ''.</dd>
-<dt><strong><code>left_labels_remove_before</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Removes the label text before the given string. ~ "? " deletes everything up until and including the question mark. Defaults to ''.</dd>
-<dt><strong><code>left_labels_remove_after</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Removes the label text after the given string. ~ ". Bitte" deletes everything after and including the punctuation mark that. Defaults to ''.</dd>
-<dt><strong><code>value_labels_add_after</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Adds text to value labels. Is useful to add a % sign for example. Defaults to ''.</dd>
-<dt><strong><code>bar_width</code></strong> :&ensp;<code>float</code>, optional</dt>
-<dd>Sets the width of the bars. Defaults to 0.8.</dd>
-<dt><strong><code>break_distance</code></strong> :&ensp;<code>float</code>, optional</dt>
-<dd>Sets the distance between the breaks. Defaults to 0.5.</dd>
-<dt><strong><code>label_size</code></strong> :&ensp;<code>float</code>, optional</dt>
-<dd>Sets the size of labels. Defaults to 16.</dd>
-<dt><strong><code>value_labels_size</code></strong> :&ensp;<code>float</code>, optional</dt>
-<dd>Sets the size of value labels. Defaults to 16.</dd>
-<dt><strong><code>legend_labels_size</code></strong> :&ensp;<code>float</code>, optional</dt>
-<dd>Sets the size of legend. Defaults to 12.</dd>
-<dt><strong><code>show_legend</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>Turns legend on and off. ~ False. Defaults to True.</dd>
-<dt><strong><code>show_total</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>Turns total bar on and off. ~ False. Defaults to True.</dd>
-<dt><strong><code>show_count</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>Turns counts in variable labels on and off. ~ True. Defaults to False.</dd>
-<dt><strong><code>show_index</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>Turns index in variable labels on and off. ~ True. Defaults to False.</dd>
-<dt><strong><code>mean_name</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Changes name written above the mean values. Defaults to 'MW'.</dd>
-<dt><strong><code>mean_transform</code></strong> :&ensp;<code>LambdaType</code>, optional</dt>
-<dd>Changes the size of the mean values with a transformation. lambda n: -n + 2 changes n to the negative value of n and adds 2. Defaults to lambda n: n.</dd>
-<dt><strong><code>select_variable_levels</code></strong> :&ensp;<code>list[int]</code>, optional</dt>
-<dd>A list variable levels used to select and order variables. ~ [2, 1, 99999997]. Defaults to [].</dd>
-<dt><strong><code>special_variables</code></strong> :&ensp;<code>list[int]</code>, optional</dt>
-<dd>A list variable levels that will be treated differently. They will appear gray in the graph and have not effect on the mean calculation. ~ [16, 99999997]. Defaults to [96, 97, 98, 99999996, 99999997, 99999998].</dd>
-<dt><strong><code>standard_arguments</code></strong> :&ensp;<code>dict</code>, optional</dt>
-<dd>Adds some standard arguments that normally don't need to be changed. Defaults to None.</dd>
-<dt><strong><code>save_figure</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>Turns figure export on and off. ~ False. Defaults to True.</dd>
-<dt><strong><code>return_figure</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>Turns figure return on and off. ~ False. Defaults to True.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>_type_</code></dt>
-<dd>If return_data is on it returns the plot data, so it can be viewed.</dd>
-</dl></div>
+<pre><code>Args:
+    info (dict): A dictionary with info about the presentation. Has info like number of slides, presentation name and the presentation object itself ~ usually info
+    df (pd.DataFrame): The current data file ~ usually df
+    meta (pyreadstat._readstat_parser.metadata_container): The current meta data file ~ usually meta
+    variables (list[str]): A list of variables. If multiple are added, function doesn't accept any breaks. ~ ['AW2'] / ['AW1_1', 'AW1_2', ...]
+    breaks (list[str], optional): A list of breaks. ~ ['alter_break', 'sex_break']. Defaults to [].
+    break_labels_rename (dict[str, str], optional): Renames the breaks. ~ {'old_name': 'new_name'}. Defaults to {}.
+    left_labels_rename (dict[str, str], optional): Renames the labels of the different break levels. ~ {'old_name', 'new_name'}. Defaults to {}.
+</code></pre>
+<p>left_labels_rename_by_level dict[int, str], optional): Renames the labels of the different break levels by index.
+~ {'index', 'new_name'}. Defaults to None.
+legend_labels_rename (dict[str, str], optional): Renames the labels of the variable in legend. ~ {'old_name', 'new_name'}. Defaults to {}.
+left_labels_wrap (int, optional): Wraps the variable labels. Defaults to 50.
+left_labels_width (int, optional): Changes the space allocated to the y-label. Defaults to 999 (which means automatic).
+show_mean (bool, optional): Turns the mean annotations on. ~ True. Defaults to False.
+title_custom_text (str, optional): Creates custom title text, if automatic text isn't desired. Defaults to "auto".
+subtitle_custom_text (str, optional): Creates custom subtitle text, if automatic text isn't desired. Defaults to "auto".
+tag_custom_text (str, optional): Creates custom tag text, if automatic text isn't desired. Defaults to "auto".
+title_position (int, optional): Sets the position of the title text. ~ 0 = don't show, 1, 2, 3 are possible positions on plot. Defaults to 1.
+subtitle_position (int, optional): Sets the position of the subtitle text. ~ 0 = don't show, 1, 2, 3 are possible positions on plot. Defaults to 2.
+tag_position (int, optional): Sets the position of the tag text. ~ 0 = don't show, 1, 2, 3 are possible positions on plot. Defaults to 3.
+return_data (bool, optional): Returns the data frame, that is used to construct the graph, so it can be viewed. The data frame will be printed out if the parameter is True. This doesn't affect the graph in any way. Defaults to False.
+color_theme (str, optional): Sets color theme for graph. ~ 'test', 'gfs'. Defaults to 'standard'.
+color_type (str, optional): Sets color value type. ~ 'groups', 'single_hue'. Defaults to 'diverging'.
+color_direction (str, optional): Sets direction of color pattern. ~ 'backward'. Defaults to 'forward'.
+value_labels_color (int, optional): Sets threshold for black or white label color. Use 0 for all black labels and 255 for all white. Use numbers between for a mix. Defaults to 130.
+value_labels_show_min (float, optional): Sets threshold showing labels by %. Use 0 to show all labels and 100 to show none. Use numbers between for a mix. Defaults to 0.8.
+weight (str, optional): Turns weight on if weight variable name is added. ~ "gewicht". Defaults to ''.
+order_by (dict, optional): A dictionary. Orders the plot by any variable in the x data frame. ~ {'mean': 'asc'} / {1: 'desc'}. Defaults to {}.
+title_remove_before (str, optional): Removes the label text before the given string. ~ "? " deletes everything up until and including the question mark. Defaults to ''.
+title_remove_after (str, optional): Removes the label text after the given string. ~ ". Bitte" deletes everything after and including the punctuation mark that. Defaults to ''.
+tag_add_before (str, optional): Adds text before the tag text. ~ "Meine Zusatzinfo, ', " adds this string before tag. Defaults to ''.
+tag_add_after (str, optional): Adds text after the tag text. ~ "Meine Zusatzinfo, ', " adds this string after tag. Defaults to ''.
+subtitle_add_before (str, optional): Adds text before the tag text. ~ "Filter: F3 = 'Ja', " adds this string before tag. Defaults to ''.
+subtitle_add_after (str, optional): Adds text after the tag text. ~ "Filter: F3 = 'Ja', " adds this string after tag. Defaults to ''.
+left_labels_remove_before (str, optional): Removes the label text before the given string. ~ "? " deletes everything up until and including the question mark. Defaults to ''.
+left_labels_remove_after (str, optional): Removes the label text after the given string. ~ ". Bitte" deletes everything after and including the punctuation mark that. Defaults to ''.
+value_labels_add_after (str, optional): Adds text to value labels. Is useful to add a % sign for example. Defaults to ''.
+bar_width (float, optional): Sets the width of the bars. Defaults to 0.8.
+break_distance (float, optional): Sets the distance between the breaks. Defaults to 0.5.
+label_size (float, optional): Sets the size of labels. Defaults to 16.
+value_labels_size (float, optional): Sets the size of value labels. Defaults to 16.
+legend_labels_size (float, optional): Sets the size of legend. Defaults to 12.
+show_legend (bool, optional): Turns legend on and off. ~ False. Defaults to True.
+show_total (bool, optional): Turns total bar on and off. ~ False. Defaults to True.
+show_count (bool, optional): Turns counts in variable labels on and off. ~ True. Defaults to False.
+show_index (bool, optional): Turns index in variable labels on and off. ~ True. Defaults to False.
+mean_name (str, optional): Changes name written above the mean values. Defaults to 'MW'.
+mean_transform (LambdaType, optional): Changes the size of the mean values with a transformation. lambda n: -n + 2 changes n to the negative value of n and adds 2. Defaults to lambda n: n.
+select_variable_levels (list[int], optional): A list variable levels used to select and order variables. ~ [2, 1, 99999997]. Defaults to [].
+special_variables (list[int], optional): A list variable levels that will be treated differently. They will appear gray in the graph and have not effect on the mean calculation. ~ [16, 99999997]. Defaults to [96, 97, 98, 99999996, 99999997, 99999998].
+standard_arguments (dict, optional): Adds some standard arguments that normally don't need to be changed. Defaults to None.
+save_figure (bool, optional): Turns figure export on and off. ~ False. Defaults to True.
+return_figure (bool, optional): Turns figure return on and off. ~ False. Defaults to True.</p>
+<pre><code>Returns:
+    _type_: If return_data is on it returns the plot data, so it can be viewed.
+</code></pre></div>
 </dd>
 <dt id="functions.create_total_column"><code class="name flex">
 <span>def <span class="ident">create_total_column</span></span>(<span>metatable: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, name: str = 'tz') ‑> None</span>
@@ -1517,7 +1542,7 @@ other languages can be chosen y using another template</p>
 <dl>
 <dt id="functions.MatrixMixer"><code class="flex name class">
 <span>class <span class="ident">MatrixMixer</span></span>
-<span>(</span><span>meta_table: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, breaks: list = [['tz']], language: str = 'de', weight: str = 'tz', special_variables_last: bool = True, study_title: Optional[str] = 'Studie', significance_level: float = 0.05, use_conf_interval: bool = False, conf_interval: float = 0.95, column_width: int = 15, column_width_b: int = 65, hide_total_break: bool = False)</span>
+<span>(</span><span>meta_table: <a title="functions.metatables.main.MetaTable2" href="metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, breaks: list = [['tz']], language: str = 'de', weight: str = 'tz', special_variables_last: bool = True, study_title: str | None = 'Studie', significance_level: float = 0.05, use_conf_interval: bool = False, conf_interval: float = 0.95, column_width: int = 15, column_width_b: int = 65, hide_total_break: bool = False)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Assembles multiple tables with descriptive statistics and exports them to excel.</p>
@@ -1583,7 +1608,7 @@ other languages can be chosen y using another template</p>
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="functions.MatrixMixer.study_title"><code class="name">var <span class="ident">study_title</span> : Optional[str]</code></dt>
+<dt id="functions.MatrixMixer.study_title"><code class="name">var <span class="ident">study_title</span> : str | None</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -1599,7 +1624,7 @@ other languages can be chosen y using another template</p>
 <h3>Methods</h3>
 <dl>
 <dt id="functions.MatrixMixer.add_title_page_info"><code class="name flex">
-<span>def <span class="ident">add_title_page_info</span></span>(<span>self, study_title: Optional[str] = None, clients: Optional[None] = None, survey_methodology: Optional[str] = None, sampling: Optional[str] = None, quota_features: Optional[str] = None, address_origin: Optional[None] = None, population: Optional[str] = None, weighting: Optional[str] = None, survey_period: Optional[str] = None, random_sample: Optional[str] = "Stichprobe:', f'n = {len(self.meta_table.df)}", custom_title_1: str = None, custom_description_1: str = None, custom_title_2: str = None, custom_description_2: str = None, custom_title_3: str = None, custom_description_3: str = None, custom_title_4: str = None, custom_description_4: str = None, custom_title_5: str = None, custom_description_5: str = None, custom_title_6: str = None, custom_description_6: str = None, custom_title_7: str = None, custom_description_7: str = None, custom_title_8: str = None, custom_description_8: str = None, custom_title_9: str = None, custom_description_9: str = None, show_institut: bool = True)</span>
+<span>def <span class="ident">add_title_page_info</span></span>(<span>self, study_title: str | None = None, clients: Optional[None] = None, survey_methodology: str | None = None, sampling: str | None = None, quota_features: str | None = None, address_origin: Optional[None] = None, population: str | None = None, weighting: str | None = None, survey_period: str | None = None, random_sample: str | None = "Stichprobe:', f'n = {len(self.meta_table.df)}", custom_title_1: str = None, custom_description_1: str = None, custom_title_2: str = None, custom_description_2: str = None, custom_title_3: str = None, custom_description_3: str = None, custom_title_4: str = None, custom_description_4: str = None, custom_title_5: str = None, custom_description_5: str = None, custom_title_6: str = None, custom_description_6: str = None, custom_title_7: str = None, custom_description_7: str = None, custom_title_8: str = None, custom_description_8: str = None, custom_title_9: str = None, custom_description_9: str = None, show_institut: bool = True)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>sets title page info </p>
@@ -1632,7 +1657,7 @@ other languages can be chosen y using another template</p>
 </dl></div>
 </dd>
 <dt id="functions.MatrixMixer.create_matrix"><code class="name flex">
-<span>def <span class="ident">create_matrix</span></span>(<span>self, question: str, breaks: list[list[str]] = 'auto', weight: str = 'auto', order_descending: Union[str, bool] = 'auto', special_variables: Union[str, list[int]] = 'auto', nps: bool = False, quartiles: bool = False, groupings: dict = None) ‑> None</span>
+<span>def <span class="ident">create_matrix</span></span>(<span>self, question: str, breaks: list[list[str]] = 'auto', weight: str = 'auto', order_descending: Union[str, bool] = 'auto', special_variables: Union[str, list[int]] = 'auto', nps: bool = False, quartiles: bool = False, groupings: dict = None, df: pandas.core.frame.DataFrame = None, filter_label: str = None) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a single matrix and saves it to the MatrixMixer object.</p>
@@ -3004,6 +3029,7 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><code><a title="functions.add_combined_graphs_slide" href="#functions.add_combined_graphs_slide">add_combined_graphs_slide</a></code></li>
 <li><code><a title="functions.add_table_slide" href="#functions.add_table_slide">add_table_slide</a></code></li>
 <li><code><a title="functions.add_text_slide" href="#functions.add_text_slide">add_text_slide</a></code></li>
+<li><code><a title="functions.add_text_slide_subtitle" href="#functions.add_text_slide_subtitle">add_text_slide_subtitle</a></code></li>
 <li><code><a title="functions.create_age_break" href="#functions.create_age_break">create_age_break</a></code></li>
 <li><code><a title="functions.create_apartment_search_break" href="#functions.create_apartment_search_break">create_apartment_search_break</a></code></li>
 <li><code><a title="functions.create_apartment_search_simple_break" href="#functions.create_apartment_search_simple_break">create_apartment_search_simple_break</a></code></li>
@@ -3031,6 +3057,9 @@ gpd.GeoDataFrame: returns clipped geopandas dataframe</p></div>
 <li><code><a title="functions.create_role_year_break" href="#functions.create_role_year_break">create_role_year_break</a></code></li>
 <li><code><a title="functions.create_sex_break" href="#functions.create_sex_break">create_sex_break</a></code></li>
 <li><code><a title="functions.create_siedlungsart_break" href="#functions.create_siedlungsart_break">create_siedlungsart_break</a></code></li>
+<li><code><a title="functions.create_siedlungsart_break_2020" href="#functions.create_siedlungsart_break_2020">create_siedlungsart_break_2020</a></code></li>
+<li><code><a title="functions.create_siedlungsart_break_2020_V2" href="#functions.create_siedlungsart_break_2020_V2">create_siedlungsart_break_2020_V2</a></code></li>
+<li><code><a title="functions.create_siedlungsart_break_HR_GDETYP2020_L1" href="#functions.create_siedlungsart_break_HR_GDETYP2020_L1">create_siedlungsart_break_HR_GDETYP2020_L1</a></code></li>
 <li><code><a title="functions.create_sprachregion_break" href="#functions.create_sprachregion_break">create_sprachregion_break</a></code></li>
 <li><code><a title="functions.create_stacked_barchart" href="#functions.create_stacked_barchart">create_stacked_barchart</a></code></li>
 <li><code><a title="functions.create_total_column" href="#functions.create_total_column">create_total_column</a></code></li>

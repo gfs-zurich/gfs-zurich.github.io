@@ -34,7 +34,7 @@
 <dl>
 <dt id="functions.metatables.column.Column"><code class="flex name class">
 <span>class <span class="ident">Column</span></span>
-<span>(</span><span>name: str, label: str, value_labels: dict[int, str], item_value_labels: dict[int, str], spss_type: str, readstat_type: str, display_width: int, storage_width: int, measure: str, missing_values: list, kind: str, group: str = None, lfm: Optional[str] = None, mean: Optional[str] = None, group_value_labels: dict[int, str] = _Nothing.NOTHING, group_label: Optional[str] = None, item_label: Optional[str] = None, filter_label: Optional[str] = '')</span>
+<span>(</span><span>name: str, label: str, value_labels: dict[int, str], item_value_labels: dict[int, str], spss_type: str, readstat_type: str, display_width: int, storage_width: int, measure: str, missing_values: list, kind: str, group: str = None, lfm: str | None = None, mean: str | None = None, group_value_labels: dict[int, str] = _Nothing.NOTHING, group_label: str | None = None, item_label: str | None = None, filter_label: str | None = '')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Represents a column in a dataset with metadata information.</p>
@@ -107,7 +107,7 @@ filter_label='Filter Label'
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="functions.metatables.column.Column.filter_label"><code class="name">var <span class="ident">filter_label</span> : Optional[str]</code></dt>
+<dt id="functions.metatables.column.Column.filter_label"><code class="name">var <span class="ident">filter_label</span> : str | None</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -115,7 +115,7 @@ filter_label='Filter Label'
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="functions.metatables.column.Column.group_label"><code class="name">var <span class="ident">group_label</span> : Optional[str]</code></dt>
+<dt id="functions.metatables.column.Column.group_label"><code class="name">var <span class="ident">group_label</span> : str | None</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -123,7 +123,7 @@ filter_label='Filter Label'
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="functions.metatables.column.Column.item_label"><code class="name">var <span class="ident">item_label</span> : Optional[str]</code></dt>
+<dt id="functions.metatables.column.Column.item_label"><code class="name">var <span class="ident">item_label</span> : str | None</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -139,11 +139,11 @@ filter_label='Filter Label'
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="functions.metatables.column.Column.lfm"><code class="name">var <span class="ident">lfm</span> : Optional[str]</code></dt>
+<dt id="functions.metatables.column.Column.lfm"><code class="name">var <span class="ident">lfm</span> : str | None</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="functions.metatables.column.Column.mean"><code class="name">var <span class="ident">mean</span> : Optional[str]</code></dt>
+<dt id="functions.metatables.column.Column.mean"><code class="name">var <span class="ident">mean</span> : str | None</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>

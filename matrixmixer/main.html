@@ -34,7 +34,7 @@
 <dl>
 <dt id="functions.matrixmixer.main.MatrixMixer"><code class="flex name class">
 <span>class <span class="ident">MatrixMixer</span></span>
-<span>(</span><span>meta_table: <a title="functions.metatables.main.MetaTable2" href="../metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, breaks: list = [['tz']], language: str = 'de', weight: str = 'tz', special_variables_last: bool = True, study_title: Optional[str] = 'Studie', significance_level: float = 0.05, use_conf_interval: bool = False, conf_interval: float = 0.95, column_width: int = 15, column_width_b: int = 65, hide_total_break: bool = False)</span>
+<span>(</span><span>meta_table: <a title="functions.metatables.main.MetaTable2" href="../metatables/main.html#functions.metatables.main.MetaTable2">MetaTable2</a>, breaks: list = [['tz']], language: str = 'de', weight: str = 'tz', special_variables_last: bool = True, study_title: str | None = 'Studie', significance_level: float = 0.05, use_conf_interval: bool = False, conf_interval: float = 0.95, column_width: int = 15, column_width_b: int = 65, hide_total_break: bool = False)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Assembles multiple tables with descriptive statistics and exports them to excel.</p>
@@ -100,7 +100,7 @@
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="functions.matrixmixer.main.MatrixMixer.study_title"><code class="name">var <span class="ident">study_title</span> : Optional[str]</code></dt>
+<dt id="functions.matrixmixer.main.MatrixMixer.study_title"><code class="name">var <span class="ident">study_title</span> : str | None</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -116,7 +116,7 @@
 <h3>Methods</h3>
 <dl>
 <dt id="functions.matrixmixer.main.MatrixMixer.add_title_page_info"><code class="name flex">
-<span>def <span class="ident">add_title_page_info</span></span>(<span>self, study_title: Optional[str] = None, clients: Optional[None] = None, survey_methodology: Optional[str] = None, sampling: Optional[str] = None, quota_features: Optional[str] = None, address_origin: Optional[None] = None, population: Optional[str] = None, weighting: Optional[str] = None, survey_period: Optional[str] = None, random_sample: Optional[str] = "Stichprobe:', f'n = {len(self.meta_table.df)}", custom_title_1: str = None, custom_description_1: str = None, custom_title_2: str = None, custom_description_2: str = None, custom_title_3: str = None, custom_description_3: str = None, custom_title_4: str = None, custom_description_4: str = None, custom_title_5: str = None, custom_description_5: str = None, custom_title_6: str = None, custom_description_6: str = None, custom_title_7: str = None, custom_description_7: str = None, custom_title_8: str = None, custom_description_8: str = None, custom_title_9: str = None, custom_description_9: str = None, show_institut: bool = True)</span>
+<span>def <span class="ident">add_title_page_info</span></span>(<span>self, study_title: str | None = None, clients: Optional[None] = None, survey_methodology: str | None = None, sampling: str | None = None, quota_features: str | None = None, address_origin: Optional[None] = None, population: str | None = None, weighting: str | None = None, survey_period: str | None = None, random_sample: str | None = "Stichprobe:', f'n = {len(self.meta_table.df)}", custom_title_1: str = None, custom_description_1: str = None, custom_title_2: str = None, custom_description_2: str = None, custom_title_3: str = None, custom_description_3: str = None, custom_title_4: str = None, custom_description_4: str = None, custom_title_5: str = None, custom_description_5: str = None, custom_title_6: str = None, custom_description_6: str = None, custom_title_7: str = None, custom_description_7: str = None, custom_title_8: str = None, custom_description_8: str = None, custom_title_9: str = None, custom_description_9: str = None, show_institut: bool = True)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>sets title page info </p>
@@ -149,7 +149,7 @@
 </dl></div>
 </dd>
 <dt id="functions.matrixmixer.main.MatrixMixer.create_matrix"><code class="name flex">
-<span>def <span class="ident">create_matrix</span></span>(<span>self, question: str, breaks: list[list[str]] = 'auto', weight: str = 'auto', order_descending: Union[str, bool] = 'auto', special_variables: Union[str, list[int]] = 'auto', nps: bool = False, quartiles: bool = False, groupings: dict = None) ‑> None</span>
+<span>def <span class="ident">create_matrix</span></span>(<span>self, question: str, breaks: list[list[str]] = 'auto', weight: str = 'auto', order_descending: Union[str, bool] = 'auto', special_variables: Union[str, list[int]] = 'auto', nps: bool = False, quartiles: bool = False, groupings: dict = None, df: pandas.core.frame.DataFrame = None, filter_label: str = None) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Creates a single matrix and saves it to the MatrixMixer object.</p>
