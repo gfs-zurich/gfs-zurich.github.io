@@ -59,7 +59,7 @@
 </dl></div>
 </dd>
 <dt id="functions.graphy.main_presentation.add_graph_slide"><code class="name flex">
-<span>def <span class="ident">add_graph_slide</span></span>(<span>info: dict, position_1_text: str, position_2_text: str, position_3_text: str, chapter_title: str = '') ‑> None</span>
+<span>def <span class="ident">add_graph_slide</span></span>(<span>info: dict, position_1_text: str, position_2_text: str, position_3_text: str, chapter_title: str = '', chapter_title_color: pptx.dml.color.RGBColor = (86, 126, 185)) ‑> None</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -69,6 +69,12 @@
 </code></dt>
 <dd>
 <div class="desc"></div>
+</dd>
+<dt id="functions.graphy.main_presentation.add_rich_text"><code class="name flex">
+<span>def <span class="ident">add_rich_text</span></span>(<span>paragraph, text, base_size=None, base_color=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Fügt text als Runs zu paragraph hinzu, wobei <b>&hellip;</b> fett dargestellt wird.</p></div>
 </dd>
 <dt id="functions.graphy.main_presentation.add_table_slide"><code class="name flex">
 <span>def <span class="ident">add_table_slide</span></span>(<span>info: dict, title_text: str, table: pandas.core.frame.DataFrame, table_width: float = 22.5, table_height: float = 5.0, table_top_distance: float = 4.5, table_left_distance: float = 1.5, column_titles: Optional[None] = None, column_alignments: Optional[None] = None, column_widths: Optional[None] = None, bold_cells: Optional[None] = None, font_size: int = 14, row_heights: Optional[None] = None, cells_with_custom_color: Optional[None] = None, show_table_background_color: bool = True, title_font_size: int = 20, cells_with_background_color: Optional[None] = None, table_font_name: str = 'Leelawadee UI', cells_with_hyperlinks: Optional[None] = None) ‑> None</span>
@@ -259,6 +265,7 @@
 <li><code><a title="functions.graphy.main_presentation.add_combined_graphs_slide" href="#functions.graphy.main_presentation.add_combined_graphs_slide">add_combined_graphs_slide</a></code></li>
 <li><code><a title="functions.graphy.main_presentation.add_graph_slide" href="#functions.graphy.main_presentation.add_graph_slide">add_graph_slide</a></code></li>
 <li><code><a title="functions.graphy.main_presentation.add_graph_slide_maps" href="#functions.graphy.main_presentation.add_graph_slide_maps">add_graph_slide_maps</a></code></li>
+<li><code><a title="functions.graphy.main_presentation.add_rich_text" href="#functions.graphy.main_presentation.add_rich_text">add_rich_text</a></code></li>
 <li><code><a title="functions.graphy.main_presentation.add_table_slide" href="#functions.graphy.main_presentation.add_table_slide">add_table_slide</a></code></li>
 <li><code><a title="functions.graphy.main_presentation.add_text_slide" href="#functions.graphy.main_presentation.add_text_slide">add_text_slide</a></code></li>
 <li><code><a title="functions.graphy.main_presentation.add_text_slide_subtitle" href="#functions.graphy.main_presentation.add_text_slide_subtitle">add_text_slide_subtitle</a></code></li>

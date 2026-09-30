@@ -118,17 +118,6 @@
 <dd>df which includes the spatial statistics and bfsnr</dd>
 </dl></div>
 </dd>
-<dt id="functions.tools.mapping.create_mapping_plz_to_gdenr"><code class="name flex">
-<span>def <span class="ident">create_mapping_plz_to_gdenr</span></span>(<span>plz_csv: pandas.core.frame.DataFrame)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>creates a json which maps each postal code to their bfs-nr</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>plz_csv</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
-<dd>df with the mapped bfsnr &lt;&ndash;&gt; postal codes</dd>
-</dl></div>
-</dd>
 <dt id="functions.tools.mapping.get_mapping_bfs_csv"><code class="name flex">
 <span>def <span class="ident">get_mapping_bfs_csv</span></span>(<span>url: str = 'https://sms.bfs.admin.ch/WcfBFSSpecificService.svc/AnonymousRest/communes/levels?useBfsCode=true&labelLanguages=de')</span>
 </code></dt>
@@ -143,22 +132,6 @@
 <dl>
 <dt><code>Exception</code></dt>
 <dd>exception if any format issues arise</dd>
-</dl></div>
-</dd>
-<dt id="functions.tools.mapping.get_mapping_plz_csv"><code class="name flex">
-<span>def <span class="ident">get_mapping_plz_csv</span></span>(<span>zip_url: str = 'https://download.geonames.org/export/zip/CH.zip')</span>
-</code></dt>
-<dd>
-<div class="desc"><p>gets postal code - bfs nr mapping form geonames.org, unzips zip file and saves csv file</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>zip_url</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>url to download from. Defaults to 'https://download.geonames.org/export/zip/CH.zip'.</dd>
-</dl>
-<h2 id="raises">Raises</h2>
-<dl>
-<dt><code>Exception</code></dt>
-<dd>exception if either zip is not in download folder or any format issues arise</dd>
 </dl></div>
 </dd>
 </dl>
@@ -187,9 +160,7 @@
 <li><code><a title="functions.tools.mapping.create_mapping_gdenr_to_siedlungsart_2020_HR_GDETYP2020_L1" href="#functions.tools.mapping.create_mapping_gdenr_to_siedlungsart_2020_HR_GDETYP2020_L1">create_mapping_gdenr_to_siedlungsart_2020_HR_GDETYP2020_L1</a></code></li>
 <li><code><a title="functions.tools.mapping.create_mapping_gdenr_to_siedlungsart_2020_V2" href="#functions.tools.mapping.create_mapping_gdenr_to_siedlungsart_2020_V2">create_mapping_gdenr_to_siedlungsart_2020_V2</a></code></li>
 <li><code><a title="functions.tools.mapping.create_mapping_gdenr_to_sprachregion" href="#functions.tools.mapping.create_mapping_gdenr_to_sprachregion">create_mapping_gdenr_to_sprachregion</a></code></li>
-<li><code><a title="functions.tools.mapping.create_mapping_plz_to_gdenr" href="#functions.tools.mapping.create_mapping_plz_to_gdenr">create_mapping_plz_to_gdenr</a></code></li>
 <li><code><a title="functions.tools.mapping.get_mapping_bfs_csv" href="#functions.tools.mapping.get_mapping_bfs_csv">get_mapping_bfs_csv</a></code></li>
-<li><code><a title="functions.tools.mapping.get_mapping_plz_csv" href="#functions.tools.mapping.get_mapping_plz_csv">get_mapping_plz_csv</a></code></li>
 </ul>
 </li>
 </ul>
